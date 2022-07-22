@@ -25,83 +25,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Moving views, controllers, helpers, services.">
-      <change afterPath="$PROJECT_DIR$/Common/Extensions/DateTimeExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/Extensions/ExceptionHandlingMiddleware.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/IWebUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/Middlewares/Exceptions/LogUnhandledExceptionMiddleware.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Common/WebUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/CmsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/ErrorController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/EventsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/ImgController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/MissionsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/ResourcesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/ILeaderboardService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/IMetaDataProvider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/IMissionsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/IPageInitializer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/ISessionService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/IStatisticsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/IVideoThumbnailParser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/LeaderboardService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/MetaDataProvider.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/MissionsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/PageInitializer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/SessionService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/StatisticsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/YouTubeVideoThumbnailParser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Cms/AboutPage.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Cms/Archive.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Cms/LandingPage.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Cms/Page.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Cms/Post.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Cms/Start.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Error/Error.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Events/EventPost.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Events/EventsArchive.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Events/_EventsList.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Missions/MissionIdeaPost.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Missions/MissionPost.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Missions/StoryPost.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Missions/_MissionIdeasList.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Missions/_MissionsBanner.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Missions/_MissionsList.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Missions/_MissionsListWithBanner.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Missions/_StoriesList.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Resources/ResourcePost.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Resources/ResourcesArchive.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Resources/_ResourcesList.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/AudioBlock.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/ColumnBlock.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/EmbeddedVideoBlock.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/HtmlBlock.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/HtmlColumnBlock.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/ImageBlock.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/ImageGalleryBlock.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/QuoteBlock.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/SeparatorBlock.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/TextBlock.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/VideoBlock.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Challenge.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Challenge.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/Partial/_ClubDetails.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/Partial/_FacebookMeta.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Favicons.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Footer.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Menu.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Meta.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/Partial/_ShareButtons.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/Partial/_TwitterMeta.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/_ViewImports.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/_ViewStart.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/SetupController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Archive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Archive.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Setup/Index.cshtml" beforeDir="false" />
-    </list>
+    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Adding csproj wuithout the default setup view." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,7 +102,7 @@
       <workItem from="1658480428035" duration="233000" />
       <workItem from="1658501084084" duration="165000" />
       <workItem from="1658501285251" duration="350000" />
-      <workItem from="1658501676666" duration="3022000" />
+      <workItem from="1658501676666" duration="3697000" />
     </task>
     <task id="LOCAL-00001" summary="Moved resources, data models, page models.">
       <created>1658504054548</created>
@@ -194,7 +118,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658504701427</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adding workspace definition for Rider">
+      <created>1658504763220</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1658504763220</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adding csproj wuithout the default setup view.">
+      <created>1658504890443</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1658504890443</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +156,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Moved resources, data models, page models." />
     <MESSAGE value="Moving views, controllers, helpers, services." />
-    <option name="LAST_COMMIT_MESSAGE" value="Moving views, controllers, helpers, services." />
+    <MESSAGE value="Adding workspace definition for Rider" />
+    <MESSAGE value="Adding csproj wuithout the default setup view." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding csproj wuithout the default setup view." />
   </component>
 </project>
