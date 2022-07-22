@@ -1,3 +1,4 @@
+using HeroesCup.Modules.ClubsModule;
 using Microsoft.EntityFrameworkCore;
 using Piranha;
 using Piranha.AttributeBuilder;
@@ -6,7 +7,7 @@ using Piranha.Data.EF.SQLite;
 using Piranha.Manager.Editor;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddClubsModule();
 builder.AddPiranha(options =>
 {
     /**

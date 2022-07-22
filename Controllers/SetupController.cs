@@ -1,12 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Piranha;
 using Piranha.Extend;
 using Piranha.Extend.Fields;
 using Piranha.Extend.Blocks;
 using Piranha.Models;
-using heroes_cup_reloaded.Models;
+using HeroesCup.Models;
 
-namespace heroes_cup_reloaded.Controllers
+namespace HeroesCup.Controllers
 {
     /// <summary>
     /// This controller is only used when the project is first started
