@@ -22,4 +22,12 @@
     <PackageReference Include="Piranha.Manager.TinyMCE" Version="10.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Setup" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Setup\Index.cshtml" />
+  </ItemGroup>
+
 </Project>
