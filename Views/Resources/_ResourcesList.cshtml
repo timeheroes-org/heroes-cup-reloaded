@@ -1,0 +1,41 @@
+﻿@model IEnumerable<HeroesCup.Web.Models.Resources.ResourcePost>
+@{
+    var resources = Model;
+}
+
+<div class="row pt-4 pb-3 mr-0">
+    @foreach (var post in resources)
+    {
+        <div class="col-sm-6 col-md-4 pt-4 pb-4">
+            <div class="item-body">
+                <a href="@post.Permalink">
+                    <div class="row justify-content-center">
+                        @if (post.Type.Value == HeroesCup.Web.Models.Resources.ResourcePostType.PDF)
+                        {
+                            <span class="resource-icon resource-icon-pdf" />
+                        }
+
+                        @if (post.Type.Value == HeroesCup.Web.Models.Resources.ResourcePostType.VIDEO)
+                        {
+                            <span class="resource-icon resource-icon-video" />
+                        }
+
+                        @if (post.Type.Value == HeroesCup.Web.Models.Resources.ResourcePostType.ARTICLE)
+                        {
+                            <span class="resource-icon resource-icon-article" />
+                        }
+                    </div>
+                    <div class="row justify-content-center text-center pt-4">
+                        <div class="col-12">
+                            <h4 class="resource-title heading4">@post.Title</h4>
+                        </div>
+                        <div class="col-12">
+                            <p class="body2">@post.Subtitle.Value</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+</div>
+

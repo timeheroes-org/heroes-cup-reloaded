@@ -6,12 +6,10 @@
 
     var posts = Model.Archive.Posts.Count;
 
-    Func<string> BlogLink = () => {
-        return Model.Data.Permalink
-            + (Model.Archive.Category != null ? $"/category/{Model.Archive.Category.Slug}"  : "")
-            + (Model.Archive.Year.HasValue ? $"/{Model.Archive.Year}" : "" )
-            + (Model.Archive.Month.HasValue ? $"/{Model.Archive.Month}" : "");
-    };
+    string BlogLink()
+    {
+        return Model.Data.Permalink + (Model.Archive.Category != null ? $"/category/{Model.Archive.Category.Slug}" : "") + (Model.Archive.Year.HasValue ? $"/{Model.Archive.Year}" : "") + (Model.Archive.Month.HasValue ? $"/{Model.Archive.Month}" : "");
+    }
 }
 @section head {
     @WebApp.MetaTags(Model.Data)

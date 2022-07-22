@@ -1,0 +1,66 @@
+﻿@model HeroesCup.Web.Models.Events.EventPost
+@{
+    System.Globalization.CultureInfo culture = Model.SiteCulture;
+    var currentUrlBase = Model.CurrentUrlBase;
+    var author = Model.Author.Value != null && Model.Author.Value != string.Empty ? Model.Author.Value : "TimeHeroes";
+}
+
+@section script{
+    <script src="~/scripts/share-buttons.js" type="text/javascript"></script>
+}
+
+@section head {
+    <partial name="~/Views/Shared/Partial/_TwitterMeta.cshtml" for="@Model.SocialNetworksMetaData" />
+    <partial name="~/Views/Shared/Partial/_FacebookMeta.cshtml" for="@Model.SocialNetworksMetaData" />
+}
+
+<div class="main mt-md-5 pt-md-4 mt-5 pt-4">
+    <div class="container mt-md-4 pt-md-4 pl-4 pr-4">
+        <div class="row pt-md-4 pt-0 pb-4">
+            <div class="row col-12 justify-content-center pr-0">
+                <div class="col-12 pt-4 pb-4">
+                    <h2 class="heading2 d-none d-md-block d-sm-none d-xs-none">@Model.Title</h2>
+                    <h3 class="heading3 d-sm-block d-md-none">@Model.Title</h3>
+                    <span class="body2">от @author, @Model.Published.Value.ToString("d MMMM yyyy", culture) </span>
+                </div>
+
+                <div class="col-md-8 col-sm-12 pt-md-4 pt-3 pb-4 mb-md-4 pr-0 pr-md-2">
+                    @if (Model.Hero.PrimaryImage.HasValue)
+                    {
+                        <div class="col-12  pl-0 pr-0 pb-md-4 pb-4">
+                            <div class="col-sm-12 pl-0 pr-0">
+                                <img class="img-fluid" src="@Url.Content(Model.Hero.PrimaryImage.Resize(WebApp.Api, 672, 416))">
+                            </div>
+                        </div>
+                    }
+                    <div class="col-12 justify-content-start pl-0 pr-0 pr-md-5 body2">
+                        @Html.DisplayFor(m => m.Blocks)
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 justify-content-start mt-3 mt-md-4 pb-4">
+                    <div class="separator d-sm-block d-md-none mb-5"></div>
+                    <div class="row share-buttons">
+                        <div class="col-12">
+                            <span class="body2">
+                                Добра новина? Сподели я:
+                            </span>
+                        </div>
+                        <partial name="~/Views/Shared/Partial/_ShareButtons.cshtml" for="@Model.SocialNetworksMetaData.TwitterUrl" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="separator"></div>
+        @* Other Events Posts *@
+        <div class="row mt-5 pl-1">
+            @if (Model.OtherEvents.Count() > 0)
+            {
+                <div class="col-12">
+                    <h2 class="heading2">Други събития</h2>
+                </div>
+                <partial name="~/Views/Events/_EventsList.cshtml" for="@Model.OtherEvents" />
+            }
+
+        </div>
+    </div>
+</div>

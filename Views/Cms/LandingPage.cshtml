@@ -1,0 +1,84 @@
+﻿@model HeroesCup.Web.Models.LandingPage
+@inject IApi Api
+@{
+    ViewBag.TypeId = Model.TypeId;
+    var currentUrlBase = $"{HttpAccess.HttpContext.Request.Scheme}://{HttpAccess.HttpContext.Request.Host}";
+}
+
+@section head{
+    <partial name="~/Views/Shared/Partial/_TwitterMeta.cshtml" for="@Model.SocialNetworksMetaData" />
+    <partial name="~/Views/Shared/Partial/_FacebookMeta.cshtml" for="@Model.SocialNetworksMetaData" />
+}
+
+<div class="main" id="landing-main">
+    <div class="container mb-md-5 mb-sm-4">
+        <div class="row justify-content-center pt-5 pb-1">
+            <img src="~/images/Logo.svg" />
+        </div>
+
+        <div class="col-sm-12 page-body text-center mt-md-5 pt-md-4 pt-3 pb-md-4 pb-3">
+            <img src="~/images/landing/Slide 3.svg" width="496" />
+            <div class="mb-4 mt-4">
+                <h1 class="heading1 d-none d-md-block d-sm-none d-xs-none">Купата на героите е доброволческото състезание на училищата в България!</h1>
+                <h3 class="heading3 d-sm-block d-md-none">Купата на героите е доброволческото състезание на училищата в България!</h3>
+            </div>
+            <div class="body2">
+                <p>
+                    TimeHeroes развива и подкрепя мрежа от неформални младежки доброволчески клубове в цялата страна от пролетта на 2015 година. Оттогава до днес, стотици ученици и студенти доброволци се включват в инициативи от платформата <a href="https://timeheroes.org/bg/">Timeheroes.org</a> или организират свои собствени мисии, в зависимост от свободното си време и интересите си.
+                </p>
+                <p>
+                    В края на всяка учебна година “Купата на героите” грабват доброволците, организирали най-много и най-добре замислени инициативи в подкрепа на каузи в своята общност.
+                </p>
+                <p>
+                    Всеки може да създаде доброволчески клуб в своето училище или университет. В мрежата ни планини повдигат дружини от едва петима доброволци, но има и клубове с повече от шейсет доброволци. Герои има от първи до дванадесети клас, има герои в различни курсове от университети в цялата страна.
+                </p>
+                <p>
+                    Всеки клуб сам избира своите каузи – има мисии, свързани с права на човека, деца и връстници, с природа и животни, спорт и култура, възрастни хора и хора в неравностойно положение. И са навсякъде – гордеем се с нашите герои от всички близо 30 градове и села, които е обхванала мрежата ни през годините!
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-12 page-body text-left pt-md-4 pt-3 pb-md-4 pb-3">
+            <div class="separator"></div>
+        </div>
+        <div class="col-sm-12 page-body text-left pt-md-4 pt-3 pb-md-4 pb-3">
+            <div class="body2">
+                <p>
+                    <h3 class="heading3">Какво правим ние за тях</h3>
+                </p>
+            </div>
+            <div class="body2">
+                <p>
+                    TimeHeroes подкрепя мрежата от доброволчески клубове чрез менторство на координаторите им, като ги насърчава с идеи за подходящи инициативи, провежда месечни предизвикателства със специални награди, а най-активните доброволци от клубовете получават сертификати в края на всяка учебна година.
+                </p>
+                <p>
+                    Всеки клуб получава и стартов пакет с подкрепящи материали, включително наръчник Как да си направим доброволчески клуб и близо 30 разписани идеи за собствени инициативи.
+                </p>
+                <p>
+                    На разположение на учениците са и различни ресурси, уроци по доброволчество и полезни материали, които могат да използват за обучение и вдъхновение.
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-12 page-body text-left pt-md-4 pt-3 pb-md-4 pb-3">
+            <div class="separator"></div>
+        </div>
+        <div class="row col-sm-12 page-body text-left pt-4 pb-4 pr-0">
+            <div class="col-sm-12 d-sm-block d-md-none">
+                <h3 class="heading3">Как да се включа</h3>
+            </div>
+            <div class="col-md-6 col-sm-12 order-md-1 order-2 body2 vertical-center order-md-1 order-2">
+                <div class="mb-4 d-none d-md-block d-sm-none d-xs-none">
+                    <h3 class="heading3">Как да се включа</h3>
+                </div>
+                <p>
+                    <strong>Пиши на hello [при] timeheroes [точка] org.</strong>
+                </p>
+                <p>
+                    Пълният уебсайт ще е готов скоро. Виж повече <a href="https://timeheroes.org/bg/pages/dobrovolcheski-klubove">тук.</a>
+                </p>
+            </div>
+            <div class="col-md-6 col-sm-12 order-md-2 order-1 justify-content-center mt-3 mt-md-0 mb-4 mb-md-0 vertical-center order-md-2 order-1 pr-0">
+                <img src="~/images/landing/Join.svg" width="496" />
+            </div>
+        </div>
+    </div>
+</div>

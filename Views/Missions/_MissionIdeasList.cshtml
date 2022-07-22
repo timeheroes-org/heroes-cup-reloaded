@@ -1,0 +1,26 @@
+﻿@model IEnumerable<HeroesCup.Web.Models.MissionIdeaViewModel>
+@{
+    var missionIdeas = Model.ToList().OrderByDescending(m => m.MissionIdea.IsPublished);
+
+}
+
+@if (missionIdeas.Count() > 0)
+{
+    <div class="row">
+        @foreach (var idea in missionIdeas)
+        {
+            <div class="col-sm-6 col-md-4 mt-md-4 pt-md-4 pt-3 mt-3">
+                <div class="mission-body">
+                    <a href="/mission-idea/@idea.MissionIdea.Slug">
+                        <div class="img-container text-left">
+                            <img class="img-fluid mission-img-list" src="/img/@idea.ImageId" />
+                        </div>
+                        <p class="mission-title mt-4 body1-bold pr-md-4 pr-1">@idea.MissionIdea.Title</p>
+                        <p class="body2 pr-md-5 pr-2">от @idea.Organization</p>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+}
+
