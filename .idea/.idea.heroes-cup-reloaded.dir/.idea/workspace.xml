@@ -25,12 +25,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Moved resources, data models, page models.">
+    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Moving views, controllers, helpers, services.">
       <change afterPath="$PROJECT_DIR$/Common/Extensions/DateTimeExtensions.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Common/Extensions/ExceptionHandlingMiddleware.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Common/IWebUtils.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Common/Middlewares/Exceptions/LogUnhandledExceptionMiddleware.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Common/WebUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/CmsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/ErrorController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/EventsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/ImgController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/MissionsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/ResourcesController.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Services/ILeaderboardService.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Services/IMetaDataProvider.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Services/IMissionsService.cs" afterDir="false" />
@@ -91,6 +97,8 @@
       <change afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Views/_ViewImports.cshtml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Views/_ViewStart.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/SetupController.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/Archive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Archive.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Setup/Index.cshtml" beforeDir="false" />
     </list>
@@ -170,7 +178,7 @@
       <workItem from="1658480428035" duration="233000" />
       <workItem from="1658501084084" duration="165000" />
       <workItem from="1658501285251" duration="350000" />
-      <workItem from="1658501676666" duration="2641000" />
+      <workItem from="1658501676666" duration="3022000" />
     </task>
     <task id="LOCAL-00001" summary="Moved resources, data models, page models.">
       <created>1658504054548</created>
@@ -179,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658504054549</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Moving views, controllers, helpers, services.">
+      <created>1658504701427</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1658504701427</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +217,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Moved resources, data models, page models." />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved resources, data models, page models." />
+    <MESSAGE value="Moving views, controllers, helpers, services." />
+    <option name="LAST_COMMIT_MESSAGE" value="Moving views, controllers, helpers, services." />
   </component>
 </project>
