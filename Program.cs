@@ -1,4 +1,7 @@
 using HeroesCup.Modules.ClubsModule;
+using HeroesCup.Web.Common;
+using HeroesCup.Web.Data;
+using HeroesCup.Web.Services;
 using Microsoft.EntityFrameworkCore;
 using Piranha;
 using Piranha.AttributeBuilder;
@@ -7,15 +10,10 @@ using Piranha.Data.EF.SQLite;
 using Piranha.Manager.Editor;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddClubsModule();
+
 builder.AddPiranha(options =>
 {
-    /**
-     * This will enable automatic reload of .cshtml
-     * without restarting the application. However since
-     * this adds a slight overhead it should not be
-     * enabled in production.
-     */
+
     options.AddRazorRuntimeCompilation = true;
 
     options.UseCms();
@@ -28,26 +26,21 @@ builder.AddPiranha(options =>
 
     var connectionString = builder.Configuration.GetConnectionString("piranha");
     options.UseEF<SQLiteDb>(db => db.UseSqlite(connectionString));
+    
     options.UseIdentityWithSeed<IdentitySQLiteDb>(db => db.UseSqlite(connectionString));
-
-    /**
-     * Here you can configure the different permissions
-     * that you want to use for securing content in the
-     * application.
-    options.UseSecurity(o =>
-    {
-        o.UsePermission("WebUser", "Web User");
-    });
-     */
-
-    /**
-     * Here you can specify the login url for the front end
-     * application. This does not affect the login url of
-     * the manager interface.
-    options.LoginUrl = "login";
-     */
 });
-
+builder.Services.AddClubsModule();
+builder.Services.AddTransient<IHeroesCupIdentitySeed, IdentitySeed>();
+builder.Services.AddTransient<IPageInitializer, PageInitializer>();
+builder.Services.AddTransient<ILeaderboardService, LeaderboardService>();
+builder.Services.AddTransient<IStatisticsService, StatisticsService>();
+builder.Services.AddTransient<IMissionsService, MissionsService>();
+builder.Services.AddTransient<ISessionService, SessionService>();
+builder.Services.AddTransient<IWebUtils, WebUtils>();
+builder.Services.AddTransient<IVideoThumbnailParser, YouTubeVideoThumbnailParser>();
+builder.Services.AddTransient<IMetaDataProvider, MetaDataProvider>();
+builder.Services.AddDbContext<HeroesCupDbContext>(
+    options => options.UseSqlite("connectionString"));
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

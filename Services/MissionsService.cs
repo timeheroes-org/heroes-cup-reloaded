@@ -15,11 +15,11 @@ namespace HeroesCup.Web.Services
 {
     public class MissionsService : IMissionsService
     {
-        private readonly ClubsModule.Services.Contracts.IMissionsService missionsService;
-        private readonly ClubsModule.Services.Contracts.IMissionIdeasService missionIdeasService;
-        private readonly ClubsModule.Services.Contracts.IStoriesService storiesService;
-        private readonly ClubsModule.Services.Contracts.IImagesService imageService;
-        private readonly IConfiguration configuration;
+        private readonly ClubsModule.Services.Contracts.IMissionsService _missionsService;
+        private readonly ClubsModule.Services.Contracts.IMissionIdeasService _missionIdeasService;
+        private readonly ClubsModule.Services.Contracts.IStoriesService _storiesService;
+        private readonly ClubsModule.Services.Contracts.IImagesService _imageService;
+        private readonly IConfiguration _configuration;
 
         public MissionsService(
             ClubsModule.Services.Contracts.IMissionsService missionsService,
@@ -28,58 +28,58 @@ namespace HeroesCup.Web.Services
             ClubsModule.Services.Contracts.IImagesService imageService,
             IConfiguration configuration)
         {
-            this.missionsService = missionsService;
-            this.missionIdeasService = missionIdeasService;
-            this.storiesService = storiesService;
-            this.imageService = imageService;
-            this.configuration = configuration;
+            this._missionsService = missionsService;
+            this._missionIdeasService = missionIdeasService;
+            this._storiesService = storiesService;
+            this._imageService = imageService;
+            this._configuration = configuration;
         }
 
         public IEnumerable<MissionIdeaViewModel> GetMissionIdeaViewModels()
         {
-            var timeheroesMissions = this.missionIdeasService.GetAllPublishedMissionIdeas();
+            var timeheroesMissions = this._missionIdeasService.GetAllPublishedMissionIdeas();
             return timeheroesMissions.Select(mi => this.MapMissionIdeaToMissionIdeaViewModel(mi));
         }
 
         public IEnumerable<MissionViewModel> GetMissionViewModels()
         {
-            var missions = this.missionsService.GetAllPublishedMissions();
-            return missions.Select(m => this.MapMissionToMissionViewModel(m, this.missionsService.GetMissionImagesIds(m.Id)));
+            var missions = this._missionsService.GetAllPublishedMissions();
+            return missions.Select(m => this.MapMissionToMissionViewModel(m, this._missionsService.GetMissionImagesIds(m.Id)));
         }
 
         public async Task<IEnumerable<MissionViewModel>> GetPinnedMissionViewModels()
         {
-            var pinnedMissions = await this.missionsService.GetPinnedMissions();
-            return pinnedMissions.Select(m => this.MapMissionToMissionViewModel(m, this.missionsService.GetMissionImagesIds(m.Id)));
+            var pinnedMissions = await this._missionsService.GetPinnedMissions();
+            return pinnedMissions.Select(m => this.MapMissionToMissionViewModel(m, this._missionsService.GetMissionImagesIds(m.Id)));
         }
 
         public int GetAllMissionsCount()
         {
-            return this.missionsService.GetAllPublishedMissions().Count();
+            return this._missionsService.GetAllPublishedMissions().Count();
         }
 
         public IDictionary<string, int> GetMissionsPerLocation()
         {
-            return this.missionsService.GetAllPublishedMissions()
+            return this._missionsService.GetAllPublishedMissions()
                 .GroupBy(m => m.Location)
                 .ToDictionary(x => x.Key, x => x.Count());
         }
 
         public IEnumerable<MissionViewModel> GetMissionViewModelsByLocation(string location)
         {
-            return this.missionsService.GetAllPublishedMissions()
+            return this._missionsService.GetAllPublishedMissions()
                 .Where(m => m.Location.Contains(location) || location.Contains(m.Location))
-                .Select(m => this.MapMissionToMissionViewModel(m, this.missionsService.GetMissionImagesIds(m.Id)));
+                .Select(m => this.MapMissionToMissionViewModel(m, this._missionsService.GetMissionImagesIds(m.Id)));
         }
 
         public IEnumerable<StoryViewModel> GetAllPublishedStoryViewModels()
         {
-            return this.storiesService.GetAllPublishedStories().Select(s => this.MapStoryToStoryViewModel(s));
+            return this._storiesService.GetAllPublishedStories().Select(s => this.MapStoryToStoryViewModel(s));
         }
 
         public async Task<MissionViewModel> GetMissionViewModelBySlugAsync(string slug)
         {
-            var result = await this.missionsService.GetMissionEditModelBySlugAsync(slug);
+            var result = await this._missionsService.GetMissionEditModelBySlugAsync(slug);
             if (result == null)
             {
                 return null;
@@ -92,7 +92,7 @@ namespace HeroesCup.Web.Services
 
         public async Task<StoryViewModel> GetStoryViewModelByMissionSlugAsync(string missionSlug)
         {
-            var story = await this.storiesService.GetStoryByMissionSlugAsync(missionSlug);
+            var story = await this._storiesService.GetStoryByMissionSlugAsync(missionSlug);
             if (story == null)
             {
                 return null;
@@ -105,7 +105,7 @@ namespace HeroesCup.Web.Services
 
         public async Task<MissionIdeaViewModel> GetMissionIdeaViewModelBySlugAsync(string slug)
         {
-            var result = await this.missionIdeasService.GetMissionIdeaEditModelBySlugAsync(slug);
+            var result = await this._missionIdeasService.GetMissionIdeaEditModelBySlugAsync(slug);
             if (result == null)
             {
                 return null;
@@ -131,7 +131,7 @@ namespace HeroesCup.Web.Services
                 ImageId = missionIdea.MissionIdeaImages != null && missionIdea.MissionIdeaImages.Any() ? missionIdea.MissionIdeaImages.FirstOrDefault().ImageId.ToString() : null,
                 IsExpired = missionIdea.EndDate.IsExpired(),
                 IsSeveralDays = IsSeveralDays(missionIdea.StartDate, missionIdea.EndDate),
-                Organization = missionIdea.Organization != null && missionIdea.Organization != String.Empty ? missionIdea.Organization : this.configuration["DefaultOrganization"]
+                Organization = missionIdea.Organization != null && missionIdea.Organization != String.Empty ? missionIdea.Organization : this._configuration["DefaultOrganization"]
             };
         }
 
@@ -153,7 +153,7 @@ namespace HeroesCup.Web.Services
                 EndDate = missionIdeEditModel.MissionIdea.EndDate.ConvertToLocalDateTime(),
                 IsExpired = missionIdeEditModel.MissionIdea.EndDate.IsExpired(),
                 IsSeveralDays = IsSeveralDays(missionIdeEditModel.MissionIdea.StartDate, missionIdeEditModel.MissionIdea.EndDate),
-                Organization = missionIdeEditModel.MissionIdea.Organization != null && missionIdeEditModel.MissionIdea.Organization != String.Empty ? missionIdeEditModel.MissionIdea.Organization : this.configuration["DefaultOrganization"]
+                Organization = missionIdeEditModel.MissionIdea.Organization != null && missionIdeEditModel.MissionIdea.Organization != String.Empty ? missionIdeEditModel.MissionIdea.Organization : this._configuration["DefaultOrganization"]
             };
         }
 
@@ -196,7 +196,7 @@ namespace HeroesCup.Web.Services
                     ClubLocation = story.Mission.Club.Location,
                     IsExpired = story.Mission.EndDate.IsExpired(),
                     IsSeveralDays = IsSeveralDays(story.Mission.StartDate, story.Mission.EndDate),
-                    ImageFilename = this.imageService.GetImageFilename(story.Mission.MissionImages.FirstOrDefault() != null ? story.Mission.MissionImages.FirstOrDefault().Image : null),
+                    ImageFilename = this._imageService.GetImageFilename(story.Mission.MissionImages.FirstOrDefault() != null ? story.Mission.MissionImages.FirstOrDefault().Image : null),
                     ImageId = story.Mission.MissionImages != null && story.Mission.MissionImages.Any() ? story.Mission.MissionImages.FirstOrDefault().ImageId.ToString() : null,
                     StartDate = story.Mission.StartDate.ConvertToLocalDateTime(),
                     EndDate = story.Mission.EndDate.ConvertToLocalDateTime(),

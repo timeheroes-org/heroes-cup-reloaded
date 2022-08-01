@@ -1,8 +1,7 @@
 ﻿@model IEnumerable<HeroesCup.Web.Models.Events.EventPost>
 @{
     var events = Model;
-    var site = await WebApp.Api.Sites.GetDefaultAsync();
-    var siteCulture = site.Culture != null ? site.Culture : "bg-BG";
+    var siteCulture = ViewBag["culture"];
     System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(siteCulture);
 }
 

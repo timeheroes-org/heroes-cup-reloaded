@@ -9,25 +9,26 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HeroesCup.Web.Data;
 
 namespace ClubsModule.Services
 {
     public class ClubsService : IClubsService
     {
-        private readonly HeroesCupDbContext dbContext;
-        private readonly IImagesService imagesService;
-        private readonly IHeroesService heroesService;
-        private readonly IConfiguration configuration;
+        private readonly HeroesCupDbContext _dbContext;
+        private readonly IImagesService _imagesService;
+        private readonly IHeroesService _heroesService;
+        private readonly IConfiguration _configuration;
 
-        private string dateTimeFormat;
+        private readonly string dateTimeFormat;
 
         public ClubsService(HeroesCupDbContext dbContext, IImagesService imagesService, IHeroesService heroesService, IConfiguration configuration)
         {
-            this.dbContext = dbContext;
-            this.imagesService = imagesService;
-            this.heroesService = heroesService;
-            this.configuration = configuration;
-            this.dateTimeFormat = this.configuration["DateТimeFormat"];
+            this._dbContext = dbContext;
+            this._imagesService = imagesService;
+            this._heroesService = heroesService;
+            this._configuration = configuration;
+            this.dateTimeFormat = this._configuration["DateТimeFormat"];
         }
 
         public async Task<ClubEditModel> CreateClubEditModelAsync(Guid? ownerId)
@@ -36,13 +37,13 @@ namespace ClubsModule.Services
             var heroes = new List<Hero>();
             if (ownerId.HasValue)
             {
-                missions = await this.dbContext.Missions.Where(m => m.OwnerId == ownerId.Value).ToListAsync();
-                heroes = await this.dbContext.Heroes.Where(h => h.Club.OwnerId == ownerId.Value).ToListAsync();
+                missions = await this._dbContext.Missions.Where(m => m.OwnerId == ownerId.Value).ToListAsync();
+                heroes = await this._dbContext.Heroes.Where(h => h.Club.OwnerId == ownerId.Value).ToListAsync();
             }
             else
             {
-                missions = await this.dbContext.Missions.ToListAsync();
-                heroes = await this.dbContext.Heroes.ToListAsync();
+                missions = await this._dbContext.Missions.ToListAsync();
+                heroes = await this._dbContext.Heroes.ToListAsync();
             }
 
             var model = new ClubEditModel()
@@ -58,7 +59,7 @@ namespace ClubsModule.Services
 
         public async Task<ClubEditModel> GetClubEditModelByIdAsync(Guid id, Guid? ownerId)
         {
-            var club = await this.dbContext.Clubs
+            var club = await this._dbContext.Clubs
                     .Include(c => c.ClubImages)
                     .FirstOrDefaultAsync(c => c.Id == id);
 
@@ -85,7 +86,7 @@ namespace ClubsModule.Services
 
             if (club.ClubImages != null && club.ClubImages.Count > 0)
             {
-                var clubImage = await this.imagesService.GetClubImage(club.Id);
+                var clubImage = await this._imagesService.GetClubImage(club.Id);
                 model.ClubImageId = Guid.Empty != clubImage.ImageId ? clubImage.ImageId.ToString() : null;
             }
 
@@ -98,7 +99,7 @@ namespace ClubsModule.Services
         public async Task<ClubListModel> GetClubListModelAsync(Guid? ownerId)
         {
             var clubs = new List<Club>();
-            clubs = await this.dbContext.Clubs
+            clubs = await this._dbContext.Clubs
                     .Include(c => c.Heroes)
                     .OrderByDescending(c => c.UpdatedOn)
                     .ToListAsync();
@@ -128,7 +129,7 @@ namespace ClubsModule.Services
 
         public async Task<Guid> SaveClubEditModelAsync(ClubEditModel model)
         {
-            var club = await this.dbContext.Clubs
+            var club = await this._dbContext.Clubs
                 .Include(c => c.ClubImages)
                 .Include(c => c.Heroes)
                 .Include(c => c.Missions)
@@ -140,7 +141,7 @@ namespace ClubsModule.Services
                 club.Id = model.Club.Id != Guid.Empty ? model.Club.Id : Guid.NewGuid();
                 club.OwnerId = model.Club.OwnerId;
                 club.CreatedOn = DateTime.Now.ToUnixMilliseconds();
-                this.dbContext.Clubs.Add(club);
+                this._dbContext.Clubs.Add(club);
             }
 
             club.Name = model.Club.Name.TrimInput();
@@ -157,7 +158,7 @@ namespace ClubsModule.Services
                 club.Heroes = new List<Hero>();
                 foreach (var heroId in model.HeroesIds)
                 {
-                    var hero = this.dbContext.Heroes.FirstOrDefault(h => h.Id == heroId);
+                    var hero = this._dbContext.Heroes.FirstOrDefault(h => h.Id == heroId);
                     club.Heroes.Add(hero);
                 }
             }
@@ -165,7 +166,7 @@ namespace ClubsModule.Services
             // set club coordinators
             if (model.CoordinatorsIds != null && model.CoordinatorsIds.All(c => c != Guid.Empty))
             {
-                await this.heroesService.SaveCoordinatorsAsync(model.CoordinatorsIds, club, false);            
+                await this._heroesService.SaveCoordinatorsAsync(model.CoordinatorsIds, club, false);            
             }
 
             // set club's missions
@@ -174,7 +175,7 @@ namespace ClubsModule.Services
                 club.Missions = new List<Mission>();
                 foreach (var missionId in model.MissionsIds)
                 {
-                    var mission = this.dbContext.Missions.FirstOrDefault(h => h.Id == missionId);
+                    var mission = this._dbContext.Missions.FirstOrDefault(h => h.Id == missionId);
                     club.Missions.Add(mission);
                 }
             }
@@ -182,20 +183,20 @@ namespace ClubsModule.Services
             // set club logo
             if (model.UploadedLogo != null)
             {
-                var image = this.imagesService.MapFormFileToImage(model.UploadedLogo);
-                await this.imagesService.CreateClubImageAsync(image, club);
+                var image = this._imagesService.MapFormFileToImage(model.UploadedLogo);
+                await this._imagesService.CreateClubImageAsync(image, club);
             }
 
             club.UpdatedOn = DateTime.Now.ToUnixMilliseconds();
 
-            await dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();
             return club.Id;
         }
 
         public async Task<IEnumerable<Hero>> GetClubCoordinatorsAsync(Guid clubId)
         {
             IEnumerable<Hero> coordinators = null;
-            var club = await this.dbContext.Clubs.FirstOrDefaultAsync(c => c.Id == clubId);
+            var club = await this._dbContext.Clubs.FirstOrDefaultAsync(c => c.Id == clubId);
             if (club == null)
             {
                 return null;
@@ -211,20 +212,20 @@ namespace ClubsModule.Services
 
         public async Task<bool> DeleteAsync(Guid id)
         {
-            var club = this.dbContext.Clubs.FirstOrDefault(c => c.Id == id);
+            var club = this._dbContext.Clubs.FirstOrDefault(c => c.Id == id);
             if (club == null)
             {
                 return false;
             }
 
-            this.dbContext.Clubs.Remove(club);
-            await this.dbContext.SaveChangesAsync();
+            this._dbContext.Clubs.Remove(club);
+            await this._dbContext.SaveChangesAsync();
             return true;
         }
 
         public IEnumerable<Club> GetAllClubs()
         {
-            return this.dbContext.Clubs
+            return this._dbContext.Clubs
                 .Include(c => c.Heroes);
         }
     }

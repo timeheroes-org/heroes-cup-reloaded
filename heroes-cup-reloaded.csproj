@@ -30,4 +30,15 @@
     <Content Remove="Views\Setup\Index.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="ClubsModule\Areas\Manager\**" />
+    <Compile Remove="ClubsModule\Resources\**" />
+    <Content Remove="ClubsModule\Areas\Manager\**" />
+    <Content Remove="ClubsModule\Resources\**" />
+    <EmbeddedResource Remove="ClubsModule\Areas\Manager\**" />
+    <EmbeddedResource Remove="ClubsModule\Resources\**" />
+    <None Remove="ClubsModule\Areas\Manager\**" />
+    <None Remove="ClubsModule\Resources\**" />
+  </ItemGroup>
+
 </Project>

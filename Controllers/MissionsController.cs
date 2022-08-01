@@ -146,8 +146,8 @@ namespace HeroesCup.Controllers
             {
                 MissionIdea = missionIdea,
                 CurrentUrlBase = currentUrlBase,
-                StartDateAsLocalString = missionIdea.StartDate != null ? missionIdea.StartDate.ToString(dateFormat, siteCulture) : null,
-                EndDateAsLocalString = missionIdea.EndDate != null ? missionIdea.EndDate.ToString(dateFormat, siteCulture): null,
+                StartDateAsLocalString = missionIdea.StartDate.ToString(dateFormat, siteCulture),
+                EndDateAsLocalString = missionIdea.EndDate.ToString(dateFormat, siteCulture),
                 Title = missionIdea.MissionIdea.Title,
                 Slug = missionIdea.MissionIdea.Slug,
                 Category = "mission-idea",
@@ -174,8 +174,8 @@ namespace HeroesCup.Controllers
             var model = new StoryPost()
             {
                 Story = story,
-                StartDateAsLocalString = story.Mission.StartDate != null ? story.Mission.StartDate.ToString(dateFormat, siteCulture) : null,
-                EndDateAsLocalString = story.Mission.EndDate != null ? story.Mission.EndDate.ToString(dateFormat, siteCulture) : null,
+                StartDateAsLocalString = story.Mission.StartDate.ToString(dateFormat, siteCulture),
+                EndDateAsLocalString = story.Mission.EndDate.ToString(dateFormat, siteCulture),
                 CurrentUrlBase = currentUrlBase,
                 SiteCulture = siteCulture,
                 Title = story.Mission.Title,

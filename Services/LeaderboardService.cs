@@ -13,13 +13,13 @@ namespace HeroesCup.Web.Services
     public class LeaderboardService : ILeaderboardService
     {
         private readonly ClubsModule.Services.Contracts.IMissionsService _missionsService;
-        public readonly ClubsModule.Services.Contracts.IImagesService imagesService;
+        private readonly ClubsModule.Services.Contracts.IImagesService _imagesService;
 
         public LeaderboardService(ClubsModule.Services.Contracts.IMissionsService missionsService,
             ClubsModule.Services.Contracts.IImagesService imagesService)
         {
             this._missionsService = missionsService;
-            this.imagesService = imagesService;
+            this._imagesService = imagesService;
         }
 
         public async Task<ClubListViewModel> GetClubsBySchoolYearAsync(string schoolYear)
@@ -67,7 +67,7 @@ namespace HeroesCup.Web.Services
                         Location = c.Club.Location,
                         ClubInitials = GetClubInitials(c.Club.Name),                      
                         HeroesCount = GetHeroesCount(c.Club),
-                        ClubImageId = this.imagesService.getClubImageId(c.Club.Id),
+                        ClubImageId = this._imagesService.getClubImageId(c.Club.Id),
                         Points = getClubPoints(c.Missions),
                         Club = c.Club,
                         Missions = clubMissions,
@@ -134,7 +134,7 @@ namespace HeroesCup.Web.Services
 
         public string GetLatestSchoolYear()
         {
-            var latestSchoolYear = this.GetSchoolYears().OrderByDescending(x => x).FirstOrDefault();
+            var latestSchoolYear = this.GetSchoolYears().MaxBy(x => x);
             return latestSchoolYear;
         }
     }

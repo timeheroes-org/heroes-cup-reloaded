@@ -5,8 +5,6 @@ using HeroesCup.Localization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Piranha.Manager.Controllers;
-using System;
-using System.Threading.Tasks;
 
 namespace ClubsModule.Controllers
 {

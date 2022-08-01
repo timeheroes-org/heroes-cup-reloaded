@@ -4,6 +4,7 @@ using HeroesCup.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
+using HeroesCup.Web.Data;
 
 namespace ClubsModule.Services
 {

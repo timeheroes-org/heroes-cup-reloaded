@@ -11,18 +11,19 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using HeroesCup.Web.Data;
 
 namespace ClubsModule.Services
 {
     public class MissionsService : IMissionsService
     {
-        private readonly HeroesCupDbContext dbContext;
-        private readonly IImagesService imagesService;
-        private readonly ISchoolYearService schoolYearService;
-        private readonly IConfiguration configuration;
-        private readonly IMissionContentsService missionContentsService;
+        private readonly HeroesCupDbContext _dbContext;
+        private readonly IImagesService _imagesService;
+        protected readonly ISchoolYearService schoolYearService;
+        private readonly IConfiguration _configuration;
+        protected readonly IMissionContentsService missionContentsService;
 
-        private string dateTimeFormat;
+        private readonly string dateTimeFormat;
 
         public MissionsService(HeroesCupDbContext dbContext,
             IImagesService imagesService,
@@ -30,18 +31,18 @@ namespace ClubsModule.Services
             IConfiguration configuration,
             IMissionContentsService missionContentsService)
         {
-            this.dbContext = dbContext;
-            this.imagesService = imagesService;
+            this._dbContext = dbContext;
+            this._imagesService = imagesService;
             this.schoolYearService = schoolYearService;
-            this.configuration = configuration;
+            this._configuration = configuration;
             this.missionContentsService = missionContentsService;
-            this.dateTimeFormat = this.configuration["DateТimeFormat"];
+            this.dateTimeFormat = this._configuration["DateТimeFormat"];
         }
 
         public async Task<MissionListModel> GetMissionListModelAsync(Guid? ownerId)
         {
             var missions = new List<Mission>();
-            missions = await this.dbContext.Missions
+            missions = await this._dbContext.Missions
                     .Include(m => m.Club)
                     .Include(m => m.HeroMissions)
                     .ThenInclude(hm => hm.Hero)
@@ -77,7 +78,7 @@ namespace ClubsModule.Services
         public async Task<MissionEditModel> CreateMissionEditModelAsync(Guid? ownerId)
         {
             var clubs = new List<Club>();
-            clubs = await this.dbContext.Clubs.ToListAsync();
+            clubs = await this._dbContext.Clubs.ToListAsync();
 
             if (ownerId.HasValue)
             {
@@ -100,7 +101,7 @@ namespace ClubsModule.Services
 
         public async Task<Guid> SaveMissionEditModelAsync(MissionEditModel model)
         {
-            var mission = await this.dbContext.Missions
+            var mission = await this._dbContext.Missions
                 .Include(c => c.MissionImages)
                 .ThenInclude(m => m.Image)
                 .Include(m => m.Club)
@@ -110,7 +111,7 @@ namespace ClubsModule.Services
             var slug = model.Mission.Title.Trim().ToSlug();
             slug = slug.Unidecode();
 
-            var missionWithSameTitle = await this.dbContext.Missions
+            var missionWithSameTitle = await this._dbContext.Missions
                 .Where(m => (m.Title == model.Mission.Title || m.Slug == slug) && m.Id != model.Mission.Id)
                 .FirstOrDefaultAsync();
 
@@ -123,10 +124,10 @@ namespace ClubsModule.Services
             {
                 mission = new Mission();
                 mission.Id = model.Mission.Id != Guid.Empty ? model.Mission.Id : Guid.NewGuid();
-                var club = await this.dbContext.Clubs.FirstOrDefaultAsync(c => c.Id == model.Mission.Club.Id);
+                var club = await this._dbContext.Clubs.FirstOrDefaultAsync(c => c.Id == model.Mission.Club.Id);
                 mission.OwnerId = club.OwnerId;
                 mission.CreatedOn = DateTime.Now.ToUnixMilliseconds();
-                this.dbContext.Missions.Add(mission);
+                this._dbContext.Missions.Add(mission);
             }
 
             mission.Title = model.Mission.Title.Trim();
@@ -137,7 +138,7 @@ namespace ClubsModule.Services
                 mission.Stars = model.Mission.Stars;
             }
 
-            var dateFormat = this.configuration["DateFormat"];
+            var dateFormat = this._configuration["DateFormat"];
             var startDate = DateTime.ParseExact(model.UploadedStartDate, dateFormat, CultureInfo.InvariantCulture);
             var endDate = DateTime.ParseExact(model.UploadedEndDate, dateFormat, CultureInfo.InvariantCulture);
             mission.StartDate = startDate.StartOfTheDay().ToUnixMilliseconds();
@@ -152,40 +153,40 @@ namespace ClubsModule.Services
             // set mission organizer
             if (model.Mission.Club.Id != Guid.Empty)
             {
-                var newOrganizator = this.dbContext.Clubs.FirstOrDefault(h => h.Id == model.Mission.Club.Id);
+                var newOrganizator = this._dbContext.Clubs.FirstOrDefault(h => h.Id == model.Mission.Club.Id);
                 mission.Club = newOrganizator;
             }
 
             // set mission image
             if (model.Image != null)
             {
-                var image = this.imagesService.MapFormFileToImage(model.Image);
-                await this.imagesService.CreateMissionImageAsync(image, mission);
+                var image = this._imagesService.MapFormFileToImage(model.Image);
+                await this._imagesService.CreateMissionImageAsync(image, mission);
             }
 
             mission.UpdatedOn = DateTime.Now.ToUnixMilliseconds();
 
-            await dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();
             return mission.Id;
         }
 
         public async Task<bool> PublishMissionEditModelAsync(Guid missionId)
         {
-            var mission = await this.dbContext.Missions.FirstOrDefaultAsync(m => m.Id == missionId);
+            var mission = await this._dbContext.Missions.FirstOrDefaultAsync(m => m.Id == missionId);
             if (mission == null)
             {
                 return false;
             }
 
             mission.IsPublished = true;
-            await this.dbContext.SaveChangesAsync();
+            await this._dbContext.SaveChangesAsync();
 
             return true;
         }
 
         public async Task<bool> UnpublishMissionEditModelAsync(Guid missionId)
         {
-            var mission = await this.dbContext.Missions.FirstOrDefaultAsync(m => m.Id == missionId);
+            var mission = await this._dbContext.Missions.FirstOrDefaultAsync(m => m.Id == missionId);
             if (mission == null)
             {
                 return false;
@@ -193,7 +194,7 @@ namespace ClubsModule.Services
 
             mission.IsPublished = false;
             mission.IsPinned = false;
-            await this.dbContext.SaveChangesAsync();
+            await this._dbContext.SaveChangesAsync();
 
             return true;
         }
@@ -201,7 +202,7 @@ namespace ClubsModule.Services
         public async Task<MissionEditModel> GetMissionEditModelByIdAsync(Guid id, Guid? ownerId)
         {
             Mission mission = null;
-            mission = await this.dbContext.Missions
+            mission = await this._dbContext.Missions
                     .Include(m => m.Club)
                     .Include(m => m.Content)
                     .Include(c => c.HeroMissions)
@@ -221,14 +222,14 @@ namespace ClubsModule.Services
 
         public async Task<bool> DeleteAsync(Guid id)
         {
-            var mission = this.dbContext.Missions.FirstOrDefault(c => c.Id == id);
+            var mission = this._dbContext.Missions.FirstOrDefault(c => c.Id == id);
             if (mission == null)
             {
                 return false;
             }
 
-            this.dbContext.Missions.Remove(mission);
-            await this.dbContext.SaveChangesAsync();
+            this._dbContext.Missions.Remove(mission);
+            await this._dbContext.SaveChangesAsync();
             return true;
         }
 
@@ -239,7 +240,7 @@ namespace ClubsModule.Services
                 return null;
             }
 
-            var result = await this.dbContext.Missions
+            var result = await this._dbContext.Missions
                 .Where(m => m.IsPublished)
                 .Include(c => c.Club)
                 .Include(m => m.HeroMissions)
@@ -254,7 +255,7 @@ namespace ClubsModule.Services
 
         public IEnumerable<string> GetMissionSchoolYears()
         {
-            var schoolYears = this.dbContext.Missions
+            var schoolYears = this._dbContext.Missions
                .Where(m => m.IsPublished && m.Stars != 0 && m.HeroMissions != null && m.HeroMissions.Count > 0)
                .GroupBy(m => m.SchoolYear)
                .Select(sy => sy.Key);
@@ -264,7 +265,7 @@ namespace ClubsModule.Services
 
         public IEnumerable<Mission> GetAllPublishedMissions()
         {
-            var missions = this.dbContext.Missions
+            var missions = this._dbContext.Missions
                 .Where(m => m.IsPublished == true)
                 .Include(m => m.HeroMissions)
                 .Include(m => m.Club)
@@ -276,35 +277,35 @@ namespace ClubsModule.Services
 
         public async Task<bool> PinMissionEditModelAsync(Guid id)
         {
-            var mission = await this.dbContext.Missions.FirstOrDefaultAsync(m => m.Id == id);
+            var mission = await this._dbContext.Missions.FirstOrDefaultAsync(m => m.Id == id);
             if (mission == null)
             {
                 return false;
             }
 
             mission.IsPinned = true;
-            await this.dbContext.SaveChangesAsync();
+            await this._dbContext.SaveChangesAsync();
 
             return true;
         }
 
         public async Task<bool> UnpinMissionEditModelAsync(Guid id)
         {
-            var mission = await this.dbContext.Missions.FirstOrDefaultAsync(m => m.Id == id);
+            var mission = await this._dbContext.Missions.FirstOrDefaultAsync(m => m.Id == id);
             if (mission == null)
             {
                 return false;
             }
 
             mission.IsPinned = false;
-            await this.dbContext.SaveChangesAsync();
+            await this._dbContext.SaveChangesAsync();
 
             return true;
         }
 
         public async Task<IEnumerable<Mission>> GetPinnedMissions()
         {
-            var missions = await this.dbContext.Missions
+            var missions = await this._dbContext.Missions
                 .Where(m => m.IsPinned == true && m.IsPublished == true)
                 .Include(m => m.Club)
                 .Include(m => m.MissionImages)
@@ -313,12 +314,12 @@ namespace ClubsModule.Services
                 .ToListAsync();
 
             int countOfPinnedMissionsOnHomePage;
-            int.TryParse(this.configuration["PinnedMissionsOnHomePageCount"], out countOfPinnedMissionsOnHomePage);
+            int.TryParse(this._configuration["PinnedMissionsOnHomePageCount"], out countOfPinnedMissionsOnHomePage);
 
             if (missions.Count() < countOfPinnedMissionsOnHomePage)
             {
                 var countOfMissionsToAdd = countOfPinnedMissionsOnHomePage - missions.Count();
-                var latestMissions = await this.dbContext.Missions
+                var latestMissions = await this._dbContext.Missions
                     .Where(m => m.IsPublished)
                     .OrderByDescending(m => m.StartDate)
                     .Take(countOfMissionsToAdd)
@@ -342,7 +343,7 @@ namespace ClubsModule.Services
             mission.DurationInHours = durationHours;
             if (commit)
             {
-                await this.dbContext.SaveChangesAsync();
+                await this._dbContext.SaveChangesAsync();
             }
         }
 
@@ -361,21 +362,21 @@ namespace ClubsModule.Services
 
             if (commit)
             {
-                await this.dbContext.SaveChangesAsync();
+                await this._dbContext.SaveChangesAsync();
             }
         }
 
         private async Task DeleteHeroMissions(Mission mission, bool commit = false)
         {
-            var heroMissions = this.dbContext.HeroMissions.Where(hm => hm.MissionId == mission.Id);
+            var heroMissions = this._dbContext.HeroMissions.Where(hm => hm.MissionId == mission.Id);
             foreach (var heroMission in heroMissions)
             {
-                this.dbContext.HeroMissions.Remove(heroMission);
+                this._dbContext.HeroMissions.Remove(heroMission);
             }
 
             if (commit)
             {
-                await this.dbContext.SaveChangesAsync();
+                await this._dbContext.SaveChangesAsync();
             }
         }
 
@@ -384,7 +385,7 @@ namespace ClubsModule.Services
             var heroMissions = new List<HeroMission>();
             foreach (var heroId in heroesIds)
             {
-                var hero = this.dbContext.Heroes.FirstOrDefault(h => h.Id == heroId);
+                var hero = this._dbContext.Heroes.FirstOrDefault(h => h.Id == heroId);
                 heroMissions.Add(new HeroMission()
                 {
                     Hero = hero,
@@ -396,14 +397,14 @@ namespace ClubsModule.Services
 
             if (commit)
             {
-                await this.dbContext.SaveChangesAsync();
+                await this._dbContext.SaveChangesAsync();
             }
         }
 
         public async Task<MissionEditModel> GetMissionEditModelBySlugAsync(string slug)
         {
             Mission mission = null;
-            mission = await this.dbContext.Missions
+            mission = await this._dbContext.Missions
                     .Include(m => m.Club)
                     .Include(m => m.Content)
                     .Include(c => c.HeroMissions)
@@ -436,12 +437,12 @@ namespace ClubsModule.Services
 
             if (mission.MissionImages != null && mission.MissionImages.Count > 0)
             {
-                var missionImage = await this.imagesService.GetMissionImage(mission.Id);
+                var missionImage = await this._imagesService.GetMissionImage(mission.Id);
                 model.ImageId = missionImage.ImageId.ToString();
                 model.ImageFilename = missionImage.Image.Filename;
             }
 
-            var dateFormat = this.configuration["DateFormat"];
+            var dateFormat = this._configuration["DateFormat"];
             model.UploadedStartDate = mission.StartDate.ToUniversalDateTime().ToLocalTime().ToString(dateFormat);
             model.UploadedEndDate = mission.EndDate.ToUniversalDateTime().ToLocalTime().ToString(dateFormat);
             model.Duration = GetMissionDuration(mission.StartDate, mission.EndDate);
@@ -452,7 +453,7 @@ namespace ClubsModule.Services
         public IEnumerable<Tuple<string, string>> GetMissionImagesIds(Guid missionId)
         {
 
-            return this.dbContext.MissionImages
+            return this._dbContext.MissionImages
             .Include(mi=>mi.Image)
             .Where(m=>m.MissionId == missionId)
             .Select(mi=> new Tuple<string, string> (mi.ImageId.ToString(),mi.Image.Filename));

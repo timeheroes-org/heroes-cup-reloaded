@@ -1,13 +1,12 @@
-﻿namespace HeroesCup.Web.Services
+﻿namespace HeroesCup.Web.Services;
+
+public interface IStatisticsService
 {
-    public interface IStatisticsService
-    {
-        int GetAllHeroesCount();
+    int GetAllHeroesCount();
 
-        int GetAllMissionsCount();
+    int GetAllMissionsCount();
 
-        int GetAllClubsCount();
+    int GetAllClubsCount();
 
-        int GetAllHoursCount();
-    }
+    int GetAllHoursCount();
 }

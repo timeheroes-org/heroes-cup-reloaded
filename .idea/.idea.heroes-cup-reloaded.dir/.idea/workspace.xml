@@ -25,7 +25,31 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Adding csproj wuithout the default setup view." />
+    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Appended workspace.xml">
+      <change afterPath="$PROJECT_DIR$/Services/IHeroesCupIdentitySeed.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Services/IdentitySeed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Heroes/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Heroes/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/_ViewImports.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/_ViewStart.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Controllers/ClubsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Controllers/ClubsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/ClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Services/ClubsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/HeroesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Services/HeroesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/ImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Services/ImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/MissionContentsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Services/MissionContentsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/MissionIdeasService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Services/MissionIdeasService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/MissionsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Services/MissionsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/StoriesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Services/StoriesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EventsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EventsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/MissionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MissionsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/HeroesCupDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/HeroesCupDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IStatisticsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IStatisticsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/LeaderboardService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/LeaderboardService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/MissionsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Events/_EventsList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Events/_EventsList.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroes-cup-reloaded.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/heroes-cup-reloaded.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,9 +59,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/4e8ebe9b927248eabbabce8e51114a30bf12a8/4d/d4f8769a/Piranha.Manager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1229972f69f5992618588ab91b3c821b3f54962608b77bc3ad562731a14f0d1/AliasApiController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/264cdbfbdb7c6a9ddc794d948824e97d8f7c0ce1a275b6ed78cde41f286ff8/HostEnvironmentEnvExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/69483dc6923dc3d71b8d9322b7e47e9b2ae6c690bc71b67cb1440f5aeba9e/ManagerLocalizer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ab47cfce987d6c68c1999dab95848465e6b85864408f1726a7e3c466d330d2/PiranhaEFExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9263651b88c2de27a58bdc904739ffb9ec8ca0fab2e0172fb4777af5faeeb7/UserController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9f3f2539caf1d1d3bc962f51b12a49523c53a6a135dd252df0b23b14b3515df/EntityFrameworkServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b5513284457d25c645b285a3783fb29734e9df1b4b9c8a9decead0eccebd49/HostingEnvironment.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b61bdb830c1925ea5cdbbee15abbf54fa1d55633e14127b8caa28fc3be848/Environments.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d17a7f1788965cbcedf3afba8f1a2e815f1fac8d11f5fbf171275dbeb69b2ddd/IHostEnvironment.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -68,15 +99,19 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Inspections-Resources",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
     <configuration name="heroes-cup-reloaded" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/net6.0/heroes-cup-reloaded" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
+      <envs>
+        <env name="ENVIRONMENT" value="Development" />
+      </envs>
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
@@ -85,7 +120,7 @@
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_TFM" value="net6.0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -102,7 +137,7 @@
       <workItem from="1658480428035" duration="233000" />
       <workItem from="1658501084084" duration="165000" />
       <workItem from="1658501285251" duration="350000" />
-      <workItem from="1658501676666" duration="3697000" />
+      <workItem from="1658501676666" duration="9355000" />
     </task>
     <task id="LOCAL-00001" summary="Moved resources, data models, page models.">
       <created>1658504054548</created>
@@ -132,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658504890443</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Appended workspace.xml">
+      <created>1658507399390</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1658507399390</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +200,11 @@
     <MESSAGE value="Moving views, controllers, helpers, services." />
     <MESSAGE value="Adding workspace definition for Rider" />
     <MESSAGE value="Adding csproj wuithout the default setup view." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding csproj wuithout the default setup view." />
+    <MESSAGE value="Appended workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Appended workspace.xml" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

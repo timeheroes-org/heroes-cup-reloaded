@@ -1,7 +1,7 @@
 ﻿using HeroesCup.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace HeroesCup.Data
+namespace HeroesCup.Web.Data
 {
     public class HeroesCupDbContext : DbContext
     {
@@ -76,7 +76,7 @@ namespace HeroesCup.Data
                 .HasForeignKey(hm => hm.ImageId);
 
             modelBuilder.Entity<MissionIdeaImage>()
-               .HasKey(h => new { h.MissionIdeaId, h.ImageId });
+                .HasKey(h => new { h.MissionIdeaId, h.ImageId });
 
             modelBuilder.Entity<MissionIdeaImage>()
                 .HasOne(hm => hm.MissionIdea)
