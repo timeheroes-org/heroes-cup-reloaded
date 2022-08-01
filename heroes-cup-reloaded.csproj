@@ -10,6 +10,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.7" />
     <PackageReference Include="Piranha" Version="10.1.0" />
     <PackageReference Include="Piranha.AspNetCore" Version="10.1.0" />
     <PackageReference Include="Piranha.AspNetCore.Identity.SQLite" Version="10.1.0" />
@@ -23,6 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ClubsModule\assets\ClubsModule" />
+    <Folder Include="ClubsModule\assets\ClubsModule\src" />
     <Folder Include="Views\Setup" />
   </ItemGroup>
 

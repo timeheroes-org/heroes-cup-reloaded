@@ -2,10 +2,7 @@ using ClubsModule;
 using ClubsModule.Security;
 using ClubsModule.Services;
 using ClubsModule.Services.Contracts;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Piranha;
 using Piranha.Manager;
@@ -30,7 +27,7 @@ namespace HeroesCup.Modules.ClubsModule
             App.Modules.Register<Module>();
 
             services.AddLocalization(options =>
-                options.ResourcesPath = "Resources"
+                options.ResourcesPath = "/ClubsModule/Resources"
             );
             services.AddScoped<IHeroesService, HeroesService>();
             services.AddScoped<IClubsService, ClubsService>();
@@ -264,7 +261,8 @@ namespace HeroesCup.Modules.ClubsModule
         {
             builder.MapRazorPages();
         }
-        public static IApplicationBuilder UseClubsModule(this IApplicationBuilder builder)
+        public static IApplicationBuilder UseClubsModule(this IApplicationBuilder builder,
+            WebApplicationBuilder webApplicationBuilder)
         {
             // Manager resources
             builder.UseEndpoints(endpoints =>
@@ -285,7 +283,8 @@ namespace HeroesCup.Modules.ClubsModule
             App.Modules.Get<Piranha.Manager.Module>().Scripts.Add("https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js");
             return builder.UseStaticFiles(new StaticFileOptions
             {
-                FileProvider = new EmbeddedFileProvider(typeof(ClubsModuleExtensions).Assembly, "ClubsModule.assets.src"),
+                FileProvider = new PhysicalFileProvider(
+                Path.Combine(webApplicationBuilder.Environment.ContentRootPath,"ClubsModule/assets")),
                 RequestPath = "/manager/clubsmodule"
             });
         }

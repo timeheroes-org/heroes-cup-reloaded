@@ -10,7 +10,7 @@ using Piranha.Data.EF.SQLite;
 using Piranha.Manager.Editor;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var connectionString = builder.Configuration.GetConnectionString("piranha");
 builder.AddPiranha(options =>
 {
 
@@ -24,12 +24,12 @@ builder.AddPiranha(options =>
     options.UseTinyMCE();
     options.UseMemoryCache();
 
-    var connectionString = builder.Configuration.GetConnectionString("piranha");
+   
     options.UseEF<SQLiteDb>(db => db.UseSqlite(connectionString));
     
     options.UseIdentityWithSeed<IdentitySQLiteDb>(db => db.UseSqlite(connectionString));
 });
-builder.Services.AddClubsModule();
+
 builder.Services.AddTransient<IHeroesCupIdentitySeed, IdentitySeed>();
 builder.Services.AddTransient<IPageInitializer, PageInitializer>();
 builder.Services.AddTransient<ILeaderboardService, LeaderboardService>();
@@ -40,8 +40,11 @@ builder.Services.AddTransient<IWebUtils, WebUtils>();
 builder.Services.AddTransient<IVideoThumbnailParser, YouTubeVideoThumbnailParser>();
 builder.Services.AddTransient<IMetaDataProvider, MetaDataProvider>();
 builder.Services.AddDbContext<HeroesCupDbContext>(
-    options => options.UseSqlite("connectionString"));
+    options => options.UseSqlite(connectionString));
+builder.Services.AddClubsModule();
+
 var app = builder.Build();
+
 
 if (app.Environment.IsDevelopment())
 {
@@ -66,5 +69,26 @@ app.UsePiranha(options =>
     options.UseTinyMCE();
     options.UseIdentity();
 });
+app.UseRouting();
+app.UseClubsModule(builder);
 
+SeedDefaultPages();
+void SeedDefaultPages()
+{
+    var dbSeed = builder.Configuration["DbSeed"];
+    if (dbSeed == "true")
+    {
+        var serviceProvider = builder.Services.BuildServiceProvider();
+
+        var identitySeed = serviceProvider.GetService<IHeroesCupIdentitySeed>();
+        identitySeed.SeedIdentityAsync();
+        var pagesInitializer = serviceProvider.GetService<IPageInitializer>();
+
+        pagesInitializer.SeedMissionsPageAsync().Wait();
+        pagesInitializer.SeedResourcesPageAsync().Wait();
+        pagesInitializer.SeedEventsPageAsync().Wait();
+        pagesInitializer.SeedAboutPageAsync().Wait();
+        pagesInitializer.SeedStarPageAsync().Wait();
+    }
+}
 app.Run();
