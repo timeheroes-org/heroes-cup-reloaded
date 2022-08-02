@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System.Globalization;
 using Piranha;
-using System.Threading.Tasks;
 
 namespace HeroesCup.Web.Common
 {
@@ -8,6 +7,6 @@ namespace HeroesCup.Web.Common
     {
         string GetUrlBase(HttpContext httpContext);
 
-        Task<System.Globalization.CultureInfo> GetCulture(IApi api);
+        Task<CultureInfo> GetCulture(IApi api);
     }
 }

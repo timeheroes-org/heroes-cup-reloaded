@@ -1,12 +1,10 @@
-﻿using HeroesCup.Web.ClubsModule.Models;
+﻿using HeroesCup.Localization;
+using HeroesCup.Web.ClubsModule.Models;
 using HeroesCup.Web.ClubsModule.Security;
-using HeroesCup.Web.Services ;
-using HeroesCup.Localization;
+using HeroesCup.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Piranha.Manager.Controllers;
-using System;
-using System.Threading.Tasks;
 
 namespace HeroesCup.Web.ClubsModule.Controllers
 {
@@ -15,7 +13,7 @@ namespace HeroesCup.Web.ClubsModule.Controllers
         private readonly IHeroesService heroesService;
         private readonly IUserManager userManager;
         private Guid? loggedInUserId;
-        private readonly HeroesCup.Localization.ManagerLocalizer heroesCupLocalizer;
+        private readonly ManagerLocalizer heroesCupLocalizer;
         public HeroesController(IHeroesService heroesService, IUserManager userManager, ManagerLocalizer heroesCupLocalizer)
         {
             this.heroesService = heroesService;

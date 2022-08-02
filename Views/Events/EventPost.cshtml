@@ -1,6 +1,7 @@
-﻿@model HeroesCup.Web.Models.Events.EventPost
+﻿@using System.Globalization
+@model HeroesCup.Web.Models.Events.EventPost
 @{
-    System.Globalization.CultureInfo culture = Model.SiteCulture;
+    CultureInfo culture = Model.SiteCulture;
     var currentUrlBase = Model.CurrentUrlBase;
     var author = Model.Author.Value != null && Model.Author.Value != string.Empty ? Model.Author.Value : "TimeHeroes";
 }

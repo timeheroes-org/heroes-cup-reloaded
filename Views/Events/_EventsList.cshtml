@@ -1,8 +1,9 @@
-﻿@model IEnumerable<HeroesCup.Web.Models.Events.EventPost>
+﻿@using System.Globalization
+@model IEnumerable<HeroesCup.Web.Models.Events.EventPost>
 @{
     var events = Model;
     var siteCulture = ViewBag["culture"];
-    System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(siteCulture);
+    CultureInfo culture = new CultureInfo(siteCulture);
 }
 
 <div class="row justify-content-between">
@@ -10,16 +11,16 @@
     {
         var author = post.Author.Value != null && post.Author.Value != string.Empty ? post.Author.Value : "TimeHeroes";
 
-    <div class="col-md-6 col-sm-12 item-body pt-5">
-        <a href="@post.Permalink">
-            <div class="col-12 justify-content-start">
-                <img src="@Url.Content(post.Hero.PrimaryImage.Resize(WebApp.Api, 496, 256))" />
-            </div>
-            <div class="col-12 justify-content-start text-start mt-3">
-                <p class="body1-bold resource-title  pr-4">@post.Title</p>
-                <p class="body2 pr-4"><span class="tag">от @author, @post.Published.Value.ToString("d MMMM yyyy", culture) </span></p>
-            </div>
-        </a>
-    </div>
+        <div class="col-md-6 col-sm-12 item-body pt-5">
+            <a href="@post.Permalink">
+                <div class="col-12 justify-content-start">
+                    <img src="@Url.Content(post.Hero.PrimaryImage.Resize(WebApp.Api, 496, 256))" />
+                </div>
+                <div class="col-12 justify-content-start text-start mt-3">
+                    <p class="body1-bold resource-title  pr-4">@post.Title</p>
+                    <p class="body2 pr-4"><span class="tag">от @author, @post.Published.Value.ToString("d MMMM yyyy", culture) </span></p>
+                </div>
+            </a>
+        </div>
     }
 </div>

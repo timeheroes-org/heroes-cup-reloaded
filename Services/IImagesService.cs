@@ -1,8 +1,4 @@
 ﻿using HeroesCup.Data.Models;
-using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace HeroesCup.Web.Services
 {

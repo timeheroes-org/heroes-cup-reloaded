@@ -1,5 +1,4 @@
 ﻿using HeroesCup.Web.Common.Middlewares.Exceptions;
-using Microsoft.AspNetCore.Builder;
 
 namespace HeroesCup.Web.Common.Extensions
 {

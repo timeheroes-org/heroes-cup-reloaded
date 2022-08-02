@@ -1,14 +1,15 @@
 @page "~/manager/clubs"
+@using Piranha.Manager.Editor
 @model HeroesCup.Web.ClubsModule.Areas.HeroesCup.Web.ClubsModule.Pages.ClubsEditViewModel
-@inject Piranha.Manager.ManagerLocalizer Localizer
+@inject ManagerLocalizer Localizer
 @{
     ViewBag.Title = Localizer.Page["Edit clubs"];
     ViewBag.MenuItem = "Clubs";
 }
 @section script
 {
-    <script src="@Url.Content(Piranha.Manager.Editor.EditorScripts.MainScriptUrl)"></script>
-    <script src="@Url.Content(Piranha.Manager.Editor.EditorScripts.EditorScriptUrl)"></script>
+    <script src="@Url.Content(EditorScripts.MainScriptUrl)"></script>
+    <script src="@Url.Content(EditorScripts.EditorScriptUrl)"></script>
     <script src="~/manager/clubsmodule/js/init.js"></script>
     <script src="~/manager/clubsmodule/js/components/blocks/clubs.js"></script>
     <script src="~/manager/clubsmodule/js/clubs.js"></script>

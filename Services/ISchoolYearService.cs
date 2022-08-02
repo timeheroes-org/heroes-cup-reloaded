@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HeroesCup.Web.Services 
+﻿namespace HeroesCup.Web.Services 
 {
     public interface ISchoolYearService
     {

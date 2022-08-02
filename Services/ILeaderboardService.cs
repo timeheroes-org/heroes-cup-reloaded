@@ -1,6 +1,4 @@
 ﻿using HeroesCup.Web.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace HeroesCup.Web.Services
 {

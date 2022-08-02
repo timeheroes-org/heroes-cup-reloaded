@@ -1,19 +1,17 @@
-﻿using HeroesCup.Web.ClubsModule.Exceptions;
+﻿using HeroesCup.Localization;
+using HeroesCup.Web.ClubsModule.Exceptions;
 using HeroesCup.Web.ClubsModule.Models;
-using HeroesCup.Web.Services ;
-using HeroesCup.Localization;
+using HeroesCup.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Piranha.Manager.Controllers;
-using System;
-using System.Threading.Tasks;
 
 namespace HeroesCup.Web.ClubsModule.Controllers
 {
     public class MissionIdeasController : ManagerController
     {
         private readonly IMissionIdeasService _missionIdeasService;
-        private readonly HeroesCup.Localization.ManagerLocalizer _heroesCupLocalizer;
+        private readonly ManagerLocalizer _heroesCupLocalizer;
 
         public MissionIdeasController(IMissionIdeasService missionIdeasService, ManagerLocalizer heroesCupLocalizer)
         {

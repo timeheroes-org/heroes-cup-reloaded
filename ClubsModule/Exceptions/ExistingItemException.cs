@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HeroesCup.Web.ClubsModule.Exceptions
+﻿namespace HeroesCup.Web.ClubsModule.Exceptions
 {
     public class ExistingItemException : ArgumentException
     {

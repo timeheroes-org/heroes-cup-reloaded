@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Threading.Tasks;
-
-namespace HeroesCup.Web.Common.Middlewares.Exceptions
+﻿namespace HeroesCup.Web.Common.Middlewares.Exceptions
 {
     public class LogUnhandledExceptionMiddleware
     {

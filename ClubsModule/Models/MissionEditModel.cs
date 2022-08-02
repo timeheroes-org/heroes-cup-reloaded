@@ -1,9 +1,6 @@
-﻿using HeroesCup.Web.ClubsModule.Attributes;
+﻿using System.ComponentModel.DataAnnotations;
 using HeroesCup.Data.Models;
-using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using HeroesCup.Web.ClubsModule.Attributes;
 
 namespace HeroesCup.Web.ClubsModule.Models
 {

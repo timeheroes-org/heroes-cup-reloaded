@@ -1,12 +1,4 @@
-﻿using AutoMapper.Configuration.Annotations;
-using HeroesCup.Web.Services ;
-using HeroesCup.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace HeroesCup.Web.Services
+﻿namespace HeroesCup.Web.Services
 {
     public class StatisticsService : IStatisticsService
     {

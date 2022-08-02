@@ -25,8 +25,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Merged serives.">
       <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Clubs/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Clubs/Edit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Clubs/List.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Clubs/List.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Heroes/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Heroes/Edit.cshtml" afterDir="false" />
@@ -36,17 +35,14 @@
       <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/Edit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/List.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/List.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Pages/ClubsEdit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Pages/ClubsEdit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Pages/ClubsEdit.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Pages/ClubsEdit.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Pages/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Pages/_ViewImports.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Shared/_ValidationModal.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Shared/_ValidationModal.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/Edit.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/List.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/List.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/_ViewImports.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Attributes/AllowedExtensionsAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Attributes/AllowedExtensionsAttribute.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Attributes/MaxSizeFileAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Attributes/MaxSizeFileAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Blocks/Clubs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Blocks/Clubs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/ClubsModuleExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/ClubsModuleExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Common/DatetimeExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/DatetimeExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Common/StringExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/StringExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Controllers/ClubsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Controllers/ClubsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Controllers/HeroesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Controllers/HeroesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Controllers/ImagesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Controllers/ImagesController.cs" afterDir="false" />
@@ -66,42 +62,126 @@
       <change beforePath="$PROJECT_DIR$/ClubsModule/Models/StoryListModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/StoryListModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Models/ValidationModal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/ValidationModal.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Module.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Module.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Permissions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Permissions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Security/IUserManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Security/IUserManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/Security/UserManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Security/UserManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/ClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ClubsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IClubImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IClubImagesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IClubsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IHeroesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IHeroesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IImagesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IMissionContentsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionContentsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IMissionIdeaImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionIdeaImagesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IMissionIdeasService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionIdeasService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IMissionImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionImagesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IMissionsService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/ISchoolYearService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ISchoolYearService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IStoriesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IStoriesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IStoryImageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IStoryImageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/HeroesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/HeroesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/ImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ImagesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/MissionContentsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionContentsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/MissionIdeasService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionIdeasService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/MissionsService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/SchoolYearService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/SchoolYearService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/StoriesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/StoriesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/DatetimeExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/DatetimeExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Common/Extensions/DateTimeExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Extensions/DateTimeExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/Extensions/ExceptionHandlingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Extensions/ExceptionHandlingMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/IWebUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/IWebUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/Middlewares/Exceptions/LogUnhandledExceptionMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Middlewares/Exceptions/LogUnhandledExceptionMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/StringExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/StringExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/WebUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/WebUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CmsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CmsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ErrorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ErrorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EventsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EventsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/ImgController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ImgController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/MissionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MissionsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/ResourcesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ResourcesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Models/MissionContent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Models/MissionContent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Models/MissionIdeaImage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Models/MissionIdeaImage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Localization/ManagerLocalizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Localization/ManagerLocalizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/AboutPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/AboutPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Blocks/EmbeddedVideoBlock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Blocks/EmbeddedVideoBlock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/ClubListViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ClubListViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/ErrorViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ErrorViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Events/EventPost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Events/EventPost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/IHeroesCupPost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/IHeroesCupPost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/ISocialNetworkPost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ISocialNetworkPost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Missions/MissionIdeaPost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Missions/MissionIdeaPost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Missions/MissionIdeaViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Missions/MissionIdeaViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Missions/MissionPost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Missions/MissionPost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Missions/MissionViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Missions/MissionViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Missions/MissionsPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Missions/MissionsPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Missions/MissionsWithBannerViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Missions/MissionsWithBannerViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Missions/StoryPost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Missions/StoryPost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Missions/StoryViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Missions/StoryViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Regions/AboutRegion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Regions/AboutRegion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Regions/Footer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Regions/Footer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Resources/ResourcePost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Resources/ResourcePost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/SocialNetworksMetaData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/SocialNetworksMetaData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/StartPage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/StartPage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Archive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Archive.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/DisplayTemplates/Comment.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/DisplayTemplates/Comment.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/DisplayTemplates/ImageGalleryBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/DisplayTemplates/ImageGalleryBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/DisplayTemplates/PageBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/DisplayTemplates/PageBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/DisplayTemplates/PostBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/DisplayTemplates/PostBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/DisplayTemplates/QuoteBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/DisplayTemplates/QuoteBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Page.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Page.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Post.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/_ViewImports.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ClubsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/HeroesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/HeroesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IClubImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IClubImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IClubsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IHeroesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IHeroesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ILeaderboardService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ILeaderboardService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IMetaDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMetaDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IMissionContentsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionContentsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IMissionIdeaImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionIdeaImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IMissionIdeasService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionIdeasService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IMissionImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionImagesService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/IMissionsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IPageInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IPageInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ISchoolYearService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ISchoolYearService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ISessionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ISessionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IStoriesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IStoriesService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/IVideoThumbnailParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IVideoThumbnailParser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/IdentitySeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IdentitySeed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ImagesService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/LeaderboardService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/LeaderboardService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/MetaDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MetaDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/MissionContentsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionContentsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/MissionIdeasService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionIdeasService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/MissionsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/PageInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/PageInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/SchoolYearService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/SchoolYearService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/SessionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/SessionService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/StatisticsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/StatisticsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/StoriesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/StoriesService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/YouTubeVideoThumbnailParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/YouTubeVideoThumbnailParser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/heroes-cup-reloaded.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/heroes-cup-reloaded.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Cms/AboutPage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/AboutPage.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Cms/Archive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/Archive.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Cms/LandingPage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/LandingPage.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Cms/Page.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/Page.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Cms/Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/Post.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Cms/Start.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/Start.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Error/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Error/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Events/EventPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Events/EventPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Events/EventsArchive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Events/EventsArchive.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Events/_EventsList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Events/_EventsList.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/MissionIdeaPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/MissionIdeaPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/MissionPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/MissionPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/StoryPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/StoryPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/_MissionIdeasList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/_MissionIdeasList.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/_MissionsBanner.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/_MissionsBanner.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/_MissionsList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/_MissionsList.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/_MissionsListWithBanner.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/_MissionsListWithBanner.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/_StoriesList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/_StoriesList.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Resources/ResourcePost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Resources/ResourcePost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Resources/ResourcesArchive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Resources/ResourcesArchive.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Resources/_ResourcesList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Resources/_ResourcesList.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/AudioBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/AudioBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/ColumnBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/ColumnBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/EmbeddedVideoBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/EmbeddedVideoBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/HtmlBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/HtmlBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/ImageBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/ImageBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/ImageGalleryBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/ImageGalleryBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/QuoteBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/QuoteBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/TextBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/TextBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/VideoBlock.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/DisplayTemplates/VideoBlock.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_Challenge.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Challenge.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_Challenge.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Challenge.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_FacebookMeta.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_FacebookMeta.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_Footer.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Footer.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_Menu.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Menu.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_Meta.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Meta.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_TwitterMeta.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_TwitterMeta.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/_ViewImports.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +226,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f14258572a7f66d43bf5905d4c2da5172757715f85b21d96661c4a3d242f558e/NonRetryingExecutionStrategy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fe2f12f3e68e67de84733fecd21594c6ce7cce62332ffc3ab5c28d4deb98ea4c/DbContextServices.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/ClubsModule/Areas/ClubsModule/MissionIdeas/List.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/ClubsModule/Areas/ClubsModule/Shared/_ValidationModal.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Pages/Archive.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Services/LeaderboardService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Services/SessionService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Views/Resources/ResourcesArchive.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -218,7 +304,7 @@
       <workItem from="1658501084084" duration="165000" />
       <workItem from="1658501285251" duration="350000" />
       <workItem from="1658501676666" duration="15316000" />
-      <workItem from="1659434508122" duration="2667000" />
+      <workItem from="1659434508122" duration="3095000" />
     </task>
     <task id="LOCAL-00001" summary="Moved resources, data models, page models.">
       <created>1658504054548</created>
@@ -276,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659367587635</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Merged serives.">
+      <created>1659440293118</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659440293118</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +399,8 @@
     <MESSAGE value="Configured for runtime." />
     <MESSAGE value="Manager is now running. Resources locations corrected." />
     <MESSAGE value="Added custom context migration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added custom context migration." />
+    <MESSAGE value="Merged serives." />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged serives." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

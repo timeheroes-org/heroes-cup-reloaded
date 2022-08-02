@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-
-namespace HeroesCup.Web.Services
+﻿namespace HeroesCup.Web.Services
 {
     public class YouTubeVideoThumbnailParser : IVideoThumbnailParser
     {

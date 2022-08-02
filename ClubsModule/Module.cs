@@ -1,10 +1,8 @@
-﻿using HeroesCup.Web.ClubsModule;
-using HeroesCup.Modules.HeroesCup.Web.ClubsModule.Blocks;
+﻿using HeroesCup.Modules.HeroesCup.Web.ClubsModule.Blocks;
 using Piranha;
 using Piranha.Extend;
 using Piranha.Manager;
 using Piranha.Security;
-using System.Collections.Generic;
 
 namespace HeroesCup.Web.ClubsModule
 {

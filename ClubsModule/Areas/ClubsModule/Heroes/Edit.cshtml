@@ -1,8 +1,8 @@
+@using HeroesCup.Web.ClubsModule
 @model HeroesCup.Web.ClubsModule.Models.HeroEditModel
 @inject IAuthorizationService Auth
 @inject ManagerLocalizer Localizer
 @inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
-@using HeroesCup.Web.ClubsModule
 @{
     ViewBag.Title = "Edit hero";
     ViewBag.MenuItem = HeroesCupLocalizer.Hero["Heroes"];
@@ -29,7 +29,7 @@
 
         <div class="container-fluid">
             <div class="top-nav">
-                @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.HeroesSave)).Succeeded)
+                @if ((await Auth.AuthorizeAsync(User, Permissions.HeroesSave)).Succeeded)
                 {
                     <button type="submit" class="btn btn-labeled btn-success pull-right">
                         <span class="btn-label">
@@ -81,7 +81,7 @@
 
                 </div>
 
-                @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.HeroesAddCoordinator)).Succeeded)
+                @if ((await Auth.AuthorizeAsync(User, Permissions.HeroesAddCoordinator)).Succeeded)
                 {
                     <div class="row">
                         <div class="col-sm-6">

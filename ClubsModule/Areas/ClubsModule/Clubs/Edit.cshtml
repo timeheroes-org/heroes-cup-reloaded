@@ -1,4 +1,6 @@
-﻿@model HeroesCup.Web.ClubsModule.Models.ClubEditModel
+﻿@using HeroesCup.Data.Models
+@using HeroesCup.Web.ClubsModule
+@model HeroesCup.Web.ClubsModule.Models.ClubEditModel
 @inject IAuthorizationService Auth
 @inject ManagerLocalizer Localizer
 @inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
@@ -6,7 +8,7 @@
     ViewBag.Title = "Edit club";
     ViewBag.MenuItem = HeroesCupLocalizer.Club["Clubs"];
 
-    var heroes = Model.Heroes != null && Model.Heroes.Count() > 0 ? Model.Heroes : new List<HeroesCup.Data.Models.Hero>();
+    var heroes = Model.Heroes != null && Model.Heroes.Count() > 0 ? Model.Heroes : new List<Hero>();
     var heroesMultipleSelectList = new MultiSelectList(heroes, "Id", "Name");
     var heroesSelectList = new SelectList(heroes, "Id", "Name");
 }
@@ -35,7 +37,7 @@
 
         <div class="container-fluid">
             <div class="top-nav">
-                @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.ClubsSave)).Succeeded)
+                @if ((await Auth.AuthorizeAsync(User, Permissions.ClubsSave)).Succeeded)
                 {
                     <button type="submit" class="btn btn-labeled btn-success pull-right">
                         <span class="btn-label">
@@ -162,7 +164,7 @@
                         }
 
                         <div class="text-right">
-                            @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.HeroesAdd)).Succeeded && Model.Club.Id != Guid.Empty)
+                            @if ((await Auth.AuthorizeAsync(User, Permissions.HeroesAdd)).Succeeded && Model.Club.Id != Guid.Empty)
                             {
                                 <a href="@Url.Action("Add", "Heroes")" class="btn btn-labeled btn-primary pull-right">
                                     <i class="fas fa-plus"></i>@HeroesCupLocalizer.Club["Add Hero"]

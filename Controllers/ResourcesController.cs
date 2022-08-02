@@ -1,17 +1,10 @@
-﻿using HeroesCup.Controllers;
-using HeroesCup.Web.Common;
-using HeroesCup.Web.Models;
+﻿using HeroesCup.Web.Common;
 using HeroesCup.Web.Models.Blocks;
 using HeroesCup.Web.Models.Resources;
 using HeroesCup.Web.Services;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Piranha;
 using Piranha.AspNetCore.Services;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HeroesCup.Web.Controllers
 {

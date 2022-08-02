@@ -1,4 +1,5 @@
-﻿@model MissionsPage
+﻿@using HeroesCup.Web.Models.Missions
+@model MissionsPage
 @inject IApi Api
 @inject IConfiguration Configuration;
 
@@ -100,7 +101,7 @@
                     }
                     else
                     {
-                        var missionsWithBanner = new HeroesCup.Web.Models.Missions.MissionsWithBannerViewModel()
+                        var missionsWithBanner = new MissionsWithBannerViewModel()
                         {
                             ShownMissionsCount = Model.Missions.Count(),
                             Missions = Model.Missions,

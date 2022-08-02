@@ -1,15 +1,8 @@
-﻿using HeroesCup.Web.Common;
+﻿using HeroesCup.Data.Models;
 using HeroesCup.Web.ClubsModule.Models;
-using HeroesCup.Web.Services ;
-using HeroesCup.Data;
-using HeroesCup.Data.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using HeroesCup.Web.Common;
 using HeroesCup.Web.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace HeroesCup.Web.Services 
 {
@@ -60,8 +53,8 @@ namespace HeroesCup.Web.Services
         public async Task<ClubEditModel> GetClubEditModelByIdAsync(Guid id, Guid? ownerId)
         {
             var club = await this._dbContext.Clubs
-                    .Include(c => c.ClubImages)
-                    .FirstOrDefaultAsync(c => c.Id == id);
+                .Include(c => c.ClubImages)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             if (club == null)
             {
@@ -100,9 +93,9 @@ namespace HeroesCup.Web.Services
         {
             var clubs = new List<Club>();
             clubs = await this._dbContext.Clubs
-                    .Include(c => c.Heroes)
-                    .OrderByDescending(c => c.UpdatedOn)
-                    .ToListAsync();
+                .Include(c => c.Heroes)
+                .OrderByDescending(c => c.UpdatedOn)
+                .ToListAsync();
 
             if (ownerId.HasValue)
             {
@@ -112,15 +105,15 @@ namespace HeroesCup.Web.Services
             var model = new ClubListModel()
             {
                 Clubs = clubs.Select(c => new ClubListItem()
-                                {
-                                    Id = c.Id,
-                                    Name = c.Name,
-                                    OrganizationType = c.OrganizationType,
-                                    OrganizationName = c.OrganizationName,
-                                    OrganizationNumber = c.OrganizationNumber,
-                                    HeroesCount = c.Heroes != null ? c.Heroes.Count() : 0,
-                                    LastUpdateOn = c.UpdatedOn.ToUniversalDateTime().ToLocalTime().ToString(this.dateTimeFormat)
-        })
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    OrganizationType = c.OrganizationType,
+                    OrganizationName = c.OrganizationName,
+                    OrganizationNumber = c.OrganizationNumber,
+                    HeroesCount = c.Heroes != null ? c.Heroes.Count() : 0,
+                    LastUpdateOn = c.UpdatedOn.ToUniversalDateTime().ToLocalTime().ToString(this.dateTimeFormat)
+                })
 
             };
 

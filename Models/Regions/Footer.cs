@@ -1,6 +1,5 @@
 ﻿using Piranha.Extend;
 using Piranha.Extend.Fields;
-using System.Collections.Generic;
 
 namespace HeroesCup.Models.Regions
 {

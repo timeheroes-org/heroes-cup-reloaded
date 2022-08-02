@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using HeroesCup.Localization;
 
 namespace HeroesCup.Web.ClubsModule.Attributes
 {
@@ -50,7 +49,7 @@ namespace HeroesCup.Web.ClubsModule.Attributes
                 return "Invalid error message";
             }
 
-            HeroesCup.Localization.ManagerLocalizer localizer = validationContext.GetService(typeof(HeroesCup.Localization.ManagerLocalizer)) as HeroesCup.Localization.ManagerLocalizer;
+            ManagerLocalizer localizer = validationContext.GetService(typeof(ManagerLocalizer)) as ManagerLocalizer;
             return localizer.General[ErrorMessage];
         }
     }

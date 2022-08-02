@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
-
-namespace HeroesCup.Web.Common
+﻿namespace HeroesCup.Web.Common
 {
     public static class DatetimeExtensions
     {
@@ -32,15 +29,15 @@ namespace HeroesCup.Web.Common
         }
 
         public static DateTime StartOfTheDay(this DateTime dateTime) => new DateTime(
-                dateTime.Year,
-                dateTime.Month,
-                dateTime.Day,
-                0, 0, 0, 0, dateTime.Kind);
+            dateTime.Year,
+            dateTime.Month,
+            dateTime.Day,
+            0, 0, 0, 0, dateTime.Kind);
 
         public static DateTime EndOfTheDay(this DateTime dateTime) => new DateTime(
-                dateTime.Year,
-                dateTime.Month,
-                dateTime.Day,
-                23, 59, 59, 0, dateTime.Kind);
+            dateTime.Year,
+            dateTime.Month,
+            dateTime.Day,
+            23, 59, 59, 0, dateTime.Kind);
     }
 }

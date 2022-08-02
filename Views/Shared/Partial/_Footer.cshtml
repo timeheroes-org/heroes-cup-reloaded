@@ -1,15 +1,16 @@
-﻿<footer class="border-top text-muted custom-footer">
+﻿@using Piranha.Extend.Fields
+<footer class="border-top text-muted custom-footer">
     <div class="container">
         @{
             var currentSite = await WebApp.Site.GetContentAsync<HeroesCupSite>();
             var hasParnerLogos = currentSite.FooterContents.PartnerLogo1.HasValue ||
-                currentSite.FooterContents.PartnerLogo2.HasValue ||
-                currentSite.FooterContents.PartnerLogo3.HasValue ||
-                currentSite.FooterContents.PartnerLogo4.HasValue ||
-                currentSite.FooterContents.PartnerLogo5.HasValue ||
-                currentSite.FooterContents.PartnerLogo6.HasValue;
+                                 currentSite.FooterContents.PartnerLogo2.HasValue ||
+                                 currentSite.FooterContents.PartnerLogo3.HasValue ||
+                                 currentSite.FooterContents.PartnerLogo4.HasValue ||
+                                 currentSite.FooterContents.PartnerLogo5.HasValue ||
+                                 currentSite.FooterContents.PartnerLogo6.HasValue;
 
-            var partnerImages = new Dictionary<Piranha.Extend.Fields.ImageField, Piranha.Extend.Fields.StringField>();
+            var partnerImages = new Dictionary<ImageField, StringField>();
             if (currentSite.FooterContents.PartnerLogo1 != null && currentSite.FooterContents.PartnerLogo1.HasValue)
             {
                 partnerImages.Add(currentSite.FooterContents.PartnerLogo1, currentSite.FooterContents.PartnerUrl1.Value);

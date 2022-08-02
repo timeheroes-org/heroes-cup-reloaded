@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace HeroesCup.Web.ClubsModule.Models
+﻿namespace HeroesCup.Web.ClubsModule.Models
 {
     public class MissionIdeaListModel
     {

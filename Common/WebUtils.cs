@@ -1,4 +1,5 @@
-﻿using Piranha;
+﻿using System.Globalization;
+using Piranha;
 
 namespace HeroesCup.Web.Common
 {
@@ -16,11 +17,11 @@ namespace HeroesCup.Web.Common
             return $"{httpContext.Request.Scheme}://{httpContext.Request.Host}";
         }
 
-        public async Task<System.Globalization.CultureInfo> GetCulture(IApi api)
+        public async Task<CultureInfo> GetCulture(IApi api)
         {
             var defaultLanguage = await api.Languages.GetDefaultAsync();
             var siteCulture = defaultLanguage.Culture;
-            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo(siteCulture);
+            CultureInfo culture = new CultureInfo(siteCulture);
             return culture;
         }
     }

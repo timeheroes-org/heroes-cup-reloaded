@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace HeroesCup.Web.Models
+﻿namespace HeroesCup.Web.Models
 {
     public class StoryViewModel
     {

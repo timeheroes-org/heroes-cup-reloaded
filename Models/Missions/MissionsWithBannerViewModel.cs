@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace HeroesCup.Web.Models.Missions
+﻿namespace HeroesCup.Web.Models.Missions
 {
     public class MissionsWithBannerViewModel
     {

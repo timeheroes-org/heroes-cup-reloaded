@@ -1,6 +1,4 @@
 ﻿using HeroesCup.Data.Models;
-using System;
-using System.Collections.Generic;
 
 namespace HeroesCup.Web.ClubsModule.Models
 {

@@ -1,12 +1,12 @@
-﻿using HeroesCup.Web.Common;
-using HeroesCup.Web.ClubsModule.Models;
-using HeroesCup.Data.Models;
-using HeroesCup.Web.Models;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Text.RegularExpressions;
+using HeroesCup.Data.Models;
 using HeroesCup.Web.ClubsModule.Exceptions;
+using HeroesCup.Web.ClubsModule.Models;
+using HeroesCup.Web.Common;
 using HeroesCup.Web.Common.Extensions;
 using HeroesCup.Web.Data;
+using HeroesCup.Web.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HeroesCup.Web.Services
@@ -300,10 +300,10 @@ namespace HeroesCup.Web.Services
         {
             var missions = new List<Mission>();
             missions = await this._dbContext.Missions
-                    .Include(m => m.Club)
-                    .Include(m => m.HeroMissions)
-                    .ThenInclude(hm => hm.Hero)
-                    .ToListAsync();
+                .Include(m => m.Club)
+                .Include(m => m.HeroMissions)
+                .ThenInclude(hm => hm.Hero)
+                .ToListAsync();
 
             if (ownerId.HasValue)
             {
@@ -313,19 +313,19 @@ namespace HeroesCup.Web.Services
             var model = new MissionListModel()
             {
                 Missions = missions
-                                .OrderBy(m => m.IsPublished)
-                                .ThenByDescending(m => m.UpdatedOn)
-                                .Select(m => new MissionListItem()
-                                {
-                                    Id = m.Id,
-                                    Title = m.Title,
-                                    ClubId = m.ClubId,
-                                    ClubName = m.Club.Name,
-                                    HeroesCount = m.HeroMissions != null ? m.HeroMissions.Count(hm => hm.MissionId == m.Id) : 0,
-                                    IsPublished = m.IsPublished,
-                                    IsPinned = m.IsPinned,
-                                    LastUpdateOn = m.UpdatedOn.ToUniversalDateTime().ToLocalTime().ToString(this._dateTimeFormat)
-                                })
+                    .OrderBy(m => m.IsPublished)
+                    .ThenByDescending(m => m.UpdatedOn)
+                    .Select(m => new MissionListItem()
+                    {
+                        Id = m.Id,
+                        Title = m.Title,
+                        ClubId = m.ClubId,
+                        ClubName = m.Club.Name,
+                        HeroesCount = m.HeroMissions != null ? m.HeroMissions.Count(hm => hm.MissionId == m.Id) : 0,
+                        IsPublished = m.IsPublished,
+                        IsPinned = m.IsPinned,
+                        LastUpdateOn = m.UpdatedOn.ToUniversalDateTime().ToLocalTime().ToString(this._dateTimeFormat)
+                    })
 
             };
 
@@ -460,14 +460,14 @@ namespace HeroesCup.Web.Services
         {
             Mission mission = null;
             mission = await this._dbContext.Missions
-                    .Include(m => m.Club)
-                    .Include(m => m.Content)
-                    .Include(c => c.HeroMissions)
-                    .ThenInclude(m => m.Hero)
-                    .Include(c => c.MissionImages)
-                    .Include(m => m.Story)
-                    .ThenInclude(s => s.StoryImages)
-                    .FirstOrDefaultAsync(c => c.Id == id);
+                .Include(m => m.Club)
+                .Include(m => m.Content)
+                .Include(c => c.HeroMissions)
+                .ThenInclude(m => m.Hero)
+                .Include(c => c.MissionImages)
+                .Include(m => m.Story)
+                .ThenInclude(s => s.StoryImages)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             return await MapMissionToMissionEditModel(mission);
         }
@@ -513,9 +513,9 @@ namespace HeroesCup.Web.Services
         public IEnumerable<string> GetMissionSchoolYears()
         {
             var schoolYears = this._dbContext.Missions
-               .Where(m => m.IsPublished && m.Stars != 0 && m.HeroMissions != null && m.HeroMissions.Count > 0)
-               .GroupBy(m => m.SchoolYear)
-               .Select(sy => sy.Key);
+                .Where(m => m.IsPublished && m.Stars != 0 && m.HeroMissions != null && m.HeroMissions.Count > 0)
+                .GroupBy(m => m.SchoolYear)
+                .Select(sy => sy.Key);
 
             return schoolYears;
         }
@@ -662,16 +662,16 @@ namespace HeroesCup.Web.Services
         {
             Mission mission = null;
             mission = await this._dbContext.Missions
-                    .Include(m => m.Club)
-                    .Include(m => m.Content)
-                    .Include(c => c.HeroMissions)
-                    .ThenInclude(m => m.Hero)
-                    .Include(c => c.MissionImages)
-                    .ThenInclude(mi => mi.Image)
-                    .Include(m => m.Story)
-                    .ThenInclude(s => s.StoryImages)
-                    .ThenInclude(si => si.Image)
-                    .FirstOrDefaultAsync(c => c.Slug == slug);
+                .Include(m => m.Club)
+                .Include(m => m.Content)
+                .Include(c => c.HeroMissions)
+                .ThenInclude(m => m.Hero)
+                .Include(c => c.MissionImages)
+                .ThenInclude(mi => mi.Image)
+                .Include(m => m.Story)
+                .ThenInclude(s => s.StoryImages)
+                .ThenInclude(si => si.Image)
+                .FirstOrDefaultAsync(c => c.Slug == slug);
 
             return await MapMissionToMissionEditModel(mission);
         }
@@ -711,9 +711,9 @@ namespace HeroesCup.Web.Services
         {
 
             return this._dbContext.MissionImages
-            .Include(mi=>mi.Image)
-            .Where(m=>m.MissionId == missionId)
-            .Select(mi=> new Tuple<string, string> (mi.ImageId.ToString(),mi.Image.Filename));
+                .Include(mi=>mi.Image)
+                .Where(m=>m.MissionId == missionId)
+                .Select(mi=> new Tuple<string, string> (mi.ImageId.ToString(),mi.Image.Filename));
         }
     }
 }

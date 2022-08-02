@@ -1,5 +1,4 @@
 ﻿using HeroesCup.Data.Models;
-using System;
 
 namespace HeroesCup.Web.Models
 {

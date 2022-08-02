@@ -1,16 +1,9 @@
-﻿using HeroesCup.Web.Common;
-using HeroesCup.Web.ClubsModule.Models;
-using HeroesCup.Web.Services ;
-using HeroesCup.Data;
+﻿using System.Text.RegularExpressions;
 using HeroesCup.Data.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using HeroesCup.Web.ClubsModule.Models;
+using HeroesCup.Web.Common;
 using HeroesCup.Web.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace HeroesCup.Web.Services 
 {
@@ -42,9 +35,9 @@ namespace HeroesCup.Web.Services
         {
             var stories = new List<Story>();
             stories = await this._dbContext.Stories
-                    .Include(c => c.Mission)
-                    .ThenInclude(m => m.Club)
-                    .ToListAsync();
+                .Include(c => c.Mission)
+                .ThenInclude(m => m.Club)
+                .ToListAsync();
 
             if (ownerId.HasValue)
             {
@@ -54,16 +47,16 @@ namespace HeroesCup.Web.Services
             var model = new StoryListModel()
             {
                 Stories = stories
-                                .OrderBy(s => s.IsPublished)
-                                .ThenByDescending(s => s.UpdatedOn)
-                                .Select(s => new StoryListItem()
-                                {
-                                    Id = s.Id,
-                                    StartText = GetShortIntroText(s.Content, 50),
-                                    Mission = s.Mission,
-                                    IsPublished = s.IsPublished,
-                                    LastUpdateOn = s.UpdatedOn.ToUniversalDateTime().ToLocalTime().ToString(this.dateTimeFormat)
-                                })
+                    .OrderBy(s => s.IsPublished)
+                    .ThenByDescending(s => s.UpdatedOn)
+                    .Select(s => new StoryListItem()
+                    {
+                        Id = s.Id,
+                        StartText = GetShortIntroText(s.Content, 50),
+                        Mission = s.Mission,
+                        IsPublished = s.IsPublished,
+                        LastUpdateOn = s.UpdatedOn.ToUniversalDateTime().ToLocalTime().ToString(this.dateTimeFormat)
+                    })
 
             };
 
@@ -105,13 +98,13 @@ namespace HeroesCup.Web.Services
         public async Task<StoryEditModel> GetStoryEditModelByIdAsync(Guid id, Guid? ownerId)
         {
             var story = await this._dbContext.Stories
-                   .Include(s => s.Mission)
-                   .ThenInclude(m => m.Club)
-                   .Include(s => s.Mission)
-                   .ThenInclude(m => m.HeroMissions)
-                   .ThenInclude(m => m.Hero)
-                   .Include(c => c.StoryImages)
-                   .FirstOrDefaultAsync(c => c.Id == id);
+                .Include(s => s.Mission)
+                .ThenInclude(m => m.Club)
+                .Include(s => s.Mission)
+                .ThenInclude(m => m.HeroMissions)
+                .ThenInclude(m => m.Hero)
+                .Include(c => c.StoryImages)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             if (story == null)
             {

@@ -1,6 +1,6 @@
 ﻿using HeroesCup.Data.Models;
-using Microsoft.EntityFrameworkCore;
 using HeroesCup.Web.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace HeroesCup.Web.Services
 {

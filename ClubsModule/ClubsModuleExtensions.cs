@@ -1,11 +1,10 @@
-using HeroesCup.Web.ClubsModule;
 using HeroesCup.Web.ClubsModule.Security;
-using HeroesCup.Web.Services ;
-using HeroesCup.Web.Services ;
+using HeroesCup.Web.Services;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.FileProviders;
 using Piranha;
 using Piranha.Manager;
+using ManagerLocalizer = HeroesCup.Localization.ManagerLocalizer;
 
 namespace HeroesCup.Web.ClubsModule
 {
@@ -40,7 +39,7 @@ namespace HeroesCup.Web.ClubsModule
             services.AddScoped<IMissionContentsService, MissionContentsService>();
 
             // Add localization service
-            services.AddScoped<HeroesCup.Localization.ManagerLocalizer>();
+            services.AddScoped<ManagerLocalizer>();
 
             services.AddAuthorization(options =>
             {
@@ -284,7 +283,7 @@ namespace HeroesCup.Web.ClubsModule
             return builder.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(
-                Path.Combine(webApplicationBuilder.Environment.ContentRootPath,"ClubsModule/assets")),
+                    Path.Combine(webApplicationBuilder.Environment.ContentRootPath,"ClubsModule/assets")),
                 RequestPath = "/manager/clubsmodule"
             });
         }

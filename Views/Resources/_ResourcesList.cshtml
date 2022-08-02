@@ -1,4 +1,5 @@
-﻿@model IEnumerable<HeroesCup.Web.Models.Resources.ResourcePost>
+﻿@using HeroesCup.Web.Models.Resources
+@model IEnumerable<HeroesCup.Web.Models.Resources.ResourcePost>
 @{
     var resources = Model;
 }
@@ -10,17 +11,17 @@
             <div class="item-body">
                 <a href="@post.Permalink">
                     <div class="row justify-content-center">
-                        @if (post.Type.Value == HeroesCup.Web.Models.Resources.ResourcePostType.PDF)
+                        @if (post.Type.Value == ResourcePostType.PDF)
                         {
                             <span class="resource-icon resource-icon-pdf" />
                         }
 
-                        @if (post.Type.Value == HeroesCup.Web.Models.Resources.ResourcePostType.VIDEO)
+                        @if (post.Type.Value == ResourcePostType.VIDEO)
                         {
                             <span class="resource-icon resource-icon-video" />
                         }
 
-                        @if (post.Type.Value == HeroesCup.Web.Models.Resources.ResourcePostType.ARTICLE)
+                        @if (post.Type.Value == ResourcePostType.ARTICLE)
                         {
                             <span class="resource-icon resource-icon-article" />
                         }
@@ -38,4 +39,3 @@
         </div>
     }
 </div>
-

@@ -1,9 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
-using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
+using HeroesCup.Localization;
 
 namespace HeroesCup.Web.ClubsModule.Attributes
 {
@@ -16,7 +12,7 @@ namespace HeroesCup.Web.ClubsModule.Attributes
         }
 
         protected override ValidationResult IsValid(
-        object value, ValidationContext validationContext)
+            object value, ValidationContext validationContext)
         {
             var files = value as IEnumerable<IFormFile>;
             ValidationResult validationResult = ValidationResult.Success;
@@ -67,7 +63,7 @@ namespace HeroesCup.Web.ClubsModule.Attributes
                 return "Invalid error message";
             }
 
-            HeroesCup.Localization.ManagerLocalizer localizer = validationContext.GetService(typeof(HeroesCup.Localization.ManagerLocalizer)) as HeroesCup.Localization.ManagerLocalizer;
+            ManagerLocalizer localizer = validationContext.GetService(typeof(ManagerLocalizer)) as ManagerLocalizer;
             return localizer.General[ErrorMessage];
         }
     }

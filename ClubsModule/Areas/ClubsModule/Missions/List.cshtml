@@ -1,6 +1,7 @@
+@using HeroesCup.Web.ClubsModule
 @model HeroesCup.Web.ClubsModule.Models.MissionListModel
 @inject IAuthorizationService Auth
-@inject Piranha.Manager.ManagerLocalizer Localizer
+@inject ManagerLocalizer Localizer
 @inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
 @{
     ViewBag.Title = "Missions";
@@ -17,7 +18,7 @@
 
     <div class="container-fluid">
         <div class="top-nav">
-            @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.MissionsAdd)).Succeeded)
+            @if ((await Auth.AuthorizeAsync(User, Permissions.MissionsAdd)).Succeeded)
             {
                 <a href="@Url.Action("Add")" class="btn btn-labeled btn-primary pull-right">
                     <i class="fas fa-plus"></i>@Localizer.General["Add"]
@@ -30,25 +31,25 @@
 <div class="container-fluid">
     <table class="table table-borderless">
         <thead>
-            <tr>
-                <th>@HeroesCupLocalizer.General["Title"]</th>
-                <th>@HeroesCupLocalizer.Club["Club"]</th>
-                <th>@HeroesCupLocalizer.Hero["Heroes"]</th>
-                <th>@HeroesCupLocalizer.General["Published"]</th>
-                @if (User.IsInRole("SysAdmin") || User.IsInRole("Timeheroes"))
-                {
-                    <th>@HeroesCupLocalizer.Mission["Pinned"]</th>
-                }
-                <th>@HeroesCupLocalizer.General["LastUpdate"]</th>
-                <th class="actions one"></th>
-            </tr>
+        <tr>
+            <th>@HeroesCupLocalizer.General["Title"]</th>
+            <th>@HeroesCupLocalizer.Club["Club"]</th>
+            <th>@HeroesCupLocalizer.Hero["Heroes"]</th>
+            <th>@HeroesCupLocalizer.General["Published"]</th>
+            @if (User.IsInRole("SysAdmin") || User.IsInRole("Timeheroes"))
+            {
+                <th>@HeroesCupLocalizer.Mission["Pinned"]</th>
+            }
+            <th>@HeroesCupLocalizer.General["LastUpdate"]</th>
+            <th class="actions one"></th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (var mission in Model.Missions)
-            {
+        @foreach (var mission in Model.Missions)
+        {
             <tr>
                 <td>
-                    @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.MissionsEdit)).Succeeded)
+                    @if ((await Auth.AuthorizeAsync(User, Permissions.MissionsEdit)).Succeeded)
                     {
                         <a href="@Url.Action("Edit", new {id = mission.Id})">@mission.Title</a>
                     }
@@ -58,7 +59,7 @@
                     }
                 </td>
                 <td>
-                    @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.ClubsEdit)).Succeeded)
+                    @if ((await Auth.AuthorizeAsync(User, Permissions.ClubsEdit)).Succeeded)
                     {
                         <a href="@Url.Action("Edit", "Clubs", new {id = mission.ClubId })">@mission.ClubName</a>
                     }
@@ -90,7 +91,7 @@
                     <span class="title">@mission.LastUpdateOn</span>
                 </td>
                 <td class="actions one">
-                    @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.MissionsDelete)).Succeeded)
+                    @if ((await Auth.AuthorizeAsync(User, Permissions.MissionsDelete)).Succeeded)
                     {
                         <a class="danger" href="@Url.Action("Delete", new {id = mission.Id})">
                             <span class="fas fa-trash"></span>
@@ -98,7 +99,7 @@
                     }
                 </td>
             </tr>
-            }
+        }
         </tbody>
     </table>
 </div>

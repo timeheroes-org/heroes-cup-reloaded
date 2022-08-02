@@ -1,6 +1,6 @@
-﻿using Piranha.AttributeBuilder;
+﻿using System.Globalization;
+using Piranha.AttributeBuilder;
 using Piranha.Models;
-using System.Globalization;
 
 namespace HeroesCup.Web.Models.Missions
 {

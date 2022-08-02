@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HeroesCup.Web.ClubsModule.Security
+﻿namespace HeroesCup.Web.ClubsModule.Security
 {
     public interface IUserManager
     {

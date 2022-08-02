@@ -1,7 +1,4 @@
-﻿using HeroesCup.Web.Services ;
-using System;
-
-namespace HeroesCup.Web.Services 
+﻿namespace HeroesCup.Web.Services 
 {
     public class SchoolYearService : ISchoolYearService
     {

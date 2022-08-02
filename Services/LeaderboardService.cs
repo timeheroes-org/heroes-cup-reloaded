@@ -1,8 +1,8 @@
-﻿using HeroesCup.Data.Models;
-using HeroesCup.Web.Models;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+using HeroesCup.Data.Models;
 using HeroesCup.Web.Common;
 using HeroesCup.Web.Common.Extensions;
+using HeroesCup.Web.Models;
 
 namespace HeroesCup.Web.Services
 {
@@ -36,18 +36,18 @@ namespace HeroesCup.Web.Services
                 .Select(c =>
                 {
                     IEnumerable<MissionViewModel> clubMissions = c.Club.Missions
-                    .OrderByDescending(m => m.StartDate)
-                    .Select(m => new MissionViewModel()
-                    {
-                        Id = m.Id,
-                        Title = m.Title,
-                        Club = m.Club,
-                        ImageId = this.GetMissionImageId(m),
-                        Slug = m.Slug,
-                        EndDate = m.EndDate.ConvertToLocalDateTime(),
-                        StartDate = m.StartDate.ConvertToLocalDateTime(),
-                        IsExpired = m.EndDate.IsExpired()
-                    });
+                        .OrderByDescending(m => m.StartDate)
+                        .Select(m => new MissionViewModel()
+                        {
+                            Id = m.Id,
+                            Title = m.Title,
+                            Club = m.Club,
+                            ImageId = this.GetMissionImageId(m),
+                            Slug = m.Slug,
+                            EndDate = m.EndDate.ConvertToLocalDateTime(),
+                            StartDate = m.StartDate.ConvertToLocalDateTime(),
+                            IsExpired = m.EndDate.IsExpired()
+                        });
 
                     IEnumerable<HeroViewModel> clubHeroes = c.Club.Heroes.Select(h => new HeroViewModel()
                     {

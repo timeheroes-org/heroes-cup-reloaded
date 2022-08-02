@@ -1,9 +1,8 @@
-﻿using HeroesCup.Web.Models;
+﻿using System.Diagnostics;
+using HeroesCup.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using System.IO;
 
 namespace HeroesCup.Web.Controllers
 {
@@ -23,7 +22,7 @@ namespace HeroesCup.Web.Controllers
             var exceptionHandlerPathFeature = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
             if (exceptionHandlerPathFeature?.Error is FileNotFoundException)
             {
-               errorModel.Reason = "File error thrown";
+                errorModel.Reason = "File error thrown";
             }
             else
             {

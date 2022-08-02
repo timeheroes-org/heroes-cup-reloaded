@@ -1,7 +1,4 @@
-﻿using HeroesCup.Web.Common;
-using System;
-
-namespace HeroesCup.Web.Common.Extensions
+﻿namespace HeroesCup.Web.Common.Extensions
 {
     public static class DateTimeExtensions
     {

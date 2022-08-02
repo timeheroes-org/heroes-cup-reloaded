@@ -1,8 +1,6 @@
-﻿using HeroesCup.Web.Services ;
-using HeroesCup.Data.Models;
+﻿using HeroesCup.Data.Models;
+using HeroesCup.Web.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 
 namespace HeroesCup.Web.Controllers
 {

@@ -1,6 +1,8 @@
 @using Piranha.AspNetCore.Models
 @using HeroesCup.Models
+@using Microsoft.AspNetCore.Authorization
+@using Piranha.AspNetCore.Services
 @namespace HeroesCup.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@inject Piranha.AspNetCore.Services.IApplicationService WebApp
-@inject Microsoft.AspNetCore.Authorization.IAuthorizationService Auth
+@inject IApplicationService WebApp
+@inject IAuthorizationService Auth

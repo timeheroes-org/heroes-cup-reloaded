@@ -3,7 +3,6 @@ using HeroesCup.Web.Models;
 using Piranha.AttributeBuilder;
 using Piranha.Extend;
 using Piranha.Models;
-using System.Collections.Generic;
 
 namespace HeroesCup.Models
 {

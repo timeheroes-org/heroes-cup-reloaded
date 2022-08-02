@@ -4,9 +4,10 @@ using HeroesCup.Web.Data;
 using HeroesCup.Web.Services;
 using Microsoft.EntityFrameworkCore;
 using Piranha;
-using Piranha.AttributeBuilder;
 using Piranha.AspNetCore.Identity.SQLite;
+using Piranha.AttributeBuilder;
 using Piranha.Data.EF.SQLite;
+using Piranha.Local;
 using Piranha.Manager.Editor;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +20,7 @@ builder.AddPiranha(options =>
     options.UseCms();
     options.UseManager();
 
-    options.UseFileStorage(naming: Piranha.Local.FileStorageNaming.UniqueFolderNames);
+    options.UseFileStorage(naming: FileStorageNaming.UniqueFolderNames);
     options.UseImageSharp();
     options.UseTinyMCE();
     options.UseMemoryCache();

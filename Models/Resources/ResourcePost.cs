@@ -1,11 +1,9 @@
-﻿using HeroesCup.Models.Regions;
+﻿using System.Globalization;
+using HeroesCup.Models.Regions;
 using Piranha.AttributeBuilder;
-using Piranha.Data;
 using Piranha.Extend;
 using Piranha.Extend.Fields;
 using Piranha.Models;
-using System.Collections.Generic;
-using System.Globalization;
 
 namespace HeroesCup.Web.Models.Resources
 {

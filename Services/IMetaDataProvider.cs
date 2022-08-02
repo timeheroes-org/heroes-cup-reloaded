@@ -1,5 +1,4 @@
 ﻿using HeroesCup.Web.Models;
-using Microsoft.AspNetCore.Http;
 
 namespace HeroesCup.Web.Services
 {

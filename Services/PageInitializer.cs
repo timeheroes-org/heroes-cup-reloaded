@@ -2,11 +2,7 @@
 using HeroesCup.Web.Models;
 using HeroesCup.Web.Models.Events;
 using HeroesCup.Web.Models.Resources;
-using Microsoft.Extensions.Configuration;
 using Piranha;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HeroesCup.Web.Services
 {

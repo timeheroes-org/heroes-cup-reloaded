@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
-
-namespace HeroesCup.Web.Models
+﻿namespace HeroesCup.Web.Models
 {
     public class ErrorViewModel
     {

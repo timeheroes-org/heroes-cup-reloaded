@@ -1,9 +1,6 @@
-﻿using HeroesCup.Web.Models;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using HeroesCup.Data.Models;
+﻿using HeroesCup.Data.Models;
 using HeroesCup.Web.ClubsModule.Models;
+using HeroesCup.Web.Models;
 
 namespace HeroesCup.Web.Services
 {

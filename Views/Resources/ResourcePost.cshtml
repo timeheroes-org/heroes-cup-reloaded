@@ -1,7 +1,8 @@
-﻿@model HeroesCup.Web.Models.Resources.ResourcePost
+﻿@using System.Globalization
+@model HeroesCup.Web.Models.Resources.ResourcePost
 @{
     var archive = await WebApp.Api.Pages.GetByIdAsync(Model.BlogId);
-    System.Globalization.CultureInfo culture = Model.SiteCulture;
+    CultureInfo culture = Model.SiteCulture;
     var currentUrlBase = Model.CurrentUrlBase;
 }
 

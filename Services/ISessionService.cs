@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace HeroesCup.Web.Services
+﻿namespace HeroesCup.Web.Services
 {
     public interface ISessionService
     {

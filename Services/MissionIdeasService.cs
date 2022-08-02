@@ -1,10 +1,10 @@
-﻿using HeroesCup.Web.Common;
+﻿using System.Globalization;
+using HeroesCup.Data.Models;
 using HeroesCup.Web.ClubsModule.Exceptions;
 using HeroesCup.Web.ClubsModule.Models;
-using HeroesCup.Data.Models;
-using Microsoft.EntityFrameworkCore;
-using System.Globalization;
+using HeroesCup.Web.Common;
 using HeroesCup.Web.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace HeroesCup.Web.Services
 {
@@ -32,15 +32,15 @@ namespace HeroesCup.Web.Services
             var model = new MissionIdeaListModel()
             {
                 MissionIdeas = missionIdeas
-                                .OrderBy(m => m.IsPublished)
-                                .ThenByDescending(m => m.UpdatedOn)
-                                .Select(m => new MissionIdeaListItem()
-                                {
-                                    Id = m.Id,
-                                    Title = m.Title,
-                                    IsPublished = m.IsPublished,
-                                    LastUpdateOn = m.UpdatedOn.ToUniversalDateTime().ToLocalTime().ToString(this.dateTimeFormat)
-                                })
+                    .OrderBy(m => m.IsPublished)
+                    .ThenByDescending(m => m.UpdatedOn)
+                    .Select(m => new MissionIdeaListItem()
+                    {
+                        Id = m.Id,
+                        Title = m.Title,
+                        IsPublished = m.IsPublished,
+                        LastUpdateOn = m.UpdatedOn.ToUniversalDateTime().ToLocalTime().ToString(this.dateTimeFormat)
+                    })
 
             };
 
@@ -71,9 +71,9 @@ namespace HeroesCup.Web.Services
         {
             MissionIdea missionIdea = null;
             missionIdea = await this.dbContext.MissionIdeas
-                    .Include(c => c.MissionIdeaImages)
-                    .ThenInclude(ci => ci.Image)
-                    .FirstOrDefaultAsync(c => c.Id == id);
+                .Include(c => c.MissionIdeaImages)
+                .ThenInclude(ci => ci.Image)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             return await MapMissionIdeaToMissionIdeaEditModel(missionIdea);
         }
@@ -82,9 +82,9 @@ namespace HeroesCup.Web.Services
         {
             MissionIdea missionIdea = null;
             missionIdea = await this.dbContext.MissionIdeas
-                    .Include(c => c.MissionIdeaImages)
-                    .ThenInclude(ci => ci.Image)
-                    .FirstOrDefaultAsync(c => c.Slug == slug);
+                .Include(c => c.MissionIdeaImages)
+                .ThenInclude(ci => ci.Image)
+                .FirstOrDefaultAsync(c => c.Slug == slug);
 
             return await MapMissionIdeaToMissionIdeaEditModel(missionIdea);
         }
@@ -101,7 +101,7 @@ namespace HeroesCup.Web.Services
 
             var missionIdeaWithSameTitle = await this.dbContext.MissionIdeas
                 .Where(m => (m.Title == model.MissionIdea.Title || m.Slug == slug) && 
-                m.Id != model.MissionIdea.Id)
+                            m.Id != model.MissionIdea.Id)
                 .FirstOrDefaultAsync();
 
             if (missionIdeaWithSameTitle != null)

@@ -1,4 +1,7 @@
-﻿@model HeroesCup.Web.ClubsModule.Models.StoryEditModel
+﻿@using HeroesCup.Data.Models
+@using HeroesCup.Web.ClubsModule
+@using HeroesCup.Web.ClubsModule.Models
+@model HeroesCup.Web.ClubsModule.Models.StoryEditModel
 @inject IAuthorizationService Auth
 @inject ManagerLocalizer Localizer
 @inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
@@ -6,10 +9,10 @@
     ViewBag.Title = "Edit story";
     ViewBag.MenuItem = HeroesCupLocalizer.Story["Stories"];
 
-    var missions = Model.Missions != null && Model.Missions.Count() > 0 ? Model.Missions.ToList() : new List<HeroesCup.Data.Models.Mission>();
+    var missions = Model.Missions != null && Model.Missions.Count() > 0 ? Model.Missions.ToList() : new List<Mission>();
     var missionsSelectList = new SelectList(missions, "Id", "Title");
 
-    var heroes = Model.Heroes != null && Model.Heroes.Count() > 0 ? Model.Heroes.ToList() : new List<HeroesCup.Data.Models.Hero>();
+    var heroes = Model.Heroes != null && Model.Heroes.Count() > 0 ? Model.Heroes.ToList() : new List<Hero>();
     var heroesMultipleSelectList = new MultiSelectList(heroes, "Id", "Name");
     foreach (var heroSelectItem in heroesMultipleSelectList)
     {
@@ -42,7 +45,7 @@
 
 @if (noMissionWithoutStory)
 {
-    var validationModal = new HeroesCup.Web.ClubsModule.Models.ValidationModal()
+    var validationModal = new ValidationModal()
     {
         Title = HeroesCupLocalizer.Story["NoMissionsModalTitle"],
         Body = HeroesCupLocalizer.Story["NoMissionsModalBody"]
@@ -68,7 +71,7 @@
 
         <div class="container-fluid">
             <div class="top-nav">
-                @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.StoriesSave)).Succeeded)
+                @if ((await Auth.AuthorizeAsync(User, Permissions.StoriesSave)).Succeeded)
                 {
                     <button type="submit" class="btn btn-labeled btn-success pull-right">
                         <span class="btn-label">
@@ -78,7 +81,7 @@
                     </button>
                 }
 
-                @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.StoriesPublish)).Succeeded && Model.Story.Id != Guid.Empty)
+                @if ((await Auth.AuthorizeAsync(User, Permissions.StoriesPublish)).Succeeded && Model.Story.Id != Guid.Empty)
                 {
                     @if (Model.Story.IsPublished == false)
                     {

@@ -1,8 +1,7 @@
-﻿using HeroesCup.Web.ClubsModule.Models;
-using HeroesCup.Web.Services ;
-using HeroesCup.Data.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using HeroesCup.Data.Models;
+using HeroesCup.Web.ClubsModule.Models;
 using HeroesCup.Web.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace HeroesCup.Web.Services
 {
@@ -19,8 +18,8 @@ namespace HeroesCup.Web.Services
         {
             var heroes = new List<Hero>();
             heroes = await this._dbContext.Heroes
-                    .Include(h => h.Club)
-                    .ToListAsync();
+                .Include(h => h.Club)
+                .ToListAsync();
 
             if (ownerId.HasValue)
             {
@@ -35,13 +34,13 @@ namespace HeroesCup.Web.Services
             var model = new HeroListModel()
             {
                 Heroes = heroes.OrderBy(h => h.Name)
-                                .Select(m => new HeroListItem()
-                                {
-                                    Id = m.Id,
-                                    Name = m.Name,
-                                    ClubId = m.ClubId,
-                                    ClubName = m.Club.Name
-                                })
+                    .Select(m => new HeroListItem()
+                    {
+                        Id = m.Id,
+                        Name = m.Name,
+                        ClubId = m.ClubId,
+                        ClubName = m.Club.Name
+                    })
 
             };
 
@@ -74,10 +73,10 @@ namespace HeroesCup.Web.Services
         public async Task<HeroEditModel> GetHeroEditModelByIdAsync(Guid id, Guid? ownerId)
         {
             var hero = await this._dbContext.Heroes
-                     .Include(h => h.Club)
-                     .Include(x => x.HeroMissions)
-                     .ThenInclude(x => x.Mission)
-                     .FirstOrDefaultAsync(h => h.Id == id);
+                .Include(h => h.Club)
+                .Include(x => x.HeroMissions)
+                .ThenInclude(x => x.Mission)
+                .FirstOrDefaultAsync(h => h.Id == id);
 
             if (hero == null)
             {
@@ -202,8 +201,8 @@ namespace HeroesCup.Web.Services
         public async Task<ICollection<Hero>> GetHeroes(Guid? clubId, Guid? ownerId)
         {
             var heroes = this._dbContext.Heroes
-                     .Include(h => h.Club)
-                     .Select(x => x);
+                .Include(h => h.Club)
+                .Select(x => x);
 
             if (clubId.HasValue)
             {
