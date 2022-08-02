@@ -1,0 +1,96 @@
+@using HeroesCup.Web.ClubsModule
+@model HeroesCup.Web.ClubsModule.Models.ClubListModel
+@inject IAuthorizationService Auth
+@inject ManagerLocalizer Localizer
+@inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
+@{
+    ViewBag.Title = "Clubs";
+    ViewBag.MenuItem = HeroesCupLocalizer.Club["Clubs"];
+
+    var userHasEditClubPermissions = (await Auth.AuthorizeAsync(User, Permissions.ClubsEdit)).Succeeded;
+}
+
+<div class="top">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">@HeroesCupLocalizer.Club["Clubs"]</li>
+            <li class="breadcrumb-item active" aria-current="page">@HeroesCupLocalizer.Club["Clubs"]</li>
+        </ol>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="top-nav">
+            @if ((await Auth.AuthorizeAsync(User, Permissions.ClubsAdd)).Succeeded)
+            {
+                if (User.IsInRole("Coordinator") && (Model.Clubs == null || Model.Clubs.Count() == 0))
+                {
+                    <a href="@Url.Action("Add")" class="btn btn-labeled btn-primary pull-right">
+                        <i class="fas fa-plus"></i>@Localizer.General["Add"]
+                    </a>
+                }
+
+                if (!User.IsInRole("Coordinator"))
+                {
+                    <a href="@Url.Action("Add")" class="btn btn-labeled btn-primary pull-right">
+                        <i class="fas fa-plus"></i>@Localizer.General["Add"]
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <table class="table table-borderless">
+        <thead>
+        <tr>
+            <th>@HeroesCupLocalizer.Club["Name"]</th>
+            <th>@HeroesCupLocalizer.Club["Organization"]</th>
+            <th>@HeroesCupLocalizer.Club["Heroes"]</th>
+            <th>@HeroesCupLocalizer.General["LastUpdate"]</th>
+            <th class="actions one"></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var club in Model.Clubs)
+        {
+            <tr>
+                <td>
+                    @if (userHasEditClubPermissions)
+                    {
+                        <a href="@Url.Action("Edit", new { id = club.Id })">@club.Name</a>
+                    }
+                    else
+                    {
+                        <span class="title">@club.Name</span>
+                    }
+                </td>
+                <td>
+                    @if (userHasEditClubPermissions)
+                    {
+                        <a href="@Url.Action("Edit", new { id = club.Id })">@club.OrganizationNumber @club.OrganizationType @club.OrganizationName</a>
+                    }
+                    else
+                    {
+                        <span class="title">@club.OrganizationNumber @club.OrganizationType @club.OrganizationName</span>
+                    }
+                </td>
+                <td>
+                    <span class="title">@club.HeroesCount</span>
+                </td>
+                <td>
+                    <span class="title">@club.LastUpdateOn</span>
+                </td>
+                <td class="actions one">
+                    @if ((await Auth.AuthorizeAsync(User, Permissions.ClubsDelete)).Succeeded)
+                    {
+                        <a class="danger" href="@Url.Action("Delete", new { id = club.Id })">
+                            <span class="fas fa-trash"></span>
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

@@ -1,58 +1,52 @@
+using HeroesCup.Web.ClubsModule;
+using HeroesCup.Web.Common;
+using HeroesCup.Web.Data;
+using HeroesCup.Web.Services;
 using Microsoft.EntityFrameworkCore;
 using Piranha;
-using Piranha.AttributeBuilder;
 using Piranha.AspNetCore.Identity.SQLite;
+using Piranha.AttributeBuilder;
 using Piranha.Data.EF.SQLite;
+using Piranha.Local;
 using Piranha.Manager.Editor;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var connectionString = builder.Configuration.GetConnectionString("piranha");
 builder.AddPiranha(options =>
 {
-    /**
-     * This will enable automatic reload of .cshtml
-     * without restarting the application. However since
-     * this adds a slight overhead it should not be
-     * enabled in production.
-     */
     options.AddRazorRuntimeCompilation = true;
 
     options.UseCms();
     options.UseManager();
 
-    options.UseFileStorage(naming: Piranha.Local.FileStorageNaming.UniqueFolderNames);
+    options.UseFileStorage(naming: FileStorageNaming.UniqueFolderNames);
     options.UseImageSharp();
     options.UseTinyMCE();
     options.UseMemoryCache();
 
-    var connectionString = builder.Configuration.GetConnectionString("piranha");
+
     options.UseEF<SQLiteDb>(db => db.UseSqlite(connectionString));
+
     options.UseIdentityWithSeed<IdentitySQLiteDb>(db => db.UseSqlite(connectionString));
-
-    /**
-     * Here you can configure the different permissions
-     * that you want to use for securing content in the
-     * application.
-    options.UseSecurity(o =>
-    {
-        o.UsePermission("WebUser", "Web User");
-    });
-     */
-
-    /**
-     * Here you can specify the login url for the front end
-     * application. This does not affect the login url of
-     * the manager interface.
-    options.LoginUrl = "login";
-     */
 });
+
+builder.Services.AddTransient<IHeroesCupIdentitySeed, IdentitySeed>();
+builder.Services.AddTransient<IPageInitializer, PageInitializer>();
+builder.Services.AddTransient<ILeaderboardService, LeaderboardService>();
+builder.Services.AddTransient<IStatisticsService, StatisticsService>();
+builder.Services.AddTransient<IMissionsService, MissionsService>();
+builder.Services.AddTransient<ISessionService, SessionService>();
+builder.Services.AddTransient<IWebUtils, WebUtils>();
+builder.Services.AddTransient<IVideoThumbnailParser, YouTubeVideoThumbnailParser>();
+builder.Services.AddTransient<IMetaDataProvider, MetaDataProvider>();
+builder.Services.AddDbContext<HeroesCupDbContext>(
+    options => options.UseSqlite(connectionString));
+builder.Services.AddClubsModule();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
+
+if (app.Environment.IsDevelopment()) app.UseDeveloperExceptionPage();
 
 app.UsePiranha(options =>
 {
@@ -72,5 +66,30 @@ app.UsePiranha(options =>
     options.UseTinyMCE();
     options.UseIdentity();
 });
+app.UseRouting();
+app.UseClubsModule(builder);
+
+SeedDefaultPages();
+
+void SeedDefaultPages()
+{
+    var dbSeed = builder.Configuration["DbSeed"];
+    if (dbSeed == "true")
+    {
+#pragma warning disable ASP0000
+        var serviceProvider = builder.Services.BuildServiceProvider();
+#pragma warning restore ASP0000
+
+        var identitySeed = serviceProvider.GetService<IHeroesCupIdentitySeed>();
+        identitySeed.SeedIdentityAsync();
+        var pagesInitializer = serviceProvider.GetService<IPageInitializer>();
+
+        pagesInitializer.SeedMissionsPageAsync().Wait();
+        pagesInitializer.SeedResourcesPageAsync().Wait();
+        pagesInitializer.SeedEventsPageAsync().Wait();
+        pagesInitializer.SeedAboutPageAsync().Wait();
+        pagesInitializer.SeedStarPageAsync().Wait();
+    }
+}
 
 app.Run();

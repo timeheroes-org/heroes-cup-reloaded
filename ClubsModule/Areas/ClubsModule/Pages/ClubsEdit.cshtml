@@ -1,0 +1,39 @@
+@page "~/manager/clubs"
+@using Piranha.Manager.Editor
+@model HeroesCup.Web.ClubsModule.Areas.HeroesCup.Web.ClubsModule.Pages.ClubsEditViewModel
+@inject ManagerLocalizer Localizer
+@{
+    ViewBag.Title = Localizer.Page["Edit clubs"];
+    ViewBag.MenuItem = "Clubs";
+}
+
+@section script
+{
+    <script src="@Url.Content(EditorScripts.MainScriptUrl)"></script>
+    <script src="@Url.Content(EditorScripts.EditorScriptUrl)"></script>
+    <script src="~/manager/clubsmodule/js/init.js"></script>
+    <script src="~/manager/clubsmodule/js/components/blocks/clubs.js"></script>
+    <script src="~/manager/clubsmodule/js/clubs.js"></script>
+    <script>
+        piranha.permissions.load(function () {
+            heroescup.clubs.load();
+        });
+    </script>
+}
+
+<div id="pageedit">
+    <div class="top">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">@Localizer.Menu["Content"]</li>
+                <li class="breadcrumb-item">
+                    <a href="~/manager/clubs">@Localizer.Menu["Clubs"]</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">@Localizer.General["Edit"]</li>
+            </ol>
+        </nav>
+    </div>
+    <div id="clubs">
+        <clubs></clubs>
+    </div>
+</div>

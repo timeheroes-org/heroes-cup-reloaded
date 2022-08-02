@@ -1,0 +1,58 @@
+.block.clubs .empty:not(:focus-within) {
+    background: gray url("../img/empty-text.png") no-repeat 50% 50%;
+    height: 8rem;
+}
+
+.block.clubs pre {
+    min-height: 1.3rem;
+    height: 100%;
+    font-size: .875rem;
+    margin-bottom: 0;
+    white-space: normal;
+}
+
+.block.clubs p {
+    min-height: 1.3rem;
+    height: 100%;
+    padding: 0 1rem;
+}
+
+.ui-menu-item {
+    display: block;
+    width: 20%;
+    padding: 1%;
+    background-color: white;
+}
+
+.ui-menu-item:hover {
+    background-color: #3585F5;
+    color: white;
+    cursor: pointer;
+}
+
+#heroes.multiselect {
+    display: none;
+}
+
+
+button.multiselect {
+    width: 120%;
+}
+
+.multiselect-container {
+    padding: 5%;
+}
+
+.invalid-tooltip {
+    position: absolute;
+    top: 0;
+    right: 2%;
+    z-index: 5;
+    display: none;
+    max-width: 100%;
+    padding: .25rem .5rem;
+    margin-top: .1rem;
+    font-size: .76562rem;
+    color: #fff;
+    background-color: rgba(169, 68, 65, .9);
+}

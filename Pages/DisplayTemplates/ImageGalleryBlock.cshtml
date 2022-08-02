@@ -1,7 +1,7 @@
-@model Piranha.Extend.Blocks.ImageGalleryBlock
 @using Piranha.Extend.Blocks
+@model Piranha.Extend.Blocks.ImageGalleryBlock
 @{
-    var unique = "gallery-" + Guid.NewGuid().ToString();
+    var unique = "gallery-" + Guid.NewGuid();
     var images = Model.Items
         .Where(i => i.GetType() == typeof(ImageBlock) && ((ImageBlock)i).Body.HasValue)
         .ToList();

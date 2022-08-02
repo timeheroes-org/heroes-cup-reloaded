@@ -1,0 +1,57 @@
+﻿@{
+    var sitemap = WebApp.Site.Sitemap;
+    var startPageTypeName = "Start page";
+    var landingPageTypeName = "Landing page";
+}
+
+@*Not the best solution but meanwhile... class = d-sm-block d-md-none is hiding on md screen solution*@
+<nav class="navbar navbar-toggleable-sm navbar-light bg-faded d-sm-block d-md-none ml-0 mr-0 mt-md-3 mt-0 pt-3 pl-4 pr-4">
+    <a class="navbar-brand" href="/">
+        <img src="~/images/logo_small.svg"/>
+    </a>
+    <button id="btn-nav-toggle" class="navbar-toggler navbar-toggler-right icon-hamburger" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+    <div class="collapse navbar-collapse text-center justify-content-center nav-items-container" id="navbarNavAltMarkup">
+        <div class="navbar-nav justify-content-center text-center">
+            @foreach (var item in sitemap)
+            {
+                @if (item.PageTypeName != startPageTypeName && item.PageTypeName != landingPageTypeName)
+                {
+                    <div class="col-12 justify-content-center pt-3 pb-3">
+                        <a class="nav-item nav-link @(item.Id == WebApp.PageId ? "active" : "")" href="@item.Permalink">
+                            <span class="body1-bold">@item.MenuTitle</span>
+                        </a>
+                    </div>
+                }
+            }
+            <div class="col-12 justify-content-center pt-3 pb-3">
+                <button class="btn btn-heroes btn-lg my-2 my-sm-0 btn-participate body2-bold" type="button" data-toggle="modal" data-target="#participateModal">Участвайте</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+@*Not the best solution but meanwhile... class =  d-none d-md-block is hiding on sm screen solution*@
+<div class="d-none d-md-block">
+    <nav class="navbar">
+        <a class="col-sm navbar-brand" href="/">
+            <img src="~/images/Logo.svg"/>
+        </a>
+        <ul class="nav nav-site justify-content-right pr-3">
+            @foreach (var item in sitemap)
+            {
+                <li class="nav-item @(item.Id == WebApp.PageId ? "active" : "") mr-2">
+                    @if (item.PageTypeName != startPageTypeName && item.PageTypeName != landingPageTypeName)
+                    {
+                        <a class="nav-link" href="@item.Permalink">
+                            <span>@item.MenuTitle</span>
+                        </a>
+                    }
+                </li>
+            }
+            <li class="nav-item">
+                <button class="btn btn-heroes btn-lg my-2 my-sm-0 btn-participate body2-bold" type="button" data-toggle="modal" data-target="#participateModal">Участвайте</button>
+            </li>
+        </ul>
+    </nav>
+</div>

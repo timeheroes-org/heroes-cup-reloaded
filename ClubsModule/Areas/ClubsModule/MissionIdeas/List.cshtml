@@ -1,0 +1,79 @@
+@using HeroesCup.Web.ClubsModule
+@model HeroesCup.Web.ClubsModule.Models.MissionIdeaListModel
+@inject IAuthorizationService Auth
+@inject ManagerLocalizer Localizer
+@inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
+@{
+    ViewBag.Title = "Mission Ideas";
+    ViewBag.MenuItem = HeroesCupLocalizer.Mission["Mission Ideas"];
+}
+
+<div class="top">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">@HeroesCupLocalizer.MissionIdea["Mission Ideas"]</li>
+            <li class="breadcrumb-item active" aria-current="page">@HeroesCupLocalizer.MissionIdea["Mission Ideas"]</li>
+        </ol>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="top-nav">
+            @if ((await Auth.AuthorizeAsync(User, Permissions.MissionIdeasAdd)).Succeeded)
+            {
+                <a href="@Url.Action("Add")" class="btn btn-labeled btn-primary pull-right">
+                    <i class="fas fa-plus"></i>@Localizer.General["Add"]
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <table class="table table-borderless">
+        <thead>
+        <tr>
+            <th>@HeroesCupLocalizer.General["Title"]</th>
+            <th>@HeroesCupLocalizer.General["Published"]</th>
+            <th>@HeroesCupLocalizer.General["LastUpdate"]</th>
+            <th class="actions one"></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var mission in Model.MissionIdeas)
+        {
+            <tr>
+                <td>
+                    @if ((await Auth.AuthorizeAsync(User, Permissions.MissionIdeasEdit)).Succeeded)
+                    {
+                        <a href="@Url.Action("Edit", new { id = mission.Id })">@mission.Title</a>
+                    }
+                    else
+                    {
+                        <span class="title">@mission.Title</span>
+                    }
+                </td>
+                <td>
+                    @if (mission.IsPublished)
+                    {
+                        <span class="title">
+                            <i class="fas fa-check text-success"></i>
+                        </span>
+                    }
+
+                </td>
+                <td>
+                    <span class="title">@mission.LastUpdateOn</span>
+                </td>
+                <td class="actions one">
+                    @if ((await Auth.AuthorizeAsync(User, Permissions.MissionIdeasDelete)).Succeeded)
+                    {
+                        <a class="danger" href="@Url.Action("Delete", new { id = mission.Id })">
+                            <span class="fas fa-trash"></span>
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

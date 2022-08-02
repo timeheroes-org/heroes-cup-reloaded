@@ -1,0 +1,15 @@
+﻿@model HeroesCup.Web.Models.Missions.MissionsWithBannerViewModel
+@{
+    var missions = Model.Missions.ToList();
+}
+
+@if (missions.Count > 0)
+{
+    if (Model.ShownMissionsCount + 1 > 9)
+    {
+        <partial name="~/Views/Missions/_MissionsBanner.cshtml"/>
+        <div class="col-12 separator mb-4"></div>
+    }
+
+    <partial name="~/Views/Missions/_MissionsList.cshtml" for="@missions"/>
+}
