@@ -50,7 +50,7 @@
                 <td>
                     @if ((await Auth.AuthorizeAsync(User, Permissions.StoriesEdit)).Succeeded)
                     {
-                        <a href="@Url.Action("Edit", new {id = story.Id})">@story.StartText</a>
+                        <a href="@Url.Action("Edit", new { id = story.Id })">@story.StartText</a>
                     }
                     else
                     {
@@ -60,7 +60,7 @@
                 <td>
                     @if ((await Auth.AuthorizeAsync(User, Permissions.MissionsEdit)).Succeeded)
                     {
-                        <a href="@Url.Action("Edit", "Missions", new {id = story.Mission.Id })">@story.Mission.Title</a>
+                        <a href="@Url.Action("Edit", "Missions", new { id = story.Mission.Id })">@story.Mission.Title</a>
                     }
                     else
                     {
@@ -73,7 +73,7 @@
                     <td>
                         @if ((await Auth.AuthorizeAsync(User, Permissions.ClubsEdit)).Succeeded)
                         {
-                            <a href="@Url.Action("Edit", "Clubs", new {id = story.Mission.Club.Id })">@story.Mission.Club.Name</a>
+                            <a href="@Url.Action("Edit", "Clubs", new { id = story.Mission.Club.Id })">@story.Mission.Club.Name</a>
                         }
                         else
                         {
@@ -85,7 +85,9 @@
                 <td>
                     @if (story.IsPublished)
                     {
-                        <span class="title"><i class="fas fa-check text-success"></i></span>
+                        <span class="title">
+                            <i class="fas fa-check text-success"></i>
+                        </span>
                     }
 
                 </td>
@@ -95,7 +97,7 @@
                 <td class="actions one">
                     @if ((await Auth.AuthorizeAsync(User, Permissions.StoriesDelete)).Succeeded)
                     {
-                        <a class="danger" href="@Url.Action("Delete", new {id = story.Id})">
+                        <a class="danger" href="@Url.Action("Delete", new { id = story.Id })">
                             <span class="fas fa-trash"></span>
                         </a>
                     }

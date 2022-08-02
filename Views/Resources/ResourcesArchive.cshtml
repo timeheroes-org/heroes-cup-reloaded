@@ -5,8 +5,8 @@
 }
 
 @section head {
-    <partial name="~/Views/Shared/Partial/_TwitterMeta.cshtml" for="@Model.SocialNetworksMetaData" />
-    <partial name="~/Views/Shared/Partial/_FacebookMeta.cshtml" for="@Model.SocialNetworksMetaData" />
+    <partial name="~/Views/Shared/Partial/_TwitterMeta.cshtml" for="@Model.SocialNetworksMetaData"/>
+    <partial name="~/Views/Shared/Partial/_FacebookMeta.cshtml" for="@Model.SocialNetworksMetaData"/>
 }
 
 <div class="main mt-md-5 pt-md-4 mt-5 pt-5" id="resources-main">
@@ -20,18 +20,18 @@
                 </p>
             </div>
             <div class="col-md-6 col-sm-12 order-md-1 order-md-2">
-                <img src="~/images/Resourses.svg" />
+                <img src="~/images/Resourses.svg"/>
             </div>
         </div>
-        <hr />
+        <hr/>
 
         @* Resource Posts *@
         @if (Model.Archive.Posts.Count > 0)
         {
-            <partial name="~/Views/Resources/_ResourcesList.cshtml" for="@Model.Archive.Posts" />
+            <partial name="~/Views/Resources/_ResourcesList.cshtml" for="@Model.Archive.Posts"/>
         }
 
-        <hr />
-        <partial name="~/Views/Shared/Partial/_Challenge.cshtml" for="@Model.Title" />
+        <hr/>
+        <partial name="~/Views/Shared/Partial/_Challenge.cshtml" for="@Model.Title"/>
     </div>
 </div>

@@ -1,9 +1,8 @@
-﻿namespace HeroesCup.Web.ClubsModule.Security
-{
-    public interface IUserManager
-    {
-        bool IsCurrentUserAdmin();
+﻿namespace HeroesCup.Web.ClubsModule.Security;
 
-        Guid? GetCurrentUserId();
-    }
+public interface IUserManager
+{
+    bool IsCurrentUserAdmin();
+
+    Guid? GetCurrentUserId();
 }

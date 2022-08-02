@@ -1,29 +1,25 @@
 ﻿using HeroesCup.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HeroesCup.Web.ClubsModule.Controllers
+namespace HeroesCup.Web.ClubsModule.Controllers;
+
+public class ImagesController : Controller
 {
-    public class ImagesController : Controller
+    private readonly IImagesService imagesService;
+
+    public ImagesController(IImagesService imagesService)
     {
-        private readonly IImagesService imagesService;
+        this.imagesService = imagesService;
+    }
 
-        public ImagesController(IImagesService imagesService)
-        {
-            this.imagesService = imagesService;
-        }
+    [Route("images/{id}")]
+    [HttpGet]
+    public async Task<IActionResult> GetImageById(Guid id)
+    {
+        var image = await imagesService.GetImage(id);
+        if (image == null) return NotFound();
 
-        [Route("images/{id}")]
-        [HttpGet]
-        public async Task<IActionResult> GetImageById(Guid id)
-        {
-            var image = await this.imagesService.GetImage(id);
-            if (image == null)
-            {
-                return NotFound();
-            }
-
-            Response.Headers.Add("Cache-Control", "max-age=31536000");
-            return File(image.Bytes, image.ContentType);
-        }
+        Response.Headers.Add("Cache-Control", "max-age=31536000");
+        return File(image.Bytes, image.ContentType);
     }
 }

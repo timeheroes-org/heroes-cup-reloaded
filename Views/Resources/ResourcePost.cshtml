@@ -1,8 +1,7 @@
-﻿@using System.Globalization
-@model HeroesCup.Web.Models.Resources.ResourcePost
+﻿@model HeroesCup.Web.Models.Resources.ResourcePost
 @{
     var archive = await WebApp.Api.Pages.GetByIdAsync(Model.BlogId);
-    CultureInfo culture = Model.SiteCulture;
+    var culture = Model.SiteCulture;
     var currentUrlBase = Model.CurrentUrlBase;
 }
 
@@ -11,8 +10,8 @@
 }
 
 @section head {
-    <partial name="~/Views/Shared/Partial/_TwitterMeta.cshtml" for="@Model.SocialNetworksMetaData" />
-    <partial name="~/Views/Shared/Partial/_FacebookMeta.cshtml" for="@Model.SocialNetworksMetaData" />
+    <partial name="~/Views/Shared/Partial/_TwitterMeta.cshtml" for="@Model.SocialNetworksMetaData"/>
+    <partial name="~/Views/Shared/Partial/_FacebookMeta.cshtml" for="@Model.SocialNetworksMetaData"/>
 }
 
 <div class="main mt-md-5 pt-md-4 mt-5 pt-4 mb-0">
@@ -49,7 +48,7 @@
                     <div class="col-12 text-left">
                         <span class="text-regular">Полезен ресурс? Сподели го:</span>
                     </div>
-                    <partial name="~/Views/Shared/Partial/_ShareButtons.cshtml" for="@Model.SocialNetworksMetaData.TwitterUrl" />
+                    <partial name="~/Views/Shared/Partial/_ShareButtons.cshtml" for="@Model.SocialNetworksMetaData.TwitterUrl"/>
                 </div>
             </div>
         </div>
@@ -63,7 +62,7 @@
                     <h2 class="heading2">Още ресурси</h2>
                 </div>
                 <div class="col-12">
-                    <partial name="~/Views/Resources/_ResourcesList.cshtml" for="@Model.OtherResources" />
+                    <partial name="~/Views/Resources/_ResourcesList.cshtml" for="@Model.OtherResources"/>
                 </div>
             }
 

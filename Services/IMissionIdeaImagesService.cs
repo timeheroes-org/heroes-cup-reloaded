@@ -1,13 +1,12 @@
 ﻿using HeroesCup.Data.Models;
 
-namespace HeroesCup.Web.Services
+namespace HeroesCup.Web.Services;
+
+public interface IMissionIdeaImagesService
 {
-    public interface IMissionIdeaImagesService
-    {
-        Task CreateMissionIdeaImageAsync(Image image, MissionIdea missionIdea);
+    Task CreateMissionIdeaImageAsync(Image image, MissionIdea missionIdea);
 
-        Task DeleteMissionIdeaImageAsync(MissionIdeaImage missionIdeaImage, bool commit = false);
+    Task DeleteMissionIdeaImageAsync(MissionIdeaImage missionIdeaImage, bool commit = false);
 
-        Task<MissionIdeaImage> GetMissionIdeaImageAsync(Guid missionIdeaId);
-    }
+    Task<MissionIdeaImage> GetMissionIdeaImageAsync(Guid missionIdeaId);
 }

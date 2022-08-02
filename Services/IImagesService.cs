@@ -1,25 +1,25 @@
 ﻿using HeroesCup.Data.Models;
 
-namespace HeroesCup.Web.Services
+namespace HeroesCup.Web.Services;
+
+public interface IImagesService : IClubImagesService, IMissionImagesService, IStoryImageService,
+    IMissionIdeaImagesService
 {
-    public interface IImagesService : IClubImagesService, IMissionImagesService, IStoryImageService, IMissionIdeaImagesService
-    {
-        Task<Image> GetImage(Guid id);
+    Task<Image> GetImage(Guid id);
 
-        Task<Image> GetImageByFileName(string filename);
+    Task<Image> GetImageByFileName(string filename);
 
-        string GetImageSource(string contentType, byte[] bytes);
+    string GetImageSource(string contentType, byte[] bytes);
 
-        byte[] GetByteArrayFromImage(IFormFile file);
+    byte[] GetByteArrayFromImage(IFormFile file);
 
-        string GetFilename(IFormFile file, Guid imageId);
+    string GetFilename(IFormFile file, Guid imageId);
 
-        string GetFileContentType(IFormFile file);
+    string GetFileContentType(IFormFile file);
 
-        Image MapFormFileToImage(IFormFile file);
+    Image MapFormFileToImage(IFormFile file);
 
-        string GetImageFilename(Image image);
+    string GetImageFilename(Image image);
 
-        Task<string> GetImageFilename(Guid id);
-    }
+    Task<string> GetImageFilename(Guid id);
 }

@@ -58,7 +58,7 @@
                 <td>
                     @if (userHasEditClubPermissions)
                     {
-                        <a href="@Url.Action("Edit", new {id = club.Id})">@club.Name</a>
+                        <a href="@Url.Action("Edit", new { id = club.Id })">@club.Name</a>
                     }
                     else
                     {
@@ -68,7 +68,7 @@
                 <td>
                     @if (userHasEditClubPermissions)
                     {
-                        <a href="@Url.Action("Edit", new {id = club.Id})">@club.OrganizationNumber @club.OrganizationType @club.OrganizationName</a>
+                        <a href="@Url.Action("Edit", new { id = club.Id })">@club.OrganizationNumber @club.OrganizationType @club.OrganizationName</a>
                     }
                     else
                     {
@@ -84,7 +84,7 @@
                 <td class="actions one">
                     @if ((await Auth.AuthorizeAsync(User, Permissions.ClubsDelete)).Succeeded)
                     {
-                        <a class="danger" href="@Url.Action("Delete", new {id = club.Id})">
+                        <a class="danger" href="@Url.Action("Delete", new { id = club.Id })">
                             <span class="fas fa-trash"></span>
                         </a>
                     }

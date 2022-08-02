@@ -4,134 +4,127 @@ using HeroesCup.Web.Common;
 using HeroesCup.Web.Common.Extensions;
 using HeroesCup.Web.Models;
 
-namespace HeroesCup.Web.Services
+namespace HeroesCup.Web.Services;
+
+public class LeaderboardService : ILeaderboardService
 {
-    public class LeaderboardService : ILeaderboardService
+    private readonly IImagesService _imagesService;
+    private readonly IMissionsService _missionsService;
+
+    public LeaderboardService(IMissionsService missionsService,
+        IImagesService imagesService)
     {
-        private readonly IMissionsService _missionsService;
-        private readonly IImagesService _imagesService;
+        _missionsService = missionsService;
+        _imagesService = imagesService;
+    }
 
-        public LeaderboardService(IMissionsService missionsService,
-            IImagesService imagesService)
-        {
-            this._missionsService = missionsService;
-            this._imagesService = imagesService;
-        }
+    public async Task<ClubListViewModel> GetClubsBySchoolYearAsync(string schoolYear)
+    {
+        var missions = await _missionsService.GetMissionsBySchoolYear(schoolYear);
+        if (missions == null) return null;
 
-        public async Task<ClubListViewModel> GetClubsBySchoolYearAsync(string schoolYear)
-        {
-            var missions = await this._missionsService.GetMissionsBySchoolYear(schoolYear);
-            if (missions == null)
+        var clubs = missions
+            .GroupBy(m => m.Club)
+            .Select(g => new
             {
-                return null;
-            }
-
-            var clubs = missions
-                .GroupBy(m => m.Club)
-                .Select(g => new
-                {
-                    Club = g.Key,
-                    Missions = g.ToList()
-                })
-                .Select(c =>
-                {
-                    IEnumerable<MissionViewModel> clubMissions = c.Club.Missions
-                        .OrderByDescending(m => m.StartDate)
-                        .Select(m => new MissionViewModel()
-                        {
-                            Id = m.Id,
-                            Title = m.Title,
-                            Club = m.Club,
-                            ImageId = this.GetMissionImageId(m),
-                            Slug = m.Slug,
-                            EndDate = m.EndDate.ConvertToLocalDateTime(),
-                            StartDate = m.StartDate.ConvertToLocalDateTime(),
-                            IsExpired = m.EndDate.IsExpired()
-                        });
-
-                    IEnumerable<HeroViewModel> clubHeroes = c.Club.Heroes.Select(h => new HeroViewModel()
+                Club = g.Key,
+                Missions = g.ToList()
+            })
+            .Select(c =>
+            {
+                var clubMissions = c.Club.Missions
+                    .OrderByDescending(m => m.StartDate)
+                    .Select(m => new MissionViewModel
                     {
-                        HeroInitials = GetClubInitials(h.Name),
-                        IsCoordinator = h.IsCoordinator,
-                        Name = h.Name
+                        Id = m.Id,
+                        Title = m.Title,
+                        Club = m.Club,
+                        ImageId = GetMissionImageId(m),
+                        Slug = m.Slug,
+                        EndDate = m.EndDate.ConvertToLocalDateTime(),
+                        StartDate = m.StartDate.ConvertToLocalDateTime(),
+                        IsExpired = m.EndDate.IsExpired()
                     });
 
-                    return new ClubListItem()
-                    {
-                        Id = c.Club.Id,
-                        Name = GetClubName(c.Club),
-                        Location = c.Club.Location,
-                        ClubInitials = GetClubInitials(c.Club.Name),                      
-                        HeroesCount = GetHeroesCount(c.Club),
-                        ClubImageId = this._imagesService.getClubImageId(c.Club.Id),
-                        Points = getClubPoints(c.Missions),
-                        Club = c.Club,
-                        Missions = clubMissions,
-                        Heroes = clubHeroes,
-                        Coordinators = clubHeroes.Where(h => h.IsCoordinator)
-                    };
-                })
-                .OrderByDescending(c => c.Points)
-                .ThenBy(c => c.Club.Name);
+                var clubHeroes = c.Club.Heroes.Select(h => new HeroViewModel
+                {
+                    HeroInitials = GetClubInitials(h.Name),
+                    IsCoordinator = h.IsCoordinator,
+                    Name = h.Name
+                });
 
-            var model = new ClubListViewModel()
-            {
-                Clubs = clubs
-            };
+                return new ClubListItem
+                {
+                    Id = c.Club.Id,
+                    Name = GetClubName(c.Club),
+                    Location = c.Club.Location,
+                    ClubInitials = GetClubInitials(c.Club.Name),
+                    HeroesCount = GetHeroesCount(c.Club),
+                    ClubImageId = _imagesService.getClubImageId(c.Club.Id),
+                    Points = getClubPoints(c.Missions),
+                    Club = c.Club,
+                    Missions = clubMissions,
+                    Heroes = clubHeroes,
+                    Coordinators = clubHeroes.Where(h => h.IsCoordinator)
+                };
+            })
+            .OrderByDescending(c => c.Points)
+            .ThenBy(c => c.Club.Name);
 
-            return model;
-        }
-
-        private string GetMissionImageId(Mission mission)
+        var model = new ClubListViewModel
         {
-            var missionImagesIds = this._missionsService.GetMissionImagesIds(mission.Id);
-            if (missionImagesIds != null && missionImagesIds.Any())
-            {
-                return missionImagesIds.FirstOrDefault().Item1;
-            }
+            Clubs = clubs
+        };
 
-            return null;
-        }
+        return model;
+    }
 
-        private string GetClubName(Club club)
-        {
-            return $"Клуб \"{club.Name}\", {club.OrganizationNumber } {club.OrganizationType } \"{club.OrganizationName }\"";
-        }
+    public IEnumerable<string> GetSchoolYears()
+    {
+        return _missionsService.GetMissionSchoolYears().OrderBy(x => x);
+    }
 
-        private string GetClubInitials(string organizationName)
-        {
-            var name = organizationName;
-            var charactersToTrim = new Char[] { ' ', '*', '.', '"', '\'', '”', '“' };
-            Regex initialsReg = new Regex(@"(\b[a-zA-Z-а-яА-Я])[a-zA-Z-а-яА-Я]* ?");
-            name = name.Trim(charactersToTrim).ToUpper();
-            var words = name.Split(' ', StringSplitOptions.RemoveEmptyEntries)
-                .Where(w => w.Length > 2)
-                .Select(w => w.Trim(charactersToTrim))
-                .ToList();
-            var result = string.Join(' ', words);
-            var initialsResult = initialsReg.Replace(result, "$1");
-            return initialsResult.Length > 3 ? initialsResult.Substring(0, 3) : initialsResult;
-        }
+    public string GetLatestSchoolYear()
+    {
+        var latestSchoolYear = GetSchoolYears().MaxBy(x => x);
+        return latestSchoolYear;
+    }
 
-        private int GetHeroesCount(Club club)
-        {
-            return club.Heroes.Count;
-        }
+    private string GetMissionImageId(Mission mission)
+    {
+        var missionImagesIds = _missionsService.GetMissionImagesIds(mission.Id);
+        if (missionImagesIds != null && missionImagesIds.Any()) return missionImagesIds.FirstOrDefault().Item1;
 
-        private int getClubPoints(IEnumerable<Mission> missions)
-        {
-            return missions.Select(m => m.Stars * m.HeroMissions.Count()).Sum();
-        }
+        return null;
+    }
 
-        public IEnumerable<string> GetSchoolYears()
-        {
-            return this._missionsService.GetMissionSchoolYears().OrderBy(x => x);
-        }
+    private string GetClubName(Club club)
+    {
+        return $"Клуб \"{club.Name}\", {club.OrganizationNumber} {club.OrganizationType} \"{club.OrganizationName}\"";
+    }
 
-        public string GetLatestSchoolYear()
-        {
-            var latestSchoolYear = this.GetSchoolYears().MaxBy(x => x);
-            return latestSchoolYear;
-        }
+    private string GetClubInitials(string organizationName)
+    {
+        var name = organizationName;
+        var charactersToTrim = new[] { ' ', '*', '.', '"', '\'', '”', '“' };
+        var initialsReg = new Regex(@"(\b[a-zA-Z-а-яА-Я])[a-zA-Z-а-яА-Я]* ?");
+        name = name.Trim(charactersToTrim).ToUpper();
+        var words = name.Split(' ', StringSplitOptions.RemoveEmptyEntries)
+            .Where(w => w.Length > 2)
+            .Select(w => w.Trim(charactersToTrim))
+            .ToList();
+        var result = string.Join(' ', words);
+        var initialsResult = initialsReg.Replace(result, "$1");
+        return initialsResult.Length > 3 ? initialsResult.Substring(0, 3) : initialsResult;
+    }
+
+    private int GetHeroesCount(Club club)
+    {
+        return club.Heroes.Count;
+    }
+
+    private int getClubPoints(IEnumerable<Mission> missions)
+    {
+        return missions.Select(m => m.Stars * m.HeroMissions.Count()).Sum();
     }
 }

@@ -1,35 +1,29 @@
-﻿namespace HeroesCup.Web.Services
+﻿namespace HeroesCup.Web.Services;
+
+public class YouTubeVideoThumbnailParser : IVideoThumbnailParser
 {
-    public class YouTubeVideoThumbnailParser : IVideoThumbnailParser
+    private readonly IConfiguration _configuration;
+
+    public YouTubeVideoThumbnailParser(IConfiguration configuration)
     {
-        private readonly IConfiguration _configuration;
+        _configuration = configuration;
+    }
 
-        public YouTubeVideoThumbnailParser(IConfiguration configuration)
+    public string ParseDefaultThumbnailUrl(string embeddedVideoUrl)
+    {
+        if (string.IsNullOrEmpty(embeddedVideoUrl) || string.IsNullOrWhiteSpace(embeddedVideoUrl)) return null;
+
+        if (embeddedVideoUrl.IndexOf(_configuration["YouTubeUrl"]) < 0) return null;
+
+        var embedUrlPart = _configuration["YouTubeEmbedUrlPart"];
+        var index = embeddedVideoUrl.IndexOf(embedUrlPart);
+        if (index != -1)
         {
-            this._configuration = configuration;
+            var videoCode = embeddedVideoUrl.Substring(index + embedUrlPart.Length);
+            return
+                $"{_configuration["YouTubeThumbnailUrl"]}/{videoCode}/{_configuration["YouTubeThumbnailDefaultImageName"]}";
         }
 
-        public string ParseDefaultThumbnailUrl(string embeddedVideoUrl)
-        {
-            if (string.IsNullOrEmpty(embeddedVideoUrl) || string.IsNullOrWhiteSpace(embeddedVideoUrl))
-            {
-                return null;
-            }
-
-            if (embeddedVideoUrl.IndexOf(this._configuration["YouTubeUrl"]) < 0)
-            {
-                return null;
-            }
-
-            var embedUrlPart = this._configuration["YouTubeEmbedUrlPart"];
-            var index = embeddedVideoUrl.IndexOf(embedUrlPart);
-            if (index != -1)
-            {
-                var videoCode = embeddedVideoUrl.Substring(index + embedUrlPart.Length);
-                return $"{this._configuration["YouTubeThumbnailUrl"]}/{videoCode}/{this._configuration["YouTubeThumbnailDefaultImageName"]}";
-            }
-
-            return null;
-        }
+        return null;
     }
 }

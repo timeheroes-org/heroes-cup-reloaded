@@ -15,7 +15,7 @@
                             if (element.name.indexOf(query) !== -1) {
                                 matches.push(element.name);
 
-                            }                           
+                            }
                         });
                         console.log(matches);
                         // Return Fetched data

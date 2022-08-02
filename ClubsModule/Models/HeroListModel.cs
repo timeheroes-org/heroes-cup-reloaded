@@ -1,18 +1,17 @@
-﻿namespace HeroesCup.Web.ClubsModule.Models
+﻿namespace HeroesCup.Web.ClubsModule.Models;
+
+public class HeroListModel
 {
-    public class HeroListModel
-    {
-        public IEnumerable<HeroListItem> Heroes { get; set; }
-    }
+    public IEnumerable<HeroListItem> Heroes { get; set; }
+}
 
-    public class HeroListItem
-    {
-        public Guid Id { get; set; }
+public class HeroListItem
+{
+    public Guid Id { get; set; }
 
-        public string Name { get; set; }
+    public string Name { get; set; }
 
-        public Guid ClubId { get; set; }
+    public Guid ClubId { get; set; }
 
-        public string ClubName { get; set; }
-    }
+    public string ClubName { get; set; }
 }

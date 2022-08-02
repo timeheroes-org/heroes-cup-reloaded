@@ -1,15 +1,14 @@
-﻿namespace HeroesCup.Web.Services
+﻿namespace HeroesCup.Web.Services;
+
+public interface IPageInitializer
 {
-    public interface IPageInitializer
-    {
-        Task SeedStarPageAsync();
+    Task SeedStarPageAsync();
 
-        Task SeedAboutPageAsync();
+    Task SeedAboutPageAsync();
 
-        Task SeedResourcesPageAsync();
+    Task SeedResourcesPageAsync();
 
-        Task SeedEventsPageAsync();
+    Task SeedEventsPageAsync();
 
-        Task SeedMissionsPageAsync();
-    }
+    Task SeedMissionsPageAsync();
 }

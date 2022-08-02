@@ -1,13 +1,12 @@
 ﻿using HeroesCup.Data.Models;
 
-namespace HeroesCup.Web.Services 
+namespace HeroesCup.Web.Services;
+
+public interface IStoryImageService
 {
-    public interface IStoryImageService
-    {
-        Task CreateStoryImagesAsync(IEnumerable<Image> images, Story story);
+    Task CreateStoryImagesAsync(IEnumerable<Image> images, Story story);
 
-        Task DeleteStoryImageAsync(StoryImage storyImage, bool commit = false);
+    Task DeleteStoryImageAsync(StoryImage storyImage, bool commit = false);
 
-        Task<IEnumerable<StoryImage>> GetStoryImages(Guid storyId);
-    }
+    Task<IEnumerable<StoryImage>> GetStoryImages(Guid storyId);
 }

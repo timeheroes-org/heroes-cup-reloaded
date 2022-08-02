@@ -1,11 +1,10 @@
-﻿namespace HeroesCup.Data.Models
-{
-    public class MissionImage
-    {
-        public Guid? ImageId { get; set; }
-        public Image Image { get; set; }
+﻿namespace HeroesCup.Data.Models;
 
-        public Guid? MissionId { get; set; }
-        public Mission Mission { get; set; }
-    }
+public class MissionImage
+{
+    public Guid? ImageId { get; set; }
+    public Image Image { get; set; }
+
+    public Guid? MissionId { get; set; }
+    public Mission Mission { get; set; }
 }

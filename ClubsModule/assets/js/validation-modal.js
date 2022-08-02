@@ -13,7 +13,7 @@
                 if ($(this).val() == "" || $(this).val() == " " || $(this).val() == null) {
                     e.preventDefault(); //prevent the default action
 
-                   return $('#validationModal').modal('show');
+                    return $('#validationModal').modal('show');
                 }
             });
 
@@ -30,7 +30,7 @@
                 e.preventDefault(); //prevent the default action
                 return $('#validationModal').modal('show');
             }
-        });       
+        });
     });
 });
 

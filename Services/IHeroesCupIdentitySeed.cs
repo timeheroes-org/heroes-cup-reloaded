@@ -1,8 +1,7 @@
-﻿namespace HeroesCup.Web.Services
+﻿namespace HeroesCup.Web.Services;
+
+public interface IHeroesCupIdentitySeed
 {
-    public interface IHeroesCupIdentitySeed
-    {
-        Task SeedRolesAsync();
-        Task SeedIdentityAsync();
-    }
+    Task SeedRolesAsync();
+    Task SeedIdentityAsync();
 }

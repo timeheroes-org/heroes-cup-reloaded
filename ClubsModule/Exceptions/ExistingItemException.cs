@@ -1,6 +1,5 @@
-﻿namespace HeroesCup.Web.ClubsModule.Exceptions
+﻿namespace HeroesCup.Web.ClubsModule.Exceptions;
+
+public class ExistingItemException : ArgumentException
 {
-    public class ExistingItemException : ArgumentException
-    {
-    }
 }

@@ -1,7 +1,6 @@
-﻿namespace HeroesCup.Web.Models
+﻿namespace HeroesCup.Web.Models;
+
+public interface ISocialNetworkPost
 {
-    public interface ISocialNetworkPost
-    {
-        SocialNetworksMetaData SocialNetworksMetaData { get; set; }
-    }
+    SocialNetworksMetaData SocialNetworksMetaData { get; set; }
 }

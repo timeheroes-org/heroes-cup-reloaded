@@ -1,15 +1,14 @@
 ﻿using HeroesCup.Data.Models;
 
-namespace HeroesCup.Web.Services
+namespace HeroesCup.Web.Services;
+
+public interface IClubImagesService
 {
-    public interface IClubImagesService
-    {
-        Task CreateClubImageAsync(Image image, Club club);
+    Task CreateClubImageAsync(Image image, Club club);
 
-        Task<ClubImage> GetClubImage(Guid clubId);
+    Task<ClubImage> GetClubImage(Guid clubId);
 
-        Task DeleteClubImageAsync(ClubImage clubImage, bool commit = false);
+    Task DeleteClubImageAsync(ClubImage clubImage, bool commit = false);
 
-        string getClubImageId(Guid clubId);
-    }
+    string getClubImageId(Guid clubId);
 }

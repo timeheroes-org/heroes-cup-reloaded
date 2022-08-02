@@ -2,63 +2,62 @@
 using HeroesCup.Web.ClubsModule.Models;
 using HeroesCup.Web.Models;
 
-namespace HeroesCup.Web.Services
+namespace HeroesCup.Web.Services;
+
+public interface IMissionsService
 {
-    public interface IMissionsService
-    {
-        IEnumerable<MissionIdeaViewModel> GetMissionIdeaViewModels();
+    IEnumerable<MissionIdeaViewModel> GetMissionIdeaViewModels();
 
-        IEnumerable<MissionViewModel> GetMissionViewModels();
+    IEnumerable<MissionViewModel> GetMissionViewModels();
 
-        Task<IEnumerable<MissionViewModel>> GetPinnedMissionViewModels();
+    Task<IEnumerable<MissionViewModel>> GetPinnedMissionViewModels();
 
-        IDictionary<string, int> GetMissionsPerLocation();
+    IDictionary<string, int> GetMissionsPerLocation();
 
-        int GetAllMissionsCount();
+    int GetAllMissionsCount();
 
-        IEnumerable<MissionViewModel> GetMissionViewModelsByLocation(string location);
+    IEnumerable<MissionViewModel> GetMissionViewModelsByLocation(string location);
 
-        Task<MissionViewModel> GetMissionViewModelBySlugAsync(string slug);
+    Task<MissionViewModel> GetMissionViewModelBySlugAsync(string slug);
 
-        Task<MissionIdeaViewModel> GetMissionIdeaViewModelBySlugAsync(string slug);
+    Task<MissionIdeaViewModel> GetMissionIdeaViewModelBySlugAsync(string slug);
 
-        IEnumerable<StoryViewModel> GetAllPublishedStoryViewModels();
+    IEnumerable<StoryViewModel> GetAllPublishedStoryViewModels();
 
-        Task<StoryViewModel> GetStoryViewModelByMissionSlugAsync(string missionSlug);
+    Task<StoryViewModel> GetStoryViewModelByMissionSlugAsync(string missionSlug);
 
-        string ParseLocation(string location);
-        Task<MissionListModel> GetMissionListModelAsync(Guid? ownerId = null);
+    string ParseLocation(string location);
+    Task<MissionListModel> GetMissionListModelAsync(Guid? ownerId = null);
 
-        Task<MissionEditModel> CreateMissionEditModelAsync(Guid? ownerId = null);
+    Task<MissionEditModel> CreateMissionEditModelAsync(Guid? ownerId = null);
 
-        Task<Guid> SaveMissionEditModelAsync(MissionEditModel model);
+    Task<Guid> SaveMissionEditModelAsync(MissionEditModel model);
 
-        Task<bool> PublishMissionEditModelAsync(Guid missionId);
-        
-        Task<bool> UnPublishMissionEditModelAsync(Guid missionId);
+    Task<bool> PublishMissionEditModelAsync(Guid missionId);
 
-        Task<MissionEditModel> GetMissionEditModelByIdAsync(Guid id, Guid? ownerId = null);
+    Task<bool> UnPublishMissionEditModelAsync(Guid missionId);
 
-        Task<MissionEditModel> GetMissionEditModelBySlugAsync(String slug);
+    Task<MissionEditModel> GetMissionEditModelByIdAsync(Guid id, Guid? ownerId = null);
 
-        Task<bool> DeleteAsync(Guid id);
+    Task<MissionEditModel> GetMissionEditModelBySlugAsync(string slug);
 
-        TimeSpan GetMissionDuration(long startDate, long endDate);
+    Task<bool> DeleteAsync(Guid id);
 
-        Task<IEnumerable<Mission>> GetMissionsBySchoolYear(string schoolYear);
+    TimeSpan GetMissionDuration(long startDate, long endDate);
 
-        IEnumerable<string> GetMissionSchoolYears();
+    Task<IEnumerable<Mission>> GetMissionsBySchoolYear(string schoolYear);
 
-        IEnumerable<Mission> GetAllPublishedMissions();
-        IEnumerable<Tuple<String, String>> GetMissionImagesIds(Guid missionId);
-        Task<bool> PinMissionEditModelAsync(Guid id);
+    IEnumerable<string> GetMissionSchoolYears();
 
-        Task<bool> UnpinMissionEditModelAsync(Guid id);
+    IEnumerable<Mission> GetAllPublishedMissions();
+    IEnumerable<Tuple<string, string>> GetMissionImagesIds(Guid missionId);
+    Task<bool> PinMissionEditModelAsync(Guid id);
 
-        Task<IEnumerable<Mission>> GetPinnedMissions();
+    Task<bool> UnpinMissionEditModelAsync(Guid id);
 
-        Task SaveMissionDurationHours(Mission mission, int durationHours, bool commit = false);
+    Task<IEnumerable<Mission>> GetPinnedMissions();
 
-        Task SaveMissionHeroes(Mission mission, IEnumerable<Guid> ids, bool commit = false);
-    }
+    Task SaveMissionDurationHours(Mission mission, int durationHours, bool commit = false);
+
+    Task SaveMissionHeroes(Mission mission, IEnumerable<Guid> ids, bool commit = false);
 }

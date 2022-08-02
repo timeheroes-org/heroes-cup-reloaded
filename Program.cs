@@ -14,7 +14,6 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("piranha");
 builder.AddPiranha(options =>
 {
-
     options.AddRazorRuntimeCompilation = true;
 
     options.UseCms();
@@ -25,9 +24,9 @@ builder.AddPiranha(options =>
     options.UseTinyMCE();
     options.UseMemoryCache();
 
-   
+
     options.UseEF<SQLiteDb>(db => db.UseSqlite(connectionString));
-    
+
     options.UseIdentityWithSeed<IdentitySQLiteDb>(db => db.UseSqlite(connectionString));
 });
 
@@ -47,10 +46,7 @@ builder.Services.AddClubsModule();
 var app = builder.Build();
 
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
+if (app.Environment.IsDevelopment()) app.UseDeveloperExceptionPage();
 
 app.UsePiranha(options =>
 {
@@ -74,6 +70,7 @@ app.UseRouting();
 app.UseClubsModule(builder);
 
 SeedDefaultPages();
+
 void SeedDefaultPages()
 {
     var dbSeed = builder.Configuration["DbSeed"];
@@ -94,4 +91,5 @@ void SeedDefaultPages()
         pagesInitializer.SeedStarPageAsync().Wait();
     }
 }
+
 app.Run();

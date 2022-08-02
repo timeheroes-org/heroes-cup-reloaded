@@ -72,7 +72,7 @@ $(function () {
         setup: setUp,
         image_title: imageTitle,
         image_class_list: [
-            { title: 'center-cropped', value: 'object-fit: cover; height: 416px;' },
+            {title: 'center-cropped', value: 'object-fit: cover; height: 416px;'},
         ],
         height: height,
         //quickbars_selection_toolbar: quickbarsSelectionToolbar,

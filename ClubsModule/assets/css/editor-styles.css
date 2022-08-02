@@ -166,13 +166,13 @@ a.btn-heroes {
     text-underline-position: unset;
 }
 
-    a.btn-heroes:hover {
-        text-decoration: none;
-        color: white;
-        text-underline-position: unset;
-        text-decoration-style: none;
-        background: linear-gradient(0deg, rgba(28, 30, 33, 0.08), rgba(28, 30, 33, 0.08)), #FE5E17;
-    }
+a.btn-heroes:hover {
+    text-decoration: none;
+    color: white;
+    text-underline-position: unset;
+    text-decoration-style: none;
+    background: linear-gradient(0deg, rgba(28, 30, 33, 0.08), rgba(28, 30, 33, 0.08)), #FE5E17;
+}
 
 a.btn-heroes span {
     color: white;

@@ -19,8 +19,8 @@
 }
 
 @section head {
-    <partial name="~/Views/Shared/Partial/_TwitterMeta.cshtml" for="@Model.SocialNetworksMetaData" />
-    <partial name="~/Views/Shared/Partial/_FacebookMeta.cshtml" for="@Model.SocialNetworksMetaData" />
+    <partial name="~/Views/Shared/Partial/_TwitterMeta.cshtml" for="@Model.SocialNetworksMetaData"/>
+    <partial name="~/Views/Shared/Partial/_FacebookMeta.cshtml" for="@Model.SocialNetworksMetaData"/>
 }
 
 <div class="main mt-md-5 pt-md-4 mt-5 pt-4">
@@ -68,16 +68,16 @@
                                             }
                                         </div>
                                         <div class="custom-options">
-                                            <input class="custom-option" type="submit" id="selectedLocation" name="selectedLocation" value="@defaultLocationText" />
+                                            <input class="custom-option" type="submit" id="selectedLocation" name="selectedLocation" value="@defaultLocationText"/>
                                             @foreach (var location in selectLocations)
                                             {
                                                 if (Model.SelectedLocation == location.Value)
                                                 {
-                                                    <input class="custom-option selected" type="submit" id="selectedLocation-@location.Value" name="selectedLocation" value="@location.Text" />
+                                                    <input class="custom-option selected" type="submit" id="selectedLocation-@location.Value" name="selectedLocation" value="@location.Text"/>
                                                 }
                                                 else
                                                 {
-                                                    <input class="custom-option" type="submit" id="selectedLocation-@location.Value" name="selectedLocation" value="@location.Text" />
+                                                    <input class="custom-option" type="submit" id="selectedLocation-@location.Value" name="selectedLocation" value="@location.Text"/>
                                                 }
                                             }
                                         </div>
@@ -88,7 +88,7 @@
                     </div>
                     @if (isLoadMoreRequested == false && Model.SelectedLocation == null)
                     {
-                        <partial name="~/Views/Missions/_MissionsList.cshtml" for="@Model.Missions" />
+                        <partial name="~/Views/Missions/_MissionsList.cshtml" for="@Model.Missions"/>
 
                         if (Model.Missions.Count() == missionsCountPerPage)
                         {
@@ -101,14 +101,14 @@
                     }
                     else
                     {
-                        var missionsWithBanner = new MissionsWithBannerViewModel()
+                        var missionsWithBanner = new MissionsWithBannerViewModel
                         {
                             ShownMissionsCount = Model.Missions.Count(),
                             Missions = Model.Missions,
                             MissionsCountPerPage = missionsCountPerPage
                         };
 
-                        <partial name="~/Views/Missions/_MissionsListWithBanner.cshtml" for="@missionsWithBanner" />
+                        <partial name="~/Views/Missions/_MissionsListWithBanner.cshtml" for="@missionsWithBanner"/>
                     }
 
                 </div>
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                     <div id="missionideas-partial">
-                        <partial name="~/Views/Missions/_MissionIdeasList.cshtml" for="@Model.MissionIdeas" />
+                        <partial name="~/Views/Missions/_MissionIdeasList.cshtml" for="@Model.MissionIdeas"/>
                     </div>
                     <div id="load-missionideas-container" class="row justify-content-center mt-4">
                         <button id="load-missionideas" class="btn btn-default btn-heroes">Покажи още</button>
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                     <div id="stories-partial">
-                        <partial name="~/Views/Missions/_StoriesList.cshtml" for="@Model.Stories" />
+                        <partial name="~/Views/Missions/_StoriesList.cshtml" for="@Model.Stories"/>
                     </div>
                     <div id="load-stories-container" class="row justify-content-center mt-4">
                         <button id="load-stories" class="btn btn-default btn-heroes">Покажи още</button>
@@ -145,7 +145,7 @@
             </div>
         </div>
         <div class="separator"></div>
-        <partial name="~/Views/Shared/Partial/_Challenge.cshtml" for="@Model.Title" />
+        <partial name="~/Views/Shared/Partial/_Challenge.cshtml" for="@Model.Title"/>
     </div>
 </div>
 

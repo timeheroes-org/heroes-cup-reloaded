@@ -1,7 +1,6 @@
-﻿namespace HeroesCup.Web.Services 
+﻿namespace HeroesCup.Web.Services;
+
+public interface ISchoolYearService
 {
-    public interface ISchoolYearService
-    {
-        string CalculateSchoolYear(DateTime startDate);
-    }
+    string CalculateSchoolYear(DateTime startDate);
 }

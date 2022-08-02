@@ -1,28 +1,27 @@
-﻿namespace HeroesCup.Web.Common.Middlewares.Exceptions
+﻿namespace HeroesCup.Web.Common.Middlewares.Exceptions;
+
+public class LogUnhandledExceptionMiddleware
 {
-    public class LogUnhandledExceptionMiddleware
+    private readonly ILoggerFactory _loggerFactory;
+    private readonly RequestDelegate _next;
+
+    public LogUnhandledExceptionMiddleware(RequestDelegate next, ILoggerFactory loggerFactory)
     {
-        private readonly RequestDelegate _next;
-        private readonly ILoggerFactory _loggerFactory;
+        _next = next;
+        _loggerFactory = loggerFactory;
+    }
 
-        public LogUnhandledExceptionMiddleware(RequestDelegate next, ILoggerFactory loggerFactory)
+    public async Task InvokeAsync(HttpContext context)
+    {
+        try
         {
-            _next = next;
-            _loggerFactory = loggerFactory;
+            await _next(context);
         }
-
-        public async Task InvokeAsync(HttpContext context)
+        catch (Exception ex)
         {
-            try
-            {
-                await _next(context);
-            }
-            catch (Exception ex)
-            {
-                var logger = _loggerFactory.CreateLogger(string.Empty);
-                logger.LogError(ex, string.Empty);
-                throw;
-            }
+            var logger = _loggerFactory.CreateLogger(string.Empty);
+            logger.LogError(ex, string.Empty);
+            throw;
         }
     }
 }

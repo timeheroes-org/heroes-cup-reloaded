@@ -11,8 +11,8 @@
 }
 
 @section head{
-    <partial name="~/Views/Shared/Partial/_TwitterMeta.cshtml" for="@Model.SocialNetworksMetaData" />
-    <partial name="~/Views/Shared/Partial/_FacebookMeta.cshtml" for="@Model.SocialNetworksMetaData" />
+    <partial name="~/Views/Shared/Partial/_TwitterMeta.cshtml" for="@Model.SocialNetworksMetaData"/>
+    <partial name="~/Views/Shared/Partial/_FacebookMeta.cshtml" for="@Model.SocialNetworksMetaData"/>
 }
 
 <div class="main mt-md-5 pt-md-4 mt-5 pt-4" id="home-main">
@@ -26,7 +26,7 @@
             <div id="corouselStart" class="carousel slide gallery-block" data-ride="carousel">
                 <ol class="carousel-indicators justify-content-md-start justify-content-center">
                     @{
-                        int indicatorIndex = 0;
+                        var indicatorIndex = 0;
                     }
                     @foreach (var hero in Model.Carousel)
                     {
@@ -42,7 +42,7 @@
                         indicatorIndex += 1;
                     }
                     @{
-                        int imageIndex = 0;
+                        var imageIndex = 0;
                     }
                 </ol>
                 <div class="carousel-inner">
@@ -108,7 +108,7 @@
 {
     <div class="row justify-content-center block pt-5 pb-5">
         <div class="col-md-3 col-6 start-icon text-center">
-            <img class="img-fluid m-1" src="~/images/User.svg" />
+            <img class="img-fluid m-1" src="~/images/User.svg"/>
             <div class="m-3">
                 <h3 class="m-1 heading3">@Model.HeroesCount+</h3>
                 <div class="m-1 body2">Герои</div>
@@ -136,7 +136,7 @@
             </div>
         </div>
     </div>
-    <hr />
+    <hr/>
 }
 
 @* Leaderboard *@
@@ -165,11 +165,11 @@
                                 {
                                     if (Model.SelectedSchoolYear == year.Value)
                                     {
-                                        <input type="submit" class="custom-option selected" id="selectedSchoolYear" name="selectedSchoolYear" value="@year.Value" />
+                                        <input type="submit" class="custom-option selected" id="selectedSchoolYear" name="selectedSchoolYear" value="@year.Value"/>
                                     }
                                     else
                                     {
-                                        <input type="submit" class="custom-option" id="selectedSchoolYear" name="selectedSchoolYear" value="@year.Value" />
+                                        <input type="submit" class="custom-option" id="selectedSchoolYear" name="selectedSchoolYear" value="@year.Value"/>
                                     }
                                 }
                             </div>
@@ -219,10 +219,10 @@
                     </div>
                 </a>
 
-                <hr />
+                <hr/>
 
                 <!-- Club Modal -->
-                <partial name="~/Views/Shared/Partial/_ClubDetails.cshtml" for="@club" />
+                <partial name="~/Views/Shared/Partial/_ClubDetails.cshtml" for="@club"/>
             }
         </div>
     }
@@ -234,7 +234,7 @@
 {
     <div class="pt-md-5 pb-md-5">
         <p class="heading2 mt-md-4 pt-4">Мисии</p>
-        <partial name="~/Views/Missions/_MissionsList.cshtml" for="@Model.Missions" />
+        <partial name="~/Views/Missions/_MissionsList.cshtml" for="@Model.Missions"/>
         <div class="row mt-3 justify-content-center">
             <a href="/missions" class="btn btn-heroes">Виж всички мисии</a>
         </div>
@@ -242,7 +242,7 @@
 }
 
 <div class="separator mt-md-5 mt-5"></div>
-<partial name="~/Views/Shared/Partial/_Challenge.cshtml" for="@Model.Title" />
+<partial name="~/Views/Shared/Partial/_Challenge.cshtml" for="@Model.Title"/>
 
 @if (Model.Blocks != null && Model.Blocks.Count > 0)
 {

@@ -24,11 +24,11 @@
     background-color: white;
 }
 
-    .ui-menu-item:hover {
-        background-color: #3585F5;
-        color: white;
-        cursor: pointer;
-    }
+.ui-menu-item:hover {
+    background-color: #3585F5;
+    color: white;
+    cursor: pointer;
+}
 
 #heroes.multiselect {
     display: none;
@@ -54,5 +54,5 @@ button.multiselect {
     margin-top: .1rem;
     font-size: .76562rem;
     color: #fff;
-    background-color: rgba(169,68,65,.9);
+    background-color: rgba(169, 68, 65, .9);
 }

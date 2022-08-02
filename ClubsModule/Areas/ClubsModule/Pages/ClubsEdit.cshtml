@@ -6,6 +6,7 @@
     ViewBag.Title = Localizer.Page["Edit clubs"];
     ViewBag.MenuItem = "Clubs";
 }
+
 @section script
 {
     <script src="@Url.Content(EditorScripts.MainScriptUrl)"></script>
@@ -25,7 +26,9 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">@Localizer.Menu["Content"]</li>
-                <li class="breadcrumb-item"><a href="~/manager/clubs">@Localizer.Menu["Clubs"]</a></li>
+                <li class="breadcrumb-item">
+                    <a href="~/manager/clubs">@Localizer.Menu["Clubs"]</a>
+                </li>
                 <li class="breadcrumb-item active" aria-current="page">@Localizer.General["Edit"]</li>
             </ol>
         </nav>

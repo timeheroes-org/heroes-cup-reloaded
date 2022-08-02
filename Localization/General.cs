@@ -1,4 +1,5 @@
-﻿namespace HeroesCup.Localization
+﻿namespace HeroesCup.Localization;
+
+public class General
 {
-    public class General { }
 }

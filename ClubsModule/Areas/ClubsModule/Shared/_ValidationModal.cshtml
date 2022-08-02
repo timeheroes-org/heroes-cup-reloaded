@@ -2,14 +2,14 @@
 @using HeroesCup.Web.ClubsModule.Models
 @model HeroesCup.Web.ClubsModule.Models.ValidationModal
 @inject ManagerLocalizer HeroesCupLocalizer
-@{ 
-    ValidationModal modal = Model;
+@{
+    var modal = Model;
     if (Model == null)
     {
-        modal = new ValidationModal()
+        modal = new ValidationModal
         {
             Title = HeroesCupLocalizer.General["ValidationModalTitle"],
-            Body = HeroesCupLocalizer.General["ValidationModalBody"],
+            Body = HeroesCupLocalizer.General["ValidationModalBody"]
         };
     }
 }

@@ -1,28 +1,27 @@
 ﻿using System.Globalization;
 using Piranha;
 
-namespace HeroesCup.Web.Common
+namespace HeroesCup.Web.Common;
+
+public class WebUtils : IWebUtils
 {
-    public class WebUtils : IWebUtils
+    private readonly IConfiguration _configuration;
+
+    public WebUtils(IConfiguration configuration)
     {
-        private readonly IConfiguration _configuration;
+        _configuration = configuration;
+    }
 
-        public WebUtils(IConfiguration configuration)
-        {
-            this._configuration = configuration;
-        }
+    public string GetUrlBase(HttpContext httpContext)
+    {
+        return $"{httpContext.Request.Scheme}://{httpContext.Request.Host}";
+    }
 
-        public string GetUrlBase(HttpContext httpContext)
-        {
-            return $"{httpContext.Request.Scheme}://{httpContext.Request.Host}";
-        }
-
-        public async Task<CultureInfo> GetCulture(IApi api)
-        {
-            var defaultLanguage = await api.Languages.GetDefaultAsync();
-            var siteCulture = defaultLanguage.Culture;
-            CultureInfo culture = new CultureInfo(siteCulture);
-            return culture;
-        }
+    public async Task<CultureInfo> GetCulture(IApi api)
+    {
+        var defaultLanguage = await api.Languages.GetDefaultAsync();
+        var siteCulture = defaultLanguage.Culture;
+        var culture = new CultureInfo(siteCulture);
+        return culture;
     }
 }

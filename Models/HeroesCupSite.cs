@@ -3,12 +3,10 @@ using Piranha.AttributeBuilder;
 using Piranha.Extend;
 using Piranha.Models;
 
-namespace HeroesCup.Models
+namespace HeroesCup.Models;
+
+[SiteType(Title = "Heores Cup site")]
+public class HeroesCupSite : SiteContent<HeroesCupSite>
 {
-    [SiteType(Title = "Heores Cup site")]
-    public class HeroesCupSite : SiteContent<HeroesCupSite>
-    {
-        [Region(Title = "Footer")]
-        public Footer FooterContents { get; set; }
-    }
+    [Region(Title = "Footer")] public Footer FooterContents { get; set; }
 }

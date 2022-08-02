@@ -1,20 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HeroesCup.Data.Models
+namespace HeroesCup.Data.Models;
+
+public class Hero
 {
-    public class Hero
-    {
-        [Key]
-        public Guid Id { get; set; }
+    [Key] public Guid Id { get; set; }
 
-        [Required]
-        public string Name { get; set; }
+    [Required] public string Name { get; set; }
 
-        public Guid ClubId { get; set; }
-        public Club Club { get; set; }
+    public Guid ClubId { get; set; }
+    public Club Club { get; set; }
 
-        public bool IsCoordinator { get; set; }
+    public bool IsCoordinator { get; set; }
 
-        public ICollection<HeroMission> HeroMissions { get; set; }
-    }
+    public ICollection<HeroMission> HeroMissions { get; set; }
 }

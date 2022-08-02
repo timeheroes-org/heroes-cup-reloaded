@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace HeroesCup.Views.Shared.Partial
+namespace HeroesCup.Views.Shared.Partial;
+
+public class _ChallengeModel : PageModel
 {
-    public class _ChallengeModel : PageModel
+    public void OnGet()
     {
-        public void OnGet()
-        {
-        }
     }
 }

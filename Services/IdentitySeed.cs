@@ -10,24 +10,24 @@ namespace HeroesCup.Web.Services;
 
 public class IdentitySeed : IHeroesCupIdentitySeed
 {
+    private readonly IConfiguration _configuration;
     private readonly IDb _db;
     private readonly UserManager<User> _userManager;
-    private readonly IConfiguration _configuration;
 
 
     public IdentitySeed(IDb db, UserManager<User> userManager, IConfiguration configuration)
     {
-        this._db = db;
-        this._userManager = userManager;
-        this._configuration = configuration;
+        _db = db;
+        _userManager = userManager;
+        _configuration = configuration;
     }
 
     public async Task SeedIdentityAsync()
     {
         await SeedRolesAsync();
-        var username = this._configuration["Identity:Users:Timeheroes:Name"];
-        var email = this._configuration["Identity:Users:Timeheroes:Email"];
-        if (!this._db.Users.Any(u => u.Email == email && u.UserName == username))
+        var username = _configuration["Identity:Users:Timeheroes:Name"];
+        var email = _configuration["Identity:Users:Timeheroes:Email"];
+        if (!_db.Users.Any(u => u.Email == email && u.UserName == username))
         {
             var user = new User
             {
@@ -35,16 +35,16 @@ public class IdentitySeed : IHeroesCupIdentitySeed
                 Email = email,
                 SecurityStamp = Guid.NewGuid().ToString()
             };
-            var createResult = await this._userManager.CreateAsync(user, "password");
+            var createResult = await _userManager.CreateAsync(user, "password");
 
             if (createResult.Succeeded)
             {
-                var timeheroesRoleName = this._configuration["Identity:Roles:TimeheroesRole"];
-                await this._userManager.AddToRoleAsync(user, timeheroesRoleName);
+                var timeheroesRoleName = _configuration["Identity:Roles:TimeheroesRole"];
+                await _userManager.AddToRoleAsync(user, timeheroesRoleName);
             }
         }
 
-        await this._db.SaveChangesAsync();
+        await _db.SaveChangesAsync();
     }
 
     public async Task SeedRolesAsync()
@@ -55,8 +55,8 @@ public class IdentitySeed : IHeroesCupIdentitySeed
 
     private async Task SeedTimeheroesRoleAsync()
     {
-        var timeheroesRoleName = this._configuration["Identity:Roles:TimeheroesRole"];
-        if (!this._db.Roles.Any(r => r.Name == timeheroesRoleName || r.NormalizedName == timeheroesRoleName.ToUpper()))
+        var timeheroesRoleName = _configuration["Identity:Roles:TimeheroesRole"];
+        if (!_db.Roles.Any(r => r.Name == timeheroesRoleName || r.NormalizedName == timeheroesRoleName.ToUpper()))
         {
             var timeheroesRole = new Role
             {
@@ -65,18 +65,18 @@ public class IdentitySeed : IHeroesCupIdentitySeed
                 NormalizedName = timeheroesRoleName.ToUpper()
             };
 
-            this._db.Roles.Add(timeheroesRole);
+            _db.Roles.Add(timeheroesRole);
             AddPermissions(timeheroesRole, GetTimeheroesPermissions());
         }
 
 
-        await this._db.SaveChangesAsync();
+        await _db.SaveChangesAsync();
     }
 
     private async Task SeedCoordinatorRoleAsync()
     {
-        var coordinatorRoleName = this._configuration["Identity:Roles:CoordinatorRole"];
-        if (!this._db.Roles.Any(r => r.Name == coordinatorRoleName || r.NormalizedName == coordinatorRoleName.ToUpper()))
+        var coordinatorRoleName = _configuration["Identity:Roles:CoordinatorRole"];
+        if (!_db.Roles.Any(r => r.Name == coordinatorRoleName || r.NormalizedName == coordinatorRoleName.ToUpper()))
         {
             var coordinatorRole = new Role
             {
@@ -85,28 +85,26 @@ public class IdentitySeed : IHeroesCupIdentitySeed
                 NormalizedName = coordinatorRoleName.ToUpper()
             };
 
-            this._db.Roles.Add(coordinatorRole);
+            _db.Roles.Add(coordinatorRole);
             AddPermissions(coordinatorRole, GetCoordinatorPermissions());
         }
 
-        await this._db.SaveChangesAsync();
+        await _db.SaveChangesAsync();
     }
 
     private void AddPermissions(Role role, IEnumerable<PermissionItem> permissions)
     {
         foreach (var permission in permissions)
         {
-            var roleClaim = this._db.RoleClaims.FirstOrDefault(c =>
+            var roleClaim = _db.RoleClaims.FirstOrDefault(c =>
                 c.RoleId == role.Id && c.ClaimType == permission.Name && c.ClaimValue == permission.Name);
             if (roleClaim == null)
-            {
-                this._db.RoleClaims.Add(new IdentityRoleClaim<Guid>
+                _db.RoleClaims.Add(new IdentityRoleClaim<Guid>
                 {
                     RoleId = role.Id,
                     ClaimType = permission.Name,
                     ClaimValue = permission.Name
                 });
-            }
         }
     }
 
@@ -139,10 +137,7 @@ public class IdentitySeed : IHeroesCupIdentitySeed
                                           permission.Name == Permissions.StoriesSave ||
                                           permission.Name == Permission.Admin;
 
-            if (isCoordinatorPermission)
-            {
-                coordinatorPermissions.Add(permission);
-            }
+            if (isCoordinatorPermission) coordinatorPermissions.Add(permission);
         }
 
         return coordinatorPermissions;

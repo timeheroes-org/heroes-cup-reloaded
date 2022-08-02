@@ -6,7 +6,7 @@
 //    el: "#clubs",
 //    data: {
 //        body: "Yo",
-        
+
 //    },
 //    methods: {
 //        load: function() {

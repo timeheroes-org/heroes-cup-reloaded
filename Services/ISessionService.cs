@@ -1,7 +1,6 @@
-﻿namespace HeroesCup.Web.Services
+﻿namespace HeroesCup.Web.Services;
+
+public interface ISessionService
 {
-    public interface ISessionService
-    {
-        int GetCurrentPageCount(HttpContext httpContext, bool loadRequest, string pageCountKey);
-    }
+    int GetCurrentPageCount(HttpContext httpContext, bool loadRequest, string pageCountKey);
 }

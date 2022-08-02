@@ -1,11 +1,10 @@
-﻿namespace HeroesCup.Data.Models
-{
-    public class ClubImage
-    {
-        public Guid? ImageId { get; set; }
-        public Image Image { get; set; }
+﻿namespace HeroesCup.Data.Models;
 
-        public Guid? ClubId { get; set; }
-        public Club Club { get; set; }
-    }
+public class ClubImage
+{
+    public Guid? ImageId { get; set; }
+    public Image Image { get; set; }
+
+    public Guid? ClubId { get; set; }
+    public Club Club { get; set; }
 }

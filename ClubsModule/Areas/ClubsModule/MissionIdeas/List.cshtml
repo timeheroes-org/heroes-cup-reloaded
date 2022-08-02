@@ -45,7 +45,7 @@
                 <td>
                     @if ((await Auth.AuthorizeAsync(User, Permissions.MissionIdeasEdit)).Succeeded)
                     {
-                        <a href="@Url.Action("Edit", new {id = mission.Id})">@mission.Title</a>
+                        <a href="@Url.Action("Edit", new { id = mission.Id })">@mission.Title</a>
                     }
                     else
                     {
@@ -53,9 +53,11 @@
                     }
                 </td>
                 <td>
-                    @if (@mission.IsPublished)
+                    @if (mission.IsPublished)
                     {
-                        <span class="title"><i class="fas fa-check text-success"></i></span>
+                        <span class="title">
+                            <i class="fas fa-check text-success"></i>
+                        </span>
                     }
 
                 </td>
@@ -65,7 +67,7 @@
                 <td class="actions one">
                     @if ((await Auth.AuthorizeAsync(User, Permissions.MissionIdeasDelete)).Succeeded)
                     {
-                        <a class="danger" href="@Url.Action("Delete", new {id = mission.Id})">
+                        <a class="danger" href="@Url.Action("Delete", new { id = mission.Id })">
                             <span class="fas fa-trash"></span>
                         </a>
                     }

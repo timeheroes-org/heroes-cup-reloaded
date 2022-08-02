@@ -25,5 +25,5 @@ Vue.component("clubs", {
         }
     },
     template: "\n<div class=\"block-body\" :class=\"{ empty: isEmpty }\">\n    <pre contenteditable=\"true\" spellcheck=\"false\" v-html=\"model.body.value\" v-on:blur=\"onBlur\"></pre>\n</div>\n"
-   
+
 });

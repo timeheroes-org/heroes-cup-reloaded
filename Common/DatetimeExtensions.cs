@@ -1,40 +1,44 @@
-﻿namespace HeroesCup.Web.Common
+﻿namespace HeroesCup.Web.Common;
+
+public static class DatetimeExtensions
 {
-    public static class DatetimeExtensions
+    public static readonly DateTime UnixTimeStartUtc = new(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+
+    public static long ToUnixMilliseconds(
+        this DateTime source)
     {
-        public static readonly DateTime UnixTimeStartUtc
-            = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+        return (long)
+            source
+                .ToUniversalTime()
+                .Subtract(UnixTimeStartUtc)
+                .TotalMilliseconds;
+    }
 
-        public static long ToUnixMilliseconds(
-            this DateTime source)
-        {
-            return (long)
-                source
-                    .ToUniversalTime()
-                    .Subtract(UnixTimeStartUtc)
-                    .TotalMilliseconds;
-        }
+    public static DateTime ToUniversalDateTime(
+        this long unixTimestamp)
+    {
+        return UnixTimeStartUtc
+            .AddMilliseconds(Convert.ToDouble(unixTimestamp))
+            .ToUniversalTime();
+    }
 
-        public static DateTime ToUniversalDateTime(
-            this long unixTimestamp)
-        {
-            return UnixTimeStartUtc
-                .AddMilliseconds(Convert.ToDouble(unixTimestamp))
-                .ToUniversalTime();
-        }
+    public static DateTime ConvertToLocalDateTime(this long timestamp)
+    {
+        return timestamp.ToUniversalDateTime().ToLocalTime();
+    }
 
-        public static DateTime ConvertToLocalDateTime(this long timestamp)
-        {
-            return timestamp.ToUniversalDateTime().ToLocalTime();
-        }
-
-        public static DateTime StartOfTheDay(this DateTime dateTime) => new DateTime(
+    public static DateTime StartOfTheDay(this DateTime dateTime)
+    {
+        return new(
             dateTime.Year,
             dateTime.Month,
             dateTime.Day,
             0, 0, 0, 0, dateTime.Kind);
+    }
 
-        public static DateTime EndOfTheDay(this DateTime dateTime) => new DateTime(
+    public static DateTime EndOfTheDay(this DateTime dateTime)
+    {
+        return new(
             dateTime.Year,
             dateTime.Month,
             dateTime.Day,

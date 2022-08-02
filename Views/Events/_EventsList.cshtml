@@ -3,7 +3,7 @@
 @{
     var events = Model;
     var siteCulture = ViewBag["culture"];
-    CultureInfo culture = new CultureInfo(siteCulture);
+    var culture = new CultureInfo(siteCulture);
 }
 
 <div class="row justify-content-between">
@@ -14,11 +14,13 @@
         <div class="col-md-6 col-sm-12 item-body pt-5">
             <a href="@post.Permalink">
                 <div class="col-12 justify-content-start">
-                    <img src="@Url.Content(post.Hero.PrimaryImage.Resize(WebApp.Api, 496, 256))" />
+                    <img src="@Url.Content(post.Hero.PrimaryImage.Resize(WebApp.Api, 496, 256))"/>
                 </div>
                 <div class="col-12 justify-content-start text-start mt-3">
                     <p class="body1-bold resource-title  pr-4">@post.Title</p>
-                    <p class="body2 pr-4"><span class="tag">от @author, @post.Published.Value.ToString("d MMMM yyyy", culture) </span></p>
+                    <p class="body2 pr-4">
+                        <span class="tag">от @author, @post.Published.Value.ToString("d MMMM yyyy", culture) </span>
+                    </p>
                 </div>
             </a>
         </div>

@@ -1,11 +1,10 @@
-﻿namespace HeroesCup.Web.Models.Missions
+﻿namespace HeroesCup.Web.Models.Missions;
+
+public class MissionsWithBannerViewModel
 {
-    public class MissionsWithBannerViewModel
-    {
-        public int ShownMissionsCount { get; set; }
+    public int ShownMissionsCount { get; set; }
 
-        public IEnumerable<MissionViewModel> Missions { get; set; }
+    public IEnumerable<MissionViewModel> Missions { get; set; }
 
-        public int MissionsCountPerPage { get; set; }
-    }
+    public int MissionsCountPerPage { get; set; }
 }

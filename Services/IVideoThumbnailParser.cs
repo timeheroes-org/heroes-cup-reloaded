@@ -1,7 +1,6 @@
-﻿namespace HeroesCup.Web.Services
+﻿namespace HeroesCup.Web.Services;
+
+public interface IVideoThumbnailParser
 {
-    public interface IVideoThumbnailParser
-    {
-        string ParseDefaultThumbnailUrl(string embeddedVideoUrl);
-    }
+    string ParseDefaultThumbnailUrl(string embeddedVideoUrl);
 }

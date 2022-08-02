@@ -4,18 +4,6 @@ namespace HeroesCup.Localization;
 
 public class ManagerLocalizer
 {
-    public IStringLocalizer<Club> Club { get; private set; }
-
-    public IStringLocalizer<Hero> Hero { get; private set; }
-
-    public IStringLocalizer<Mission> Mission { get; private set; }
-
-    public IStringLocalizer<Story> Story { get; private set; }
-
-    public IStringLocalizer<General> General { get; private set; }
-
-    public IStringLocalizer<MissionIdea> MissionIdea { get; private set; }
-
     public ManagerLocalizer(IStringLocalizer<Club> club,
         IStringLocalizer<Hero> hero,
         IStringLocalizer<Mission> mission,
@@ -30,4 +18,16 @@ public class ManagerLocalizer
         General = general;
         MissionIdea = missionIdea;
     }
+
+    public IStringLocalizer<Club> Club { get; }
+
+    public IStringLocalizer<Hero> Hero { get; }
+
+    public IStringLocalizer<Mission> Mission { get; }
+
+    public IStringLocalizer<Story> Story { get; }
+
+    public IStringLocalizer<General> General { get; }
+
+    public IStringLocalizer<MissionIdea> MissionIdea { get; }
 }

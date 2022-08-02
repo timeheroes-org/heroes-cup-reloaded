@@ -22,7 +22,9 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">@HeroesCupLocalizer.Club["Clubs"]</li>
-                <li class="breadcrumb-item" aria-current="page"><a href="@Url.Action("List")">@HeroesCupLocalizer.Hero["Heroes"]</a></li>
+                <li class="breadcrumb-item" aria-current="page">
+                    <a href="@Url.Action("List")">@HeroesCupLocalizer.Hero["Heroes"]</a>
+                </li>
                 <li class="breadcrumb-item active" aria-current="page">@Localizer.General["Edit"]</li>
             </ol>
         </nav>
@@ -101,5 +103,5 @@
             </div>
         </div>
     </div>
-    <partial name="_ValidationModal" model="null" />
+    <partial name="_ValidationModal" model="null"/>
 }

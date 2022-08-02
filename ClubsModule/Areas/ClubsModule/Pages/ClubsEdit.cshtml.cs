@@ -12,10 +12,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Piranha.Manager;
 
-namespace HeroesCup.Web.ClubsModule.Areas.HeroesCup.Web.ClubsModule.Pages
+namespace HeroesCup.Web.ClubsModule.Areas.HeroesCup.Web.ClubsModule.Pages;
+
+[Authorize(Policy = Permission.PagesEdit)]
+public class ClubsEditViewModel : PageModel
 {
-    [Authorize(Policy = Permission.PagesEdit)]
-    public class ClubsEditViewModel : PageModel
-    {
-    }
 }
