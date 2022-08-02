@@ -73,7 +73,7 @@ public class EventsController : Controller
         model.Archive = eventsArchive;
         model.Archive.Posts = posts;
         model.SocialNetworksMetaData = _metaDataProvider.getMetaData(HttpContext, model.Slug, model.Title);
-        ViewBag["culture"] = await _webUtils.GetCulture(_api);
+        ViewBag.culture = await _webUtils.GetCulture(_api);
         return View(model);
     }
 

@@ -26,7 +26,7 @@ public class MissionsPage : Page<MissionsPage>, ISocialNetworkPost
 
     public string SelectedLocation { get; set; }
 
-    public IQueryable<Story> Stories { get; set; }
+    public IEnumerable<StoryViewModel> Stories { get; set; }
 
     public bool IsLoadMoreMissionsRequest { get; set; }
 

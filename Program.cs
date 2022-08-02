@@ -49,6 +49,7 @@ builder.Services.AddClubsModule();
 
 var app = builder.Build();
 
+app.UseSession();
 
 if (app.Environment.IsDevelopment()) app.UseDeveloperExceptionPage();
 

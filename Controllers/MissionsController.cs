@@ -88,7 +88,7 @@ public class MissionsController : Controller
 
         model.MissionIdeas = _missionsService.GetMissionIdeaViewModels()
             .Take(missionIdeasCurrentPageCount * _missionsCount);
-        model.Stories = _missionsService.GetAllPublishedStories()
+        model.Stories = _missionsService.GetAllPublishedStoryViewModels()
             .Take(storiesCurrentPageCount * _missionsCount);
 
         model.MissionsPerLocation = _missionsService.GetMissionsPerLocation();

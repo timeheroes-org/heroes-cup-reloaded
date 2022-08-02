@@ -83,7 +83,7 @@ public class MissionsService : IMissionsService
             .ThenInclude(m => m.Club)
             .Include(s => s.StoryImages)
             .Where(s => s.IsPublished == true)
-            .OrderByDescending(s => s.Mission.StartDate).Select(x=> MapStoryToStoryViewModel(x, false));
+            .OrderByDescending(s => s.Mission.StartDate).Select(x=> MapStoryToStoryViewModel(x, _imageService, false));
     }
 
     public IQueryable<Story> GetAllPublishedStories()
@@ -120,7 +120,7 @@ public class MissionsService : IMissionsService
             .FirstOrDefaultAsync(s => s.Mission.Slug == missionSlug);
         if (story == null) return null;
 
-        var model = MapStoryToStoryViewModel(story, true);
+        var model = MapStoryToStoryViewModel(story, _imageService, true);
 
         return model;
     }
@@ -500,7 +500,7 @@ public class MissionsService : IMissionsService
         };
     }
 
-    private StoryViewModel MapStoryToStoryViewModel(Story story, bool includeImages = false)
+    private static StoryViewModel MapStoryToStoryViewModel(Story story, IImagesService imagesService, bool includeImages = false)
     {
         if (story == null) return null;
 
@@ -534,11 +534,11 @@ public class MissionsService : IMissionsService
                 ClubLocation = story.Mission.Club.Location,
                 IsExpired = story.Mission.EndDate.IsExpired(),
                 IsSeveralDays = IsSeveralDays(story.Mission.StartDate, story.Mission.EndDate),
-                ImageFilename = _imageService.GetImageFilename(story.Mission.MissionImages.FirstOrDefault() != null
-                    ? story.Mission.MissionImages.FirstOrDefault().Image
+                ImageFilename = imagesService.GetImageFilename(story.Mission.MissionImages.FirstOrDefault() != null
+                    ? story.Mission.MissionImages.FirstOrDefault()?.Image
                     : null),
                 ImageId = story.Mission.MissionImages != null && story.Mission.MissionImages.Any()
-                    ? story.Mission.MissionImages.FirstOrDefault().ImageId.ToString()
+                    ? story.Mission.MissionImages.FirstOrDefault()?.ImageId.ToString()
                     : null,
                 StartDate = story.Mission.StartDate.ConvertToLocalDateTime(),
                 EndDate = story.Mission.EndDate.ConvertToLocalDateTime()
@@ -612,12 +612,12 @@ public class MissionsService : IMissionsService
         };
     }
 
-    private bool IsSeveralDays(long startDate, long endDate)
+    private static bool IsSeveralDays(long startDate, long endDate)
     {
         return endDate.ConvertToLocalDateTime().Date != startDate.ConvertToLocalDateTime().Date;
     }
 
-    private string GetPostClubName(Club club)
+    private static string GetPostClubName(Club club)
     {
         var clubNumber = club.OrganizationNumber != null && club.OrganizationNumber != string.Empty
             ? $" {club.OrganizationNumber} "
