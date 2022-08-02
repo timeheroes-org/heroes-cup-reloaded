@@ -1,4 +1,4 @@
-﻿namespace HeroesCup.Web.ClubsModule.Exceptions;
+﻿namespace HeroesCup.Web.Exceptions;
 
 public class ExistingItemException : ArgumentException
 {

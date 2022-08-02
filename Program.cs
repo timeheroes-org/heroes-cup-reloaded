@@ -40,7 +40,11 @@ builder.Services.AddTransient<IWebUtils, WebUtils>();
 builder.Services.AddTransient<IVideoThumbnailParser, YouTubeVideoThumbnailParser>();
 builder.Services.AddTransient<IMetaDataProvider, MetaDataProvider>();
 builder.Services.AddDbContext<HeroesCupDbContext>(
-    options => options.UseSqlite(connectionString));
+    options =>
+    {
+        options.UseSqlite(connectionString);
+        options.EnableSensitiveDataLogging();
+    });
 builder.Services.AddClubsModule();
 
 var app = builder.Build();
@@ -56,9 +60,7 @@ app.UsePiranha(options =>
     // Build content types
     new ContentTypeBuilder(options.Api)
         .AddAssembly(typeof(Program).Assembly)
-        .Build()
-        .DeleteOrphans();
-
+        .Build();
     // Configure Tiny MCE
     EditorConfig.FromFile("editorconfig.json");
 

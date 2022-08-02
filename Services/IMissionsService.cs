@@ -15,14 +15,14 @@ public interface IMissionsService
     IDictionary<string, int> GetMissionsPerLocation();
 
     int GetAllMissionsCount();
-
+    IQueryable<Story> GetAllPublishedStories();
     IEnumerable<MissionViewModel> GetMissionViewModelsByLocation(string location);
 
     Task<MissionViewModel> GetMissionViewModelBySlugAsync(string slug);
 
     Task<MissionIdeaViewModel> GetMissionIdeaViewModelBySlugAsync(string slug);
 
-    IEnumerable<StoryViewModel> GetAllPublishedStoryViewModels();
+    IQueryable<StoryViewModel> GetAllPublishedStoryViewModels();
 
     Task<StoryViewModel> GetStoryViewModelByMissionSlugAsync(string missionSlug);
 

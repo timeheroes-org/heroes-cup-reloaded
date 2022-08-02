@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 using HeroesCup.Data.Models;
-using HeroesCup.Web.ClubsModule.Exceptions;
+using HeroesCup.Web.Exceptions;
 using HeroesCup.Web.ClubsModule.Models;
 using HeroesCup.Web.Common;
 using HeroesCup.Web.Data;

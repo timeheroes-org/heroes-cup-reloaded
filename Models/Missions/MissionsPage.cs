@@ -1,4 +1,5 @@
-﻿using HeroesCup.Web.Models;
+﻿using HeroesCup.Data.Models;
+using HeroesCup.Web.Models;
 using Piranha.AttributeBuilder;
 using Piranha.Models;
 
@@ -13,7 +14,6 @@ public class MissionsPage : Page<MissionsPage>, ISocialNetworkPost
         Missions = new HashSet<MissionViewModel>();
         MissionIdeas = new HashSet<MissionIdeaViewModel>();
         MissionsPerLocation = new Dictionary<string, int>();
-        Stories = new HashSet<StoryViewModel>();
     }
 
     public IEnumerable<MissionViewModel> Missions { get; set; }
@@ -26,7 +26,7 @@ public class MissionsPage : Page<MissionsPage>, ISocialNetworkPost
 
     public string SelectedLocation { get; set; }
 
-    public IEnumerable<StoryViewModel> Stories { get; set; }
+    public IQueryable<Story> Stories { get; set; }
 
     public bool IsLoadMoreMissionsRequest { get; set; }
 

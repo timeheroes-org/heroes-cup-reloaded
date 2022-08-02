@@ -1,5 +1,5 @@
 ﻿using HeroesCup.Localization;
-using HeroesCup.Web.ClubsModule.Exceptions;
+using HeroesCup.Web.Exceptions;
 using HeroesCup.Web.ClubsModule.Models;
 using HeroesCup.Web.Services;
 using Microsoft.AspNetCore.Authorization;

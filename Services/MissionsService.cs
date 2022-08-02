@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
 using HeroesCup.Data.Models;
-using HeroesCup.Web.ClubsModule.Exceptions;
+using HeroesCup.Web.Exceptions;
 using HeroesCup.Web.ClubsModule.Models;
 using HeroesCup.Web.Common;
 using HeroesCup.Web.Common.Extensions;
@@ -19,24 +19,18 @@ public class MissionsService : IMissionsService
     private readonly IImagesService _imageService;
     private readonly IMissionContentsService _missionContentsService;
     private readonly IMissionIdeasService _missionIdeasService;
-    private readonly IMissionsService _missionsService;
     private readonly ISchoolYearService _schoolYearService;
-    private readonly IStoriesService _storiesService;
 
     public MissionsService(
         HeroesCupDbContext dbContext,
-        IMissionsService missionsService,
         IMissionIdeasService missionIdeasService,
         IMissionContentsService missionContentsService,
-        IStoriesService storiesService,
         IImagesService imageService,
         IConfiguration configuration, ISchoolYearService schoolYearService)
     {
         _dbContext = dbContext;
-        _missionsService = missionsService;
         _missionIdeasService = missionIdeasService;
         _missionContentsService = missionContentsService;
-        _storiesService = storiesService;
         _imageService = imageService;
         _configuration = configuration;
         _schoolYearService = schoolYearService;
@@ -51,43 +45,61 @@ public class MissionsService : IMissionsService
 
     public IEnumerable<MissionViewModel> GetMissionViewModels()
     {
-        var missions = _missionsService.GetAllPublishedMissions();
-        return missions.Select(m => MapMissionToMissionViewModel(m, _missionsService.GetMissionImagesIds(m.Id)));
+        var missions = this.GetAllPublishedMissions();
+        return missions.Select(m => MapMissionToMissionViewModel(m, this.GetMissionImagesIds(m.Id)));
     }
 
     public async Task<IEnumerable<MissionViewModel>> GetPinnedMissionViewModels()
     {
-        var pinnedMissions = await _missionsService.GetPinnedMissions();
-        return pinnedMissions.Select(m => MapMissionToMissionViewModel(m, _missionsService.GetMissionImagesIds(m.Id)));
+        var pinnedMissions = await this.GetPinnedMissions();
+        return pinnedMissions.Select(m => MapMissionToMissionViewModel(m, this.GetMissionImagesIds(m.Id)));
     }
 
     public int GetAllMissionsCount()
     {
-        return _missionsService.GetAllPublishedMissions().Count();
+        return this.GetAllPublishedMissions().Count();
     }
 
     public IDictionary<string, int> GetMissionsPerLocation()
     {
-        return _missionsService.GetAllPublishedMissions()
+        return this.GetAllPublishedMissions()
             .GroupBy(m => m.Location)
             .ToDictionary(x => x.Key, x => x.Count());
     }
 
     public IEnumerable<MissionViewModel> GetMissionViewModelsByLocation(string location)
     {
-        return _missionsService.GetAllPublishedMissions()
+        return this.GetAllPublishedMissions()
             .Where(m => m.Location.Contains(location) || location.Contains(m.Location))
-            .Select(m => MapMissionToMissionViewModel(m, _missionsService.GetMissionImagesIds(m.Id)));
+            .Select(m => MapMissionToMissionViewModel(m, this.GetMissionImagesIds(m.Id)));
     }
 
-    public IEnumerable<StoryViewModel> GetAllPublishedStoryViewModels()
+    public IQueryable<StoryViewModel> GetAllPublishedStoryViewModels()
     {
-        return _storiesService.GetAllPublishedStories().Select(s => MapStoryToStoryViewModel(s));
+        return _dbContext.Stories
+            .Include(s => s.Mission)
+            .ThenInclude(m => m.MissionImages)
+            .Include(s => s.Mission)
+            .ThenInclude(m => m.Club)
+            .Include(s => s.StoryImages)
+            .Where(s => s.IsPublished == true)
+            .OrderByDescending(s => s.Mission.StartDate).Select(x=> MapStoryToStoryViewModel(x, false));
     }
 
+    public IQueryable<Story> GetAllPublishedStories()
+    {
+        return _dbContext.Stories
+            .Include(s => s.Mission)
+            .ThenInclude(m => m.MissionImages)
+            .Include(s => s.Mission)
+            .ThenInclude(m => m.Club)
+            .Include(s => s.StoryImages)
+            .Where(s => s.IsPublished == true)
+            .OrderByDescending(s => s.Mission.StartDate);
+    }
     public async Task<MissionViewModel> GetMissionViewModelBySlugAsync(string slug)
     {
-        var result = await _missionsService.GetMissionEditModelBySlugAsync(slug);
+        var result = await this.GetMissionEditModelBySlugAsync(slug);
         if (result == null) return null;
 
         var model = MapMissionEditModelToMissionViewModel(result);
@@ -97,7 +109,15 @@ public class MissionsService : IMissionsService
 
     public async Task<StoryViewModel> GetStoryViewModelByMissionSlugAsync(string missionSlug)
     {
-        var story = await _storiesService.GetStoryByMissionSlugAsync(missionSlug);
+        var story = await _dbContext.Stories
+            .Include(s => s.Mission)
+            .ThenInclude(m => m.MissionImages)
+            .ThenInclude(mi => mi.Image)
+            .Include(s => s.Mission)
+            .ThenInclude(m => m.Club)
+            .Include(s => s.StoryImages)
+            .ThenInclude(si => si.Image)
+            .FirstOrDefaultAsync(s => s.Mission.Slug == missionSlug);
         if (story == null) return null;
 
         var model = MapStoryToStoryViewModel(story, true);
