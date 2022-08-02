@@ -1,4 +1,4 @@
-﻿@model ClubsModule.Models.ClubEditModel
+﻿@model HeroesCup.Web.ClubsModule.Models.ClubEditModel
 @inject IAuthorizationService Auth
 @inject ManagerLocalizer Localizer
 @inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
@@ -35,7 +35,7 @@
 
         <div class="container-fluid">
             <div class="top-nav">
-                @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.ClubsSave)).Succeeded)
+                @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.ClubsSave)).Succeeded)
                 {
                     <button type="submit" class="btn btn-labeled btn-success pull-right">
                         <span class="btn-label">
@@ -162,7 +162,7 @@
                         }
 
                         <div class="text-right">
-                            @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.HeroesAdd)).Succeeded && Model.Club.Id != Guid.Empty)
+                            @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.HeroesAdd)).Succeeded && Model.Club.Id != Guid.Empty)
                             {
                                 <a href="@Url.Action("Add", "Heroes")" class="btn btn-labeled btn-primary pull-right">
                                     <i class="fas fa-plus"></i>@HeroesCupLocalizer.Club["Add Hero"]

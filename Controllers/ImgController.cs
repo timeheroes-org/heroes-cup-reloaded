@@ -1,4 +1,4 @@
-﻿using ClubsModule.Services.Contracts;
+﻿using HeroesCup.Web.Services ;
 using HeroesCup.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;

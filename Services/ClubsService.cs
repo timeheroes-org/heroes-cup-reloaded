@@ -1,6 +1,6 @@
-﻿using ClubsModule.Common;
-using ClubsModule.Models;
-using ClubsModule.Services.Contracts;
+﻿using HeroesCup.Web.Common;
+using HeroesCup.Web.ClubsModule.Models;
+using HeroesCup.Web.Services ;
 using HeroesCup.Data;
 using HeroesCup.Data.Models;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using HeroesCup.Web.Data;
 
-namespace ClubsModule.Services
+namespace HeroesCup.Web.Services 
 {
     public class ClubsService : IClubsService
     {

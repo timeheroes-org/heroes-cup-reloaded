@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace ClubsModule.Attributes
+namespace HeroesCup.Web.ClubsModule.Attributes
 {
     public class MaxSizeFileAttribute : ValidationAttribute
     {

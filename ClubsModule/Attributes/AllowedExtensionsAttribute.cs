@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 
-namespace ClubsModule.Attributes
+namespace HeroesCup.Web.ClubsModule.Attributes
 {
     public class AllowedExtensionsAttribute : ValidationAttribute
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClubsModule.Services.Contracts
+namespace HeroesCup.Web.Services 
 {
     public interface ISchoolYearService
     {

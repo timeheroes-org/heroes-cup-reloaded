@@ -1,9 +1,9 @@
-﻿using ClubsModule.Services.Contracts;
+﻿using HeroesCup.Web.Services ;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 
-namespace ClubsModule.Controllers
+namespace HeroesCup.Web.ClubsModule.Controllers
 {
     public class ImagesController : Controller
     {

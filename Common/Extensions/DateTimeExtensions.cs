@@ -1,4 +1,4 @@
-﻿using ClubsModule.Common;
+﻿using HeroesCup.Web.Common;
 using System;
 
 namespace HeroesCup.Web.Common.Extensions

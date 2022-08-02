@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ClubsModule.Models
+namespace HeroesCup.Web.ClubsModule.Models
 {
     public class ClubListModel
     {

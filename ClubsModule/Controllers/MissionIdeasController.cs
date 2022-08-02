@@ -1,6 +1,6 @@
-﻿using ClubsModule.Exceptions;
-using ClubsModule.Models;
-using ClubsModule.Services.Contracts;
+﻿using HeroesCup.Web.ClubsModule.Exceptions;
+using HeroesCup.Web.ClubsModule.Models;
+using HeroesCup.Web.Services ;
 using HeroesCup.Localization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +8,7 @@ using Piranha.Manager.Controllers;
 using System;
 using System.Threading.Tasks;
 
-namespace ClubsModule.Controllers
+namespace HeroesCup.Web.ClubsModule.Controllers
 {
     public class MissionIdeasController : ManagerController
     {

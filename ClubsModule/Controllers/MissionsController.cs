@@ -1,7 +1,7 @@
-﻿using ClubsModule.Exceptions;
-using ClubsModule.Models;
-using ClubsModule.Security;
-using ClubsModule.Services.Contracts;
+﻿using HeroesCup.Web.ClubsModule.Exceptions;
+using HeroesCup.Web.ClubsModule.Models;
+using HeroesCup.Web.ClubsModule.Security;
+using HeroesCup.Web.Services ;
 using HeroesCup.Localization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +9,7 @@ using Piranha.Manager.Controllers;
 using System;
 using System.Threading.Tasks;
 
-namespace ClubsModule.Controllers
+namespace HeroesCup.Web.ClubsModule.Controllers
 {
     public class MissionsController : ManagerController
     {
@@ -116,7 +116,7 @@ namespace ClubsModule.Controllers
                 return View("Edit", model);
             }
 
-            var result = await this.missionsService.UnpublishMissionEditModelAsync(model.Mission.Id);
+            var result = await this.missionsService.UnPublishMissionEditModelAsync(model.Mission.Id);
             if (result)
             {
                 SuccessMessage(this.heroesCupLocalizer.Mission["The mission has been unpublished."]);

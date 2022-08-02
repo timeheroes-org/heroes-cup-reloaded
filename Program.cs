@@ -1,4 +1,4 @@
-using HeroesCup.Modules.ClubsModule;
+using HeroesCup.Web.ClubsModule;
 using HeroesCup.Web.Common;
 using HeroesCup.Web.Data;
 using HeroesCup.Web.Services;
@@ -78,7 +78,9 @@ void SeedDefaultPages()
     var dbSeed = builder.Configuration["DbSeed"];
     if (dbSeed == "true")
     {
+#pragma warning disable ASP0000
         var serviceProvider = builder.Services.BuildServiceProvider();
+#pragma warning restore ASP0000
 
         var identitySeed = serviceProvider.GetService<IHeroesCupIdentitySeed>();
         identitySeed.SeedIdentityAsync();

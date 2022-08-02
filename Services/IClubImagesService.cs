@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace ClubsModule.Services.Contracts
+namespace HeroesCup.Web.Services
 {
     public interface IClubImagesService
     {

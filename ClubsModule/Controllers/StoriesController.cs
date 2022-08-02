@@ -1,12 +1,12 @@
-﻿using ClubsModule.Models;
-using ClubsModule.Security;
-using ClubsModule.Services.Contracts;
+﻿using HeroesCup.Web.ClubsModule.Models;
+using HeroesCup.Web.ClubsModule.Security;
+using HeroesCup.Web.Services ;
 using HeroesCup.Localization;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Piranha.Manager.Controllers;
 
-namespace ClubsModule.Controllers
+namespace HeroesCup.Web.ClubsModule.Controllers
 {
     public class StoriesController : ManagerController
     {

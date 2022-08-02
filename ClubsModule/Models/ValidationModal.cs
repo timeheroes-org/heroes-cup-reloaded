@@ -1,4 +1,4 @@
-﻿namespace ClubsModule.Models
+﻿namespace HeroesCup.Web.ClubsModule.Models
 {
     public class ValidationModal
     {

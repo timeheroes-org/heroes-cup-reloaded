@@ -1,22 +1,18 @@
-﻿using ClubsModule.Common;
-using HeroesCup.Data.Models;
-using HeroesCup.Web.Common.Extensions;
+﻿using HeroesCup.Data.Models;
 using HeroesCup.Web.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using HeroesCup.Web.Common;
+using HeroesCup.Web.Common.Extensions;
 
 namespace HeroesCup.Web.Services
 {
     public class LeaderboardService : ILeaderboardService
     {
-        private readonly ClubsModule.Services.Contracts.IMissionsService _missionsService;
-        private readonly ClubsModule.Services.Contracts.IImagesService _imagesService;
+        private readonly IMissionsService _missionsService;
+        private readonly IImagesService _imagesService;
 
-        public LeaderboardService(ClubsModule.Services.Contracts.IMissionsService missionsService,
-            ClubsModule.Services.Contracts.IImagesService imagesService)
+        public LeaderboardService(IMissionsService missionsService,
+            IImagesService imagesService)
         {
             this._missionsService = missionsService;
             this._imagesService = imagesService;

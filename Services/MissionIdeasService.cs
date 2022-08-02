@@ -1,19 +1,12 @@
-﻿using ClubsModule.Common;
-using ClubsModule.Exceptions;
-using ClubsModule.Models;
-using ClubsModule.Services.Contracts;
-using HeroesCup.Data;
+﻿using HeroesCup.Web.Common;
+using HeroesCup.Web.ClubsModule.Exceptions;
+using HeroesCup.Web.ClubsModule.Models;
 using HeroesCup.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
 using HeroesCup.Web.Data;
 
-namespace ClubsModule.Services
+namespace HeroesCup.Web.Services
 {
     public class MissionIdeasService : IMissionIdeasService
     {

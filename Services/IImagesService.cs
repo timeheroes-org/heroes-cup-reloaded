@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ClubsModule.Services.Contracts
+namespace HeroesCup.Web.Services
 {
     public interface IImagesService : IClubImagesService, IMissionImagesService, IStoryImageService, IMissionIdeaImagesService
     {

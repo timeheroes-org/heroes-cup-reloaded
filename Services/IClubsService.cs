@@ -1,11 +1,11 @@
-﻿using ClubsModule.Models;
+﻿using HeroesCup.Web.ClubsModule.Models;
 using HeroesCup.Data.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ClubsModule.Services.Contracts
+namespace HeroesCup.Web.Services
 {
     public interface IClubsService
     {

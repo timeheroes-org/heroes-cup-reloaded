@@ -2,6 +2,6 @@
 {
     public interface IVideoThumbnailParser
     {
-        string ParseDefaultThubnailUrl(string embeddedVideoUrl);
+        string ParseDefaultThumbnailUrl(string embeddedVideoUrl);
     }
 }

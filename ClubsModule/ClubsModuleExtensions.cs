@@ -1,13 +1,13 @@
-using ClubsModule;
-using ClubsModule.Security;
-using ClubsModule.Services;
-using ClubsModule.Services.Contracts;
+using HeroesCup.Web.ClubsModule;
+using HeroesCup.Web.ClubsModule.Security;
+using HeroesCup.Web.Services ;
+using HeroesCup.Web.Services ;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.FileProviders;
 using Piranha;
 using Piranha.Manager;
 
-namespace HeroesCup.Modules.ClubsModule
+namespace HeroesCup.Web.ClubsModule
 {
     public static class ClubsModuleExtensions
     {

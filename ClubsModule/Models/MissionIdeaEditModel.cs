@@ -1,9 +1,9 @@
-﻿using ClubsModule.Attributes;
+﻿using HeroesCup.Web.ClubsModule.Attributes;
 using HeroesCup.Data.Models;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations;
 
-namespace ClubsModule.Models
+namespace HeroesCup.Web.ClubsModule.Models
 {
     public class MissionIdeaEditModel
     {

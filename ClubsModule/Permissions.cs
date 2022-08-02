@@ -1,4 +1,4 @@
-﻿namespace ClubsModule
+﻿namespace HeroesCup.Web.ClubsModule
 {
     /// <summary>
     /// The available Clubs permissions.

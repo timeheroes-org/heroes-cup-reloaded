@@ -1,4 +1,4 @@
-﻿@model ClubsModule.Models.StoryEditModel
+﻿@model HeroesCup.Web.ClubsModule.Models.StoryEditModel
 @inject IAuthorizationService Auth
 @inject ManagerLocalizer Localizer
 @inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
@@ -42,7 +42,7 @@
 
 @if (noMissionWithoutStory)
 {
-    var validationModal = new ClubsModule.Models.ValidationModal()
+    var validationModal = new HeroesCup.Web.ClubsModule.Models.ValidationModal()
     {
         Title = HeroesCupLocalizer.Story["NoMissionsModalTitle"],
         Body = HeroesCupLocalizer.Story["NoMissionsModalBody"]
@@ -68,7 +68,7 @@
 
         <div class="container-fluid">
             <div class="top-nav">
-                @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.StoriesSave)).Succeeded)
+                @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.StoriesSave)).Succeeded)
                 {
                     <button type="submit" class="btn btn-labeled btn-success pull-right">
                         <span class="btn-label">
@@ -78,7 +78,7 @@
                     </button>
                 }
 
-                @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.StoriesPublish)).Succeeded && Model.Story.Id != Guid.Empty)
+                @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.StoriesPublish)).Succeeded && Model.Story.Id != Guid.Empty)
                 {
                     @if (Model.Story.IsPublished == false)
                     {

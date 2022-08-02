@@ -1,4 +1,4 @@
-@model ClubsModule.Models.HeroListModel
+@model HeroesCup.Web.ClubsModule.Models.HeroListModel
 @inject IAuthorizationService Auth
 @inject Piranha.Manager.ManagerLocalizer Localizer
 @inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
@@ -17,7 +17,7 @@
 
     <div class="container-fluid">
         <div class="top-nav">
-            @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.HeroesAdd)).Succeeded)
+            @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.HeroesAdd)).Succeeded)
             {
                 <a href="@Url.Action("Add")" class="btn btn-labeled btn-primary pull-right">
                     <i class="fas fa-plus"></i>@Localizer.General["Add"]
@@ -41,7 +41,7 @@
             {
                 <tr>
                     <td>
-                        @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.HeroesEdit)).Succeeded)
+                        @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.HeroesEdit)).Succeeded)
                         {
                             <a href="@Url.Action("Edit", new {id = hero.Id})">@hero.Name</a>
                         }
@@ -51,7 +51,7 @@
                         }
                     </td>
                     <td>
-                        @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.ClubsEdit)).Succeeded)
+                        @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.ClubsEdit)).Succeeded)
                         {
                             <a href="@Url.Action("Edit", "Clubs", new {id = hero.ClubId })">@hero.ClubName</a>
                         }
@@ -61,7 +61,7 @@
                         }
                     </td>
                     <td class="actions one">
-                        @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.HeroesDelete)).Succeeded)
+                        @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.HeroesDelete)).Succeeded)
                         {
                             <a class="danger" href="@Url.Action("Delete", new {id = hero.Id})">
                                 <span class="fas fa-trash"></span>

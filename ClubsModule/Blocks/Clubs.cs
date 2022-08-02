@@ -1,7 +1,7 @@
 using Piranha.Extend;
 using Piranha.Extend.Fields;
 
-namespace HeroesCup.Modules.ClubsModule.Blocks
+namespace HeroesCup.Modules.HeroesCup.Web.ClubsModule.Blocks
 {
     /// <summary>
     /// Single column text block.

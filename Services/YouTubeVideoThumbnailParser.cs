@@ -4,31 +4,31 @@ namespace HeroesCup.Web.Services
 {
     public class YouTubeVideoThumbnailParser : IVideoThumbnailParser
     {
-        private readonly IConfiguration configuration;
+        private readonly IConfiguration _configuration;
 
         public YouTubeVideoThumbnailParser(IConfiguration configuration)
         {
-            this.configuration = configuration;
+            this._configuration = configuration;
         }
 
-        public string ParseDefaultThubnailUrl(string embeddedVideoUrl)
+        public string ParseDefaultThumbnailUrl(string embeddedVideoUrl)
         {
             if (string.IsNullOrEmpty(embeddedVideoUrl) || string.IsNullOrWhiteSpace(embeddedVideoUrl))
             {
                 return null;
             }
 
-            if (embeddedVideoUrl.IndexOf(this.configuration["YouTubeUrl"]) < 0)
+            if (embeddedVideoUrl.IndexOf(this._configuration["YouTubeUrl"]) < 0)
             {
                 return null;
             }
 
-            var embedUrlPart = this.configuration["YouTubeEmbedUrlPart"];
+            var embedUrlPart = this._configuration["YouTubeEmbedUrlPart"];
             var index = embeddedVideoUrl.IndexOf(embedUrlPart);
             if (index != -1)
             {
                 var videoCode = embeddedVideoUrl.Substring(index + embedUrlPart.Length);
-                return $"{this.configuration["YouTubeThumbnailUrl"]}/{videoCode}/{this.configuration["YouTubeThumbnailDefaultImageName"]}";
+                return $"{this._configuration["YouTubeThumbnailUrl"]}/{videoCode}/{this._configuration["YouTubeThumbnailDefaultImageName"]}";
             }
 
             return null;

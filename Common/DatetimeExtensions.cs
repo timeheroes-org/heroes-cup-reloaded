@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
 
-namespace ClubsModule.Common
+namespace HeroesCup.Web.Common
 {
     public static class DatetimeExtensions
     {

@@ -1,12 +1,12 @@
-﻿using ClubsModule;
-using HeroesCup.Modules.ClubsModule.Blocks;
+﻿using HeroesCup.Web.ClubsModule;
+using HeroesCup.Modules.HeroesCup.Web.ClubsModule.Blocks;
 using Piranha;
 using Piranha.Extend;
 using Piranha.Manager;
 using Piranha.Security;
 using System.Collections.Generic;
 
-namespace HeroesCup.Modules.ClubsModule
+namespace HeroesCup.Web.ClubsModule
 {
     /// <summary>
     /// The identity module.

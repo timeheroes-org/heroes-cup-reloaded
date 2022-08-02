@@ -1,7 +1,7 @@
-﻿using ClubsModule.Services.Contracts;
+﻿using HeroesCup.Web.Services ;
 using System;
 
-namespace ClubsModule.Services
+namespace HeroesCup.Web.Services 
 {
     public class SchoolYearService : ISchoolYearService
     {

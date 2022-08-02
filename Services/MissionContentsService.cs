@@ -1,12 +1,8 @@
-﻿using ClubsModule.Services.Contracts;
-using HeroesCup.Data;
-using HeroesCup.Data.Models;
+﻿using HeroesCup.Data.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Threading.Tasks;
 using HeroesCup.Web.Data;
 
-namespace ClubsModule.Services
+namespace HeroesCup.Web.Services
 {
     public class MissionContentsService : IMissionContentsService
     {

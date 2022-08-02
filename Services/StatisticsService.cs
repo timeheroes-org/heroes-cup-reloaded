@@ -1,5 +1,5 @@
 ﻿using AutoMapper.Configuration.Annotations;
-using ClubsModule.Services.Contracts;
+using HeroesCup.Web.Services ;
 using HeroesCup.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -10,24 +10,24 @@ namespace HeroesCup.Web.Services
 {
     public class StatisticsService : IStatisticsService
     {
-        private const int SPENT_HOURS_PER_DAY = 8;
-        private readonly ClubsModule.Services.Contracts.IMissionsService missionsService;
-        private readonly IClubsService clubsService;
+        private readonly IMissionsService _missionsService;
+        private readonly IClubsService _clubsService;
 
-        public StatisticsService(ClubsModule.Services.Contracts.IMissionsService missionsService, IClubsService clubsService)
+        public StatisticsService(IClubsService clubsService, IMissionsService missionsService)
         {
-            this.missionsService = missionsService;
-            this.clubsService = clubsService;
+            this._clubsService = clubsService;
+            this._missionsService = missionsService;
+            this._clubsService = clubsService;
         }
 
         public int GetAllClubsCount()
         {
-            return this.clubsService.GetAllClubs().Count();
+            return this._clubsService.GetAllClubs().Count();
         }
 
         public int GetAllHeroesCount()
         {
-            var clubs = this.clubsService.GetAllClubs();
+            var clubs = this._clubsService.GetAllClubs();
             var heroesCount = 0;
             foreach (var club in clubs)
             {
@@ -39,7 +39,7 @@ namespace HeroesCup.Web.Services
 
         public int GetAllHoursCount()
         {
-            var missions = this.missionsService.GetAllPublishedMissions();
+            var missions = this._missionsService.GetAllPublishedMissions();
             var hours = 0;
             foreach (var mission in missions)
             {
@@ -52,7 +52,7 @@ namespace HeroesCup.Web.Services
 
         public int GetAllMissionsCount()
         {
-            return this.missionsService.GetAllPublishedMissions().Count();
+            return this._missionsService.GetAllPublishedMissions().Count();
         }
     }
 }

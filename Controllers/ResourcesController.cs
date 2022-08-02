@@ -92,7 +92,7 @@ namespace HeroesCup.Web.Controllers
                     if (firstEmbedVideoBlock != null)
                     {
                         var videoUrl = firstEmbedVideoBlock.Source;
-                        model.VideoThumbnail = _videoThumbnailParser.ParseDefaultThubnailUrl(videoUrl);
+                        model.VideoThumbnail = _videoThumbnailParser.ParseDefaultThumbnailUrl(videoUrl);
                         model.VideoUrl = videoUrl;
                         model.SocialNetworksMetaData.VideoUrl = videoUrl;
                         model.SocialNetworksMetaData.VideoType = this._configuration["FacebookDefaultVideoType"];

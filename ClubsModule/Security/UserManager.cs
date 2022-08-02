@@ -2,7 +2,7 @@
 using System;
 using System.Security.Claims;
 
-namespace ClubsModule.Security
+namespace HeroesCup.Web.ClubsModule.Security
 {
     public class UserManager : IUserManager
     {

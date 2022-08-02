@@ -1,4 +1,4 @@
-@model ClubsModule.Models.ClubListModel
+@model HeroesCup.Web.ClubsModule.Models.ClubListModel
 @inject IAuthorizationService Auth
 @inject Piranha.Manager.ManagerLocalizer Localizer
 @inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
@@ -6,7 +6,7 @@
     ViewBag.Title = "Clubs";
     ViewBag.MenuItem = HeroesCupLocalizer.Club["Clubs"];
 
-    var userHasEditClubPermissions = (await Auth.AuthorizeAsync(User, ClubsModule.Permissions.ClubsEdit)).Succeeded;
+    var userHasEditClubPermissions = (await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.ClubsEdit)).Succeeded;
 }
 
 <div class="top">
@@ -19,7 +19,7 @@
 
     <div class="container-fluid">
         <div class="top-nav">
-            @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.ClubsAdd)).Succeeded)
+            @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.ClubsAdd)).Succeeded)
             {
                 if (User.IsInRole("Coordinator") && (Model.Clubs == null || Model.Clubs.Count() == 0))
                 {
@@ -81,7 +81,7 @@
                     <span class="title">@club.LastUpdateOn</span>
                 </td>
                 <td class="actions one">
-                    @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.ClubsDelete)).Succeeded)
+                    @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.ClubsDelete)).Succeeded)
                     {
                         <a class="danger" href="@Url.Action("Delete", new {id = club.Id})">
                             <span class="fas fa-trash"></span>

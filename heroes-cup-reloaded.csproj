@@ -26,6 +26,7 @@
   <ItemGroup>
     <Folder Include="ClubsModule\assets\ClubsModule" />
     <Folder Include="ClubsModule\assets\ClubsModule\src" />
+    <Folder Include="ClubsModule\Common" />
     <Folder Include="Views\Setup" />
   </ItemGroup>
 

@@ -114,27 +114,27 @@ public class IdentitySeed : IHeroesCupIdentitySeed
 
         foreach (var permission in App.Permissions.GetPermissions())
         {
-            var isCoordinatorPermission = permission.Name == ClubsModule.Permissions.Clubs ||
-                                          permission.Name == ClubsModule.Permissions.ClubsAdd ||
-                                          permission.Name == ClubsModule.Permissions.ClubsDelete ||
-                                          permission.Name == ClubsModule.Permissions.ClubsEdit ||
-                                          permission.Name == ClubsModule.Permissions.ClubsSave ||
-                                          permission.Name == ClubsModule.Permissions.Heroes ||
-                                          permission.Name == ClubsModule.Permissions.HeroesAdd ||
-                                          permission.Name == ClubsModule.Permissions.HeroesDelete ||
-                                          permission.Name == ClubsModule.Permissions.HeroesEdit ||
-                                          permission.Name == ClubsModule.Permissions.HeroesSave ||
-                                          permission.Name == ClubsModule.Permissions.HeroesAddCoordinator ||
-                                          permission.Name == ClubsModule.Permissions.Missions ||
-                                          permission.Name == ClubsModule.Permissions.MissionsAdd ||
-                                          permission.Name == ClubsModule.Permissions.MissionsDelete ||
-                                          permission.Name == ClubsModule.Permissions.MissionsEdit ||
-                                          permission.Name == ClubsModule.Permissions.MissionsSave ||
-                                          permission.Name == ClubsModule.Permissions.Stories ||
-                                          permission.Name == ClubsModule.Permissions.StoriesAdd ||
-                                          permission.Name == ClubsModule.Permissions.StoriesDelete ||
-                                          permission.Name == ClubsModule.Permissions.StoriesEdit ||
-                                          permission.Name == ClubsModule.Permissions.StoriesSave ||
+            var isCoordinatorPermission = permission.Name == HeroesCup.Web.ClubsModule.Permissions.Clubs ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.ClubsAdd ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.ClubsDelete ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.ClubsEdit ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.ClubsSave ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.Heroes ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.HeroesAdd ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.HeroesDelete ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.HeroesEdit ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.HeroesSave ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.HeroesAddCoordinator ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.Missions ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.MissionsAdd ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.MissionsDelete ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.MissionsEdit ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.MissionsSave ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.Stories ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.StoriesAdd ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.StoriesDelete ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.StoriesEdit ||
+                                          permission.Name == HeroesCup.Web.ClubsModule.Permissions.StoriesSave ||
                                           permission.Name == Piranha.Manager.Permission.Admin;
 
             if (isCoordinatorPermission)

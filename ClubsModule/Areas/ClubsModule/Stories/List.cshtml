@@ -1,4 +1,4 @@
-@model ClubsModule.Models.StoryListModel
+@model HeroesCup.Web.ClubsModule.Models.StoryListModel
 @inject IAuthorizationService Auth
 @inject Piranha.Manager.ManagerLocalizer Localizer
 @inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
@@ -17,7 +17,7 @@
 
     <div class="container-fluid">
         <div class="top-nav">
-            @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.StoriesAdd)).Succeeded)
+            @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.StoriesAdd)).Succeeded)
             {
                 <a href="@Url.Action("Add")" class="btn btn-labeled btn-primary pull-right">
                     <i class="fas fa-plus"></i>@Localizer.General["Add"]
@@ -47,7 +47,7 @@
             {
             <tr>
                 <td>
-                    @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.StoriesEdit)).Succeeded)
+                    @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.StoriesEdit)).Succeeded)
                     {
                         <a href="@Url.Action("Edit", new {id = story.Id})">@story.StartText</a>
                     }
@@ -57,7 +57,7 @@
                     }
                 </td>
                 <td>
-                    @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.MissionsEdit)).Succeeded)
+                    @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.MissionsEdit)).Succeeded)
                     {
                         <a href="@Url.Action("Edit", "Missions", new {id = story.Mission.Id })">@story.Mission.Title</a>
                     }
@@ -70,7 +70,7 @@
                 @if (User.IsInRole("SysAdmin") || User.IsInRole("Timeheroes"))
                 {
                     <td>
-                        @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.ClubsEdit)).Succeeded)
+                        @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.ClubsEdit)).Succeeded)
                         {
                             <a href="@Url.Action("Edit", "Clubs", new {id = story.Mission.Club.Id })">@story.Mission.Club.Name</a>
                         }
@@ -92,7 +92,7 @@
                     <span class="title">@story.LastUpdateOn</span>
                 </td>
                 <td class="actions one">
-                    @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.StoriesDelete)).Succeeded)
+                    @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.StoriesDelete)).Succeeded)
                     {
                         <a class="danger" href="@Url.Action("Delete", new {id = story.Id})">
                             <span class="fas fa-trash"></span>

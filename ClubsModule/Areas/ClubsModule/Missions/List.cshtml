@@ -1,4 +1,4 @@
-@model ClubsModule.Models.MissionListModel
+@model HeroesCup.Web.ClubsModule.Models.MissionListModel
 @inject IAuthorizationService Auth
 @inject Piranha.Manager.ManagerLocalizer Localizer
 @inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
@@ -17,7 +17,7 @@
 
     <div class="container-fluid">
         <div class="top-nav">
-            @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.MissionsAdd)).Succeeded)
+            @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.MissionsAdd)).Succeeded)
             {
                 <a href="@Url.Action("Add")" class="btn btn-labeled btn-primary pull-right">
                     <i class="fas fa-plus"></i>@Localizer.General["Add"]
@@ -48,7 +48,7 @@
             {
             <tr>
                 <td>
-                    @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.MissionsEdit)).Succeeded)
+                    @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.MissionsEdit)).Succeeded)
                     {
                         <a href="@Url.Action("Edit", new {id = mission.Id})">@mission.Title</a>
                     }
@@ -58,7 +58,7 @@
                     }
                 </td>
                 <td>
-                    @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.ClubsEdit)).Succeeded)
+                    @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.ClubsEdit)).Succeeded)
                     {
                         <a href="@Url.Action("Edit", "Clubs", new {id = mission.ClubId })">@mission.ClubName</a>
                     }
@@ -90,7 +90,7 @@
                     <span class="title">@mission.LastUpdateOn</span>
                 </td>
                 <td class="actions one">
-                    @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.MissionsDelete)).Succeeded)
+                    @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.MissionsDelete)).Succeeded)
                     {
                         <a class="danger" href="@Url.Action("Delete", new {id = mission.Id})">
                             <span class="fas fa-trash"></span>

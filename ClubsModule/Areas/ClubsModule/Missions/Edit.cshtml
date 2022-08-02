@@ -1,4 +1,4 @@
-﻿@model ClubsModule.Models.MissionEditModel
+﻿@model HeroesCup.Web.ClubsModule.Models.MissionEditModel
 @inject IAuthorizationService Auth
 @inject ManagerLocalizer Localizer
 @inject HeroesCup.Localization.ManagerLocalizer HeroesCupLocalizer
@@ -53,7 +53,7 @@
 
         <div class="container-fluid">
             <div class="top-nav">
-                @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.MissionsSave)).Succeeded && Model.Mission.Club != null)
+                @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.MissionsSave)).Succeeded && Model.Mission.Club != null)
                 {
                     <button asp-action="Save" type="submit" class="btn btn-labeled btn-success pull-right">
                         <span class="btn-label">
@@ -63,7 +63,7 @@
                     </button>
                 }
 
-                @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.MissionsPublish)).Succeeded && Model.Mission.Club != null)
+                @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.MissionsPublish)).Succeeded && Model.Mission.Club != null)
                 {
                     @if (Model.Mission.IsPublished == false)
                     {
@@ -150,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                    @if ((await Auth.AuthorizeAsync(User, ClubsModule.Permissions.MissionsStars)).Succeeded)
+                    @if ((await Auth.AuthorizeAsync(User, HeroesCup.Web.ClubsModule.Permissions.MissionsStars)).Succeeded)
                     {
                         <div class="col-sm-6">
                             <div class="form-group">

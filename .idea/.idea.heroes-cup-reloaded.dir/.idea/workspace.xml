@@ -25,28 +25,82 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Configured for runtime.">
+    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Clubs/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Clubs/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Clubs/List.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Clubs/List.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Heroes/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Heroes/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Heroes/List.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Heroes/List.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/MissionIdeas/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/MissionIdeas/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/MissionIdeas/List.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/MissionIdeas/List.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/List.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/List.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Pages/ClubsEdit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Pages/ClubsEdit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Pages/ClubsEdit.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Pages/ClubsEdit.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Shared/_ValidationModal.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Shared/_ValidationModal.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/List.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/List.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/_ViewImports.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Attributes/AllowedExtensionsAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Attributes/AllowedExtensionsAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Attributes/MaxSizeFileAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Attributes/MaxSizeFileAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Blocks/Clubs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Blocks/Clubs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClubsModule/ClubsModuleExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/ClubsModuleExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/bg-cities.json" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/bg-cities.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/css/editor-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/css/editor-styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/images/no_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/images/no_image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/images/team_no_image.png" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/images/team_no_image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/images/team_no_image.svg" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/images/team_no_image.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/js/clubs.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/js/clubs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/js/components/blocks/clubs.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/js/components/blocks/clubs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/js/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/js/init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/js/mission-datetimepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/js/mission-datetimepicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/js/mission-location-autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/js/mission-location-autocomplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/js/multiselect.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/js/multiselect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/js/story-modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/js/story-modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/js/summernote-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/js/summernote-editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/js/tiny-mce-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/js/tiny-mce-editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/js/tiny-mce-simple-editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/js/tiny-mce-simple-editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/assets/src/js/validation-modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/assets/js/validation-modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Common/DatetimeExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/DatetimeExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Common/StringExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/StringExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Controllers/ClubsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Controllers/ClubsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Controllers/HeroesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Controllers/HeroesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Controllers/ImagesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Controllers/ImagesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Controllers/MissionIdeasController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Controllers/MissionIdeasController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Controllers/MissionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Controllers/MissionsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Controllers/StoriesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Controllers/StoriesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Exceptions/ExistingItemException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Exceptions/ExistingItemException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/ClubEditModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/ClubEditModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/ClubListModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/ClubListModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/HeroEditModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/HeroEditModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/HeroListModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/HeroListModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/MissionEditModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/MissionEditModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/MissionIdeaEditModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/MissionIdeaEditModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/MissionIdeaListModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/MissionIdeaListModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/MissionListModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/MissionListModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/StoryEditModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/StoryEditModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/StoryListModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/StoryListModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/ValidationModal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/ValidationModal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Module.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Module.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Permissions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Permissions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Security/IUserManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Security/IUserManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Security/UserManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Security/UserManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/ClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ClubsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IClubImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IClubImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IClubsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IHeroesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IHeroesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IMissionContentsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionContentsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IMissionIdeaImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionIdeaImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IMissionIdeasService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionIdeasService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IMissionImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IMissionsService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/ISchoolYearService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ISchoolYearService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IStoriesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IStoriesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/Contracts/IStoryImageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IStoryImageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/HeroesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/HeroesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/ImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/MissionContentsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionContentsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/MissionIdeasService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionIdeasService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/MissionsService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/SchoolYearService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/SchoolYearService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Services/StoriesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/StoriesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/Extensions/DateTimeExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Extensions/DateTimeExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ImgController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ImgController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ResourcesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ResourcesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IMissionsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IMissionsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IVideoThumbnailParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IVideoThumbnailParser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IdentitySeed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IdentitySeed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/LeaderboardService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/LeaderboardService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/MetaDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MetaDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/MissionsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/StatisticsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/StatisticsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/YouTubeVideoThumbnailParser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/YouTubeVideoThumbnailParser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroes-cup-reloaded.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/heroes-cup-reloaded.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,9 +119,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e375cbfee39b4a488bb0df094d1e1c482de000/27/7c239f06/DbConnectionOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/4e8ebe9b927248eabbabce8e51114a30bf12a8/4d/d4f8769a/Piranha.Manager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1229972f69f5992618588ab91b3c821b3f54962608b77bc3ad562731a14f0d1/AliasApiController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -77,7 +128,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/46f3e4c1aadd9cc27d8553917233ea9b2a19f5bbc7e8116369aad9d31cd917/ModelSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5330988bfaacf93f15e30f9b3dd6018a768f89da3b38d874fda77299c62164/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/595a578380fad7a0c4ade2cb256e4ff7233d9368473f9d35a898197d7762a0/DbContextOptions`.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/664ec06dfe9e907a2e8e36384a8df7f162a6ff658fe1c344c172d92a15e134df/PhysicalFileProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/664ec06dfe9e907a2e8e36384a8df7f162a6ff658fe1c344c172d92a15e134df/PhysicalFileProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/69483dc6923dc3d71b8d9322b7e47e9b2ae6c690bc71b67cb1440f5aeba9e/ManagerLocalizer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7ab47cfce987d6c68c1999dab95848465e6b85864408f1726a7e3c466d330d2/PiranhaEFExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9263651b88c2de27a58bdc904739ffb9ec8ca0fab2e0172fb4777af5faeeb7/UserController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -95,7 +146,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f14258572a7f66d43bf5905d4c2da5172757715f85b21d96661c4a3d242f558e/NonRetryingExecutionStrategy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fe2f12f3e68e67de84733fecd21594c6ce7cce62332ffc3ab5c28d4deb98ea4c/DbContextServices.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Views/Events/_EventsList.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -108,6 +158,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectId" id="2CIBrPVqHtDMDedV5SbYKJ5XfbU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -118,18 +171,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Inspections-Resources",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Inspections-Resources&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="heroes-cup-reloaded" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/net6.0/heroes-cup-reloaded" />
@@ -164,7 +217,8 @@
       <workItem from="1658480428035" duration="233000" />
       <workItem from="1658501084084" duration="165000" />
       <workItem from="1658501285251" duration="350000" />
-      <workItem from="1658501676666" duration="14357000" />
+      <workItem from="1658501676666" duration="15316000" />
+      <workItem from="1659434508122" duration="2667000" />
     </task>
     <task id="LOCAL-00001" summary="Moved resources, data models, page models.">
       <created>1658504054548</created>
@@ -208,7 +262,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659362302565</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Manager is now running. Resources locations corrected.">
+      <created>1659367566839</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1659367566839</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added custom context migration.">
+      <created>1659367587635</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659367587635</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +304,9 @@
     <MESSAGE value="Adding csproj wuithout the default setup view." />
     <MESSAGE value="Appended workspace.xml" />
     <MESSAGE value="Configured for runtime." />
-    <option name="LAST_COMMIT_MESSAGE" value="Configured for runtime." />
+    <MESSAGE value="Manager is now running. Resources locations corrected." />
+    <MESSAGE value="Added custom context migration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added custom context migration." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
