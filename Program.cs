@@ -4,9 +4,9 @@ using HeroesCup.Web.Data;
 using HeroesCup.Web.Services;
 using Microsoft.EntityFrameworkCore;
 using Piranha;
-using Piranha.AspNetCore.Identity.SQLite;
+using Piranha.AspNetCore.Identity.MySQL;
 using Piranha.AttributeBuilder;
-using Piranha.Data.EF.SQLite;
+using Piranha.Data.EF.MySql;
 using Piranha.Local;
 using Piranha.Manager.Editor;
 
@@ -25,9 +25,9 @@ builder.AddPiranha(options =>
     options.UseMemoryCache();
 
 
-    options.UseEF<SQLiteDb>(db => db.UseSqlite(connectionString));
+    options.UseEF<MySqlDb>(db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
-    options.UseIdentityWithSeed<IdentitySQLiteDb>(db => db.UseSqlite(connectionString));
+    options.UseIdentityWithSeed<IdentityMySQLDb>(db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 });
 
 builder.Services.AddTransient<IHeroesCupIdentitySeed, IdentitySeed>();
@@ -42,7 +42,7 @@ builder.Services.AddTransient<IMetaDataProvider, MetaDataProvider>();
 builder.Services.AddDbContext<HeroesCupDbContext>(
     options =>
     {
-        options.UseSqlite(connectionString);
+        options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         options.EnableSensitiveDataLogging();
     });
 builder.Services.AddClubsModule();
