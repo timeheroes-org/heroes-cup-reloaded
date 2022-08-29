@@ -34,7 +34,7 @@ jobs:
     - name: Backup
       run: mv /var/www/heroes-cup/ /var/www/heroes-cup-$(date +%m%d%Y) 2>/dev/null
     - name: Deploy artifact
-      run: mkdir /var/www/heroes-cup & ls
+      run: mv heroes-cup-reloaded/heroes-cup-reloaded/artifact /var/www/heroes-cup
     - name: Start service
       run: sudo /bin/systemctl start kupatanageroite.service
       
