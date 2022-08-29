@@ -72,28 +72,4 @@ app.UsePiranha(options =>
 });
 app.UseRouting();
 app.UseClubsModule(builder);
-
-//SeedDefaultPages();
-
-void SeedDefaultPages()
-{
-    var dbSeed = builder.Configuration["DbSeed"];
-    if (dbSeed == "true")
-    {
-#pragma warning disable ASP0000
-        var serviceProvider = builder.Services.BuildServiceProvider();
-#pragma warning restore ASP0000
-
-        var identitySeed = serviceProvider.GetService<IHeroesCupIdentitySeed>();
-        identitySeed.SeedIdentityAsync();
-        var pagesInitializer = serviceProvider.GetService<IPageInitializer>();
-
-        pagesInitializer.SeedMissionsPageAsync().Wait();
-        pagesInitializer.SeedResourcesPageAsync().Wait();
-        pagesInitializer.SeedEventsPageAsync().Wait();
-        pagesInitializer.SeedAboutPageAsync().Wait();
-        pagesInitializer.SeedStarPageAsync().Wait();
-    }
-}
-
 app.Run();
