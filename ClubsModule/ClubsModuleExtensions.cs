@@ -14,7 +14,6 @@ public static class ClubsModuleExtensions
     {
         services.Configure<RazorViewEngineOptions>(options =>
         {
-            options.AreaViewLocationFormats.Clear();
             options.AreaViewLocationFormats.Add("/ClubsModule/Areas/ClubsModule/{1}/{0}.cshtml");
             options.AreaViewLocationFormats.Add("/ClubsModule/Areas/ClubsModule/Shared/{0}.cshtml");
             options.AreaViewLocationFormats.Add("/ClubsModule/Areas/Views/Shared/{0}.cshtml");

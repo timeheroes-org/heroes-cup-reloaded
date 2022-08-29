@@ -26,7 +26,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Removed seed.">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/dotnet.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/dotnet.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +107,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.heroes-cup-reloaded">
     <configuration name="heroes-cup-reloaded" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/net6.0/heroes-cup-reloaded" />
       <option name="PROGRAM_PARAMETERS" value="" />
