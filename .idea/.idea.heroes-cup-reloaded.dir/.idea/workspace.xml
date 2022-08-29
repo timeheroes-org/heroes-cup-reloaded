@@ -26,9 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/dotnet.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.Development.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/heroes-cup-reloaded.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/heroes-cup-reloaded.csproj" afterDir="false" />
     </list>
@@ -48,20 +48,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/adb5cbeb54e64893ac7eb2c5c56544652de000/00/383910a4/DbConnectionStringBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/adb5cbeb54e64893ac7eb2c5c56544652de000/00/383910a4/DbConnectionStringBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/324c205dd24097a66660317052ce349c156c3984c8b656b639a966cd3585f7/ConnectionSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5fc673f695cd4845d67e52f55b7f4c7ab8c27b5d52ab5e1cb85e3235d6196/MySqlDbContextOptionsBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bebd253e21dcf766929bfdfd74615bfe46e6e1693b289273dbdb82152893/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bebd253e21dcf766929bfdfd74615bfe46e6e1693b289273dbdb82152893/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Migrations/20220801144609_Initial.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Archive.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Page.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IStatisticsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IStoriesService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IStoryImageService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IVideoThumbnailParser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Services/IdentitySeed.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/ImagesService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/LeaderboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/MissionsService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/appsettings.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/compilerconfig.json" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -120,7 +125,7 @@
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="Unloaded" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
       <option name="PROJECT_TFM" value="net6.0" />
       <method v="2">
         <option name="Build" />
@@ -146,6 +151,9 @@
       <workItem from="1661603587115" duration="67000" />
       <workItem from="1661603712744" duration="95000" />
       <workItem from="1661604543921" duration="1959000" />
+      <workItem from="1661763606877" duration="346000" />
+      <workItem from="1661766187614" duration="1282000" />
+      <workItem from="1661772098651" duration="1604000" />
     </task>
     <task id="LOCAL-00001" summary="Moved resources, data models, page models.">
       <created>1658504054548</created>
@@ -269,6 +277,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Program.cs</url>
+          <line>12</line>
+          <properties documentPath="$PROJECT_DIR$/Program.cs" initialLine="12" containingFunctionPresentation="">
+            <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="DotNet Exception Breakpoints" />
       </default-breakpoints>

@@ -1,0 +1,43 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "ci-init" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Build
+      run: dotnet build --configuration Release
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        path:  bin/Release/net6.0/
+        if-no-files-found: error
+        retention-days: 1
+  publish:
+    needs: build 
+    runs-on: [ci-th]
+    steps:
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v3.0.0
+    - name: Stop service
+      run: sudo /bin/systemctl stop kupatanageroite.service
+    - name: Backup
+      run: find "/var/www/" -maxdepth 1 -name heroes-cup  -type d -exec mv {} /var/www/heroes-cup-$(date +%m%d%Y-%S) \;
+    - name: Deploy artifact
+      run: mv ~/actions-runner/_work/heroes-cup-reloaded/heroes-cup-reloaded/artifact /var/www/heroes-cup
+    - name: Link images
+      run: ln -s /var/www/heroes-cup-uploads/uploads /var/www/heroes-cup/wwwroot
+    - name: Start service
+      run: sudo /bin/systemctl start kupatanageroite.service
+      
+      

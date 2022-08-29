@@ -10,8 +10,9 @@ using Piranha.Data.EF.MySql;
 using Piranha.Local;
 using Piranha.Manager.Editor;
 
+
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("piranha");
+var connectionString = Environment.GetEnvironmentVariable("HEROESCUP_CONNECTIONSTRING") ?? builder.Configuration.GetConnectionString("piranha");
 builder.AddPiranha(options =>
 {
     options.AddRazorRuntimeCompilation = true;
@@ -72,7 +73,7 @@ app.UsePiranha(options =>
 app.UseRouting();
 app.UseClubsModule(builder);
 
-SeedDefaultPages();
+//SeedDefaultPages();
 
 void SeedDefaultPages()
 {
