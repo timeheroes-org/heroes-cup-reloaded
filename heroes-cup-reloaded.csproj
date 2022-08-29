@@ -29,7 +29,7 @@
         <Folder Include="Views\Setup" />
     </ItemGroup>
     <ItemGroup>
-        <None Include="wwwroot\*"  CopyToOutputDirectory="Always"/>
+        <None Include="wwwroot\**\*"  CopyToOutputDirectory="Always"/>
     </ItemGroup>
 
     <ItemGroup>
