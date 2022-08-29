@@ -27,12 +27,9 @@
         <Folder Include="ClubsModule\assets\ClubsModule" />
         <Folder Include="ClubsModule\assets\ClubsModule\src" />
         <Folder Include="Views\Setup" />
-        <Folder Include="wwwroot\uploads" />
     </ItemGroup>
-
     <ItemGroup>
-        <Content Remove="Views\Setup\Index.cshtml" />
-        <Content Remove="wwwroot\uploads\b376a075-9d21-4ed5-843b-fb43ac3600f4\Screenshot_from_2022-07-22_11-56-01_210x160.png" />
+        <None Include="wwwroot\*"  CopyToOutputDirectory="Always"/>
     </ItemGroup>
 
     <ItemGroup>
