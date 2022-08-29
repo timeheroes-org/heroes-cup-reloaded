@@ -23,3 +23,19 @@ jobs:
         path:  bin/Release/net6.0/
         if-no-files-found: error
         retention-days: 1
+  publish:
+    needs: build 
+    runs-on: [ci-th]
+    steps:
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v3.0.0
+    - name: Stop service
+      run: sudo /bin/systemctl stop kupatanageroite.service
+    - name: Backup
+      run: mv /var/www/heroes-cup/ /var/www/heroes-cup-$(date +%m%d%Y)
+    - name: Deploy artifact
+      run: mkdir /var/www/heroes-cup & ls
+    - name: Start service
+      run: sudo /bin/systemctl start kupatanageroite.service
+      
+      
