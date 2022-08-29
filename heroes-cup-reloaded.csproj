@@ -36,6 +36,7 @@
         <Compile Remove="ClubsModule\Resources\**" />
         <Content Remove="ClubsModule\Areas\Manager\**" />
         <Content Remove="ClubsModule\Resources\**" />
+        <Content Include=".github\workflows\dotnet.yml" />
         <EmbeddedResource Remove="ClubsModule\Areas\Manager\**" />
         <EmbeddedResource Remove="ClubsModule\Resources\**" />
         <None Remove="ClubsModule\Areas\Manager\**" />
