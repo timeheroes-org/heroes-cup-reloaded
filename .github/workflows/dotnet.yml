@@ -32,7 +32,7 @@ jobs:
     - name: Stop service
       run: sudo /bin/systemctl stop kupatanageroite.service
     - name: Backup
-      run: mv /var/www/heroes-cup/ /var/www/heroes-cup-$(date +%m%d%Y)
+      run: mv /var/www/heroes-cup/ /var/www/heroes-cup-$(date +%m%d%Y) 2>/dev/null
     - name: Deploy artifact
       run: mkdir /var/www/heroes-cup & ls
     - name: Start service
