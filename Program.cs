@@ -1,3 +1,4 @@
+using HeroesCup.ActionFilters;
 using HeroesCup.Web.ClubsModule;
 using HeroesCup.Web.Common;
 using HeroesCup.Web.Data;
@@ -12,11 +13,11 @@ using Piranha.Manager.Editor;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
 var connectionString = Environment.GetEnvironmentVariable("HEROESCUP_CONNECTIONSTRING") ?? builder.Configuration.GetConnectionString("piranha");
 builder.AddPiranha(options =>
 {
     options.AddRazorRuntimeCompilation = true;
-
     options.UseCms();
     options.UseManager();
 
@@ -46,11 +47,13 @@ builder.Services.AddDbContext<HeroesCupDbContext>(
         options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
         options.EnableSensitiveDataLogging();
     });
+
 builder.Services.AddClubsModule();
 
 var app = builder.Build();
 
 app.UseSession();
+app.UseStaticFiles();
 
 if (app.Environment.IsDevelopment()) app.UseDeveloperExceptionPage();
 
@@ -65,7 +68,6 @@ app.UsePiranha(options =>
         .Build();
     // Configure Tiny MCE
     EditorConfig.FromFile("editorconfig.json");
-
     options.UseManager();
     options.UseTinyMCE();
     options.UseIdentity();

@@ -1,4 +1,5 @@
-﻿using HeroesCup.Web.Common;
+﻿using HeroesCup.ActionFilters;
+using HeroesCup.Web.Common;
 using HeroesCup.Web.Models.Blocks;
 using HeroesCup.Web.Models.Resources;
 using HeroesCup.Web.Services;
@@ -7,7 +8,7 @@ using Piranha;
 using Piranha.AspNetCore.Services;
 
 namespace HeroesCup.Web.Controllers;
-
+[SchoolsList()]
 public class ResourcesController : Controller
 {
     private readonly IApi _api;

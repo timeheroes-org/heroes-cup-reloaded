@@ -2,7 +2,7 @@
     ViewBag.Title = "Доброволческото състезание на училищата в България";
 
     var mainBodyClass = GetMainBodyClass();
-
+    var schools = ViewBag.Schools;
     string GetMainBodyClass()
     {
         if (ViewBag.TypeId == "StartPage")
@@ -75,8 +75,58 @@
         <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=286910919236893&ev=PageView&noscript=1"/>
     </noscript><!-- End Facebook Pixel Code -->
 </head>
-<body class="@mainBodyClass">
-<header class="site-header @(ViewBag.HasImage == null || !ViewBag.HasImage ? "site-header-dark" : "") justify-content-center">
+<body class="@mainBodyClass modal-container">
+<div class="modal fade justify-content-center" id="participateModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content p-md-4 p-2">
+            <a href="/" type="button" class="close modal-close d-block d-md-block d-sm-none d-xs-none" data-dismiss="modal" aria-label="Close"></a>
+            <div class="row modal-header">
+                <div class="col-12">
+                    <h2 class="heading2 modal-title d-none d-md-block d-sm-none d-xs-none">Участвай в Купата!</h2>
+                    <san>Вече си регистриран? <a href="/manager">Влез в профила си</a></san>
+                </div>
+            </div>
+            <div class="modal-body body2">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <label for="participate-name">Име</label>
+                            <div class="form-group">
+                                <input class="form-control" id="participate-name" placeholder="Име">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="participate-surname">Фамилия</label>
+                            <div class="form-group">
+                                <input class="form-control" id="participate-surname"placeholder="Фамилия">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="participate-type">Ти си</label>
+                            <div class="form-group">
+                                <select class="form-control" id="participate-type">
+                                  <option>Ученик</option>
+                                  <option>Координатор</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="participate-school">Училище</label>
+                             <div class="form-group">
+                                <select  class="form-control" id="participate-school" 
+                                        asp-items="@(new SelectList(schools))">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<header class="site-header main-blur @(ViewBag.HasImage == null || !ViewBag.HasImage ? "site-header-dark" : "") justify-content-center">
     @if (ViewBag.TypeId != "LandingPage")
     {
         <div class="fixed-top">
@@ -90,31 +140,7 @@
         </div>
     }
 </header>
-<!-- Modal -->
-<div class="modal fade justify-content-center" id="participateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content p-md-4 p-2">
-            <div class="row modal-header">
-                <div class="col-12">
-                    <a href="/" type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"></a>
-                </div>
-                <div class="col-12">
-                    <h2 class="heading2 modal-title d-none d-md-block d-sm-none d-xs-none" id="exampleModalLabel">Направете геройски клуб и спечелете Купата!</h2>
-                    <h3 class="heading3 modal-title d-sm-block d-md-none" id="exampleModalLabel">Направете геройски клуб и спечелете Купата!</h3>
-                </div>
-            </div>
-            <div class="modal-body body2">
-                <p>Пишете ни, за да грабнете стартовия си пакет.</p>
-                <p>
-                    <a class="btn btn-heroes mr-auto mt-3 mb-3" href="mailto:hello@timeheroes.org" target="_blank">hello@timeheroes.org</a>
-                </p>
-                <p>
-                    Вече имате клуб?<a href="/manager"> Вход за координатори</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+
 @RenderBody()
 
 <partial name="Partial/_Footer.cshtml"/>

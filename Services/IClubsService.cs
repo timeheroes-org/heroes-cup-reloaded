@@ -5,6 +5,7 @@ namespace HeroesCup.Web.Services;
 
 public interface IClubsService
 {
+    public Task<IEnumerable<String>> GetSchools();
     Task<ClubListModel> GetClubListModelAsync(Guid? ownerId);
 
     Task<ClubEditModel> CreateClubEditModelAsync(Guid? ownerId);

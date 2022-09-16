@@ -1,4 +1,4 @@
-﻿﻿html, body {
+﻿html, body {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -480,11 +480,6 @@ header {
 
 /* Modal */
 
-.modal-content {
-    width: 120%;
-    background-color: #faf8f3;
-    border-radius: 0;
-}
 
     .modal-content > .modal-header {
         border-bottom: none;
@@ -505,6 +500,17 @@ header {
     /* Dark */
     color: #1C1E21;
 }
+#participateModal {
+    z-index: 9999;
+    
+}
+body.modal-open .main-blur{    
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+}
 
 .modal-close {
     display: block;
@@ -512,9 +518,11 @@ header {
     height: 32px;
     border-radius: 50%;
     background: url('../images/cross.svg') center no-repeat;
-    background-color: white;
     align-content: center;
     opacity: unset;
+    position: absolute;
+    top: 45px;
+    right: 100px;
 }
 
 /* Club Modal */
@@ -706,10 +714,6 @@ a .tab-title {
         font-weight: bold;
         font-size: 16px;
         line-height: 24px;
-        border-bottom: 3px solid #FE5E17;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-        background: #FAF8F3;
     }
 
     .nav-link.active span {
@@ -994,6 +998,23 @@ a:hover .resource-icon-article {
     text-align: center;
     color: white;
 }
+#participateModal .modal-dialog {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+     
+}
+
+#participateModal .modal-content {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+    background: rgba(245,247,253,0.95);
+    align-items: center;
+    justify-content: center;
+}
 
     .img-container .mission-img-list {
         object-fit: cover;
@@ -1030,14 +1051,7 @@ a:hover .resource-icon-article {
     width: 1024px;
 }
 
-#participateModal .modal-content {
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin-left: -90px;
-    width: 692px;
-    height: 384px;
-}
+
 
 @media screen and (max-width: 1060px) {
     body {
@@ -1076,22 +1090,8 @@ a:hover .resource-icon-article {
         background: url('../images/background/hero_events_top_left.svg') left 2% no-repeat, url('../images/background/hero_events_top_right.svg') right top no-repeat;
         background-color: #FAF8F3;
     }
-
-    .modal-content {
-        width: 120%;
-        background-color: #faf8f3;
-        border-radius: 0;
-    }
-
-    #participateModal .modal-content {
-        position: absolute;
-        right: 0;
-        left: 0;
-        margin-left: -90px;
-        width: 692px;
-        height: 384px;
-    }
-
+    
+    
     .modal-lg {
         height: 484px;
     }
@@ -1112,7 +1112,6 @@ a:hover .resource-icon-article {
         height: 32px;
         border-radius: 50%;
         background: url('../images/cross.svg') center no-repeat;
-        background-color: white;
         align-content: center;
         opacity: unset;
     }
@@ -1238,21 +1237,7 @@ a:hover .resource-icon-article {
         background: url('../images/background/hero_events_top_left_small.svg') left -1.2% no-repeat, url('../images/background/hero_events_top_right_small.svg') right -2% no-repeat;
         background-color: #FAF8F3;
     }
-
-    .modal-content {
-        max-width: 100%;
-        background-color: #faf8f3;
-        border-radius: 0;
-    }
-
-    #participateModal .modal-content {
-        width: 100%;
-        height: 464px;
-        position: absolute;
-        right: 0;
-        left: 0;
-        margin-left: 0px;
-    }
+    
 
     .club-modal .modal-content {
         max-width: 100%;

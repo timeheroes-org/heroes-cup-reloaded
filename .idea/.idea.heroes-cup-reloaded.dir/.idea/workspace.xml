@@ -25,8 +25,43 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Removed seed.">
+    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment=" p">
+      <change afterPath="$PROJECT_DIR$/ActionFilters/SchoolsListActionFilter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CmsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CmsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EventsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EventsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/MissionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MissionsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ResourcesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ResourcesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ClubsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IClubsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Cms/AboutPage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/AboutPage.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Cms/Page.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/Page.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Cms/Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/Post.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Cms/Start.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/Start.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Error/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Error/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Events/EventPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Events/EventPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Events/EventsArchive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Events/EventsArchive.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/MissionIdeaPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/MissionIdeaPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/MissionPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/MissionPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/StoryPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/StoryPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Resources/ResourcePost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Resources/ResourcePost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Resources/ResourcesArchive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Resources/ResourcesArchive.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_Menu.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Menu.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_blocks.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_general.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_navbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_posts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_type.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/assets/css/style.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +72,7 @@
     <option name="disabledMethods">
       <set>
         <option value="Microsoft.AspNetCore : Microsoft.AspNetCore.Builder.WebApplication : get_Lifetime ()" />
+        <option value="System.Linq : System.Linq.SystemCore_EnumerableDebugView&lt;T&gt; : get_Items ()" />
       </set>
     </option>
   </component>
@@ -44,17 +80,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/adb5cbeb54e64893ac7eb2c5c56544652de000/00/383910a4/DbConnectionStringBuilder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/324c205dd24097a66660317052ce349c156c3984c8b656b639a966cd3585f7/ConnectionSettings.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5fc673f695cd4845d67e52f55b7f4c7ab8c27b5d52ab5e1cb85e3235d6196/MySqlDbContextOptionsBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bebd253e21dcf766929bfdfd74615bfe46e6e1693b289273dbdb82152893/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75b0d80017554e859b1a49b756b3ba2ea6e00/1e/a5566fae/SslStream.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c85aff997a014acca2334f8c43384d8594de00/61/2aeeb960/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1d37e86d3f44af3b70b9ee3188332d488c00/03/a1f8f76e/Socket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/2a/66918e2a/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/5c/9789476c/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/d6/59db6db7/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e4827c990cfab6c5480b437c0c58a1ead161fdc39797bd53826724afdcbb28b/ServerSession.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Migrations/20220801144609_Initial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Archive.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Page.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IStatisticsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IStoriesService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IStoryImageService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -95,15 +132,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "NewWatcherDialog.advanced.open": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/andrey/Git/heroes-cup-reloaded/assets/scss",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
+    "settings.editor.selected.configurable": "watcher.settings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -152,6 +191,7 @@
       <workItem from="1661763606877" duration="346000" />
       <workItem from="1661766187614" duration="1282000" />
       <workItem from="1661772098651" duration="1604000" />
+      <workItem from="1663309792090" duration="9479000" />
     </task>
     <task id="LOCAL-00001" summary="Moved resources, data models, page models.">
       <created>1658504054548</created>
@@ -299,18 +339,30 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="MySqlConnector.MySqlException" isInternal="false" displayValue="MySqlException" namespaceName="MySqlConnector">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.IO.IOException" isInternal="false" displayValue="IOException" namespaceName="System.IO">
+            <option name="internal" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Program.cs</url>
+          <url>file://$PROJECT_DIR$/ActionFilters/SchoolsListActionFilter.cs</url>
           <line>12</line>
-          <properties documentPath="$PROJECT_DIR$/Program.cs" initialLine="12" containingFunctionPresentation="">
+          <properties documentPath="$PROJECT_DIR$/ActionFilters/SchoolsListActionFilter.cs" initialLine="12" containingFunctionPresentation="method 'OnActionExecuting'">
             <startOffsets>
-              <option value="-1" />
+              <option value="491" />
             </startOffsets>
             <endOffsets>
-              <option value="-1" />
+              <option value="523" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
