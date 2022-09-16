@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HeroesCup.Data.Models;
 
@@ -29,4 +30,6 @@ public class MissionIdea
     public long CreatedOn { get; set; }
 
     public long UpdatedOn { get; set; }
+
+  
 }

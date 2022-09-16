@@ -107,7 +107,7 @@ public class MissionsController : Controller
 
         var currentUrlBase = _webUtils.GetUrlBase(HttpContext);
         var url = $"{currentUrlBase}/mission/{mission.Slug}";
-        var imageUrl = $"{currentUrlBase}/img/{mission.ImageFilename}";
+        var imageUrl = $"{currentUrlBase}/uploads/{mission.ImageFileName}";
         var siteCulture = await _webUtils.GetCulture(_api);
         var dateFormat = _configuration["PostDateFormat"];
         var model = new MissionPost
@@ -135,7 +135,7 @@ public class MissionsController : Controller
 
         var currentUrlBase = _webUtils.GetUrlBase(HttpContext);
         var url = $"{currentUrlBase}/mission-idea/{missionIdea.Slug}";
-        var imageUrl = $"{currentUrlBase}/img/{missionIdea.ImageFilename}";
+        var imageUrl = $"{currentUrlBase}/img/{missionIdea.ImageFileName}";
         var siteCulture = await _webUtils.GetCulture(_api);
         var dateFormat = _configuration["PostDateFormat"];
         var model = new MissionIdeaPost

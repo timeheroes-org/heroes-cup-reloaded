@@ -10,7 +10,7 @@ public class MissionIdeaViewModel
 
     public MissionIdea MissionIdea { get; set; }
 
-    public string ImageFilename { get; set; }
+    public string ImageFileName { get; set; }
 
     public string ImageId { get; set; }
 

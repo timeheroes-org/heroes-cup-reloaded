@@ -51,7 +51,7 @@ builder.Services.AddClubsModule();
 var app = builder.Build();
 
 app.UseSession();
-
+app.UseStaticFiles();
 if (app.Environment.IsDevelopment()) app.UseDeveloperExceptionPage();
 
 app.UsePiranha(options =>

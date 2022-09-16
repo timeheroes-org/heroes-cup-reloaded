@@ -485,7 +485,7 @@ public class MissionsService : IMissionsService
             Id = missionIdeEditModel.MissionIdea.Id,
             Slug = missionIdeEditModel.MissionIdea.Slug,
             ImageId = missionIdeEditModel.ImageId,
-            ImageFilename = missionIdeEditModel.ImageFilename,
+            ImageFileName = missionIdeEditModel.ImageFilename,
             MissionIdea = missionIdeEditModel.MissionIdea,
             StartDate = missionIdeEditModel.MissionIdea.StartDate.ConvertToLocalDateTime(),
             EndDate = missionIdeEditModel.MissionIdea.EndDate.ConvertToLocalDateTime(),
@@ -504,7 +504,7 @@ public class MissionsService : IMissionsService
     {
         if (story == null) return null;
 
-        var storyImageIds = story.StoryImages.Select(s => s.ImageId.ToString());
+        var storyImageIds = story.StoryImages.Select(s => $"{s.ImageId.ToString()}.{s.Image.Extension}");
         var heroImageId = story.StoryImages != null && story.StoryImages.Any()
             ? story.StoryImages.FirstOrDefault()?.ImageId.ToString()
             : story.Mission.MissionImages.FirstOrDefault()?.ImageId.ToString();
@@ -522,7 +522,7 @@ public class MissionsService : IMissionsService
             Content = story.Content,
             ClubName = story.Mission.Club.Name,
             HeroImageFilename = heroImageFilename,
-            ImageIds = storyImageIds,
+            ImageFileNames = storyImageIds,
             HeroImageId = heroImageId,
             Mission = new MissionViewModel
             {
@@ -534,7 +534,7 @@ public class MissionsService : IMissionsService
                 ClubLocation = story.Mission.Club.Location,
                 IsExpired = story.Mission.EndDate.IsExpired(),
                 IsSeveralDays = IsSeveralDays(story.Mission.StartDate, story.Mission.EndDate),
-                ImageFilename = imagesService.GetImageFilename(story.Mission.MissionImages.FirstOrDefault() != null
+                ImageFileName = imagesService.GetImageFilename(story.Mission.MissionImages.FirstOrDefault() != null
                     ? story.Mission.MissionImages.FirstOrDefault()?.Image
                     : null),
                 ImageId = story.Mission.MissionImages != null && story.Mission.MissionImages.Any()
@@ -555,7 +555,7 @@ public class MissionsService : IMissionsService
             Id = missionEditModel.Mission.Id,
             Title = missionEditModel.Mission.Title,
             Slug = missionEditModel.Mission.Slug,
-            ImageFilename = missionEditModel.ImageFilename,
+            ImageFileName = missionEditModel.ImageFileName,
             ImageId = missionEditModel.ImageId,
             Content = missionEditModel.Mission.Content,
             ClubName = missionEditModel.Mission.Club.Name,
@@ -570,10 +570,10 @@ public class MissionsService : IMissionsService
                 {
                     Content = missionEditModel.Mission.Story != null ? missionEditModel.Mission.Story.Content : null,
                     ClubName = missionEditModel.Mission.Club.Name,
-                    ImageIds =
+                    ImageFileNames =
                         missionEditModel.Mission.Story.StoryImages != null &&
                         missionEditModel.Mission.Story.StoryImages.Any()
-                            ? missionEditModel.Mission.Story.StoryImages.Select(s => s.ImageId.ToString())
+                            ? missionEditModel.Mission.Story.StoryImages.Select(s => $"{s.ImageId}.{s.Image.Extension}")
                             : null
                 }
                 : null
@@ -593,7 +593,7 @@ public class MissionsService : IMissionsService
             ClubName = mission.Club.Name,
             PostClubName = GetPostClubName(mission.Club),
             ClubLocation = mission.Club.Location,
-            ImageFilename = missionImages.FirstOrDefault().Item2,
+            ImageFileName = missionImages.FirstOrDefault().Item2,
             ImageId = missionImages.FirstOrDefault().Item1,
             StartDate = mission.StartDate.ConvertToLocalDateTime(),
             EndDate = mission.EndDate.ConvertToLocalDateTime(),
@@ -604,7 +604,7 @@ public class MissionsService : IMissionsService
                 {
                     Content = mission.Story.Content,
                     ClubName = mission.Club.Name,
-                    ImageIds = mission.Story.StoryImages != null && mission.Story.StoryImages.Any()
+                    ImageFileNames = mission.Story.StoryImages != null && mission.Story.StoryImages.Any()
                         ? mission.Story.StoryImages.Select(s => s.ImageId.ToString())
                         : null
                 }
@@ -667,7 +667,7 @@ public class MissionsService : IMissionsService
         {
             var missionImage = await _imageService.GetMissionImage(mission.Id);
             model.ImageId = missionImage.ImageId.ToString();
-            model.ImageFilename = missionImage.Image.Filename;
+            model.ImageFileName = missionImage.Image.Filename;
         }
 
         var dateFormat = _configuration["DateFormat"];

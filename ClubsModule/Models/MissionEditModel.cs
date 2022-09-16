@@ -18,7 +18,7 @@ public class MissionEditModel
 
     public string ImageId { get; set; }
 
-    public string ImageFilename { get; set; }
+    public string ImageFileName { get; set; }
 
     public IEnumerable<Club> Clubs { get; set; }
 

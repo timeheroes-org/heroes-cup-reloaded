@@ -12,7 +12,7 @@ public class StoryViewModel
 
     public string HeroImageId { get; set; }
 
-    public IEnumerable<string> ImageIds { get; set; }
+    public IEnumerable<string> ImageFileNames { get; set; }
 
     public string ClubName { get; set; }
 }

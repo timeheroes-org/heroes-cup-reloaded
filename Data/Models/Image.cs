@@ -1,4 +1,6 @@
-﻿namespace HeroesCup.Data.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace HeroesCup.Data.Models;
 
 public class Image
 {
@@ -17,4 +19,18 @@ public class Image
     public ICollection<StoryImage> StoryImages { get; set; }
 
     public ICollection<MissionIdeaImage> MissionIdeaImages { get; set; }
+    [NotMapped]
+    public string Extension
+    {
+        get
+        {
+            return ContentType switch
+            {
+                "image/jpeg" => "jpg",
+                "image/png" => "png",
+                "application/pdf" => "pdf",
+                _ => String.Empty
+            };
+        }
+    }
 }

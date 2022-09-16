@@ -184,7 +184,7 @@ public class ImagesService : IImagesService
     {
         if (image == null) return null;
 
-        return image.Filename;
+        return $"{image.Filename}.{image.Extension}";
     }
 
     public async Task<string> GetImageFilename(Guid id)
@@ -193,7 +193,7 @@ public class ImagesService : IImagesService
 
         var image = await GetImage(id);
 
-        return image.Filename;
+        return $"{image.Filename}.{image.Extension}";
     }
 
     public async Task<Image> GetImageByFileName(string filename)

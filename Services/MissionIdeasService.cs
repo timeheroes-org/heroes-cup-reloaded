@@ -186,7 +186,7 @@ public class MissionIdeasService : IMissionIdeasService
             model.ImageId = missionIdea.MissionIdeaImages != null && missionIdea.MissionIdeaImages.Any()
                 ? missionIdea.MissionIdeaImages.FirstOrDefault().ImageId.ToString()
                 : null;
-            model.ImageFilename = missionIdeaImage.Image.Filename;
+            model.ImageFilename = $"{missionIdeaImage.Image.Filename}.{missionIdeaImage.Image.Extension}";
         }
 
         return model;

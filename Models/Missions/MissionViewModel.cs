@@ -20,7 +20,7 @@ public class MissionViewModel
 
     public MissionContent Content { get; set; }
 
-    public string ImageFilename { get; set; }
+    public string ImageFileName { get; set; }
 
     public string ImageId { get; set; }
 

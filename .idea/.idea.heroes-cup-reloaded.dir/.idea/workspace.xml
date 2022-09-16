@@ -27,6 +27,24 @@
   <component name="ChangeListManager">
     <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Removed seed.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/MissionEditModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/MissionEditModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/MissionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MissionsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Models/Image.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Models/Image.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Models/MissionIdea.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/Models/MissionIdea.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Missions/MissionIdeaViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Missions/MissionIdeaViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Missions/MissionViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Missions/MissionViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Missions/StoryViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Missions/StoryViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/MissionIdeasService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionIdeasService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/MissionsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/MissionIdeaPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/MissionIdeaPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/MissionPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/MissionPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/StoryPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/StoryPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/_MissionIdeasList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/_MissionIdeasList.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/_MissionsList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/_MissionsList.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Missions/_StoriesList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/_StoriesList.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_ClubDetails.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_ClubDetails.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,17 +62,21 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/adb5cbeb54e64893ac7eb2c5c56544652de000/00/383910a4/DbConnectionStringBuilder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/324c205dd24097a66660317052ce349c156c3984c8b656b639a966cd3585f7/ConnectionSettings.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5fc673f695cd4845d67e52f55b7f4c7ab8c27b5d52ab5e1cb85e3235d6196/MySqlDbContextOptionsBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bebd253e21dcf766929bfdfd74615bfe46e6e1693b289273dbdb82152893/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75b0d80017554e859b1a49b756b3ba2ea6e00/1e/a5566fae/SslStream.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c85aff997a014acca2334f8c43384d8594de00/61/2aeeb960/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1d37e86d3f44af3b70b9ee3188332d488c00/03/a1f8f76e/Socket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/2a/66918e2a/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/5c/9789476c/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/d6/59db6db7/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bde215d3d568499d3be1f524f92914afa1cfbbea3c7da7f1fc7cdfc68f1020/FileStorageStartupExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e4827c990cfab6c5480b437c0c58a1ead161fdc39797bd53826724afdcbb28b/ServerSession.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9d1991eff9bd564c90b86f95b51c8938e3d1419b3119b1c65cd9f66180d4cc/FileStorageExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Migrations/20220801144609_Initial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Archive.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Page.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IStatisticsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IStoriesService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IStoryImageService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -93,21 +115,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.intentionPowerPack",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.intentionPowerPack&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected=".NET Project.heroes-cup-reloaded">
+}</component>
+  <component name="RunManager">
     <configuration name="heroes-cup-reloaded" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/net6.0/heroes-cup-reloaded" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -294,7 +316,8 @@
     <MESSAGE value="Merged" />
     <MESSAGE value="Changed release branch to master." />
     <MESSAGE value="Removed seed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed seed." />
+    <MESSAGE value="Adding participate form." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding participate form." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -311,6 +334,84 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Services/MissionIdeasService.cs</url>
+          <line>188</line>
+          <properties documentPath="$PROJECT_DIR$/Services/MissionIdeasService.cs" initialLine="188" containingFunctionPresentation="method 'MapMissionIdeaToMissionIdeaEditModel'">
+            <startOffsets>
+              <option value="7126" />
+            </startOffsets>
+            <endOffsets>
+              <option value="7220" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs</url>
+          <line>95</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" initialLine="95" containingFunctionPresentation="method 'GetResourceName'">
+            <startOffsets>
+              <option value="3155" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3213" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs</url>
+          <line>83</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" initialLine="83" containingFunctionPresentation="method 'GetResourceName'">
+            <startOffsets>
+              <option value="2648" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2695" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs</url>
+          <line>68</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" initialLine="68" containingFunctionPresentation="method 'GetPublicUrl'">
+            <startOffsets>
+              <option value="2095" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2153" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs</url>
+          <line>56</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" initialLine="56" containingFunctionPresentation="lambda expression inside method 'OpenAsync'">
+            <startOffsets>
+              <option value="1634" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1717" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs</url>
+          <line>33</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" initialLine="33" containingFunctionPresentation="constructor 'FileStorage'">
+            <startOffsets>
+              <option value="1056" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1077" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

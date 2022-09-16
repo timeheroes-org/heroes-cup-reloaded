@@ -39,12 +39,12 @@
                         <div class="col-sm-12 pl-0 pr-0">
                             @if (Model.Mission.IsExpired)
                             {
-                                <img class="img-fluid expired-img center-cropped mission-image" src="/img/@Model.Mission.ImageId">
+                                <img class="img-fluid expired-img center-cropped mission-image" src="/uploads/@Model.Mission.ImageFileName">
                                 <div class="top-left body3-bold">ПРИКЛЮЧИЛА</div>
                             }
                             else
                             {
-                                <img class="img-fluid center-cropped mission-image" src="/img/@Model.Mission.ImageId">
+                                <img class="img-fluid center-cropped mission-image" src="/uploads/@Model.Mission.ImageFileName">
                             }
                         </div>
                     </div>
@@ -59,17 +59,17 @@
                                     @Html.Raw(Model.Mission.Story.Content)
                                 </div>
                             </div>
-                            @if (Model.Mission.Story.ImageIds != null && Model.Mission.Story.ImageIds.Any())
+                            @if (Model.Mission.Story.ImageFileNames != null && Model.Mission.Story.ImageFileNames.Any())
                             {
                                 <div class="row pt-md-4 pt-2 mt-md-4 mt-2 pr-md-2 pl-3 pr-3">
-                                    @foreach (var imageId in Model.Mission.Story.ImageIds)
+                                    @foreach (var imageId in Model.Mission.Story.ImageFileNames)
                                     {
                                         <div class="col-md-6 col-sm-12 thumb pr-0 mb-3">
                                             <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-                                               data-image="/img/@imageId"
+                                               data-image="/uploads/@imageId"
                                                data-target="#image-gallery">
                                                 <img class="img-fluid img-thumbnail center-cropped story-image"
-                                                     src="/img/@imageId"
+                                                     src="/uploads/@imageId"
                                                      alt="Another alt text">
                                             </a>
                                         </div>
