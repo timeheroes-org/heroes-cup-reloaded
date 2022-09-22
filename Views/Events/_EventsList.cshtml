@@ -2,8 +2,8 @@
 @model IEnumerable<HeroesCup.Web.Models.Events.EventPost>
 @{
     var events = Model;
-    var siteCulture = ViewBag["culture"];
-    var culture = new CultureInfo(siteCulture);
+    var siteCulture = ViewBag.culture;
+    var culture = new CultureInfo(siteCulture.Name);
 }
 
 <div class="row justify-content-between">

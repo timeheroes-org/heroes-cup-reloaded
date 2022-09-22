@@ -62,7 +62,8 @@ public class MissionsController : Controller
         Guid? category = null, Guid? tag = null, bool draft = false)
     {
         var model = await _loader.GetPageAsync<MissionsPage>(id, HttpContext.User, draft);
-
+        //Fixing erroneous saved default location.
+        model.SelectedLocation = String.Empty;
         var missionsCurrentPageCount =
             _sessionService.GetCurrentPageCount(HttpContext, loadRequest, MissionsPageCountKey);
         var missionIdeasCurrentPageCount =

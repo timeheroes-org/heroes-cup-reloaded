@@ -25,10 +25,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Removed seed.">
+    <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment="Fixed default selected location coming from admin.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Controllers/ImagesController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/ImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ImagesService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +119,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected=".NET Project.heroes-cup-reloaded">
+  <component name="RunManager">
     <configuration name="heroes-cup-reloaded" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/net6.0/heroes-cup-reloaded" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -272,7 +270,28 @@
       <option name="project" value="LOCAL" />
       <updated>1661793641171</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016">
+      <created>1663832520801</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1663832520801</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Blah">
+      <created>1663832540155</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1663832540155</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fixed default selected location coming from admin.">
+      <created>1663833309744</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1663833309744</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,8 +327,9 @@
     <MESSAGE value="Merged" />
     <MESSAGE value="Changed release branch to master." />
     <MESSAGE value="Removed seed." />
-    <MESSAGE value="Adding participate form." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding participate form." />
+    <MESSAGE value="Blah" />
+    <MESSAGE value="Fixed default selected location coming from admin." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed default selected location coming from admin." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -328,82 +348,85 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Services/MissionIdeasService.cs</url>
-          <line>188</line>
-          <properties documentPath="$PROJECT_DIR$/Services/MissionIdeasService.cs" initialLine="188" containingFunctionPresentation="method 'MapMissionIdeaToMissionIdeaEditModel'">
+          <url>file://$PROJECT_DIR$/Controllers/MissionsController.cs</url>
+          <line>63</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/MissionsController.cs" initialLine="63" containingFunctionPresentation="method 'MissionsArchive'">
             <startOffsets>
-              <option value="7126" />
+              <option value="2429" />
             </startOffsets>
             <endOffsets>
-              <option value="7220" />
+              <option value="2511" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs</url>
-          <line>95</line>
-          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" initialLine="95" containingFunctionPresentation="method 'GetResourceName'">
+          <url>file://$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml</url>
+          <line>8</line>
+          <properties documentPath="$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml" initialLine="8" isMultiMethodBreakpoint="true">
+            <option name="multiMethodBreakpoint" value="true" />
             <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml</url>
+          <line>15</line>
+          <properties documentPath="$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml" initialLine="15" isMultiMethodBreakpoint="true">
+            <option name="multiMethodBreakpoint" value="true" />
+            <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml</url>
+          <line>60</line>
+          <properties documentPath="$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml" initialLine="60" isMultiMethodBreakpoint="true">
+            <option name="multiMethodBreakpoint" value="true" />
+            <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/MissionsController.cs</url>
+          <line>75</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/MissionsController.cs" initialLine="74" containingFunctionPresentation="method 'MissionsArchive'">
+            <startOffsets>
+              <option value="3085" />
+            </startOffsets>
+            <endOffsets>
               <option value="3155" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3213" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs</url>
-          <line>83</line>
-          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" initialLine="83" containingFunctionPresentation="method 'GetResourceName'">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3a52601aa97770d089a5a719d2b56a543362d2e613fc835b88fda8a2b8881b6f/ModelLoader.cs</url>
+          <line>63</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3a52601aa97770d089a5a719d2b56a543362d2e613fc835b88fda8a2b8881b6f/ModelLoader.cs" initialLine="63" containingFunctionPresentation="method 'GetPageAsync'">
             <startOffsets>
-              <option value="2648" />
+              <option value="2088" />
             </startOffsets>
             <endOffsets>
-              <option value="2695" />
+              <option value="2103" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs</url>
-          <line>68</line>
-          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" initialLine="68" containingFunctionPresentation="method 'GetPublicUrl'">
-            <startOffsets>
-              <option value="2095" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2153" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs</url>
-          <line>56</line>
-          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" initialLine="56" containingFunctionPresentation="lambda expression inside method 'OpenAsync'">
-            <startOffsets>
-              <option value="1634" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1717" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs</url>
-          <line>33</line>
-          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" initialLine="33" containingFunctionPresentation="constructor 'FileStorage'">
-            <startOffsets>
-              <option value="1056" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1077" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="18" />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

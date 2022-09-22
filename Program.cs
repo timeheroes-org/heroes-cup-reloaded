@@ -40,6 +40,7 @@ builder.Services.AddTransient<ISessionService, SessionService>();
 builder.Services.AddTransient<IWebUtils, WebUtils>();
 builder.Services.AddTransient<IVideoThumbnailParser, YouTubeVideoThumbnailParser>();
 builder.Services.AddTransient<IMetaDataProvider, MetaDataProvider>();
+builder.Services.AddPiranhaFileStorage();
 builder.Services.AddDbContext<HeroesCupDbContext>(
     options =>
     {
