@@ -39,7 +39,7 @@ jobs:
     - name: Link images
       run: ln -s /var/www/heroes-cup-uploads/uploads /var/www/heroes-cup/wwwroot
     - name: Configure secrets
-      with:
+      env:
           GOOGLERECAPTCHASITEKEY: ${{ secrets.GOOGLERECAPTCHASITEKEY }}
           GOOGLERECAPTCHASECRETKEY: ${{ secrets.GOOGLERECAPTCHASECRETKEY }}
           OUTGOINGEMAILSETTINGSACCOUNT: ${{ secrets.OUTGOINGEMAILSETTINGSACCOUNT }}
