@@ -262,7 +262,7 @@ function onParticipateFormSubmit(e) {
               data: data,
               success: function (result) {
                   $(participateForm)[0].reset();
-                  $('#participateModal').modal('close');
+                      $('#participateModal').modal('hide');
               },
               error: function (e) {
                   console.error(e);
