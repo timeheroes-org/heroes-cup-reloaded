@@ -46,11 +46,11 @@ jobs:
           OUTGOINGEMAILSETTINGSPASSWORD: ${{ secrets.OUTGOINGEMAILSETTINGSPASSWORD }}
           OUTGOINGEMAILSETTINGSSERVER: ${{ secrets.OUTGOINGEMAILSETTINGSSERVER }}
       run: |
-        sed -iE "s/(.+)SiteKey.+/\1SiteKey\"=${GOOGLERECAPTCHASITEKEY}\"/" /var/www/heroes-cup/appsettings.json
-        sed -iE "s/(.+)SecretKey.+/\SecretKey\"=${GOOGLERECAPTCHASECRETKEY}\"/" /var/www/heroes-cup/appsettings.json
-        sed -iE "s/(.+)EmailAccount.+/\EmailAccount\"=${OUTGOINGEMAILSETTINGSACCOUNT}\"/" /var/www/heroes-cup/appsettings.json
-        sed -iE "s/(.+)EmailPassword.+/\EmailPassword\"=${OUTGOINGEMAILSETTINGSPASSWORD}\"/" /var/www/heroes-cup/appsettings.json
-        sed -iE "s/(.+)EmailServer.+/\EmailServer\"=${OUTGOINGEMAILSETTINGSSERVER}\"/" /var/www/heroes-cup/appsettings.json
+        sed -ire "s/(.+)SiteKey.+/\1SiteKey\"=\"${GOOGLERECAPTCHASITEKEY}\"/" /var/www/heroes-cup/appsettings.json
+        sed -ire "s/(.+)SecretKey.+/\SecretKey\"=\"${GOOGLERECAPTCHASECRETKEY}\"/" /var/www/heroes-cup/appsettings.json
+        sed -ire "s/(.+)EmailAccount.+/\EmailAccount\"=\"${OUTGOINGEMAILSETTINGSACCOUNT}\"/" /var/www/heroes-cup/appsettings.json
+        sed -ire "s/(.+)EmailPassword.+/\EmailPassword\"=\"${OUTGOINGEMAILSETTINGSPASSWORD}\"/" /var/www/heroes-cup/appsettings.json
+        sed -ire "s/(.+)EmailServer.+/\EmailServer\"=\"${OUTGOINGEMAILSETTINGSSERVER}\"/" /var/www/heroes-cup/appsettings.json
     - name: Start service
       run: sudo /bin/systemctl start kupatanageroite.service
       
