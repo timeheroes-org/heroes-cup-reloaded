@@ -243,8 +243,8 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&autoLogAppEvents=1&version=v7.0&appId=@Configuration["FacebookAppId"]"></script>
 @RenderSection("script", false)
 <script>
- document.participateForm["participate-grade"].oninput = function(){
-    document.participateForm.participateGradeOutput.value = document.participateForm["participate-grade"].value;
+ document.participateForm["participant-grade"].oninput = function(){
+    document.participateForm.participateGradeOutput.value = document.participateForm["participant-grade"].value;
  }
 function onParticipateFormSubmit(e) {
   e.preventDefault();
