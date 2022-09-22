@@ -6,11 +6,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="MailKit" Version="3.4.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.7">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.7" />
+        <PackageReference Include="MimeKit" Version="3.4.1" />
         <PackageReference Include="Piranha" Version="10.1.0" />
         <PackageReference Include="Piranha.AspNetCore" Version="10.1.0" />
         <PackageReference Include="Piranha.AspNetCore.Identity.MySQL" Version="10.1.0" />

@@ -7,7 +7,6 @@ using Piranha;
 using Piranha.AspNetCore.Services;
 
 namespace HeroesCup.Web.Controllers;
-
 public class ResourcesController : Controller
 {
     private readonly IApi _api;

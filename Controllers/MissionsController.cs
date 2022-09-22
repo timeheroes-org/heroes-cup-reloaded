@@ -7,7 +7,6 @@ using Piranha;
 using Piranha.AspNetCore.Services;
 
 namespace HeroesCup.Controllers;
-
 public class MissionsController : Controller
 {
     private const string MissionsPageCountKey = "missionsPageCount";

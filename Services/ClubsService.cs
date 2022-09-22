@@ -25,6 +25,10 @@ public class ClubsService : IClubsService
         dateTimeFormat = _configuration["DateТimeFormat"];
     }
 
+    public Task<IEnumerable<String>> GetSchools()
+    {
+        return  Task.FromResult<IEnumerable<string>>(_dbContext.Clubs.Select(c => c.OrganizationName).Distinct());
+    }
     public async Task<ClubEditModel> CreateClubEditModelAsync(Guid? ownerId)
     {
         var missions = new List<Mission>();
