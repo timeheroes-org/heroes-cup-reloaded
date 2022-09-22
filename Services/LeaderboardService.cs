@@ -60,7 +60,7 @@ public class LeaderboardService : ILeaderboardService
                     Location = c.Club.Location,
                     ClubInitials = GetClubInitials(c.Club.Name),
                     HeroesCount = GetHeroesCount(c.Club),
-                    ClubImageId = _imagesService.getClubImageId(c.Club.Id),
+                    ClubImageId = c.Club.ClubImages.FirstOrDefault()?.ImageId.ToString(),
                     Points = getClubPoints(c.Missions),
                     Club = c.Club,
                     Missions = clubMissions,

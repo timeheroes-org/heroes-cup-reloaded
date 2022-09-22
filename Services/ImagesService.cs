@@ -1,4 +1,5 @@
-﻿using HeroesCup.Data.Models;
+﻿using System.Reflection;
+using HeroesCup.Data.Models;
 using HeroesCup.Web.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +22,8 @@ public class ImagesService : IImagesService
         if (oldClubImages != null)
             foreach (var clubImage in oldClubImages)
                 await DeleteClubImageAsync(clubImage);
-
+        await File.WriteAllBytesAsync(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), image.Filename), image.Bytes);
+        image.Bytes = null;
         dbContext.Images.Add(image);
         dbContext.ClubImages.Add(new ClubImage
         {
@@ -85,7 +87,8 @@ public class ImagesService : IImagesService
         if (oldMissionImages != null)
             foreach (var missionImage in oldMissionImages)
                 await DeleteMissionImageAsync(missionImage);
-
+        await File.WriteAllBytesAsync(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), image.Filename), image.Bytes);
+        image.Bytes = null;
         dbContext.Images.Add(image);
         dbContext.MissionImages.Add(new MissionImage
         {
@@ -122,6 +125,8 @@ public class ImagesService : IImagesService
 
         foreach (var image in images)
         {
+            await File.WriteAllBytesAsync(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), image.Filename), image.Bytes);
+            image.Bytes = null;
             dbContext.Images.Add(image);
             dbContext.StoryImages.Add(new StoryImage
             {
@@ -154,7 +159,8 @@ public class ImagesService : IImagesService
         if (oldMissionIdeaImages != null)
             foreach (var missionIdeaImage in oldMissionIdeaImages)
                 await DeleteMissionIdeaImageAsync(missionIdeaImage);
-
+        await File.WriteAllBytesAsync(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), image.Filename), image.Bytes);
+        image.Bytes = null;
         dbContext.Images.Add(image);
         dbContext.MissionIdeaImages.Add(new MissionIdeaImage
         {
@@ -214,12 +220,5 @@ public class ImagesService : IImagesService
 
         return image;
     }
-
-    public string getClubImageId(Guid clubId)
-    {
-        var clubImage = dbContext.ClubImages.Where(ci => ci.ClubId == clubId).FirstOrDefault();
-        if (clubImage == null) return null;
-
-        return clubImage.ImageId.ToString();
-    }
+    
 }
