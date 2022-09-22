@@ -1,5 +1,4 @@
-﻿using HeroesCup.ActionFilters;
-using HeroesCup.Models;
+﻿using HeroesCup.Models;
 using HeroesCup.Web.Models;
 using HeroesCup.Web.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +7,6 @@ using Piranha.AspNetCore.Services;
 
 namespace HeroesCup.Controllers;
 
-[SchoolsList()]
 public class CmsController : Controller
 {
     private readonly IApi _api;

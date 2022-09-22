@@ -1,5 +1,4 @@
-﻿using HeroesCup.ActionFilters;
-using HeroesCup.Models;
+﻿using HeroesCup.Models;
 using HeroesCup.Web.Common;
 using HeroesCup.Web.Models.Missions;
 using HeroesCup.Web.Services;
@@ -8,7 +7,6 @@ using Piranha;
 using Piranha.AspNetCore.Services;
 
 namespace HeroesCup.Controllers;
-[SchoolsList()]
 public class MissionsController : Controller
 {
     private const string MissionsPageCountKey = "missionsPageCount";

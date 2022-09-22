@@ -1,4 +1,3 @@
-using HeroesCup.ActionFilters;
 using HeroesCup.Web.ClubsModule;
 using HeroesCup.Web.Common;
 using HeroesCup.Web.Data;

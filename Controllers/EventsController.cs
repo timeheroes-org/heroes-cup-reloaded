@@ -1,5 +1,4 @@
-﻿using HeroesCup.ActionFilters;
-using HeroesCup.Web.Common;
+﻿using HeroesCup.Web.Common;
 using HeroesCup.Web.Models.Events;
 using HeroesCup.Web.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +6,6 @@ using Piranha;
 using Piranha.AspNetCore.Services;
 
 namespace HeroesCup.Web.Controllers;
-[SchoolsList()]
 public class EventsController : Controller
 {
     private const string PageCountKey = "pageCount";

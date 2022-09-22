@@ -26,42 +26,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0194faf7-1aea-4809-8ca4-829b4b271ab3" name="Default Changelist" comment=" p">
-      <change afterPath="$PROJECT_DIR$/ActionFilters/SchoolsListActionFilter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/ParticipateController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/GoogleRecaptchaConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/GoogleRecaptchaResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/ParticipateModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ActionFilters/SchoolsListActionFilter.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/CmsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CmsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/EventsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EventsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/MissionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MissionsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/ResourcesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ResourcesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/ClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ClubsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/IClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IClubsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Cms/AboutPage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/AboutPage.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Cms/Page.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/Page.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Cms/Post.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/Post.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Cms/Start.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Cms/Start.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Error/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Error/Error.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Events/EventPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Events/EventPost.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Events/EventsArchive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Events/EventsArchive.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Missions/MissionIdeaPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/MissionIdeaPost.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Missions/MissionPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/MissionPost.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/MissionsArchive.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Missions/StoryPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Missions/StoryPost.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Resources/ResourcePost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Resources/ResourcePost.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Resources/ResourcesArchive.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Resources/ResourcesArchive.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_Menu.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Menu.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_blocks.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_buttons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_cards.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_general.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_header.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_navbar.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_pagination.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_posts.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/inc/_type.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/assets/css/style.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/heroes-cup-reloaded.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/heroes-cup-reloaded.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,13 +58,33 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75b0d80017554e859b1a49b756b3ba2ea6e00/1e/a5566fae/SslStream.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c85aff997a014acca2334f8c43384d8594de00/61/2aeeb960/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1d37e86d3f44af3b70b9ee3188332d488c00/03/a1f8f76e/Socket.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/2a/66918e2a/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/5c/9789476c/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/d6/59db6db7/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e4827c990cfab6c5480b437c0c58a1ead161fdc39797bd53826724afdcbb28b/ServerSession.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5e02963164fe426c99895e1a8eb94f0311e400/df/277e74f0/MailboxAddress.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/adb5cbeb54e64893ac7eb2c5c56544652de000/00/383910a4/DbConnectionStringBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1390a4b16a70c57df283dd441dd48a2a16998d22b5faf5ed2172f6da728455b/DefaultHttpContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/17a25bf4cd58852e31b6bc798fef1d6289441360eea1912bf89a9b4fd337a3/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1b7584f2711c347d896d37f5097dfa3c0959afdca9e51ac0c9e563fdd9cf/AsyncMethodBuilderCore.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2ff6bc225fd491e0596fc5d7f6192b4bcb1817d1b7c02365339be07928efa6c/RuntimeHandles.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/31ce2d5cb8d43dff2a7f7bda7c11ee5b147fb2892748e5d7aa1b1fc7e7db42/FeatureReferences.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/324c205dd24097a66660317052ce349c156c3984c8b656b639a966cd3585f7/ConnectionSettings.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3a52601aa97770d089a5a719d2b56a543362d2e613fc835b88fda8a2b8881b6f/ModelLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5947e9eb575633734c9548481908f355e654cc882e1d7f2571692b17ed37d/IModelLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5fc673f695cd4845d67e52f55b7f4c7ab8c27b5d52ab5e1cb85e3235d6196/MySqlDbContextOptionsBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7733bdb26b2be012c4266979a95d3728e74790201f91a02df4529ee6c2f37/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8f2ba51d4c579e65ff5ba9d5807aefaa39879cab8ec9a0307b6c90e75c37f/SmtpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a4f51f201dca40bd938f37a528b1d91b4f1089a8ba612a057c4732bf7c21aad/FieldInfo.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a89c43b9e4639a86ef72bfbdd915cf3a88d4582ea46a7bc809f17b1baa77abf/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bcae882191178c8bf44c9add4cdeffa874a7afe629e3e56e9280f5896e953425/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bde215d3d568499d3be1f524f92914afa1cfbbea3c7da7f1fc7cdfc68f1020/FileStorageStartupExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bebd253e21dcf766929bfdfd74615bfe46e6e1693b289273dbdb82152893/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c191b28d721bfa98bdbbf7e4a908a3d6a13a77f2c32544b1a96b3c82f8d28ec/StatusCodes.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ec45275be855555cf8689ff79f3ca5653437d7de8dcbc1a728c8acdf41e4fa/BadRequestResult.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9d1991eff9bd564c90b86f95b51c8938e3d1419b3119b1c65cd9f66180d4cc/FileStorageExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Controllers/MissionsController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Migrations/20220801144609_Initial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Archive.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Page.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -100,6 +98,7 @@
     <setting file="file://$PROJECT_DIR$/Services/ImagesService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/LeaderboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/MissionsService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/compilerconfig.json" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -130,30 +129,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "NewWatcherDialog.advanced.open": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/andrey/Git/heroes-cup-reloaded/assets/scss",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "watcher.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;NewWatcherDialog.advanced.open&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/andrey/Git/heroes-cup-reloaded/assets/scss&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected=".NET Project.heroes-cup-reloaded">
+}</component>
+  <component name="RunManager">
     <configuration name="heroes-cup-reloaded" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/net6.0/heroes-cup-reloaded" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <envs>
-        <env name="ENVIRONMENT" value="Development" />
+        <env name="ENVIRONMENT" value="Production" />
       </envs>
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -352,17 +351,30 @@
           <option name="timeStamp" value="4" />
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ActionFilters/SchoolsListActionFilter.cs</url>
-          <line>12</line>
-          <properties documentPath="$PROJECT_DIR$/ActionFilters/SchoolsListActionFilter.cs" initialLine="12" containingFunctionPresentation="method 'OnActionExecuting'">
+          <url>file://$PROJECT_DIR$/Controllers/ParticipateController.cs</url>
+          <line>84</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/ParticipateController.cs" initialLine="51" containingFunctionPresentation="method 'Participate'">
             <startOffsets>
-              <option value="491" />
+              <option value="3389" />
             </startOffsets>
             <endOffsets>
-              <option value="523" />
+              <option value="3409" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/ParticipateController.cs</url>
+          <line>48</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/ParticipateController.cs" initialLine="45" containingFunctionPresentation="method 'Participate'">
+            <startOffsets>
+              <option value="1398" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1424" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

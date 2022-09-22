@@ -1,4 +1,10 @@
-﻿@{
+﻿@using Microsoft.Extensions.Options
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using HeroesCup.Web.ClubsModule.Controllers
+@using HeroesCup.Web.ClubsModule.Models
+@inject IConfiguration Configuration
+
+@{
     ViewBag.Title = "Доброволческото състезание на училищата в България";
 
     var mainBodyClass = GetMainBodyClass();
@@ -50,7 +56,7 @@
     <link rel="stylesheet" href="~/css/custom-select.css"/>
     <script src="https://kit.fontawesome.com/e8be9fcdae.js" crossorigin="anonymous"></script>
     <partial name="Partial/_Favicons.cshtml"/>
-
+    <script src="https://www.google.com/recaptcha/api.js?render=@Configuration.GetSection("GoogleRecaptcha").GetSection("SiteKey").Value"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172912338-1"></script>
     <script>
@@ -87,40 +93,104 @@
                 </div>
             </div>
             <div class="modal-body body2">
-                <form>
+                <form name="participateForm" onsubmit="return onParticipateFormSubmit(event)">
                     <div class="row">
                         <div class="col">
-                            <label for="participate-name">Име</label>
+                            <label for="participant-name">Име</label>
                             <div class="form-group">
-                                <input class="form-control" id="participate-name" placeholder="Име">
+                                <input class="form-control" name="participant-name" required id="participant-name" placeholder="Име" />
                             </div>
                         </div>
                         <div class="col">
-                            <label for="participate-surname">Фамилия</label>
+                            <label for="participant-lastname">Фамилия</label>
                             <div class="form-group">
-                                <input class="form-control" id="participate-surname"placeholder="Фамилия">
+                                <input class="form-control" required id="participant-lastname" name="participant-lastname" placeholder="Фамилия" />
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <label for="participate-type">Ти си</label>
+                            <label for="participant-type">Ти си</label>
                             <div class="form-group">
-                                <select class="form-control" id="participate-type">
-                                  <option>Ученик</option>
-                                  <option>Координатор</option>
+                                <select class="form-control" id="participant-type" name="participant-type">
+                                    <option>Ученик</option>
+                                    <option>Координатор</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col">
-                            <label for="participate-school">Училище</label>
-                             <div class="form-group">
-                                <select  class="form-control" id="participate-school" 
-                                        asp-items="@(new SelectList(schools))">
-                                </select>
+                            <label for="participant-school">Училище</label>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <input class="form-control" name="participant-school" required id="participant-school" placeholder="Училище" />
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="participant-grade">Клас</label>
+                            <div class="form-group">
+                                <input class="form-control" id="participant-grade" name="participant-grade"  type="range" min="1" max="12" placeholder="Клас" list="grades"/>
+                                <datalist id="grades">
+                                    <option value="1" label="1"></option>
+                                    <option value="2"></option>
+                                    <option value="3"></option>
+                                    <option value="4"></option>
+                                    <option value="5"></option>
+                                    <option value="6" label="6" ></option>
+                                    <option value="7" selected="selected"></option>
+                                    <option value="8"></option>
+                                    <option value="9"></option>
+                                    <option value="10"></option>
+                                    <option value="11" label="11"></option>
+                                    <option value="12" label="12"></option>
+                                </datalist>
+                                <input type="number" name="participateGradeOutput" disabled="disabled" value="7" style="max-width: 40px"/>
+                            </div>
+                            
+                        </div>
+                        <div class="col">
+                            <label for="participant-location">Населено място</label>
+                            <div class="form-group">
+                                <input class="form-control" id="participant-location" name="participant-location" required placeholder="Населено място" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="participant-email">Email</label>
+                            <div class="form-group">
+                                <input class="form-control" id="participant-email" type="email"  name="participant-email" required placeholder="Email" />
+                            </div>
+                        </div>
+                        <div class="col">
+                            &nbsp;
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="participant-more">Разкажи ни повече за себе си</label>
+                            <div class="form-group">
+                                <textarea class="form-control" id="participant-more" name="participant-more" required placeholder="Повече за теб" ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input type="checkbox" required="required"/> Съгласявам се с <a href="https://timeheroes.org/bg/pages/tocoop">Общите условия</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-heroes btn-lg body2-bold" 
+                                    data-sitekey="@Configuration.GetSection("GoogleRecaptcha").GetSection("SiteKey").Value" 
+                                    id="submit-participate-form"
+                            >Изпрати</button>
+                        </div>
+                    </div>
+                    <input type="hidden" id="participate-g-token" name="participant-token"/>
                 </form>
             </div>
         </div>
@@ -172,5 +242,35 @@
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/bg_BG/sdk.js#xfbml=1&autoLogAppEvents=1&version=v7.0&appId=@Configuration["FacebookAppId"]"></script>
 @RenderSection("script", false)
+<script>
+ document.participateForm["participate-grade"].oninput = function(){
+    document.participateForm.participateGradeOutput.value = document.participateForm["participate-grade"].value;
+ }
+function onParticipateFormSubmit(e) {
+  e.preventDefault();
+  
+  var siteKey = document.getElementById("submit-participate-form").getAttribute("data-siteKey");
+  
+  grecaptcha.ready(function() {
+      grecaptcha.execute(siteKey, {action: 'submit'}).then(function(token) {
+          $("#participate-g-token").val(token);
+          var data = $(participateForm).serialize();
+          $.ajax({
+              type: 'POST',
+              url: '/participate',
+              contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+              data: data,
+              success: function (result) {
+                  $(participateForm)[0].reset();
+                  $('#participateModal').modal('close');
+              },
+              error: function (e) {
+                  console.error(e);
+              }
+          })
+      });
+  });
+}
+</script>
 </body>
 </html>
