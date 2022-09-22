@@ -41,16 +41,16 @@ jobs:
     - name: Configure secrets
       env:
           GOOGLERECAPTCHASITEKEY: ${{ secrets.GOOGLERECAPTCHASITEKEY }}
-          GOOGLERECAPTCHASECRETKEY: ${{ secrets.GOOGLERECAPTCHASECRETKEY }}
+          GOOGLERECAPTCHASITESECRET: ${{ secrets.GOOGLERECAPTCHASITESECRET }}
           OUTGOINGEMAILSETTINGSACCOUNT: ${{ secrets.OUTGOINGEMAILSETTINGSACCOUNT }}
           OUTGOINGEMAILSETTINGSPASSWORD: ${{ secrets.OUTGOINGEMAILSETTINGSPASSWORD }}
           OUTGOINGEMAILSETTINGSSERVER: ${{ secrets.OUTGOINGEMAILSETTINGSSERVER }}
       run: |
         sed -i.bak -re "s/(.+)SiteKey.+/\1SiteKey\":\"${GOOGLERECAPTCHASITEKEY}\",/" /var/www/heroes-cup/appsettings.json
-        sed -i.bak -re "s/(.+)SecretKey.+/\SecretKey\":\"${GOOGLERECAPTCHASITESECRET}\",/" /var/www/heroes-cup/appsettings.json
-        sed -i.bak -re "s/(.+)EmailAccount.+/\EmailAccount\":\"${OUTGOINGEMAILSETTINGSACCOUNT}\",/" /var/www/heroes-cup/appsettings.json
-        sed -i.bak -re "s/(.+)EmailPassword.+/\EmailPassword\":\"${OUTGOINGEMAILSETTINGSPASSWORD}\",/" /var/www/heroes-cup/appsettings.json
-        sed -i.bak -re "s/(.+)EmailServer.+/\EmailServer\":\"${OUTGOINGEMAILSETTINGSSERVER}\",/" /var/www/heroes-cup/appsettings.json
+        sed -i.bak -re "s/(.+)SecretKey.+/\1SecretKey\":\"${GOOGLERECAPTCHASITESECRET}\",/" /var/www/heroes-cup/appsettings.json
+        sed -i.bak -re "s/(.+)EmailAccount.+/\1EmailAccount\":\"${OUTGOINGEMAILSETTINGSACCOUNT}\",/" /var/www/heroes-cup/appsettings.json
+        sed -i.bak -re "s/(.+)EmailPassword.+/\1EmailPassword\":\"${OUTGOINGEMAILSETTINGSPASSWORD}\",/" /var/www/heroes-cup/appsettings.json
+        sed -i.bak -re "s/(.+)EmailServer.+/\1EmailServer\":\"${OUTGOINGEMAILSETTINGSSERVER}\",/" /var/www/heroes-cup/appsettings.json
     - name: Start service
       run: sudo /bin/systemctl start kupatanageroite.service
       
