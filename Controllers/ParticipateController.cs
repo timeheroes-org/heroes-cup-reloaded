@@ -1,4 +1,5 @@
 using System.Net;
+using HeroesCup.Web.Common;
 using HeroesCup.Web.Models;
 using MailKit.Net.Smtp;
 using MailKit.Security;
@@ -19,33 +20,14 @@ public class ParticipateController : Controller
     }
 
 
-    private async Task<bool> Verify(string token)
-    {
-        var url =
-            $"https://www.google.com/recaptcha/api/siteverify?secret={_config.GetSection("GoogleRecaptcha").GetSection("SecretKey").Value}&response={token}";
-
-        using (var client = new HttpClient())
-        {
-            var httpResult = await client.GetAsync(url);
-            if (httpResult.StatusCode != HttpStatusCode.OK)
-            {
-                return false;
-            }
-
-            var responseString = await httpResult.Content.ReadAsStringAsync();
-
-            var googleResult = JsonConvert.DeserializeObject<GoogleReCaptchaResponseModel>(responseString);
-
-            return googleResult.Success && googleResult.Score >= 0.5;
-        }
-    }
+    
 
     [HttpPost]
     public async Task<IActionResult> Participate([FromForm] ParticipateModel model)
     {
         if (ModelState.IsValid)
         {
-            var googleReCaptchaResult = await this.Verify(model.Token);
+            var googleReCaptchaResult = await RecaptchaValidator.Verify(_config, model.Token);
             if (googleReCaptchaResult)
             {
                 var emailMessage = new MimeMessage();
