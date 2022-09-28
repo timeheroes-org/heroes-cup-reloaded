@@ -1,12 +1,16 @@
 ﻿@using System.Globalization
+@using HeroesCup.Web.Models.Events
 @model IEnumerable<HeroesCup.Web.Models.Events.EventPost>
 @{
-    var events = Model;
-    var siteCulture = ViewBag.culture;
-    var culture = new CultureInfo(siteCulture.Name);
+    List<EventPost> events = Model as List<EventPost>;
+    var culture = ViewBag.SiteCulture;
 }
 
 <div class="row justify-content-between">
+
+    @{
+        System.Diagnostics.Debug.Assert(events != null, nameof(events) + " != null");
+    }
     @foreach (var post in events)
     {
         var author = post.Author.Value != null && post.Author.Value != string.Empty ? post.Author.Value : "TimeHeroes";
