@@ -1,4 +1,6 @@
 using HeroesCup.Web.Common;
+using HeroesCup.Web.Models;
+using HeroesCup.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HeroesCup.Web.Controllers;
@@ -6,10 +8,12 @@ namespace HeroesCup.Web.Controllers;
 public class SearchController : Controller
 {
     private readonly IConfiguration _config;
+    private readonly ISearchServce _searchServce;
 
-    public SearchController(IConfiguration config)
+    public SearchController(IConfiguration config, ISearchServce searchServce)
     {
         _config = config;
+        _searchServce = searchServce;
     }
 
     [HttpPost]
@@ -18,25 +22,10 @@ public class SearchController : Controller
         var googleReCaptchaResult = await RecaptchaValidator.Verify(_config, model.Token);
         if (googleReCaptchaResult)
         {
-            SearchResponseViewModel responseViewModel;
-            return View(responseViewModel);
+            SearchResponseModel responseModel = await _searchServce.Search(model.SearchTerm);
+            return View(responseModel);
         }
 
         return BadRequest();
     }
-}
-
-public class SearchResponseViewModel
-{
-    public string Title { get; set; }
-    public string Date { get; set; }
-    public string Text { get; set; }
-    public string Author { get; set; }
-    public string Status { get; set; }
-}
-
-public class SearchViewModel
-{
-    public string Search { get; set; }
-    public string Token { get; set; }
 }
