@@ -63,7 +63,7 @@
             }
             <li class="nav-item nav-search">
                 <form id="search-box" class="search-box" method="post" action="/search" data-sitekey="@Configuration.GetSection("GoogleRecaptcha").GetSection("SiteKey").Value">
-                    <input type="text" minlength="3" name="search" required/>
+                    <input type="text" minlength="1" name="search" required/>
                     <input type="hidden" class="search-token" name="search-token"/>
                     <i class="fa fa-search"></i>
                 </form>

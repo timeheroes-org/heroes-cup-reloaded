@@ -2,24 +2,6 @@
     box-sizing: border-box;
 }
 
-/*/* Select */
-
-
-/*.custom-select {
-    border: none;
-    outline: none;
-    box-shadow: none;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    color: #370AEB;
-    background: url('../images/dropdown-rectangle.svg') no-repeat right;
-    background-position: 100% 45%;
-}
-*/
-
-
 
 .custom-select-wrapper {
     position: relative;
@@ -44,7 +26,7 @@
     border: none;
     outline: none;
     box-shadow: none;
-    font-family: Montserrat;
+    font-family: 'Fira Sans', sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -87,7 +69,7 @@ input.custom-option {
     position: relative;
     display: block;
     padding: 0 22px 0 22px;
-    font-family: Montserrat;
+    font-family: 'Fira Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -100,7 +82,7 @@ input.custom-option {
 
     .custom-option:hover {
         cursor: pointer;
-        font-family: Montserrat;
+        font-family: 'Fira Sans', sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
@@ -111,7 +93,7 @@ input.custom-option {
     }
 
     .custom-option.selected {
-        font-family: Montserrat;
+        font-family: 'Fira Sans', sans-serif;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;

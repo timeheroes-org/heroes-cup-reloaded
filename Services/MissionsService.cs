@@ -351,6 +351,16 @@ public class MissionsService : IMissionsService
         return missions.ToList();
     }
 
+    public async Task<List<Mission>> GetAllPublishedMissionsWithContentAndImages()
+    {
+        return await _dbContext.Missions
+            .Where(m => m.IsPublished == true)
+            .Include(m => m.Content)
+            .Include(m => m.HeroMissions)
+            .Include(m => m.Club)
+            .Include(m=>m.MissionImages).ToListAsync();
+    }
+
     public async Task<bool> PinMissionEditModelAsync(Guid id)
     {
         var mission = await _dbContext.Missions.FirstOrDefaultAsync(m => m.Id == id);

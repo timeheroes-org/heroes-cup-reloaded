@@ -19,4 +19,5 @@ public interface IClubsService
     Task<bool> DeleteAsync(Guid id);
 
     IEnumerable<Club> GetAllClubs();
+    Task<Task<List<Club>>> GetAllClubsWithImages();
 }
