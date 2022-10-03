@@ -4,15 +4,15 @@
     <projectFile>heroes-cup-reloaded.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/SearchResponseModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/SearchViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/Search/Search.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/ISearchServce.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/SearchService.cs" afterDir="false" />
+    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Added more search inventory.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/SearchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/SearchController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/SearchViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/SearchViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Search/Search.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Search/Search.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +27,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/2a/66918e2a/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/5c/9789476c/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/d6/59db6db7/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/da/b5345179/TaskAwaiter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18cac6b0834a5276c83674be55f08b584743b1b4bc22368c061a4c2be98411f/PostService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f499d4027f8e8e28191ae6723a925ef4ab359a8c42290e84c2fb5e4860c5ca/IApi.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/934198ddca58cc49db309419f143245c3a390d85a5758e861bf9c02f38b2c7/IPostService.cs" root0="SKIP_HIGHLIGHTING" />
@@ -82,6 +83,14 @@
       <updated>1664352766061</updated>
       <workItem from="1664352772446" duration="7344000" />
     </task>
+    <task id="LOCAL-00001" summary="Added more search inventory.">
+      <created>1664370381785</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664370381785</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,21 +110,38 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added more search inventory." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more search inventory." />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Controllers/SearchController.cs</url>
-          <line>20</line>
+          <line>21</line>
           <properties documentPath="$PROJECT_DIR$/Controllers/SearchController.cs" initialLine="8" containingFunctionPresentation="method 'Search'">
             <startOffsets>
-              <option value="542" />
+              <option value="570" />
             </startOffsets>
             <endOffsets>
-              <option value="543" />
+              <option value="571" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Services/SearchService.cs</url>
+          <line>22</line>
+          <properties documentPath="$PROJECT_DIR$/Services/SearchService.cs" initialLine="22" containingFunctionPresentation="method 'Search'">
+            <startOffsets>
+              <option value="626" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1032" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

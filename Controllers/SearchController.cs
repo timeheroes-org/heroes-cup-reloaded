@@ -5,27 +5,30 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HeroesCup.Web.Controllers;
 
+[Route("[controller]")]
 public class SearchController : Controller
 {
     private readonly IConfiguration _config;
-    private readonly ISearchServce _searchServce;
+    private readonly ISearchServce _searchService;
 
-    public SearchController(IConfiguration config, ISearchServce searchServce)
+    public SearchController(IConfiguration config, ISearchServce searchService)
     {
         _config = config;
-        _searchServce = searchServce;
+        _searchService = searchService;
     }
 
     [HttpPost]
     public async Task<IActionResult> Search([FromForm] SearchViewModel model)
     {
+        if (model == null || string.IsNullOrEmpty(model.Token))
+            return BadRequest();
         var googleReCaptchaResult = await RecaptchaValidator.Verify(_config, model.Token);
         if (googleReCaptchaResult)
         {
-            SearchResponseModel responseModel = await _searchServce.Search(model.SearchTerm);
+            SearchResponseModel responseModel = await _searchService.Search(model.SearchTerm);
             return View(responseModel);
         }
 
-        return BadRequest();
+        return View(new SearchResponseModel());
     }
 }
