@@ -4,6 +4,7 @@
     <projectFile>heroes-cup-reloaded.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Added more search inventory.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/SearchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/SearchController.cs" afterDir="false" />
@@ -13,6 +14,14 @@
       <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/style.css" afterDir="false" />
+=======
+    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Started working on search. Added search bar.">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/EventsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/EventsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Events/EventPost.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Events/EventPost.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Events/_EventsList.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Events/_EventsList.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+>>>>>>> main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +36,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/2a/66918e2a/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/5c/9789476c/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/d6/59db6db7/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
+<<<<<<< HEAD
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/da/b5345179/TaskAwaiter.cs" root0="SKIP_HIGHLIGHTING" />
+=======
+>>>>>>> main
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18cac6b0834a5276c83674be55f08b584743b1b4bc22368c061a4c2be98411f/PostService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f499d4027f8e8e28191ae6723a925ef4ab359a8c42290e84c2fb5e4860c5ca/IApi.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/934198ddca58cc49db309419f143245c3a390d85a5758e861bf9c02f38b2c7/IPostService.cs" root0="SKIP_HIGHLIGHTING" />
@@ -35,7 +47,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e4827c990cfab6c5480b437c0c58a1ead161fdc39797bd53826724afdcbb28b/ServerSession.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9d1991eff9bd564c90b86f95b51c8938e3d1419b3119b1c65cd9f66180d4cc/FileStorageExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+<<<<<<< HEAD
     <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Controllers/EventsController.cs" root0="SKIP_HIGHLIGHTING" />
+=======
+>>>>>>> main
     <setting file="file://$PROJECT_DIR$/Migrations/20220801144609_Initial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Archive.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Page.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -65,6 +80,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -73,6 +89,18 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected=".NET Project.heroes-cup-reloaded" />
+>>>>>>> main
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -81,6 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664352766061</updated>
+<<<<<<< HEAD
       <workItem from="1664352772446" duration="7344000" />
     </task>
     <task id="LOCAL-00001" summary="Added more search inventory.">
@@ -89,6 +118,16 @@
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1664370381785</updated>
+=======
+      <workItem from="1664352772446" duration="10807000" />
+    </task>
+    <task id="LOCAL-00001" summary="Started working on search. Added search bar.">
+      <created>1664364458050</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664364458051</updated>
+>>>>>>> main
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -111,13 +150,19 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+<<<<<<< HEAD
     <MESSAGE value="Added more search inventory." />
     <option name="LAST_COMMIT_MESSAGE" value="Added more search inventory." />
+=======
+    <MESSAGE value="Started working on search. Added search bar." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started working on search. Added search bar." />
+>>>>>>> main
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
+<<<<<<< HEAD
           <url>file://$PROJECT_DIR$/Controllers/SearchController.cs</url>
           <line>21</line>
           <properties documentPath="$PROJECT_DIR$/Controllers/SearchController.cs" initialLine="8" containingFunctionPresentation="method 'Search'">
@@ -142,6 +187,45 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="14" />
+=======
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18cac6b0834a5276c83674be55f08b584743b1b4bc22368c061a4c2be98411f/PostService.cs</url>
+          <line>102</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18cac6b0834a5276c83674be55f08b584743b1b4bc22368c061a4c2be98411f/PostService.cs" initialLine="102" containingFunctionPresentation="method 'GetAllAsync'">
+            <startOffsets>
+              <option value="3901" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3902" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/EventsController.cs</url>
+          <line>44</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/EventsController.cs" initialLine="44" containingFunctionPresentation="method 'EventsArchive'">
+            <startOffsets>
+              <option value="1762" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1763" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/EventsController.cs</url>
+          <line>86</line>
+          <properties documentPath="$PROJECT_DIR$/Controllers/EventsController.cs" initialLine="86" containingFunctionPresentation="method 'EventPost'">
+            <startOffsets>
+              <option value="3330" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3331" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+>>>>>>> main
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

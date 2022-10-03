@@ -81,6 +81,7 @@ public class EventsController : Controller
     /// </summary>
     /// <param name="id">The unique page id</param>
     /// <param name="draft">If a draft is requested</param>
+    [ResponseCache(Duration = 600)]
     [Route("event")]
     public async Task<IActionResult> EventPost(Guid id, bool draft = false)
     {
@@ -97,6 +98,7 @@ public class EventsController : Controller
             var currentUrlBase = _webUtils.GetUrlBase(HttpContext);
             model.CurrentUrlBase = currentUrlBase;
             model.SiteCulture = await _webUtils.GetCulture(_api);
+            ViewBag.SiteCulture = model.SiteCulture;
             var image = model.Hero != null && model.Hero.PrimaryImage.HasValue
                 ? $"{currentUrlBase}{model.Hero.PrimaryImage.Media.PublicUrl.TrimStart(new[] { '~' })}"
                 : $"{currentUrlBase}/{_configuration["FacebookDefaultImageUrl"]}";
