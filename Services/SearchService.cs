@@ -80,7 +80,7 @@ public class SearchService : ISearchServce
                 Date = e.Created.ToShortDateString(),
                 Slug = e.Slug,
                 Image = e.Hero?.PrimaryImage?.Media?.PublicUrl,
-                Text = ((HtmlBlock)e.Blocks?[0])?.Body,
+                Text = ((HtmlBlock)e.Blocks.FirstOrDefault(b=>b is HtmlBlock))?.Body,
                 Title = e.Title,
                 Type = SearchResultType.Event
 
