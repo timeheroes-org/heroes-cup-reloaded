@@ -109,7 +109,7 @@
                                     </div>
                                     <div class="search-result-content col">
                                         <span>@item.Author</span>
-                                        <h3><a href="/event/@item.Slug">@item.Title</a></h3>
+                                        <h3><a href="/events/@item.Slug">@item.Title</a></h3>
                                         @{
                                             var strippedText = Regex.Replace(item.Text, "<.*?>", string.Empty);
                                             var eventText = strippedText.Length > 200 ? string.Concat(strippedText.Substring(0, 200), "...") : strippedText;
