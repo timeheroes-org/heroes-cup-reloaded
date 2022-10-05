@@ -17,11 +17,17 @@ public class SearchController : Controller
         _searchService = searchService;
     }
 
+    [HttpGet]
+    public async Task<IActionResult> SearchPage([FromForm] SearchViewModel model)
+    {
+        ViewBag.IsSearchPage = true;
+        return View("Search", new SearchResponseModel());
+    }
+
     [HttpPost]
     public async Task<IActionResult> Search([FromForm] SearchViewModel model)
     {
-        if (model == null || string.IsNullOrEmpty(model.Token))
-            return BadRequest();
+        ViewBag.IsSearchPage = true;
         var googleReCaptchaResult = await RecaptchaValidator.Verify(_config, model.Token);
         if (googleReCaptchaResult)
         {

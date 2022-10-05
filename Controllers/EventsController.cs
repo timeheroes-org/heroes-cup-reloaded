@@ -38,6 +38,7 @@ public class EventsController : Controller
     /// <param name="category">The optional category</param>
     /// <param name="tag">The optional tag</param>
     /// <param name="draft">If a draft is requested</param>
+    [ResponseCache(Duration = 600)]
     [Route("events")]
     public async Task<IActionResult> EventsArchive(Guid id, bool loadRequest, int? year = null, int? month = null,
         int? page = null,

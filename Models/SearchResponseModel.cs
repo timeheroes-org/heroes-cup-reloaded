@@ -19,6 +19,7 @@ namespace HeroesCup.Web.Models
         public SearchResultType Type { get; set; }
         public string Image { get; set; }
         public string Id { get; set; }
+        public string Slug { get; set; }
     }
 
     public enum SearchResultType

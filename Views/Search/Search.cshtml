@@ -4,89 +4,124 @@
 @model HeroesCup.Web.Models.SearchResponseModel
 
 @{
-    ViewData["Title"] =  ViewBag.Title ?? String.Concat("Резултати от търсене за ", ViewBag.SearchTerm);
+    ViewData["Title"] = ViewBag.Title ?? String.Concat("Резултати от търсене за ", ViewBag.SearchTerm);
     Layout = "_Layout";
     var missions = Model.Items.Where(i => i.Type == SearchResultType.Mission).ToList();
     var clubs = Model.Items.Where(i => i.Type == SearchResultType.Club).ToList();
+    var events = Model.Items.Where(i => i.Type == SearchResultType.Event).ToList();
+    var resources = Model.Items.Where(i => i.Type == SearchResultType.Resource).ToList();
 }
 <main class="search-results main">
     <div class="container mt-md-4 pt-md-4 pl-4 pr-4">
-    <div class="row justify-content-center">
-        
-        <div class="col search-results-header">
-            <h2>Резултати за:</h2>
-            <form class="search-box-result" method="post" action="/search" data-sitekey="@Configuration.GetSection("GoogleRecaptcha").GetSection("SiteKey").Value">
-                <input type="text" minlength="3" name="search" value="@ViewBag.SearchTerm" required/>
-                <input type="hidden" class="search-token" name="search-token"/>
-                <i class="fa fa-search"></i>
-            </form>
-        </div>
-    </div>
-    <div class="row justify-content-center search-results-content">
-        <div class="col justify-content-left search-results-list">
-            <ul class="nav nav-tabs" id="search-result-tabs" role="tablist">
-                @if (missions.Any())
-                {
-                    <li class="nav-item" role="presentation">
-                        <a class="button btn-light search-result-button" data-toggle="tab" data-target="#search-result-missions" aria-controls="search-result-missions" href="#" role="tab" aria-selected="true">Мисии</a>
-                    </li>
-                }
-                @if (clubs.Any())
-                {
-                    var clubsSelected = !missions.Any() ? "true" : "false";
-                    <li class="nav-item" role="presentation">
-                        <a class="button btn-light search-result-button" data-toggle="tab" data-target="#search-result-clubs" aria-controls="search-result-clubs" role="tab" href="#" aria-selected="@clubsSelected">Клубове</a>
-                    </li>
-                }
-            </ul>
-            <div class="tab-content" id="search-results-tab-content">
-                @if (missions.Any())
-                {
-                    <div class="tab-pane fade show active" id="search-result-missions" role="tabpanel" aria-labelledby="missions-tab">
-                        @foreach (var mission in missions)
-                        {
-                            var title = Regex.Replace(mission.Title, "<.*?>", string.Empty);
-                            var id = Regex.Replace(mission.Id, "<.*?>", string.Empty);
-                            <div class="row">
-                                <div class="search-result-image col">
-                                    <img src="img/@mission.Image" alt="@title"/>
-                                </div>
-                                <div class="search-result-content col">
-                                    <span>от @mission.Author, @mission.Date</span>
-                                    <h3><a href="/mission/@id">@title</a></h3>
-                                    @{
-                                        var strippedText = Regex.Replace(mission.Text, "<.*?>", string.Empty);
-                                        var missionText = strippedText.Length > 200 ? string.Concat(strippedText.Substring(0, 200), "...") : strippedText;
-                                    }
-                                    @missionText
-                                </div>
-                            </div>
-                        }
-                    </div>
+        <div class="row justify-content-center">
 
-                }
-                @if (clubs.Any())
-                {
-                    var active = !missions.Any() ? "show active" : string.Empty;
-                    <div class="tab-pane fade @active" id="search-result-clubs" role="tabpanel" aria-labelledby="clubs-tab">
-                        @foreach (var club in clubs)
-                        {
-                            <div class="row">
-                                <div class="searchr-result-image col">
-                                    <img src="img/@club.Image" alt="@club.Title"/>
-                                </div>
-                                <div class="search-result-content col">
-                                    <span>@club.Author</span>
-                                    @* <h3><a href="/club/@club.Id">@club.Title</a></h3> *@
-                                    <h3><a href="#">@club.Title</a></h3>
-                                    @Html.Raw(Regex.Replace((club.Text.Length > 200 ? string.Concat(club.Text.Substring(0, 200), "...") : club.Text), "<.*?>", string.Empty))
-                                </div>
-                            </div>
-                        }
-                    </div>
-                }
+            <div class="col search-results-header">
+                <h2>Резултати за:</h2>
+                <form class="search-box-result" method="post" action="/search" data-sitekey="@Configuration.GetSection("GoogleRecaptcha").GetSection("SiteKey").Value">
+                    <input type="text" minlength="3" name="search" value="@ViewBag.SearchTerm" required/>
+                    <input type="hidden" class="search-token" name="search-token"/>
+                    <i class="fa fa-search"></i>
+                </form>
             </div>
         </div>
-    </div>
+        <div class="row justify-content-center search-results-content">
+            <div class="col justify-content-left search-results-list">
+                <ul class="nav nav-tabs" id="search-result-tabs" role="tablist">
+                    @if (missions.Any())
+                    {
+                        <li class="nav-item" role="presentation">
+                            <a class="button btn-light search-result-button" data-toggle="tab" data-target="#search-result-missions" aria-controls="search-result-missions" href="#" role="tab" aria-selected="true">Мисии</a>
+                        </li>
+                    }
+                    @if (clubs.Any())
+                    {
+                        var clubsSelected = !missions.Any() ? "true" : "false";
+                        <li class="nav-item" role="presentation">
+                            <a class="button btn-light search-result-button" data-toggle="tab" data-target="#search-result-clubs" aria-controls="search-result-clubs" role="tab" href="#" aria-selected="@clubsSelected">Клубове</a>
+                        </li>
+                    }
+                    @if (events.Any())
+                    {
+                        var eventsSelected = !missions.Any() && !events.Any() ? "true" : "false";
+                        <li class="nav-item" role="presentation">
+                            <a class="button btn-light search-result-button" data-toggle="tab" data-target="#search-result-events" aria-controls="search-result-events" role="tab" href="#" aria-selected="@eventsSelected">Актуално</a>
+                        </li>
+                    }
+                </ul>
+                <div class="tab-content" id="search-results-tab-content">
+                    @if (missions.Any())
+                    {
+                        <div class="tab-pane fade show active" id="search-result-missions" role="tabpanel" aria-labelledby="missions-tab">
+                            @foreach (var mission in missions)
+                            {
+                                var title = Regex.Replace(mission.Title, "<.*?>", string.Empty);
+                                var id = Regex.Replace(mission.Id, "<.*?>", string.Empty);
+                                <div class="row">
+                                    <div class="search-result-image col">
+                                        <img src="/img/@mission.Image" alt="@title"/>
+                                    </div>
+                                    <div class="search-result-content col">
+                                        <span>от @mission.Author, @mission.Date</span>
+                                        <h3>
+                                            <a href="/mission/@id">@title</a>
+                                        </h3>
+                                        @{
+                                            var strippedText = Regex.Replace(mission.Text, "<.*?>", string.Empty);
+                                            var missionText = strippedText.Length > 200 ? string.Concat(strippedText.Substring(0, 200), "...") : strippedText;
+                                        }
+                                        @missionText
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    @if (clubs.Any())
+                    {
+                        var active = !missions.Any() ? "show active" : string.Empty;
+                        <div class="tab-pane fade @active" id="search-result-clubs" role="tabpanel" aria-labelledby="clubs-tab">
+                            @foreach (var club in clubs)
+                            {
+                                <div class="row">
+                                    <div class="searchr-result-image col">
+                                        <img src="/img/@club.Image" alt="@club.Title"/>
+                                    </div>
+                                    <div class="search-result-content col">
+                                        <span>@club.Author</span>
+                                        @* <h3><a href="/club/@club.Id">@club.Title</a></h3> *@
+                                        <h3>
+                                            <a href="#">@club.Title</a>
+                                        </h3>
+                                        @Html.Raw(Regex.Replace((club.Text.Length > 200 ? string.Concat(club.Text.Substring(0, 200), "...") : club.Text), "<.*?>", string.Empty))
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    @if (events.Any())
+                    {
+                        var active = !missions.Any() && !clubs.Any() ? "show active" : string.Empty;
+                        <div class="tab-pane fade @active" id="search-result-events" role="tabpanel" aria-labelledby="clubs-tab">
+                            @foreach (var item in events)
+                            {
+                                <div class="row">
+                                    <div class="searchr-result-image col">
+                                        <img src="@item.Image?.TrimStart(new[] { '~' })" alt="@item.Title"/>
+                                    </div>
+                                    <div class="search-result-content col">
+                                        <span>@item.Author</span>
+                                        <h3><a href="/event/@item.Slug">@item.Title</a></h3>
+                                        @{
+                                            var strippedText = Regex.Replace(item.Text, "<.*?>", string.Empty);
+                                            var eventText = strippedText.Length > 200 ? string.Concat(strippedText.Substring(0, 200), "...") : strippedText;
+                                        }
+                                        @eventText
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
     </div>
 </main>

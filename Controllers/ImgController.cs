@@ -13,6 +13,7 @@ public class ImgController : Controller
         _imagesService = imagesService;
     }
 
+    [ResponseCache(Duration = 10000)]
     [Route("img/{filenameOrId}")]
     [HttpGet]
     public async Task<IActionResult> GetImageByFileName(string filenameOrId)
@@ -30,7 +31,6 @@ public class ImgController : Controller
 
         if (image == null) return NotFound();
 
-        Response.Headers.Add("Cache-Control", "max-age=31536000");
         return File(image.Bytes, image.ContentType);
     }
 }

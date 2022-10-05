@@ -1,6 +1,8 @@
 using HeroesCup.Web.Data;
 using HeroesCup.Web.Models;
+using HeroesCup.Web.Models.Events;
 using Piranha;
+using Piranha.Extend.Blocks;
 
 namespace HeroesCup.Web.Services;
 
@@ -9,13 +11,15 @@ public class SearchService : ISearchServce
     private readonly IDb _db;
     private readonly HeroesCupDbContext _dbContext;
     private readonly IMissionsService _missionsService;
+    private readonly IApi _api;
     private readonly IClubsService _clubsService;
 
-    public SearchService(IDb db, HeroesCupDbContext dbContext, IMissionsService missionsService, IClubsService clubsService)
+    public SearchService(IDb db, HeroesCupDbContext dbContext, IMissionsService missionsService, IClubsService clubsService, IApi api)
     {
         _db = db;
         _dbContext = dbContext;
         _missionsService = missionsService;
+        _api = api;
         _clubsService = clubsService;
     }
 
@@ -29,7 +33,11 @@ public class SearchService : ISearchServce
             m.Content.Equipment.ToUpper().Contains(searchTerm) || m.Content.What.ToUpper().Contains(searchTerm) ||
             m.Content.Where.ToUpper().Contains(searchTerm) || m.Content.Where.ToUpper().Contains(searchTerm) ||
             m.Content.Why.ToUpper().Contains(searchTerm)).ToList();
-        
+        var searchEvents = await _api.Posts.GetAllAsync<EventPost>("events");
+        searchEvents = searchEvents.Where(e =>
+            e.Title.ToUpper().Contains(searchTerm) || 
+            (e.Blocks.Count > 0 && e.Blocks[0] is HtmlBlock && 
+             ((HtmlBlock)e.Blocks[0]).Body.Value.ToUpper().Contains(searchTerm))).ToList();
         var clubs = await _clubsService.GetAllClubsWithImages().Result;
         var searchClubs = clubs.FindAll(c => (!string.IsNullOrEmpty(c.Name) && c.Name.ToUpper().Contains(searchTerm)) ||
                                            (!string.IsNullOrEmpty(c.Description) && c.Description.ToUpper().Contains(searchTerm)) ||
@@ -40,7 +48,7 @@ public class SearchService : ISearchServce
             {
                 Id = s.Slug,
                 Author = s.Club?.Name,
-                Date = $@"{s.StartDate} - {s.EndDate}",
+                Date = $@"{new DateTime(s.StartDate).ToShortDateString()} - {new DateTime(s.EndDate).ToShortDateString()}",
                 Status = s.IsPublished ? "Публикувана" : "Приключила",
                 Text = s.Content?.What,
                 Title = s.Title,
@@ -64,6 +72,21 @@ public class SearchService : ISearchServce
             }).ToList());
         }
 
+        if (searchEvents.Any())
+        {
+            response.Items.AddRange(searchEvents.Select(e => new SearchItem
+            {
+                Author = e.Author,
+                Date = e.Created.ToShortDateString(),
+                Slug = e.Slug,
+                Image = e.Hero?.PrimaryImage?.Media?.PublicUrl,
+                Text = ((HtmlBlock)e.Blocks?[0])?.Body,
+                Title = e.Title,
+                Type = SearchResultType.Event
+
+            }).ToList());
+            
+        }
         return response;
     }
 }
