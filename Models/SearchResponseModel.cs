@@ -2,7 +2,11 @@ namespace HeroesCup.Web.Models
 {
     public class SearchResponseModel
     {
-        public List<SearchItem> Items => new List<SearchItem>();
+        public SearchResponseModel()
+        {
+            Items = new List<SearchItem>();
+        }
+        public List<SearchItem> Items { get; set; }
     }
 
     public class SearchItem
@@ -13,6 +17,8 @@ namespace HeroesCup.Web.Models
         public string Author { get; set; }
         public string Status { get; set; }
         public SearchResultType Type { get; set; }
+        public string Image { get; set; }
+        public string Id { get; set; }
     }
 
     public enum SearchResultType

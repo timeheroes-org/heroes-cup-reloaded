@@ -26,9 +26,9 @@ public class SearchController : Controller
         if (googleReCaptchaResult)
         {
             SearchResponseModel responseModel = await _searchService.Search(model.SearchTerm);
+            ViewBag.SearchTerm = model.SearchTerm;
             return View(responseModel);
         }
-
         return View(new SearchResponseModel());
     }
 }
