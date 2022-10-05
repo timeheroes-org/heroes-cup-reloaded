@@ -6,5 +6,6 @@ public class SearchViewModel
 {
     [BindProperty(Name = "search")]
     public string SearchTerm { get; set; }
+    [BindProperty(Name = "search-token")]
     public string Token { get; set; }
 }

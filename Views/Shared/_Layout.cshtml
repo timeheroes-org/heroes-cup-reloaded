@@ -272,18 +272,18 @@ function onParticipateFormSubmit(e) {
   });
 }
 $(".search-box").on('submit',(e)=> {
-    e.preventDefault();
-    if (e.currentTarget.search.validity.valid) {
-      grecaptcha.ready(function() {
-          const siteKey = e.currentTarget.getAttribute("data-siteKey");
-          grecaptcha.execute(siteKey, {action: 'submit'}).then(function(token) {
-                  $(".search-token").each(function () {
-                      $(this).val(token) 
+        e.preventDefault();
+        if (e.currentTarget.search.validity.valid) {
+            grecaptcha.ready(function() {
+                  const siteKey = e.currentTarget.getAttribute("data-siteKey");
+                  grecaptcha.execute(siteKey, {action: 'submit'}).then(function(token) {
+                      $(".search-token").each(function () {
+                          $(this).val(token) 
+                      });
+                      $(e.currentTarget).unbind('submit').submit();
+                      });    
                   });
-                  $(e.currentTarget).unbind('submit').submit();
-              });    
-          });
-      }
+            }
 });
 </script>
 </body>

@@ -37,6 +37,7 @@ builder.Services.AddTransient<ILeaderboardService, LeaderboardService>();
 builder.Services.AddTransient<IStatisticsService, StatisticsService>();
 builder.Services.AddTransient<IMissionsService, MissionsService>();
 builder.Services.AddTransient<ISessionService, SessionService>();
+builder.Services.AddTransient<ISearchServce, SearchService>();
 builder.Services.AddTransient<IWebUtils, WebUtils>();
 builder.Services.AddTransient<IVideoThumbnailParser, YouTubeVideoThumbnailParser>();
 builder.Services.AddTransient<IMetaDataProvider, MetaDataProvider>();
