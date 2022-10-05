@@ -13,6 +13,15 @@
     </button>
     <div class="collapse navbar-collapse text-center justify-content-center nav-items-container" id="navbarNavAltMarkup">
         <div class="navbar-nav justify-content-center text-center">
+            <div class="col-12 justify-content-center pt-3 pb-3">
+                <a class="nav-item nav-link">
+                <form id="search-box-mobile" class="search-box" method="post" action="/search" data-sitekey="@Configuration.GetSection("GoogleRecaptcha").GetSection("SiteKey").Value">
+                    <input type="text" minlength="3" name="search" required />
+                    <input type="hidden" class="search-token" name="search-token" />
+                    <i class="fa fa-search"></i>
+                </form>
+                </a>
+            </div>
             @foreach (var item in sitemap)
             {
                 @if (item.PageTypeName != startPageTypeName && item.PageTypeName != landingPageTypeName)
@@ -25,7 +34,9 @@
                 }
             }
             <div class="col-12 justify-content-center pt-3 pb-3">
-                <button class="btn btn-heroes btn-lg my-2 my-sm-0 btn-participate body2-bold" type="button" data-toggle="modal" data-target="#participateModal">Участвайте</button>
+                
+                <button class="btn btn-heroes btn-lg my-2 my-sm-0 btn-participate body2-bold" type="button" data-toggle="modal" data-target="#participateModal">Участвайте
+                </button>
             </div>
         </div>
     </div>
@@ -37,6 +48,7 @@
         <a class="col-sm navbar-brand" href="/">
             <img src="~/images/Logo.svg"/>
         </a>
+        
         <ul class="nav nav-site justify-content-right pr-3">
             @foreach (var item in sitemap)
             {
@@ -49,6 +61,13 @@
                     }
                 </li>
             }
+            <li class="nav-item nav-search">
+                <form id="search-box" class="search-box" method="post" action="/search" data-sitekey="@Configuration.GetSection("GoogleRecaptcha").GetSection("SiteKey").Value">
+                    <input type="text" minlength="3" name="search" required/>
+                    <input type="hidden" class="search-token" name="search-token"/>
+                    <i class="fa fa-search"></i>
+                </form>
+            </li>
             <li class="nav-item">
                 <button class="btn btn-heroes btn-lg my-2 my-sm-0 btn-participate body2-bold" type="button" data-toggle="modal" data-target="#participateModal">Участвайте</button>
             </li>
