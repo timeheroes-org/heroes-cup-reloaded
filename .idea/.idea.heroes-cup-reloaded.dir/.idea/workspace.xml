@@ -4,11 +4,11 @@
     <projectFile>heroes-cup-reloaded.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixed appsettings conflict.">
+    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixed missing clubs image.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/SearchService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/SearchService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_Menu.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_Menu.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,10 @@
     <setting file="file://$PROJECT_DIR$/Services/ImagesService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/LeaderboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/MissionsService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Services/SearchService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Services/SearchService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Views/Events/_EventsList.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Views/Search/Search.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Views/Search/Search.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Views/Shared/Partial/_Menu.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
@@ -138,7 +141,21 @@
       <option name="project" value="LOCAL" />
       <updated>1664969562582</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed wrong block extracted.">
+      <created>1664971000952</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664971000952</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fixed missing clubs image.">
+      <created>1664971821319</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664971821319</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +178,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added more search inventory." />
     <MESSAGE value="Fixed appsettings conflict." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed appsettings conflict." />
+    <MESSAGE value="Fixed wrong block extracted." />
+    <MESSAGE value="Fixed missing clubs image." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed missing clubs image." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
