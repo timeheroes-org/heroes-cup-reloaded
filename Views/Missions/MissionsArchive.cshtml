@@ -86,7 +86,7 @@
                             </form>
                         </div>
                     </div>
-                    @if (isLoadMoreRequested == false && Model.SelectedLocation == null)
+                    @if (isLoadMoreRequested == false && String.IsNullOrEmpty((Model.SelectedLocation)))
                     {
                         <partial name="~/Views/Missions/_MissionsList.cshtml" for="@Model.Missions"/>
 

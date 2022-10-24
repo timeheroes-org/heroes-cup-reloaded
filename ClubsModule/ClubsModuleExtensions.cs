@@ -24,9 +24,7 @@ public static class ClubsModuleExtensions
         services.AddHttpContextAccessor();
         App.Modules.Register<Module>();
 
-        services.AddLocalization(options =>
-            options.ResourcesPath = "/ClubsModule/Resources"
-        );
+        services.AddLocalization();
         services.AddScoped<IHeroesService, HeroesService>();
         services.AddScoped<IClubsService, ClubsService>();
         services.AddScoped<IImagesService, ImagesService>();
@@ -273,7 +271,6 @@ public static class ClubsModuleExtensions
 
             endpoints.MapClubsModule();
         });
-
         App.Modules.Get<Piranha.Manager.Module>().Scripts.Add("~/manager/clubsmodule/js/components/blocks/clubs.js");
         App.Modules.Get<Piranha.Manager.Module>().Styles.Add("~/manager/clubsmodule/css/styles.css");
         App.Modules.Get<Piranha.Manager.Module>().Styles

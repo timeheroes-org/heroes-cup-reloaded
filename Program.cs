@@ -1,7 +1,9 @@
+using System.Globalization;
 using HeroesCup.Web.ClubsModule;
 using HeroesCup.Web.Common;
 using HeroesCup.Web.Data;
 using HeroesCup.Web.Services;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Piranha;
 using Piranha.AspNetCore.Identity.MySQL;
@@ -31,6 +33,11 @@ builder.AddPiranha(options =>
     options.UseIdentityWithSeed<IdentityMySQLDb>(db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 });
 
+builder.Services.Configure<RequestLocalizationOptions>(o =>
+{
+    o.SetDefaultCulture("bg-BG");
+    o.DefaultRequestCulture = new RequestCulture(new CultureInfo("bg-BG"));
+});
 builder.Services.AddTransient<IHeroesCupIdentitySeed, IdentitySeed>();
 builder.Services.AddTransient<IPageInitializer, PageInitializer>();
 builder.Services.AddTransient<ILeaderboardService, LeaderboardService>();
@@ -55,6 +62,16 @@ var app = builder.Build();
 
 app.UseSession();
 app.UseStaticFiles();
+IList<CultureInfo> supportedCultures = new List<CultureInfo>
+{
+    new CultureInfo("bg-BG")
+};
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture(new CultureInfo("bg-BG")),
+    SupportedCultures = supportedCultures,
+    SupportedUICultures = supportedCultures
+});
 
 if (app.Environment.IsDevelopment()) app.UseDeveloperExceptionPage();
 
@@ -72,6 +89,7 @@ app.UsePiranha(options =>
     options.UseManager();
     options.UseTinyMCE();
     options.UseIdentity();
+    
 });
 app.UseRouting();
 app.UseClubsModule(builder);
