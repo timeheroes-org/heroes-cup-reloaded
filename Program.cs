@@ -34,10 +34,8 @@ builder.AddPiranha(options =>
         db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)),
         identityOptions: i =>
         {
-            
         },  a =>
         {
-            a.ExpireTimeSpan = TimeSpan.MaxValue;
             a.SlidingExpiration = true;
         } );
 });

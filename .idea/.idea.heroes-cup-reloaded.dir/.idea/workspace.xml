@@ -4,7 +4,11 @@
     <projectFile>heroes-cup-reloaded.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Changed points algo. Merging with master." />
+    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Changed points algo. Merging with master.">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666957613861</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Changed points algo. Merging with master.">
+      <created>1666957776309</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666957776309</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
