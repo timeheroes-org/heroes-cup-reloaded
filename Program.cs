@@ -39,7 +39,6 @@ builder.AddPiranha(options =>
         {
             a.ExpireTimeSpan = TimeSpan.MaxValue;
             a.SlidingExpiration = true;
-            a.Cookie.Expiration = TimeSpan.MaxValue;
         } );
 });
 
