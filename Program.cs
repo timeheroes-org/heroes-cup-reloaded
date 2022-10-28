@@ -30,7 +30,17 @@ builder.AddPiranha(options =>
 
     options.UseEF<MySqlDb>(db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
-    options.UseIdentityWithSeed<IdentityMySQLDb>(db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+    options.UseIdentityWithSeed<IdentityMySQLDb>(
+        db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)),
+        identityOptions: i =>
+        {
+            
+        },  a =>
+        {
+            a.ExpireTimeSpan = TimeSpan.MaxValue;
+            a.SlidingExpiration = true;
+            a.Cookie.Expiration = TimeSpan.MaxValue;
+        } );
 });
 
 builder.Services.Configure<RequestLocalizationOptions>(o =>
