@@ -4,10 +4,8 @@
     <projectFile>heroes-cup-reloaded.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Changed points algo. Merging with master.">
+    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Changed logos.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +21,23 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4b571373e6a4749b42306c86b1148f981400/2f/7e65be03/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/17a25bf4cd58852e31b6bc798fef1d6289441360eea1912bf89a9b4fd337a3/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/43d3be9ccbdf2956e1d3ddbf62b2ed2d18fa549d5c576e1c03434599f81/CookieAuthenticationOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/62442695d9c977cb9dbd397d302cf12660a6a92087ac89162aead6959a35d0/Buffer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8cac2a5f5c55954ff02c35157eb3b1264186dce79f3fb952b2bda0386afacf/CookieBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8dadd64e63df11ce25bca485ab125c85a756d197117fc4f74df2742f3ece77/OrderedEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bde215d3d568499d3be1f524f92914afa1cfbbea3c7da7f1fc7cdfc68f1020/FileStorageStartupExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9d1991eff9bd564c90b86f95b51c8938e3d1419b3119b1c65cd9f66180d4cc/FileStorageExtensions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -40,9 +52,7 @@
     <setting file="file://$PROJECT_DIR$/Services/IVideoThumbnailParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IdentitySeed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/ImagesService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/LeaderboardService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/LeaderboardService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/LeaderboardService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/MissionsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/compilerconfig.json" root0="FORCE_HIGHLIGHTING" />
@@ -98,6 +108,7 @@
       <updated>1664352766061</updated>
       <workItem from="1664352772446" duration="7344000" />
       <workItem from="1666606317768" duration="8628000" />
+      <workItem from="1669301110873" duration="4988000" />
     </task>
     <task id="LOCAL-00001" summary="Added more search inventory.">
       <created>1664370381785</created>
@@ -162,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666957776309</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Changed logos.">
+      <created>1669302315722</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669302315722</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,24 +207,12 @@
     <MESSAGE value="Fixed missing clubs image." />
     <MESSAGE value="Added login button." />
     <MESSAGE value="Changed points algo. Merging with master." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed points algo. Merging with master." />
+    <MESSAGE value="Changed logos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed logos." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Common/WebUtils.cs</url>
-          <line>21</line>
-          <properties documentPath="$PROJECT_DIR$/Common/WebUtils.cs" initialLine="21" containingFunctionPresentation="method 'GetCulture'">
-            <startOffsets>
-              <option value="483" />
-            </startOffsets>
-            <endOffsets>
-              <option value="543" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9aab3368c279437585932b0873d651d2a200/15/86271062/ResourceManagerStringLocalizerLoggerExtensions.cs</url>
           <line>29</line>
@@ -249,6 +255,34 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <condition expression="missions.First().Club.Name.Contains(&quot;Аген&quot;)" language="C#" />
+          <url>file://$PROJECT_DIR$/Services/LeaderboardService.cs</url>
+          <line>126</line>
+          <properties documentPath="$PROJECT_DIR$/Services/LeaderboardService.cs" initialLine="126" containingFunctionPresentation="method 'getClubPoints'">
+            <startOffsets>
+              <option value="4374" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4375" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Views/Missions/MissionPost.cshtml</url>
+          <line>39</line>
+          <properties documentPath="$PROJECT_DIR$/Views/Missions/MissionPost.cshtml" initialLine="39" isMultiMethodBreakpoint="true">
+            <option name="multiMethodBreakpoint" value="true" />
+            <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
