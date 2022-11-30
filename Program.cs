@@ -31,13 +31,7 @@ builder.AddPiranha(options =>
     options.UseEF<MySqlDb>(db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
     options.UseIdentityWithSeed<IdentityMySQLDb>(
-        db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)),
-        identityOptions: i =>
-        {
-        },  a =>
-        {
-            a.SlidingExpiration = true;
-        } );
+        db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 });
 
 builder.Services.Configure<RequestLocalizationOptions>(o =>
