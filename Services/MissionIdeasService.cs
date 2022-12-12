@@ -61,6 +61,7 @@ public class MissionIdeasService : IMissionIdeasService
         var missionIdeas = dbContext.MissionIdeas
             .Where(m => m.IsPublished == true)
             .Include(m => m.MissionIdeaImages)
+            .ThenInclude(m => m.Image)
             .OrderByDescending(mi => mi.StartDate != long.MinValue ? mi.StartDate : mi.CreatedOn);
 
         return missionIdeas;

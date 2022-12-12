@@ -15,7 +15,7 @@ public class ClubEditModel
     [AllowedExtensions(new[] { ".jpg", ".jpeg", ".png", ".svg" }, ErrorMessage = "AllowedFileExtensionsErrorMessage")]
     public IFormFile UploadedLogo { get; set; }
 
-    public string ClubImageId { get; set; }
+    public string ClubImage { get; set; }
 
     public IEnumerable<Hero> Heroes { get; set; }
 

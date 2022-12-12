@@ -4,7 +4,9 @@ using HeroesCup.Web.Common;
 using HeroesCup.Web.Data;
 using HeroesCup.Web.Services;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Piranha;
 using Piranha.AspNetCore.Identity.MySQL;
 using Piranha.AttributeBuilder;
@@ -31,13 +33,7 @@ builder.AddPiranha(options =>
     options.UseEF<MySqlDb>(db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
     options.UseIdentityWithSeed<IdentityMySQLDb>(
-        db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)),
-        identityOptions: i =>
-        {
-        },  a =>
-        {
-            a.SlidingExpiration = true;
-        } );
+        db => db.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 });
 
 builder.Services.Configure<RequestLocalizationOptions>(o =>
@@ -69,6 +65,12 @@ var app = builder.Build();
 
 app.UseSession();
 app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions()
+{
+    FileProvider = new PhysicalFileProvider("/var/www/heroes-cup-static"),
+    RequestPath = new PathString("/img")
+     
+});
 IList<CultureInfo> supportedCultures = new List<CultureInfo>
 {
     new CultureInfo("bg-BG")

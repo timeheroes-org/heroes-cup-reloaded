@@ -33,12 +33,13 @@ public class SearchService : ISearchServce
             m.Content.Equipment.ToUpper().Contains(searchTerm) || m.Content.What.ToUpper().Contains(searchTerm) ||
             m.Content.Where.ToUpper().Contains(searchTerm) || m.Content.Where.ToUpper().Contains(searchTerm) ||
             m.Content.Why.ToUpper().Contains(searchTerm)).ToList();
-        var searchEvents = await _api.Posts.GetAllAsync<EventPost>("events");
-        searchEvents = searchEvents.Where(e =>
-            e.Title.ToUpper().Contains(searchTerm) || 
-            (e.Blocks.Count > 0 && e.Blocks[0] is HtmlBlock && 
-             ((HtmlBlock)e.Blocks[0]).Body.Value.ToUpper().Contains(searchTerm))).ToList();
-        var clubs = await _clubsService.GetAllClubsWithImages().Result;
+        var searchEvents = (await _api.Posts.GetAllAsync<EventPost>("events"))
+            .Where(e =>
+                e.Title.ToUpper().Contains(searchTerm) || 
+                (e.Blocks.Count > 0 && e.Blocks[0] is HtmlBlock && 
+                ((HtmlBlock)e.Blocks[0]).Body.Value.ToUpper().Contains(searchTerm)))
+            .ToList();
+        var clubs = await _clubsService.GetAllClubsWithImages();
         var searchClubs = clubs.FindAll(c => (!string.IsNullOrEmpty(c.Name) && c.Name.ToUpper().Contains(searchTerm)) ||
                                            (!string.IsNullOrEmpty(c.Description) && c.Description.ToUpper().Contains(searchTerm)) ||
                                            (!string.IsNullOrEmpty(c.OrganizationName) && c.OrganizationName.ToUpper().Contains(searchTerm))).ToList();

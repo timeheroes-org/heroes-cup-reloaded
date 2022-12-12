@@ -6,54 +6,50 @@ namespace HeroesCup.Web.Services;
 
 public class ImagesService : IImagesService
 {
-    private readonly HeroesCupDbContext dbContext;
+    private readonly HeroesCupDbContext _dbContext;
 
     public ImagesService(HeroesCupDbContext dbContext)
     {
-        this.dbContext = dbContext;
+        this._dbContext = dbContext;
     }
 
     public async Task CreateClubImageAsync(Image image, Club club)
     {
-        var oldClubImages = dbContext.ClubImages.Where(ci => ci.ClubId == club.Id)
+        var oldClubImages = _dbContext.ClubImages.Where(ci => ci.ClubId == club.Id)
             .Include(ci => ci.Image);
 
-        if (oldClubImages != null)
-            foreach (var clubImage in oldClubImages)
-                await DeleteClubImageAsync(clubImage);
+        foreach (var clubImage in oldClubImages)
+            await DeleteClubImageAsync(clubImage);
 
-        dbContext.Images.Add(image);
-        dbContext.ClubImages.Add(new ClubImage
+        _dbContext.Images.Add(image);
+        _dbContext.ClubImages.Add(new ClubImage
         {
             Club = club,
             Image = image
         });
 
-        await dbContext.SaveChangesAsync();
+        await _dbContext.SaveChangesAsync();
     }
 
     public async Task DeleteClubImageAsync(ClubImage clubImage, bool commit = false)
     {
-        dbContext.Images.Remove(clubImage.Image);
+        _dbContext.Images.Remove(clubImage.Image);
 
-        if (commit) await dbContext.SaveChangesAsync();
+        if (commit) await _dbContext.SaveChangesAsync();
     }
 
     public async Task<ClubImage> GetClubImage(Guid clubId)
     {
-        return await dbContext.ClubImages.Where(ci => ci.ClubId == clubId).FirstOrDefaultAsync();
+        return await _dbContext.ClubImages
+            .Include(c=>c.Image)
+            .Where(ci => ci.ClubId == clubId).FirstOrDefaultAsync();
     }
 
     public async Task<Image> GetImage(Guid id)
     {
-        return await dbContext.Images.FirstOrDefaultAsync(i => i.Id == id);
+        return await _dbContext.Images.FirstOrDefaultAsync(i => i.Id == id);
     }
 
-    public string GetImageSource(string contentType, byte[] bytes)
-    {
-        var bytesTobase64 = Convert.ToBase64String(bytes);
-        return string.Format("data:{0};base64,{1}", contentType, bytesTobase64);
-    }
 
     public byte[] GetByteArrayFromImage(IFormFile file)
     {
@@ -79,42 +75,54 @@ public class ImagesService : IImagesService
 
     public async Task CreateMissionImageAsync(Image image, Mission mission)
     {
-        var oldMissionImages = dbContext.MissionImages.Where(mi => mi.MissionId == mission.Id)
+        var oldMissionImages = _dbContext.MissionImages.Where(mi => mi.MissionId == mission.Id)
             .Include(mi => mi.Image);
 
         if (oldMissionImages != null)
             foreach (var missionImage in oldMissionImages)
                 await DeleteMissionImageAsync(missionImage);
 
-        dbContext.Images.Add(image);
-        dbContext.MissionImages.Add(new MissionImage
+        _dbContext.Images.Add(image);
+        _dbContext.MissionImages.Add(new MissionImage
         {
             Mission = mission,
             Image = image
         });
 
-        await dbContext.SaveChangesAsync();
+        await _dbContext.SaveChangesAsync();
     }
 
     public async Task DeleteMissionImageAsync(MissionImage missionImage, bool commit = false)
     {
-        dbContext.Images.Remove(missionImage.Image);
+        _dbContext.Images.Remove(missionImage.Image);
 
-        if (commit) await dbContext.SaveChangesAsync();
+        if (commit) await _dbContext.SaveChangesAsync();
     }
 
     public async Task<MissionImage> GetMissionImage(Guid missionId)
     {
-        return await dbContext.MissionImages
+        return await _dbContext.MissionImages
             .Where(mi => mi.MissionId == missionId)
             .Include(mi => mi.Image)
+            .Select(i => new MissionImage
+            {
+                ImageId = i.ImageId,
+                Image = new Image
+                {
+                    Filename = i.Image.Filename,
+                    ContentType = i.Image.ContentType,
+                    Id = i.Image.Id
+                }
+            })
             .FirstOrDefaultAsync();
     }
 
     public async Task CreateStoryImagesAsync(IEnumerable<Image> images, Story story)
     {
-        var oldStoryImages = dbContext.StoryImages.Where(si => si.StoryId == story.Id)
-            .Include(si => si.Image);
+        var oldStoryImages = 
+                _dbContext.StoryImages
+                    .Where(si => si.StoryId == story.Id)
+                    .Include(si => si.Image);
 
         if (oldStoryImages != null)
             foreach (var storyImage in oldStoryImages)
@@ -122,32 +130,32 @@ public class ImagesService : IImagesService
 
         foreach (var image in images)
         {
-            dbContext.Images.Add(image);
-            dbContext.StoryImages.Add(new StoryImage
+            _dbContext.Images.Add(image);
+            _dbContext.StoryImages.Add(new StoryImage
             {
                 Story = story,
                 Image = image
             });
         }
 
-        await dbContext.SaveChangesAsync();
+        await _dbContext.SaveChangesAsync();
     }
 
     public async Task DeleteStoryImageAsync(StoryImage storyImage, bool commit = false)
     {
-        dbContext.Images.Remove(storyImage.Image);
+        _dbContext.Images.Remove(storyImage.Image);
 
-        if (commit) await dbContext.SaveChangesAsync();
+        if (commit) await _dbContext.SaveChangesAsync();
     }
 
     public async Task<IEnumerable<StoryImage>> GetStoryImages(Guid storyId)
     {
-        return await dbContext.StoryImages.Where(si => si.StoryId == storyId).ToListAsync();
+        return await _dbContext.StoryImages.Where(si => si.StoryId == storyId).ToListAsync();
     }
 
     public async Task CreateMissionIdeaImageAsync(Image image, MissionIdea missionIdea)
     {
-        var oldMissionIdeaImages = dbContext.MissionIdeaImages
+        var oldMissionIdeaImages = _dbContext.MissionIdeaImages
             .Where(mi => mi.MissionIdeaId == missionIdea.Id)
             .Include(mi => mi.Image);
 
@@ -155,37 +163,31 @@ public class ImagesService : IImagesService
             foreach (var missionIdeaImage in oldMissionIdeaImages)
                 await DeleteMissionIdeaImageAsync(missionIdeaImage);
 
-        dbContext.Images.Add(image);
-        dbContext.MissionIdeaImages.Add(new MissionIdeaImage
+        _dbContext.Images.Add(image);
+        _dbContext.MissionIdeaImages.Add(new MissionIdeaImage
         {
             MissionIdea = missionIdea,
             Image = image
         });
 
-        await dbContext.SaveChangesAsync();
+        await _dbContext.SaveChangesAsync();
     }
 
     public async Task DeleteMissionIdeaImageAsync(MissionIdeaImage missionIdeaImage, bool commit = false)
     {
-        dbContext.Images.Remove(missionIdeaImage.Image);
+        _dbContext.Images.Remove(missionIdeaImage.Image);
 
-        if (commit) await dbContext.SaveChangesAsync();
+        if (commit) await _dbContext.SaveChangesAsync();
     }
 
     public async Task<MissionIdeaImage> GetMissionIdeaImageAsync(Guid missionIdeaId)
     {
-        return await dbContext.MissionIdeaImages
+        return await _dbContext.MissionIdeaImages
             .Where(mi => mi.MissionIdeaId == missionIdeaId)
             .Include(mi => mi.Image)
             .FirstOrDefaultAsync();
     }
 
-    public string GetImageFilename(Image image)
-    {
-        if (image == null) return null;
-
-        return image.Filename;
-    }
 
     public async Task<string> GetImageFilename(Guid id)
     {
@@ -198,17 +200,15 @@ public class ImagesService : IImagesService
 
     public async Task<Image> GetImageByFileName(string filename)
     {
-        return await dbContext.Images.FirstOrDefaultAsync(i => i.Filename == filename);
+        return await _dbContext.Images.FirstOrDefaultAsync(i => i.Filename == filename);
     }
 
     public Image MapFormFileToImage(IFormFile file)
     {
         var image = new Image();
         image.Id = Guid.NewGuid();
-        var bytes = GetByteArrayFromImage(file);
         var filename = GetFilename(file, image.Id);
         var contentType = GetFileContentType(file);
-        image.Bytes = bytes;
         image.Filename = filename;
         image.ContentType = contentType;
 
@@ -217,7 +217,7 @@ public class ImagesService : IImagesService
 
     public string getClubImageId(Guid clubId)
     {
-        var clubImage = dbContext.ClubImages.Where(ci => ci.ClubId == clubId).FirstOrDefault();
+        var clubImage = _dbContext.ClubImages.FirstOrDefault(ci => ci.ClubId == clubId);
         if (clubImage == null) return null;
 
         return clubImage.ImageId.ToString();

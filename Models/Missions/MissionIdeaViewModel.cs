@@ -12,8 +12,6 @@ public class MissionIdeaViewModel
 
     public string ImageFilename { get; set; }
 
-    public string ImageId { get; set; }
-
     public DateTime StartDate { get; set; }
 
     public DateTime EndDate { get; set; }
