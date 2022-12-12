@@ -6,7 +6,7 @@ public interface IStoryImageService
 {
     Task CreateStoryImagesAsync(IEnumerable<Image> images, Story story);
 
-    Task DeleteStoryImageAsync(StoryImage storyImage, bool commit = false);
+    Task DeleteStoryImageAsync(StoryImage image, bool commit = false);
 
     Task<IEnumerable<StoryImage>> GetStoryImages(Guid storyId);
 }

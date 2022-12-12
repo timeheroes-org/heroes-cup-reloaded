@@ -478,7 +478,7 @@ public class MissionsService : IMissionsService
             Slug = missionIdea.Slug,
             MissionIdea = missionIdea,
             ImageFilename = missionIdea.MissionIdeaImages != null && missionIdea.MissionIdeaImages.Any()
-                ? missionIdea.MissionIdeaImages.FirstOrDefault()?.Image.Filename
+                ? string.Concat(missionIdea.MissionIdeaImages.FirstOrDefault()?.Image.Id.ToString(), "/" ,missionIdea.MissionIdeaImages.FirstOrDefault()?.Image.Filename)
                 : null, 
             IsExpired = missionIdea.EndDate.IsExpired(),
             IsSeveralDays = IsSeveralDays(missionIdea.StartDate, missionIdea.EndDate),
@@ -519,8 +519,8 @@ public class MissionsService : IMissionsService
         string heroImageFilename = null;
 
         heroImageFilename = story.StoryImages != null && story.StoryImages.Any()
-            ? story.StoryImages.FirstOrDefault()?.Image.Filename
-            : story.Mission.MissionImages.FirstOrDefault()?.Image.Filename;
+            ? String.Concat(story.StoryImages.FirstOrDefault()?.Image.Id.ToString(),"/",story.StoryImages.FirstOrDefault()?.Image.Filename)
+            : String.Concat(story.Mission.MissionImages.FirstOrDefault()?.Image.Id.ToString(),"/",story.Mission.MissionImages.FirstOrDefault()?.Image.Filename);
 
 
         return new StoryViewModel
@@ -541,7 +541,7 @@ public class MissionsService : IMissionsService
                 IsExpired = story.Mission.EndDate.IsExpired(),
                 IsSeveralDays = IsSeveralDays(story.Mission.StartDate, story.Mission.EndDate),
                 ImageFilename = story.Mission.MissionImages.FirstOrDefault() != null
-                    ? story.Mission.MissionImages.FirstOrDefault()?.Image.Filename
+                    ? String.Concat(story.Mission.MissionImages.FirstOrDefault()?.Image.Id.ToString(), "/",story.Mission.MissionImages.FirstOrDefault()?.Image.Filename)
                     : null,
                 ImageId = story.Mission.MissionImages != null && story.Mission.MissionImages.Any()
                     ? story.Mission.MissionImages.FirstOrDefault()?.ImageId.ToString()
@@ -599,7 +599,7 @@ public class MissionsService : IMissionsService
             ClubName = mission.Club.Name,
             PostClubName = GetPostClubName(mission.Club),
             ClubLocation = mission.Club.Location,
-            ImageFilename = missionImages.FirstOrDefault().Item2,
+            ImageFilename = string.Concat(missionImages.FirstOrDefault().Item1, "/", missionImages.FirstOrDefault().Item2),
             ImageId = missionImages.FirstOrDefault().Item1,
             StartDate = mission.StartDate.ConvertToLocalDateTime(),
             EndDate = mission.EndDate.ConvertToLocalDateTime(),

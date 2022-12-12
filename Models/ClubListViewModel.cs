@@ -13,7 +13,7 @@ public class ClubListItem
 
     public string ClubInitials { get; set; }
 
-    public string ClubImageId { get; set; }
+    public string ClubImageFileName { get; set; }
 
     public string Name { get; set; }
 

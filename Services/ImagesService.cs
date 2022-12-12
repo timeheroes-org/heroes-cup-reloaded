@@ -1,12 +1,14 @@
 ﻿using HeroesCup.Data.Models;
 using HeroesCup.Web.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 
 namespace HeroesCup.Web.Services;
 
 public class ImagesService : IImagesService
 {
     private readonly HeroesCupDbContext _dbContext;
+    private const string StaticAssetsPath = "/var/www/heroes-cup-static/";
 
     public ImagesService(HeroesCupDbContext dbContext)
     {
@@ -20,7 +22,10 @@ public class ImagesService : IImagesService
 
         foreach (var clubImage in oldClubImages)
             await DeleteClubImageAsync(clubImage);
-
+        Directory.CreateDirectory(Path.Combine(StaticAssetsPath, image.Id.ToString()));
+        await File.WriteAllBytesAsync(
+            Path.Combine(Path.Combine(StaticAssetsPath, image.Id.ToString()), image.Filename), image.Bytes);
+        image.Bytes = null;
         _dbContext.Images.Add(image);
         _dbContext.ClubImages.Add(new ClubImage
         {
@@ -31,18 +36,19 @@ public class ImagesService : IImagesService
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task DeleteClubImageAsync(ClubImage clubImage, bool commit = false)
+    public async Task DeleteClubImageAsync(ClubImage image, bool commit = false)
     {
-        _dbContext.Images.Remove(clubImage.Image);
+        var directoryPath = Path.Combine(ImagesService.StaticAssetsPath, image.Image.Id.ToString());
+        if (Directory.Exists(directoryPath))
+            Directory.Delete(directoryPath, true);
+        _dbContext.Images.Remove(image.Image);
 
         if (commit) await _dbContext.SaveChangesAsync();
     }
 
-    public async Task<ClubImage> GetClubImage(Guid clubId)
+    public ClubImage GetClubImage(Guid clubId)
     {
-        return await _dbContext.ClubImages
-            .Include(c=>c.Image)
-            .Where(ci => ci.ClubId == clubId).FirstOrDefaultAsync();
+        return _dbContext.ClubImages.Include(c => c.Image).FirstOrDefault(ci => ci.ClubId == clubId);
     }
 
     public async Task<Image> GetImage(Guid id)
@@ -63,7 +69,7 @@ public class ImagesService : IImagesService
     public string GetFilename(IFormFile file, Guid imageId)
     {
         var filename = Path.GetFileName(file.FileName);
-        var formatIndex = filename.LastIndexOf(".");
+        var formatIndex = filename.LastIndexOf(".", StringComparison.Ordinal);
         var fileFormat = filename.Substring(formatIndex);
         return $"{imageId}{fileFormat}";
     }
@@ -78,10 +84,12 @@ public class ImagesService : IImagesService
         var oldMissionImages = _dbContext.MissionImages.Where(mi => mi.MissionId == mission.Id)
             .Include(mi => mi.Image);
 
-        if (oldMissionImages != null)
-            foreach (var missionImage in oldMissionImages)
-                await DeleteMissionImageAsync(missionImage);
-
+        foreach (var missionImage in oldMissionImages)
+            await DeleteMissionImageAsync(missionImage);
+        Directory.CreateDirectory(Path.Combine(StaticAssetsPath, image.Id.ToString()));
+        await File.WriteAllBytesAsync(
+            Path.Combine(Path.Combine(StaticAssetsPath, image.Id.ToString()), image.Filename), image.Bytes);
+        image.Bytes = null;
         _dbContext.Images.Add(image);
         _dbContext.MissionImages.Add(new MissionImage
         {
@@ -92,9 +100,12 @@ public class ImagesService : IImagesService
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task DeleteMissionImageAsync(MissionImage missionImage, bool commit = false)
+    public async Task DeleteMissionImageAsync(MissionImage image, bool commit = false)
     {
-        _dbContext.Images.Remove(missionImage.Image);
+        var directoryPath = Path.Combine(ImagesService.StaticAssetsPath, image.Image.Id.ToString());
+        if (Directory.Exists(directoryPath))
+            Directory.Delete(directoryPath, true);
+        _dbContext.Images.Remove(image.Image);
 
         if (commit) await _dbContext.SaveChangesAsync();
     }
@@ -109,7 +120,7 @@ public class ImagesService : IImagesService
                 ImageId = i.ImageId,
                 Image = new Image
                 {
-                    Filename = i.Image.Filename,
+                    Filename = String.Concat(i.Image.Id, "/", i.Image.Filename),
                     ContentType = i.Image.ContentType,
                     Id = i.Image.Id
                 }
@@ -120,16 +131,18 @@ public class ImagesService : IImagesService
     public async Task CreateStoryImagesAsync(IEnumerable<Image> images, Story story)
     {
         var oldStoryImages = 
-                _dbContext.StoryImages
-                    .Where(si => si.StoryId == story.Id)
+                Queryable.Where(_dbContext.StoryImages, si => si.StoryId == story.Id)
                     .Include(si => si.Image);
 
-        if (oldStoryImages != null)
-            foreach (var storyImage in oldStoryImages)
-                await DeleteStoryImageAsync(storyImage);
+        foreach (var storyImage in oldStoryImages)
+            await DeleteStoryImageAsync(storyImage);
 
         foreach (var image in images)
         {
+            Directory.CreateDirectory(Path.Combine(StaticAssetsPath, image.Id.ToString()));
+            await File.WriteAllBytesAsync(
+                Path.Combine(Path.Combine(StaticAssetsPath, image.Id.ToString()), image.Filename), image.Bytes);
+            image.Bytes = null;
             _dbContext.Images.Add(image);
             _dbContext.StoryImages.Add(new StoryImage
             {
@@ -141,9 +154,12 @@ public class ImagesService : IImagesService
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task DeleteStoryImageAsync(StoryImage storyImage, bool commit = false)
+    public async Task DeleteStoryImageAsync(StoryImage image, bool commit = false)
     {
-        _dbContext.Images.Remove(storyImage.Image);
+        var directoryPath = Path.Combine(ImagesService.StaticAssetsPath, image.Image.Id.ToString());
+        if (Directory.Exists(directoryPath))
+            Directory.Delete(directoryPath, true);
+        _dbContext.Images.Remove(image.Image);
 
         if (commit) await _dbContext.SaveChangesAsync();
     }
@@ -155,14 +171,15 @@ public class ImagesService : IImagesService
 
     public async Task CreateMissionIdeaImageAsync(Image image, MissionIdea missionIdea)
     {
-        var oldMissionIdeaImages = _dbContext.MissionIdeaImages
-            .Where(mi => mi.MissionIdeaId == missionIdea.Id)
+        var oldMissionIdeaImages = Queryable.Where(_dbContext.MissionIdeaImages, mi => mi.MissionIdeaId == missionIdea.Id)
             .Include(mi => mi.Image);
 
-        if (oldMissionIdeaImages != null)
-            foreach (var missionIdeaImage in oldMissionIdeaImages)
-                await DeleteMissionIdeaImageAsync(missionIdeaImage);
-
+        foreach (var missionIdeaImage in oldMissionIdeaImages)
+            await DeleteMissionIdeaImageAsync(missionIdeaImage);
+        Directory.CreateDirectory(Path.Combine(StaticAssetsPath, image.Id.ToString()));
+        await File.WriteAllBytesAsync(
+            Path.Combine(Path.Combine(StaticAssetsPath, image.Id.ToString()), image.Filename), image.Bytes);
+        image.Bytes = null;
         _dbContext.Images.Add(image);
         _dbContext.MissionIdeaImages.Add(new MissionIdeaImage
         {
@@ -173,9 +190,12 @@ public class ImagesService : IImagesService
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task DeleteMissionIdeaImageAsync(MissionIdeaImage missionIdeaImage, bool commit = false)
+    public async Task DeleteMissionIdeaImageAsync(MissionIdeaImage image, bool commit = false)
     {
-        _dbContext.Images.Remove(missionIdeaImage.Image);
+        var directoryPath = Path.Combine(ImagesService.StaticAssetsPath, image.Image.Id.ToString());
+        if (Directory.Exists(directoryPath))
+            Directory.Delete(directoryPath, true);
+        _dbContext.Images.Remove(image.Image);
 
         if (commit) await _dbContext.SaveChangesAsync();
     }
@@ -207,6 +227,11 @@ public class ImagesService : IImagesService
     {
         var image = new Image();
         image.Id = Guid.NewGuid();
+        using (var ms = new MemoryStream())
+        {
+            file.CopyTo(ms);
+            image.Bytes = ms.ToArray();
+        }
         var filename = GetFilename(file, image.Id);
         var contentType = GetFileContentType(file);
         image.Filename = filename;
