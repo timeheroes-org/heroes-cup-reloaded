@@ -4,8 +4,23 @@
     <projectFile>heroes-cup-reloaded.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Changed logos.">
+    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixed default locale and resources missing. Removed participate banner in missions archive.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/MissionIdeas/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/MissionIdeas/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/StoryEditModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/StoryEditModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/MissionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MissionsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/ClubListViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ClubListViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ClubsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IClubImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IClubImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/IStoryImageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IStoryImageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ImagesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/LeaderboardService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/LeaderboardService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/MissionsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/StoriesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/StoriesService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_ClubDetails.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_ClubDetails.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images.sh" beforeDir="false" afterPath="$PROJECT_DIR$/images.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,28 +38,58 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d4b571373e6a4749b42306c86b1148f981400/2f/7e65be03/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0ec8a143930a49e79e95415db0b5ef5011c00/49/31870eef/PhysicalFileProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/169415b99e394c749158a12b13012b2c6e200/fd/fa432fe1/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/279648e8fad84788a4b155685fc03b257e00/66/4d537e8e/MvcLocalizationMvcBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/479b15363bb84600b27e048ab9e7a89a1cc600/25/976ea326/ResponseCacheAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/479b15363bb84600b27e048ab9e7a89a1cc600/cc/982e5581/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6818c1ae16684bb6a6533b1e52073ad994de00/5e/0785d0a9/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6818c1ae16684bb6a6533b1e52073ad994de00/8f/909993f2/Array.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6818c1ae16684bb6a6533b1e52073ad994de00/db/63f5541b/Activator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6818c1ae16684bb6a6533b1e52073ad994de00/ec/d590625d/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/75b0d80017554e859b1a49b756b3ba2ea6e00/1e/a5566fae/SslStream.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/88f8c4fa683846c883ddd318357ec61d1e000/ec/9483af03/LoggerMessage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96bde21bd8ce4144aa5114683093e2313400/15/d91cca29/IStringLocalizer`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96bde21bd8ce4144aa5114683093e2313400/9d/017ae6fd/LocalizedString.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/96bde21bd8ce4144aa5114683093e2313400/fe/a4b1f865/StringLocalizer`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9a1f1e649d4c48d490650dc3af7cf3801a400/54/71104e17/OptionsFactory`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9aab3368c279437585932b0873d651d2a200/00/38bcdbbc/ResourceManagerStringLocalizer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9aab3368c279437585932b0873d651d2a200/15/86271062/ResourceManagerStringLocalizerLoggerExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9aab3368c279437585932b0873d651d2a200/47/92467d90/LocalizationOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9aab3368c279437585932b0873d651d2a200/cb/134d8f96/ResourceManagerStringLocalizerFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9aab3368c279437585932b0873d651d2a200/e6/fad0c726/LocalizationServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a03bef28fa5844aea9c9d6687d085aad94de00/53/55abcb6c/Path.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a03bef28fa5844aea9c9d6687d085aad94de00/7c/5a2fd451/AsyncTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a03bef28fa5844aea9c9d6687d085aad94de00/8e/8f206940/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bf4eba79888b492cafefb0e2d6afec262be00/a0/e2cc89b1/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c85aff997a014acca2334f8c43384d8594de00/61/2aeeb960/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d6805019be5d47da820df169d662c0d31cc600/6a/7f74eb09/DefaultModelMetadata.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e2bc7f5be6514d5d86867b4aa1a3c71216e00/4a/58b11ee3/DataAnnotationsMetadataProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1d37e86d3f44af3b70b9ee3188332d488c00/03/a1f8f76e/Socket.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/2a/66918e2a/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/5c/9789476c/ExceptionDispatchInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/76/b6c9d688/DefaultInterpolatedStringHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/d6/59db6db7/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe0fc1d21c0849f6a3af6785d34c340294de00/da/b5345179/TaskAwaiter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/17a25bf4cd58852e31b6bc798fef1d6289441360eea1912bf89a9b4fd337a3/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/43d3be9ccbdf2956e1d3ddbf62b2ed2d18fa549d5c576e1c03434599f81/CookieAuthenticationOptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/62442695d9c977cb9dbd397d302cf12660a6a92087ac89162aead6959a35d0/Buffer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8cac2a5f5c55954ff02c35157eb3b1264186dce79f3fb952b2bda0386afacf/CookieBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8dadd64e63df11ce25bca485ab125c85a756d197117fc4f74df2742f3ece77/OrderedEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/18cac6b0834a5276c83674be55f08b584743b1b4bc22368c061a4c2be98411f/PostService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f499d4027f8e8e28191ae6723a925ef4ab359a8c42290e84c2fb5e4860c5ca/IApi.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5ad8a96b4cae2c11f1fe630e4ad9d8347ff4bb26bd95964c953138bcf5f168/NewtonsoftJsonMvcOptionsSetup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/69483dc6923dc3d71b8d9322b7e47e9b2ae6c690bc71b67cb1440f5aeba9e/ManagerLocalizer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6abcbcdb141cec34c4b382846bdf849865ded1fafb60cf8b174af051fcd96a/HtmlBlock.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/797bf2d827823ba3052383fbc57f4fc46459fb89ace02e7d3a80a89751c06a/MvcNewtonsoftJsonOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8a1377c79961b7218fdbe47b99ff483822eedf8fe97620eb56d1ce975344f51/ManagerStartupExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/934198ddca58cc49db309419f143245c3a390d85a5758e861bf9c02f38b2c7/IPostService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bde215d3d568499d3be1f524f92914afa1cfbbea3c7da7f1fc7cdfc68f1020/FileStorageStartupExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bfe3c13abe7be4a96ce2d73a4561d6763eb055c7d7decbaf3b77d2ecf1394/ManagerExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e4827c990cfab6c5480b437c0c58a1ead161fdc39797bd53826724afdcbb28b/ServerSession.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9d1991eff9bd564c90b86f95b51c8938e3d1419b3119b1c65cd9f66180d4cc/FileStorageExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/ClubsModule/Models/ClubEditModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/ClubsModule/Models/ClubEditModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Migrations/20220801144609_Initial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Archive.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Page.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IStatisticsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IStoriesService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -52,6 +97,7 @@
     <setting file="file://$PROJECT_DIR$/Services/IVideoThumbnailParser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/IdentitySeed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/ImagesService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Services/LeaderboardService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/LeaderboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/MissionsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
@@ -78,7 +124,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.Debug">
     <configuration name="Debug" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/net6.0/heroes-cup-reloaded" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -108,7 +154,9 @@
       <updated>1664352766061</updated>
       <workItem from="1664352772446" duration="7344000" />
       <workItem from="1666606317768" duration="8628000" />
-      <workItem from="1669301110873" duration="4988000" />
+      <workItem from="1667811618210" duration="142000" />
+      <workItem from="1667814552660" duration="13965000" />
+      <workItem from="1670835609597" duration="10984000" />
     </task>
     <task id="LOCAL-00001" summary="Added more search inventory.">
       <created>1664370381785</created>
@@ -173,12 +221,12 @@
       <option name="project" value="LOCAL" />
       <updated>1666957776309</updated>
     </task>
-    <task id="LOCAL-00010" summary="Changed logos.">
-      <created>1669302315722</created>
+    <task id="LOCAL-00010" summary="Fixed default locale and resources missing. Removed participate banner in missions archive.">
+      <created>1670836703675</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1669302315722</updated>
+      <updated>1670836703675</updated>
     </task>
     <option name="localTasksCounter" value="11" />
     <servers />
@@ -207,8 +255,8 @@
     <MESSAGE value="Fixed missing clubs image." />
     <MESSAGE value="Added login button." />
     <MESSAGE value="Changed points algo. Merging with master." />
-    <MESSAGE value="Changed logos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed logos." />
+    <MESSAGE value="Fixed default locale and resources missing. Removed participate banner in missions archive." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed default locale and resources missing. Removed participate banner in missions archive." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -257,23 +305,74 @@
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <condition expression="missions.First().Club.Name.Contains(&quot;Аген&quot;)" language="C#" />
-          <url>file://$PROJECT_DIR$/Services/LeaderboardService.cs</url>
-          <line>126</line>
-          <properties documentPath="$PROJECT_DIR$/Services/LeaderboardService.cs" initialLine="126" containingFunctionPresentation="method 'getClubPoints'">
+          <url>file://$PROJECT_DIR$/Services/MissionsService.cs</url>
+          <line>558</line>
+          <properties documentPath="$PROJECT_DIR$/Services/MissionsService.cs" initialLine="561" containingFunctionPresentation="method 'MapMissionEditModelToMissionViewModel'">
             <startOffsets>
-              <option value="4374" />
+              <option value="21364" />
             </startOffsets>
             <endOffsets>
-              <option value="4375" />
+              <option value="22980" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="36" />
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Views/Missions/MissionPost.cshtml</url>
-          <line>39</line>
-          <properties documentPath="$PROJECT_DIR$/Views/Missions/MissionPost.cshtml" initialLine="39" isMultiMethodBreakpoint="true">
+          <url>file://$PROJECT_DIR$/Services/MissionIdeasService.cs</url>
+          <line>183</line>
+          <properties documentPath="$PROJECT_DIR$/Services/MissionIdeasService.cs" initialLine="183" containingFunctionPresentation="method 'MapMissionIdeaToMissionIdeaEditModel'">
+            <startOffsets>
+              <option value="6747" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6832" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Services/ImagesService.cs</url>
+          <line>27</line>
+          <properties documentPath="$PROJECT_DIR$/Services/ImagesService.cs" initialLine="23" containingFunctionPresentation="method 'CreateClubImageAsync'">
+            <startOffsets>
+              <option value="975" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1004" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Services/ImagesService.cs</url>
+          <line>91</line>
+          <properties documentPath="$PROJECT_DIR$/Services/ImagesService.cs" initialLine="84" containingFunctionPresentation="method 'CreateMissionImageAsync'">
+            <startOffsets>
+              <option value="3089" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3118" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Services/ImagesService.cs</url>
+          <line>181</line>
+          <properties documentPath="$PROJECT_DIR$/Services/ImagesService.cs" initialLine="165" containingFunctionPresentation="method 'CreateMissionIdeaImageAsync'">
+            <startOffsets>
+              <option value="6483" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6512" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Views/Missions/_MissionsList.cshtml</url>
+          <line>23</line>
+          <properties documentPath="$PROJECT_DIR$/Views/Missions/_MissionsList.cshtml" initialLine="23" isMultiMethodBreakpoint="true">
             <option name="multiMethodBreakpoint" value="true" />
             <startOffsets>
               <option value="-1" />
@@ -282,9 +381,51 @@
               <option value="-1" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="45" />
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Services/MissionsService.cs</url>
+          <line>253</line>
+          <properties documentPath="$PROJECT_DIR$/Services/MissionsService.cs" initialLine="253" containingFunctionPresentation="method 'SaveMissionEditModelAsync'">
+            <startOffsets>
+              <option value="9709" />
+            </startOffsets>
+            <endOffsets>
+              <option value="9769" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Services/ImagesService.cs</url>
+          <line>81</line>
+          <properties documentPath="$PROJECT_DIR$/Services/ImagesService.cs" initialLine="81" containingFunctionPresentation="method 'CreateMissionImageAsync'">
+            <startOffsets>
+              <option value="2568" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2569" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ClubsModule/Controllers/MissionsController.cs</url>
+          <line>49</line>
+          <properties documentPath="$PROJECT_DIR$/ClubsModule/Controllers/MissionsController.cs" initialLine="49" containingFunctionPresentation="method 'SaveAsync'">
+            <startOffsets>
+              <option value="1665" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1666" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="CidrExceptionBreakpoint" />
+      </default-breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>

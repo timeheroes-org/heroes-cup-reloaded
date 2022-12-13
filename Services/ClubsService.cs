@@ -76,8 +76,8 @@ public class ClubsService : IClubsService
 
         if (club.ClubImages != null && club.ClubImages.Count > 0)
         {
-            var clubImage = await _imagesService.GetClubImage(club.Id);
-            model.ClubImage = Guid.Empty != clubImage.ImageId ? clubImage.Image.Filename : null;
+            var clubImage = _imagesService.GetClubImage(club.Id);
+            model.ClubImage = Guid.Empty != clubImage.ImageId ? string.Concat(clubImage.Image.Id.ToString(),"/",clubImage.Image.Filename) : null;
         }
 
         model.Missions = club.Missions;

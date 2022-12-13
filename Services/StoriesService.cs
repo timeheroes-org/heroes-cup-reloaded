@@ -112,8 +112,8 @@ public class StoriesService : IStoriesService
         model.Missions = new List<Mission> { story.Mission };
         model.Heroes = await _heroesService.GetHeroes(story.Mission.Club.Id, ownerId);
         model.HeroesIds = new List<Guid>();
-        model.ImageIds = story.StoryImages != null && story.StoryImages.Any()
-            ? story.StoryImages.Select(si => si.ImageId.ToString()).ToList()
+        model.ImageFileNames = story.StoryImages != null && story.StoryImages.Any()
+            ? story.StoryImages.Select(si => string.Concat(si.ImageId.ToString(),"/", si.Image.Filename)).ToList()
             : new List<string>();
 
         if (story.Mission.HeroMissions != null && story.Mission.HeroMissions.Count > 0)

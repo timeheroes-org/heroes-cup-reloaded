@@ -52,21 +52,20 @@ public class LeaderboardService : ILeaderboardService
                     IsCoordinator = h.IsCoordinator,
                     Name = h.Name
                 });
-
-                return new ClubListItem
-                {
-                    Id = c.Club.Id,
-                    Name = GetClubName(c.Club),
-                    Location = c.Club.Location,
-                    ClubInitials = GetClubInitials(c.Club.Name),
-                    HeroesCount = GetHeroesCount(c.Club),
-                    ClubImageId = _imagesService.getClubImageId(c.Club.Id),
-                    Points = getClubPoints(c.Missions),
-                    Club = c.Club,
-                    Missions = clubMissions,
-                    Heroes = clubHeroes,
-                    Coordinators = clubHeroes.Where(h => h.IsCoordinator)
-                };
+                var clubImage = _imagesService.GetClubImage(c.Club.Id);
+                var item = new ClubListItem();
+                item.Id = c.Club.Id;
+                item.Name = GetClubName(c.Club);
+                item.Location = c.Club.Location;
+                item.ClubInitials = GetClubInitials(c.Club.Name);
+                item.HeroesCount = GetHeroesCount(c.Club);
+                item.ClubImageFileName = clubImage != null ? $"{clubImage.Image.Id}/{clubImage.Image.Filename}" : null;
+                item.Points = getClubPoints(c.Missions);
+                item.Club = c.Club;
+                item.Missions = clubMissions;
+                item.Heroes = clubHeroes;
+                item.Coordinators = clubHeroes.Where(h => h.IsCoordinator);
+                return item;
             })
             .OrderByDescending(c => c.Points)
             .ThenBy(c => c.Club.Name);

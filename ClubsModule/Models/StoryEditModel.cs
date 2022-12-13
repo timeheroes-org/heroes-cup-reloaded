@@ -13,7 +13,7 @@ public class StoryEditModel
     [AllowedExtensions(new[] { ".jpg", ".jpeg", ".png", ".svg" }, ErrorMessage = "AllowedFileExtensionsErrorMessage")]
     public ICollection<IFormFile> UploadedImages { get; set; }
 
-    public ICollection<string> ImageIds { get; set; }
+    public ICollection<string> ImageFileNames { get; set; }
 
     public ICollection<Hero> Heroes { get; set; }
 

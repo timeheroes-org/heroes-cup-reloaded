@@ -107,7 +107,7 @@ public class MissionsController : Controller
 
         var currentUrlBase = _webUtils.GetUrlBase(HttpContext);
         var url = $"{currentUrlBase}/mission/{mission.Slug}";
-        var imageUrl = $"{currentUrlBase}/img/{mission.ImageFilename.Replace("jpeg","jpg")}";
+        var imageUrl = $"{currentUrlBase}/img/{mission.ImageFilename}";
         var siteCulture = await _webUtils.GetCulture(_api);
         var dateFormat = _configuration["PostDateFormat"];
         var model = new MissionPost
