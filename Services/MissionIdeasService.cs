@@ -185,7 +185,7 @@ public class MissionIdeasService : IMissionIdeasService
         {
             var missionIdeaImage = await imagesService.GetMissionIdeaImageAsync(missionIdea.Id);
             model.ImageId = missionIdea.MissionIdeaImages != null && missionIdea.MissionIdeaImages.Any()
-                ? missionIdea.MissionIdeaImages.FirstOrDefault().ImageId.ToString()
+                ? string.Concat(missionIdea.MissionIdeaImages.FirstOrDefault()?.Image.Id.ToString(),"/",missionIdea.MissionIdeaImages.FirstOrDefault()?.Image.Filename)
                 : null;
             model.ImageFilename = missionIdeaImage.Image.Filename;
         }
