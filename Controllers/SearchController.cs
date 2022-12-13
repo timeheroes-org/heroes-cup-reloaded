@@ -18,7 +18,7 @@ public class SearchController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> SearchPage([FromForm] SearchViewModel model)
+    public IActionResult SearchPage([FromForm] SearchViewModel model)
     {
         ViewBag.IsSearchPage = true;
         return View("Search", new SearchResponseModel());

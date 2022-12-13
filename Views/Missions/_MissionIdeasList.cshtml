@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<HeroesCup.Web.Models.MissionIdeaViewModel>
 @{
     var missionIdeas = Model.ToList().OrderByDescending(m => m.MissionIdea.IsPublished);
-
 }
 
 @if (missionIdeas.Count() > 0)
@@ -13,7 +12,7 @@
                 <div class="mission-body">
                     <a href="/mission-idea/@idea.MissionIdea.Slug">
                         <div class="img-container text-left">
-                            <img class="img-fluid mission-img-list" src="/img/@idea.ImageId"/>
+                            <img class="img-fluid mission-img-list" src="/img/@idea.ImageFilename"/>
                         </div>
                         <p class="mission-title mt-4 body1-bold pr-md-4 pr-1">@idea.MissionIdea.Title</p>
                         <p class="body2 pr-md-5 pr-2">от @idea.Organization</p>

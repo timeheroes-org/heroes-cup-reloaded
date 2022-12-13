@@ -79,9 +79,11 @@ public class MissionsService : IMissionsService
         return _dbContext.Stories
             .Include(s => s.Mission)
             .ThenInclude(m => m.MissionImages)
+            .ThenInclude(m=>m.Image)
             .Include(s => s.Mission)
             .ThenInclude(m => m.Club)
             .Include(s => s.StoryImages)
+            .ThenInclude(i=>i.Image)
             .Where(s => s.IsPublished == true)
             .OrderByDescending(s => s.Mission.StartDate).Select(x=> MapStoryToStoryViewModel(x, _imageService, false));
     }
@@ -475,9 +477,9 @@ public class MissionsService : IMissionsService
             Id = missionIdea.Id,
             Slug = missionIdea.Slug,
             MissionIdea = missionIdea,
-            ImageId = missionIdea.MissionIdeaImages != null && missionIdea.MissionIdeaImages.Any()
-                ? missionIdea.MissionIdeaImages.FirstOrDefault().ImageId.ToString()
-                : null,
+            ImageFilename = missionIdea.MissionIdeaImages != null && missionIdea.MissionIdeaImages.Any()
+                ? missionIdea.MissionIdeaImages.FirstOrDefault()?.Image.Filename
+                : null, 
             IsExpired = missionIdea.EndDate.IsExpired(),
             IsSeveralDays = IsSeveralDays(missionIdea.StartDate, missionIdea.EndDate),
             Organization = !string.IsNullOrEmpty(missionIdea.Organization)
@@ -494,7 +496,6 @@ public class MissionsService : IMissionsService
         {
             Id = missionIdeEditModel.MissionIdea.Id,
             Slug = missionIdeEditModel.MissionIdea.Slug,
-            ImageId = missionIdeEditModel.ImageId,
             ImageFilename = missionIdeEditModel.ImageFilename,
             MissionIdea = missionIdeEditModel.MissionIdea,
             StartDate = missionIdeEditModel.MissionIdea.StartDate.ConvertToLocalDateTime(),
@@ -514,26 +515,21 @@ public class MissionsService : IMissionsService
     {
         if (story == null) return null;
 
-        var storyImageIds = story.StoryImages.Select(s => s.ImageId.ToString());
-        var heroImageId = story.StoryImages != null && story.StoryImages.Any()
-            ? story.StoryImages.FirstOrDefault()?.ImageId.ToString()
-            : story.Mission.MissionImages.FirstOrDefault()?.ImageId.ToString();
+        var images = story.StoryImages.Select(s => s.Image.Filename);
         string heroImageFilename = null;
 
-        if (includeImages)
-            heroImageFilename = story.StoryImages != null && story.StoryImages.Any()
-                ? story.StoryImages.FirstOrDefault().Image.Filename
-                : story.Mission.MissionImages.FirstOrDefault().Image.Filename;
+        heroImageFilename = story.StoryImages != null && story.StoryImages.Any()
+            ? story.StoryImages.FirstOrDefault()?.Image.Filename
+            : story.Mission.MissionImages.FirstOrDefault()?.Image.Filename;
 
 
         return new StoryViewModel
         {
             Id = story.Id,
+            Images = images,
             Content = story.Content,
             ClubName = story.Mission.Club.Name,
             HeroImageFilename = heroImageFilename,
-            ImageIds = storyImageIds,
-            HeroImageId = heroImageId,
             Mission = new MissionViewModel
             {
                 Id = story.Mission.Id,
@@ -544,9 +540,9 @@ public class MissionsService : IMissionsService
                 ClubLocation = story.Mission.Club.Location,
                 IsExpired = story.Mission.EndDate.IsExpired(),
                 IsSeveralDays = IsSeveralDays(story.Mission.StartDate, story.Mission.EndDate),
-                ImageFilename = imagesService.GetImageFilename(story.Mission.MissionImages.FirstOrDefault() != null
-                    ? story.Mission.MissionImages.FirstOrDefault()?.Image
-                    : null),
+                ImageFilename = story.Mission.MissionImages.FirstOrDefault() != null
+                    ? story.Mission.MissionImages.FirstOrDefault()?.Image.Filename
+                    : null,
                 ImageId = story.Mission.MissionImages != null && story.Mission.MissionImages.Any()
                     ? story.Mission.MissionImages.FirstOrDefault()?.ImageId.ToString()
                     : null,
@@ -580,10 +576,10 @@ public class MissionsService : IMissionsService
                 {
                     Content = missionEditModel.Mission.Story != null ? missionEditModel.Mission.Story.Content : null,
                     ClubName = missionEditModel.Mission.Club.Name,
-                    ImageIds =
+                    Images =
                         missionEditModel.Mission.Story.StoryImages != null &&
                         missionEditModel.Mission.Story.StoryImages.Any()
-                            ? missionEditModel.Mission.Story.StoryImages.Select(s => s.ImageId.ToString())
+                            ? missionEditModel.Mission.Story.StoryImages.Select(s => String.Concat(s.Image.Filename.ToString(),".",s.Image.Extension))
                             : null
                 }
                 : null
@@ -614,8 +610,8 @@ public class MissionsService : IMissionsService
                 {
                     Content = mission.Story.Content,
                     ClubName = mission.Club.Name,
-                    ImageIds = mission.Story.StoryImages != null && mission.Story.StoryImages.Any()
-                        ? mission.Story.StoryImages.Select(s => s.ImageId.ToString())
+                    Images = mission.Story.StoryImages != null && mission.Story.StoryImages.Any()
+                        ? mission.Story.StoryImages.Select(s => String.Concat(s.Image.Filename.ToString(),".",s.Image.Extension))
                         : null
                 }
                 : null

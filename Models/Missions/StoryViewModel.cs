@@ -10,9 +10,7 @@ public class StoryViewModel
 
     public string HeroImageFilename { get; set; }
 
-    public string HeroImageId { get; set; }
-
-    public IEnumerable<string> ImageIds { get; set; }
+    public IEnumerable<string> Images { get; set; }
 
     public string ClubName { get; set; }
 }

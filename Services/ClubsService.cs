@@ -8,12 +8,11 @@ namespace HeroesCup.Web.Services;
 
 public class ClubsService : IClubsService
 {
-    private readonly IConfiguration _configuration;
     private readonly HeroesCupDbContext _dbContext;
     private readonly IHeroesService _heroesService;
     private readonly IImagesService _imagesService;
 
-    private readonly string dateTimeFormat;
+    private readonly string _dateTimeFormat;
 
     public ClubsService(HeroesCupDbContext dbContext, IImagesService imagesService, IHeroesService heroesService,
         IConfiguration configuration)
@@ -21,8 +20,7 @@ public class ClubsService : IClubsService
         _dbContext = dbContext;
         _imagesService = imagesService;
         _heroesService = heroesService;
-        _configuration = configuration;
-        dateTimeFormat = _configuration["DateТimeFormat"];
+        _dateTimeFormat = configuration["DateТimeFormat"];
     }
 
     public Task<IEnumerable<String>> GetSchools()
@@ -31,8 +29,8 @@ public class ClubsService : IClubsService
     }
     public async Task<ClubEditModel> CreateClubEditModelAsync(Guid? ownerId)
     {
-        var missions = new List<Mission>();
-        var heroes = new List<Hero>();
+        List<Mission> missions;
+        List<Hero> heroes;
         if (ownerId.HasValue)
         {
             missions = await _dbContext.Missions.Where(m => m.OwnerId == ownerId.Value).ToListAsync();
@@ -79,7 +77,7 @@ public class ClubsService : IClubsService
         if (club.ClubImages != null && club.ClubImages.Count > 0)
         {
             var clubImage = await _imagesService.GetClubImage(club.Id);
-            model.ClubImageId = Guid.Empty != clubImage.ImageId ? clubImage.ImageId.ToString() : null;
+            model.ClubImage = Guid.Empty != clubImage.ImageId ? clubImage.Image.Filename : null;
         }
 
         model.Missions = club.Missions;
@@ -108,7 +106,7 @@ public class ClubsService : IClubsService
                 OrganizationName = c.OrganizationName,
                 OrganizationNumber = c.OrganizationNumber,
                 HeroesCount = c.Heroes != null ? c.Heroes.Count() : 0,
-                LastUpdateOn = c.UpdatedOn.ToUniversalDateTime().ToLocalTime().ToString(dateTimeFormat)
+                LastUpdateOn = c.UpdatedOn.ToUniversalDateTime().ToLocalTime().ToString(_dateTimeFormat)
             })
         };
 
@@ -206,9 +204,9 @@ public class ClubsService : IClubsService
             .Include(c => c.Heroes);
     }
 
-    public async Task<Task<List<Club>>> GetAllClubsWithImages()
+    public async Task<List<Club>> GetAllClubsWithImages()
     {
-        return _dbContext.Clubs
+        return await _dbContext.Clubs
             .Include(c => c.ClubImages).ToListAsync();
     }
 }

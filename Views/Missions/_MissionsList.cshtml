@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<HeroesCup.Web.Models.MissionViewModel>
 @{
     var missions = Model.ToList();
-    var isLoadMoreRequest = HttpAccess.HttpContext.Request.Query["loadRequest"].ToString();
 }
 
 @if (missions.Count > 0)
@@ -15,14 +14,14 @@
                         @if (mission.IsExpired)
                         {
                             <div class="img-container text-left">
-                                <img class="img-fluid expired-img mission-img-list" src="/img/@mission.ImageId"/>
+                                <img class="img-fluid expired-img mission-img-list" src="/img/@mission.ImageFilename"/>
                                 <div class="top-left body3-bold">ПРИКЛЮЧИЛА</div>
                             </div>
                         }
                         else
                         {
                             <div class="img-container text-left">
-                                <img class="img-fluid mission-img-list" src="/img/@mission.ImageId"/>
+                                <img class="img-fluid mission-img-list" src="/img/@mission.ImageFilename"/>
                             </div>
                         }
                         <p class="mission-title body1-bold pr-md-4 pr-1 mt-4">@mission.Title</p>

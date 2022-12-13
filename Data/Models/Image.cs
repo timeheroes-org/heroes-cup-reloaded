@@ -1,4 +1,6 @@
-﻿namespace HeroesCup.Data.Models;
+﻿using System.Diagnostics;
+
+namespace HeroesCup.Data.Models;
 
 public class Image
 {
@@ -10,6 +12,18 @@ public class Image
 
     public string ContentType { get; set; }
 
+    public String Extension
+    {
+        get
+        {
+            return ContentType switch
+            {
+                "image/png" => "png",
+                "application/pdf" => "pdf",
+                _ => "jpg"
+            };
+        }
+    }
     public ICollection<ClubImage> ClubImages { get; set; }
 
     public ICollection<MissionImage> MissionImages { get; set; }
