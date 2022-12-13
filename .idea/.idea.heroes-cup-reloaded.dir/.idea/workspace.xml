@@ -41,6 +41,7 @@
     <setting file="file://$PROJECT_DIR$/Services/LeaderboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/MissionIdeasService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/MissionsService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/MissionsService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Views/Missions/MissionPost.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/compilerconfig.json" root0="FORCE_HIGHLIGHTING" />
@@ -184,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670951571675</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fixed mission image.">
+      <created>1670952128328</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1670952128328</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,10 +262,10 @@
           <line>558</line>
           <properties documentPath="$PROJECT_DIR$/Services/MissionsService.cs" initialLine="561" containingFunctionPresentation="method 'MapMissionEditModelToMissionViewModel'">
             <startOffsets>
-              <option value="21364" />
+              <option value="21365" />
             </startOffsets>
             <endOffsets>
-              <option value="22980" />
+              <option value="22981" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="43" />

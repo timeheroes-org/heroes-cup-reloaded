@@ -561,7 +561,7 @@ public class MissionsService : IMissionsService
             Id = missionEditModel.Mission.Id,
             Title = missionEditModel.Mission.Title,
             Slug = missionEditModel.Mission.Slug,
-            ImageFilename = missionEditModel.ImageFilename,
+            ImageFilename = String.Concat(missionEditModel.ImageId,"/",missionEditModel.ImageFilename),
             ImageId = missionEditModel.ImageId,
             Content = missionEditModel.Mission.Content,
             ClubName = missionEditModel.Mission.Club.Name,
