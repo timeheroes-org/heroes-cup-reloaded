@@ -40,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/Services/ImagesService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/LeaderboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/MissionIdeasService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/MissionsService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/MissionsService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/MissionsService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Views/Missions/MissionPost.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
@@ -192,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670952128328</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed mission image.">
+      <created>1670954632410</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1670954632410</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +273,7 @@
               <option value="21365" />
             </startOffsets>
             <endOffsets>
-              <option value="22981" />
+              <option value="23025" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="43" />

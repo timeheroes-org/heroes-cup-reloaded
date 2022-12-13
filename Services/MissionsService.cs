@@ -496,7 +496,7 @@ public class MissionsService : IMissionsService
         {
             Id = missionIdeEditModel.MissionIdea.Id,
             Slug = missionIdeEditModel.MissionIdea.Slug,
-            ImageFilename = missionIdeEditModel.ImageFilename,
+            ImageFilename = string.Concat(missionIdeEditModel.ImageId,"/",missionIdeEditModel.ImageFilename),
             MissionIdea = missionIdeEditModel.MissionIdea,
             StartDate = missionIdeEditModel.MissionIdea.StartDate.ConvertToLocalDateTime(),
             EndDate = missionIdeEditModel.MissionIdea.EndDate.ConvertToLocalDateTime(),
