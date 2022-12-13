@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Almost done. King of stupid commit messages.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images.sh" beforeDir="false" afterPath="$PROJECT_DIR$/images.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +86,8 @@
     <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Services/LeaderboardService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/LeaderboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/MissionsService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Views/Missions/_MissionIdeasList.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Views/Shared/Partial/_ClubDetails.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Views/Shared/Partial/_ClubDetails.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/compilerconfig.json" root0="FORCE_HIGHLIGHTING" />
