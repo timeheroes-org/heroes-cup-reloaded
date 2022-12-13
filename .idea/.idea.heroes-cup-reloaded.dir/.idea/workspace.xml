@@ -4,23 +4,8 @@
     <projectFile>heroes-cup-reloaded.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixed default locale and resources missing. Removed participate banner in missions archive.">
+    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Almost done. King of stupid commit messages.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/MissionIdeas/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/MissionIdeas/Edit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Missions/Edit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Areas/ClubsModule/Stories/Edit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubsModule/Models/StoryEditModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubsModule/Models/StoryEditModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/MissionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/MissionsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/ClubListViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/ClubListViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/ClubsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ClubsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/IClubImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IClubImagesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/IStoryImageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/IStoryImageService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/ImagesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ImagesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/LeaderboardService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/LeaderboardService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/MissionsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/MissionsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/StoriesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/StoriesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Shared/Partial/_ClubDetails.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/Partial/_ClubDetails.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images.sh" beforeDir="false" afterPath="$PROJECT_DIR$/images.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +85,7 @@
     <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Services/LeaderboardService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/LeaderboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/MissionsService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/andrey/Git/heroes-cup-reloaded/Views/Shared/Partial/_ClubDetails.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/compilerconfig.json" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -156,7 +142,7 @@
       <workItem from="1666606317768" duration="8628000" />
       <workItem from="1667811618210" duration="142000" />
       <workItem from="1667814552660" duration="13965000" />
-      <workItem from="1670835609597" duration="10984000" />
+      <workItem from="1670835609597" duration="13394000" />
     </task>
     <task id="LOCAL-00001" summary="Added more search inventory.">
       <created>1664370381785</created>
@@ -228,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670836703675</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Almost done. King of stupid commit messages.">
+      <created>1670858052947</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670858052947</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +249,8 @@
     <MESSAGE value="Added login button." />
     <MESSAGE value="Changed points algo. Merging with master." />
     <MESSAGE value="Fixed default locale and resources missing. Removed participate banner in missions archive." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed default locale and resources missing. Removed participate banner in missions archive." />
+    <MESSAGE value="Almost done. King of stupid commit messages." />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost done. King of stupid commit messages." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -292,19 +286,6 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Controllers/MissionsController.cs</url>
-          <line>187</line>
-          <properties documentPath="$PROJECT_DIR$/Controllers/MissionsController.cs" initialLine="187" containingFunctionPresentation="method 'LoadMissions'">
-            <startOffsets>
-              <option value="8142" />
-            </startOffsets>
-            <endOffsets>
-              <option value="8143" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Services/MissionsService.cs</url>
           <line>558</line>
           <properties documentPath="$PROJECT_DIR$/Services/MissionsService.cs" initialLine="561" containingFunctionPresentation="method 'MapMissionEditModelToMissionViewModel'">
@@ -332,39 +313,39 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Services/ImagesService.cs</url>
-          <line>27</line>
+          <line>28</line>
           <properties documentPath="$PROJECT_DIR$/Services/ImagesService.cs" initialLine="23" containingFunctionPresentation="method 'CreateClubImageAsync'">
             <startOffsets>
-              <option value="975" />
+              <option value="1009" />
             </startOffsets>
             <endOffsets>
-              <option value="1004" />
+              <option value="1038" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Services/ImagesService.cs</url>
-          <line>91</line>
+          <line>92</line>
           <properties documentPath="$PROJECT_DIR$/Services/ImagesService.cs" initialLine="84" containingFunctionPresentation="method 'CreateMissionImageAsync'">
             <startOffsets>
-              <option value="3089" />
+              <option value="3123" />
             </startOffsets>
             <endOffsets>
-              <option value="3118" />
+              <option value="3152" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Services/ImagesService.cs</url>
-          <line>181</line>
+          <line>182</line>
           <properties documentPath="$PROJECT_DIR$/Services/ImagesService.cs" initialLine="165" containingFunctionPresentation="method 'CreateMissionIdeaImageAsync'">
             <startOffsets>
-              <option value="6483" />
+              <option value="6517" />
             </startOffsets>
             <endOffsets>
-              <option value="6512" />
+              <option value="6546" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="51" />
@@ -398,29 +379,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Services/ImagesService.cs</url>
-          <line>81</line>
+          <line>82</line>
           <properties documentPath="$PROJECT_DIR$/Services/ImagesService.cs" initialLine="81" containingFunctionPresentation="method 'CreateMissionImageAsync'">
             <startOffsets>
-              <option value="2568" />
+              <option value="2602" />
             </startOffsets>
             <endOffsets>
-              <option value="2569" />
+              <option value="2603" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ClubsModule/Controllers/MissionsController.cs</url>
-          <line>49</line>
-          <properties documentPath="$PROJECT_DIR$/ClubsModule/Controllers/MissionsController.cs" initialLine="49" containingFunctionPresentation="method 'SaveAsync'">
-            <startOffsets>
-              <option value="1665" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1666" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
