@@ -465,7 +465,7 @@ public class MissionsService : IMissionsService
         return _dbContext.MissionImages
             .Include(mi => mi.Image)
             .Where(m => m.MissionId == missionId)
-            .Select(mi => new Tuple<string, string>(mi.ImageId.ToString(), mi.Image.Filename));
+            .Select(mi => new Tuple<string, string>(mi.Image.Id.ToString(), mi.Image.Filename));
     }
 
     private MissionIdeaViewModel MapMissionIdeaToMissionIdeaViewModel(MissionIdea missionIdea)
