@@ -54,7 +54,7 @@ public class SearchService : ISearchServce
                 Text = s.Content?.What,
                 Title = s.Title,
                 Type = SearchResultType.Mission,
-                Image = s.MissionImages?.FirstOrDefault()?.ImageId.ToString()
+                Image = string.Concat(s.MissionImages?.FirstOrDefault()?.Image.Id.ToString(),"/",s.MissionImages?.FirstOrDefault()?.Image.Filename)
             }).ToList());
         }
 
@@ -69,7 +69,7 @@ public class SearchService : ISearchServce
                 Text = s.Description,
                 Title = s.Name,
                 Type = SearchResultType.Club,
-                Image = s.ClubImages?.FirstOrDefault()?.ImageId.ToString()
+                Image = string.Concat(s.ClubImages?.FirstOrDefault()?.Image.Id.ToString(),"/",s.ClubImages?.FirstOrDefault()?.Image.Filename)
             }).ToList());
         }
 

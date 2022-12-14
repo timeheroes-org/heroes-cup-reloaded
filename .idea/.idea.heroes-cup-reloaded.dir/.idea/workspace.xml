@@ -4,7 +4,7 @@
     <projectFile>heroes-cup-reloaded.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixed unable to edit story." />
+    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixed story images not displaying." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +28,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bde215d3d568499d3be1f524f92914afa1cfbbea3c7da7f1fc7cdfc68f1020/FileStorageStartupExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c0ae6e714e5b92c5442bb9246f1d2fa7685b5d6ec287e81ac3e03fa83c7616f7/FileStorage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f9d1991eff9bd564c90b86f95b51c8938e3d1419b3119b1c65cd9f66180d4cc/FileStorageExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/ClubsModule/Areas/ClubsModule/Stories/Edit.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Migrations/20220801144609_Initial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Archive.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Pages/Page.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -97,7 +98,7 @@
       <workItem from="1667811618210" duration="142000" />
       <workItem from="1667814552660" duration="13965000" />
       <workItem from="1670835609597" duration="13394000" />
-      <workItem from="1671017621135" duration="316000" />
+      <workItem from="1671017621135" duration="1087000" />
     </task>
     <task id="LOCAL-00001" summary="Added more search inventory.">
       <created>1664370381785</created>
@@ -218,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671017779359</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Fixed story images not displaying.">
+      <created>1671018101326</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1671018101326</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,7 +257,8 @@
     <MESSAGE value="Almost done. King of stupid commit messages." />
     <MESSAGE value="Fixed mission image." />
     <MESSAGE value="Fixed unable to edit story." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed unable to edit story." />
+    <MESSAGE value="Fixed story images not displaying." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed story images not displaying." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
