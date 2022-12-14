@@ -100,6 +100,7 @@ public class StoriesService : IStoriesService
             .ThenInclude(m => m.HeroMissions)
             .ThenInclude(m => m.Hero)
             .Include(c => c.StoryImages)
+            .ThenInclude(c=>c.Image)
             .FirstOrDefaultAsync(c => c.Id == id);
 
         if (story == null) return null;
@@ -113,7 +114,7 @@ public class StoriesService : IStoriesService
         model.Heroes = await _heroesService.GetHeroes(story.Mission.Club.Id, ownerId);
         model.HeroesIds = new List<Guid>();
         model.ImageFileNames = story.StoryImages != null && story.StoryImages.Any()
-            ? story.StoryImages.Select(si => string.Concat(si.ImageId.ToString(),"/", si.Image.Filename)).ToList()
+            ? story.StoryImages.Select(si => string.Concat(si.Image.Id.ToString(),"/", si.Image.Filename)).ToList()
             : new List<string>();
 
         if (story.Mission.HeroMissions != null && story.Mission.HeroMissions.Count > 0)

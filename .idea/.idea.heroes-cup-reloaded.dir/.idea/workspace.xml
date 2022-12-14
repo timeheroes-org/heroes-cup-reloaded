@@ -209,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670960092030</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fixed mission image.">
+      <created>1670960542115</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1670960542115</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,10 +286,10 @@
           <line>558</line>
           <properties documentPath="$PROJECT_DIR$/Services/MissionsService.cs" initialLine="561" containingFunctionPresentation="method 'MapMissionEditModelToMissionViewModel'">
             <startOffsets>
-              <option value="21412" />
+              <option value="21359" />
             </startOffsets>
             <endOffsets>
-              <option value="23072" />
+              <option value="23019" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="43" />
