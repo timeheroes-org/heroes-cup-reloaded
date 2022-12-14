@@ -4,7 +4,9 @@
     <projectFile>heroes-cup-reloaded.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixed story images not displaying." />
+    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixing search result images.">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +100,7 @@
       <workItem from="1667811618210" duration="142000" />
       <workItem from="1667814552660" duration="13965000" />
       <workItem from="1670835609597" duration="13394000" />
-      <workItem from="1671017621135" duration="1087000" />
+      <workItem from="1671017621135" duration="1860000" />
     </task>
     <task id="LOCAL-00001" summary="Added more search inventory.">
       <created>1664370381785</created>
@@ -226,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671018101326</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fixing search result images.">
+      <created>1671031518074</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1671031518074</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,7 +267,8 @@
     <MESSAGE value="Fixed mission image." />
     <MESSAGE value="Fixed unable to edit story." />
     <MESSAGE value="Fixed story images not displaying." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed story images not displaying." />
+    <MESSAGE value="Fixing search result images." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing search result images." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

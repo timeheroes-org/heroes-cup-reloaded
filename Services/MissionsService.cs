@@ -360,7 +360,9 @@ public class MissionsService : IMissionsService
             .Include(m => m.Content)
             .Include(m => m.HeroMissions)
             .Include(m => m.Club)
-            .Include(m=>m.MissionImages).ToListAsync();
+            .Include(m=>m.MissionImages)
+            .ThenInclude(m=>m.Image).ToListAsync();
+        
     }
 
     public async Task<bool> PinMissionEditModelAsync(Guid id)
