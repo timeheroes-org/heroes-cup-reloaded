@@ -4,9 +4,7 @@
     <projectFile>heroes-cup-reloaded.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixing search result images.">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.heroes-cup-reloaded.dir/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixing mission images missing exception." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +41,7 @@
     <setting file="file://$PROJECT_DIR$/Services/ImagesService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/LeaderboardService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/MissionsService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/MissionsService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/compilerconfig.json" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -100,7 +99,7 @@
       <workItem from="1667811618210" duration="142000" />
       <workItem from="1667814552660" duration="13965000" />
       <workItem from="1670835609597" duration="13394000" />
-      <workItem from="1671017621135" duration="1860000" />
+      <workItem from="1671017621135" duration="2335000" />
     </task>
     <task id="LOCAL-00001" summary="Added more search inventory.">
       <created>1664370381785</created>
@@ -235,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671031518074</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixing mission images missing exception.">
+      <created>1671034000584</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1671034000584</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +274,8 @@
     <MESSAGE value="Fixed unable to edit story." />
     <MESSAGE value="Fixed story images not displaying." />
     <MESSAGE value="Fixing search result images." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing search result images." />
+    <MESSAGE value="Fixing mission images missing exception." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing mission images missing exception." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -305,13 +312,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Services/MissionsService.cs</url>
-          <line>558</line>
+          <line>560</line>
           <properties documentPath="$PROJECT_DIR$/Services/MissionsService.cs" initialLine="561" containingFunctionPresentation="method 'MapMissionEditModelToMissionViewModel'">
             <startOffsets>
-              <option value="21359" />
+              <option value="21405" />
             </startOffsets>
             <endOffsets>
-              <option value="23019" />
+              <option value="23065" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="43" />

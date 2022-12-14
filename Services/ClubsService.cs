@@ -207,6 +207,7 @@ public class ClubsService : IClubsService
     public async Task<List<Club>> GetAllClubsWithImages()
     {
         return await _dbContext.Clubs
-            .Include(c => c.ClubImages).ToListAsync();
+            .Include(c => c.ClubImages)
+            .ThenInclude(c=>c.Image).ToListAsync();
     }
 }
