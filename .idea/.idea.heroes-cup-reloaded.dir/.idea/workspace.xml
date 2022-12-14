@@ -4,7 +4,7 @@
     <projectFile>heroes-cup-reloaded.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixed mission image." />
+    <list default="true" id="4544072a-9069-485d-8d70-4483f3714987" name="Changes" comment="Fixed unable to edit story." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,13 +39,7 @@
     <setting file="file://$PROJECT_DIR$/Services/IdentitySeed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/ImagesService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/LeaderboardService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/MissionIdeasService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/MissionsService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Services/MissionsService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/MissionsService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Services/MissionsService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Views/Missions/MissionIdeaPost.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/adautev/Git/heroes-cup-reloaded/Views/Missions/MissionPost.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/compilerconfig.json" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -103,6 +97,7 @@
       <workItem from="1667811618210" duration="142000" />
       <workItem from="1667814552660" duration="13965000" />
       <workItem from="1670835609597" duration="13394000" />
+      <workItem from="1671017621135" duration="316000" />
     </task>
     <task id="LOCAL-00001" summary="Added more search inventory.">
       <created>1664370381785</created>
@@ -216,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670960542115</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fixed unable to edit story.">
+      <created>1671017779359</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1671017779359</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +248,8 @@
     <MESSAGE value="Fixed default locale and resources missing. Removed participate banner in missions archive." />
     <MESSAGE value="Almost done. King of stupid commit messages." />
     <MESSAGE value="Fixed mission image." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed mission image." />
+    <MESSAGE value="Fixed unable to edit story." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed unable to edit story." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
