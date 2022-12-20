@@ -120,7 +120,7 @@ public class ImagesService : IImagesService
                 ImageId = i.ImageId,
                 Image = new Image
                 {
-                    Filename = String.Concat(i.Image.Id, "/", i.Image.Filename),
+                    Filename = i.Image.Filename,
                     ContentType = i.Image.ContentType,
                     Id = i.Image.Id
                 }
