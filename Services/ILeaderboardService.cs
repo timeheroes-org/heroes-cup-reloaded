@@ -8,5 +8,5 @@ public interface ILeaderboardService
 
     IEnumerable<string> GetSchoolYears();
 
-    Task<ClubListViewModel> GetClubsBySchoolYearAsync(string schoolYear);
+    ClubListViewModel GetClubsBySchoolYearAsync(string schoolYear);
 }

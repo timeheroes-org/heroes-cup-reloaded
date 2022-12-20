@@ -320,6 +320,8 @@ public class MissionsService : IMissionsService
 
         var result = await _dbContext.Missions
             .Where(m => m.IsPublished)
+            .Include(m=>m.MissionImages)
+            .ThenInclude(m=>m.Image)
             .Include(c => c.Club)
             .Include(m => m.HeroMissions)
             .ThenInclude(hm => hm.Hero)
@@ -393,8 +395,10 @@ public class MissionsService : IMissionsService
             .Where(m => m.IsPinned == true && m.IsPublished == true)
             .Include(m => m.Club)
             .Include(m => m.MissionImages)
+            .ThenInclude(mi=>mi.Image)
             .Include(m => m.Story)
             .ThenInclude(s => s.StoryImages)
+            .ThenInclude(si=>si.Image)
             .ToListAsync();
 
         int countOfPinnedMissionsOnHomePage;
@@ -613,7 +617,7 @@ public class MissionsService : IMissionsService
                     Content = mission.Story.Content,
                     ClubName = mission.Club.Name,
                     Images = mission.Story.StoryImages != null && mission.Story.StoryImages.Any()
-                        ? mission.Story.StoryImages.Select(s => String.Concat(s.Image.Filename.ToString(),".",s.Image.Extension))
+                        ? mission.Story.StoryImages.Select(s => String.Concat(s.Image.Id,"",s.Image.Filename))
                         : null
                 }
                 : null

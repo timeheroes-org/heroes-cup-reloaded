@@ -100,7 +100,7 @@ public class CmsController : Controller
         else
             model.SelectedSchoolYear = _leaderboardService.GetLatestSchoolYear();
 
-        var clubsListModel = await _leaderboardService.GetClubsBySchoolYearAsync(model.SelectedSchoolYear);
+        var clubsListModel = _leaderboardService.GetClubsBySchoolYearAsync(model.SelectedSchoolYear);
         model.Clubs = clubsListModel;
 
         // Statistics

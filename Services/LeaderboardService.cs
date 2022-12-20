@@ -18,10 +18,9 @@ public class LeaderboardService : ILeaderboardService
         _imagesService = imagesService;
     }
 
-    public async Task<ClubListViewModel> GetClubsBySchoolYearAsync(string schoolYear)
+    public ClubListViewModel GetClubsBySchoolYearAsync(string schoolYear)
     {
-        var missions = await _missionsService.GetMissionsBySchoolYear(schoolYear);
-        if (missions == null) return null;
+        var missions = _missionsService.GetMissionsBySchoolYear(schoolYear).Result.ToList();
 
         var clubs = missions
             .GroupBy(m => m.Club)
@@ -39,12 +38,12 @@ public class LeaderboardService : ILeaderboardService
                         Id = m.Id,
                         Title = m.Title,
                         Club = m.Club,
-                        ImageId = GetMissionImageId(m),
+                        ImageFilename = string.Concat(m.MissionImages?.FirstOrDefault()?.Image.Id,"/",m.MissionImages?.FirstOrDefault()?.Image.Filename),
                         Slug = m.Slug,
                         EndDate = m.EndDate.ConvertToLocalDateTime(),
                         StartDate = m.StartDate.ConvertToLocalDateTime(),
                         IsExpired = m.EndDate.IsExpired()
-                    });
+                    }).ToList();
 
                 var clubHeroes = c.Club.Heroes.Select(h => new HeroViewModel
                 {
@@ -53,22 +52,24 @@ public class LeaderboardService : ILeaderboardService
                     Name = h.Name
                 });
                 var clubImage = _imagesService.GetClubImage(c.Club.Id);
-                var item = new ClubListItem();
-                item.Id = c.Club.Id;
-                item.Name = GetClubName(c.Club);
-                item.Location = c.Club.Location;
-                item.ClubInitials = GetClubInitials(c.Club.Name);
-                item.HeroesCount = GetHeroesCount(c.Club);
-                item.ClubImageFileName = clubImage != null ? $"{clubImage.Image.Id}/{clubImage.Image.Filename}" : null;
-                item.Points = getClubPoints(c.Missions);
-                item.Club = c.Club;
-                item.Missions = clubMissions;
-                item.Heroes = clubHeroes;
-                item.Coordinators = clubHeroes.Where(h => h.IsCoordinator);
+                var item = new ClubListItem
+                {
+                    Id = c.Club.Id,
+                    Name = GetClubName(c.Club),
+                    Location = c.Club.Location,
+                    ClubInitials = GetClubInitials(c.Club.Name),
+                    HeroesCount = GetHeroesCount(c.Club),
+                    ClubImageFileName = clubImage != null ? $"{clubImage.Image.Id}/{clubImage.Image.Filename}" : null,
+                    Points = getClubPoints(c.Missions),
+                    Club = c.Club,
+                    Missions = clubMissions,
+                    Heroes = clubHeroes,
+                    Coordinators = clubHeroes.Where(h => h.IsCoordinator)
+                };
                 return item;
             })
             .OrderByDescending(c => c.Points)
-            .ThenBy(c => c.Club.Name);
+            .ThenBy(c => c.Club.Name).ToList();
 
         var model = new ClubListViewModel
         {
