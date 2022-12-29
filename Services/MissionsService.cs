@@ -521,7 +521,7 @@ public class MissionsService : IMissionsService
     {
         if (story == null) return null;
 
-        var images = story.StoryImages.Select(s => s.Image.Filename);
+        var images = story.StoryImages.Select(s => string.Concat(s.Image.Id,"/",s.Image.Filename));
         string heroImageFilename = null;
 
         heroImageFilename = story.StoryImages != null && story.StoryImages.Any()
