@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿
+using System.Text.RegularExpressions;
 using HeroesCup.Data.Models;
 using HeroesCup.Web.Common;
 using HeroesCup.Web.Common.Extensions;
@@ -125,8 +126,7 @@ public class LeaderboardService : ILeaderboardService
 
     private int getClubPoints(IEnumerable<Mission> missions)
     {
-        return missions.Select(m => m.Stars * m.HeroMissions.Count()).Sum();
-
+        // return missions.Select(m => m.Stars * m.HeroMissions.Count()).Sum();
         return missions.Where(m=>new DateTime(2022, 9, 15).ToUnixMilliseconds() >= m.StartDate).Select(m => m.Stars * m.HeroMissions.Count()).Sum() +
                missions.Where(m=>new DateTime(2022, 9, 15).ToUnixMilliseconds() < m.StartDate).Sum(s=> s.Stars +
                    (s.HeroMissions.Count is >= 50 and < 100 ? 1
