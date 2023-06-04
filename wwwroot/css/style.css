@@ -1368,13 +1368,19 @@ a:hover .resource-icon-article {
         border-radius: 0;
         top: 0;
         z-index: 99;
+        padding-top: 0.5rem !important;
+        background-color: var(--backgroundColor);
+        box-shadow: 0px -4px 11px var(--borderColor);
     }
+}
+.fixed-top {
+    box-shadow: 0px 0px 0px var(--borderColor);
+    transition: box-shadow 0.3s ease-out;
 }
 
 .fixed-top.scrolled {
-    box-shadow: inset 0px -1px 0px var(--borderColor);
+    box-shadow: 0px -4px 11px var(--borderColor);
     background-color: var(--backgroundColor) !important;
-    transition: background-color 150ms linear;
 }
 
 .share-buttons.sticky {
@@ -2182,5 +2188,19 @@ a.nav-link.login:hover {
 @media (max-width: 745px) {
     .leaderboard-text {
         padding-left: 1rem;
+    }
+    .mobile-extra-margin {
+        margin-top: 2.8rem;
+    }
+}
+
+.fixed-container {
+    width: 100%;
+    padding: 0.1rem 3rem;
+}
+
+@media (max-width: 1070px) {
+    .fixed-container {
+        padding: 0.1rem 1rem;
     }
 }
