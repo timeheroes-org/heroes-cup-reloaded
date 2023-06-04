@@ -158,12 +158,12 @@ input.custom-option {
 }
 
 .school-years-button:hover {
-    background: var(--lightBackgroundColor);
+    background: var(--secondaryBackgroundColor);
     border-radius: 32px;
 }
 
 .school-years-button:active {
-    background: var(--lightBackgroundColor);
+    background: var(--secondaryBackgroundColor);
     border-radius: 32px;
 }
 
@@ -180,11 +180,11 @@ input.custom-option {
 }
 
 .locations-button:hover {
-    background: var(--lightBackgroundColor);
+    background: var(--secondaryBackgroundColor);
     border-radius: 32px;
 }
 
 .locations-button:active {
-    background: var(--lightBackgroundColor);
+    background: var(--secondaryBackgroundColor);
     border-radius: 32px;
 }
