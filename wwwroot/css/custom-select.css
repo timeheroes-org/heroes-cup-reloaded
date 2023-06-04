@@ -1,4 +1,6 @@
-﻿*, *:after, *:before {
+﻿*,
+*:after,
+*:before {
     box-sizing: border-box;
 }
 
@@ -7,13 +9,16 @@
     position: relative;
     user-select: none;
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .custom-select {
     position: relative;
     display: flex;
     flex-direction: column;
-    background: #EBE7FD;
+    background: #FFFFFF;
+    line-height: 1;
 }
 
 .custom-select__trigger {
@@ -21,6 +26,7 @@
     display: flex;
     width: 100%;
     height: 100%;
+    margin-top: 0.1rem;
     align-items: center;
     justify-content: flex-start;
     border: none;
@@ -30,7 +36,7 @@
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
-    color: #370AEB;
+    color: var(--mediumColor);
     background: url('../images/dropdown-rectangle.svg') no-repeat right;
     background-position: 100% 47%;
 }
@@ -57,7 +63,7 @@
     pointer-events: all;
     border: 1px solid rgba(0, 0, 0, 0.16);
     border-radius: 6px;
-    top:0;
+    top: 0;
 }
 
 input.custom-option {
@@ -75,33 +81,33 @@ input.custom-option {
     font-size: 14px;
     line-height: 17px;
     /* identical to box height */
-    color: #000000;
+    color: var(--fontColor);
     cursor: pointer;
     transition: all 0.5s;
 }
 
-    .custom-option:hover {
-        cursor: pointer;
-        font-family: 'Fira Sans', sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 17px;
-        /* identical to box height */
-        color: #FFFFFF;
-        background: #3585F5;
-    }
+.custom-option:hover {
+    cursor: pointer;
+    font-family: 'Fira Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: var(--whiteColor);
+    background: var(--primaryColor);
+}
 
-    .custom-option.selected {
-        font-family: 'Fira Sans', sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 17px;
-        /* identical to box height */
-        color: #FFFFFF;
-        background: #3585F5;
-    }
+.custom-option.selected {
+    font-family: 'Fira Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: var(--whiteColor);
+    background: var(--primaryColor);
+}
 
 
 /*.arrow {
@@ -148,38 +154,37 @@ input.custom-option {
     max-height: 48px;
     padding: 12px 24px;
     border: none;
-    background-color: #EBE7FD;
     border-radius: 32px;
 }
 
-    .school-years-button:hover {
-        background: linear-gradient(0deg, rgba(55, 10, 235, 0.08), rgba(55, 10, 235, 0.08)), #EBE7FD;
-        border-radius: 32px;
-    }
+.school-years-button:hover {
+    background: var(--lightBackgroundColor);
+    border-radius: 32px;
+}
 
-    .school-years-button:active {
-        background: linear-gradient(0deg, rgba(55, 10, 235, 0.16), rgba(55, 10, 235, 0.16)), #EBE7FD;
-        border-radius: 32px;
-    }
+.school-years-button:active {
+    background: var(--lightBackgroundColor);
+    border-radius: 32px;
+}
 
 
 .locations-button {
     min-width: 166px;
-    min-height: 48px;
+    min-height: 42px;
     max-width: 258px;
     max-height: 48px;
     padding: 12px 24px;
     border: none;
-    background-color: #EBE7FD;
+    background-color: #FFFFFF;
     border-radius: 32px;
 }
 
-    .locations-button:hover {
-        background: linear-gradient(0deg, rgba(55, 10, 235, 0.08), rgba(55, 10, 235, 0.08)), #EBE7FD;
-        border-radius: 32px;
-    }
+.locations-button:hover {
+    background: var(--lightBackgroundColor);
+    border-radius: 32px;
+}
 
-    .locations-button:active {
-        background: linear-gradient(0deg, rgba(55, 10, 235, 0.16), rgba(55, 10, 235, 0.16)), #EBE7FD;
-        border-radius: 32px;
-    }
+.locations-button:active {
+    background: var(--lightBackgroundColor);
+    border-radius: 32px;
+}
