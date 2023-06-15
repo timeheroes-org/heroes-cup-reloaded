@@ -16,14 +16,21 @@
 
 }
 
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/Fira/Fira-Regular.woff2') format('woff2'),
+        url('../fonts/Fira/Fira-Regular.woff') format('woff');
+}
+
 /*
 *   Comments
 */
+
 #disqus_thread {
     width: 100%;
     margin-bottom: 32px;
-    padding-left: 1.5rem!important;
-    padding-right: 1.5rem!important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
 }
 
 #disqus_thread p {
@@ -524,11 +531,11 @@ header.page-header img {
 /* Modal */
 
 
-.modal-content>.modal-header {
+.modal-content-custom>.modal-header {
     border-bottom: none;
 }
 
-.modal-content>.modal-footer {
+.modal-content-custom>.modal-footer {
     border-top: none;
 }
 
@@ -564,15 +571,48 @@ body.modal-open .main-blur {
     background: url('../images/cross.svg') center no-repeat;
     align-content: center;
     opacity: unset;
-    position: absolute;
+    position: absolute !important;
     top: 45px;
     right: 100px;
+}
+
+.club-modal .modal-close {
+    top: 0;
+    right: -16px;
 }
 
 /* Club Modal */
 
 .club-modal {
     align-content: center;
+}
+
+.club-modal-cont {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+}
+
+.club-modal-title {
+    display: flex;
+}
+
+.club-modal-title-text {
+    flex: 1;
+}
+
+.club-modal-icon {
+    width: 106px;
+    max-width: 106px;
+}
+
+.club-modal-icon-small {
+    width: 87px;
+    max-width: 87px;
+}
+
+.club-modal-wrap {
+    display: block !important;
 }
 
 .center-cropped {
@@ -756,12 +796,12 @@ a:hover .points-heroes-separator {
 }
 
 .club {
-    height: 250px;
+    height: auto;
     overflow-y: auto;
 }
 
 .club-container {
-    max-height: 484px;
+    max-height: 90vh;
 }
 
 .tabpanel,
@@ -1021,8 +1061,8 @@ a:hover .resource-icon-article {
 .img-container .club-img {
     object-fit: cover;
     object-position: 50% 0;
-    width: 384px;
-    height: 484px;
+    width: 100%;
+    height: 100%;
 }
 
 .button-left {
@@ -1060,7 +1100,7 @@ a:hover .resource-icon-article {
     right: 16px;
 }
 
-#image-gallery .modal-content {
+#image-gallery .modal-content-custom {
     border: none;
 }
 
@@ -1089,17 +1129,19 @@ a:hover .resource-icon-article {
     position: relative;
     text-align: center;
     color: white;
-}
-
-#participateModal .modal-dialog {
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
     height: 100%;
-    margin: 0;
 }
 
-#participateModal .modal-content {
+.modal-dialog {
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh !important;
+    max-height: 100%;
+    margin: 0;
+    pointer-events: auto;
+}
+
+#participateModal .modal-content-custom {
     width: 100%;
     height: 100%;
     border: 0;
@@ -1108,6 +1150,8 @@ a:hover .resource-icon-article {
     align-items: center;
     justify-content: center;
     height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     overflow: auto;
 }
 
@@ -1138,12 +1182,24 @@ a:hover .resource-icon-article {
 }
 
 
-.club-modal .modal-content {
+.modal-content-custom {
     position: absolute;
-    right: 0;
-    left: 0;
-    margin-left: -90px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 1024px;
+    overflow: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    background-clip: unset;
+    background: var(--backgroundColor);
+    border-radius: 1rem;
+    border-radius: 0.8rem;
+}
+
+.modal-content-custom .row {
+    margin: 0;
+    padding: 0;
 }
 
 .fixed-top {
@@ -1189,16 +1245,6 @@ a:hover .resource-icon-article {
         height: 484px;
     }
 
-    .club {
-        height: 242px;
-        overflow-y: auto;
-    }
-
-
-    .club-container {
-        max-height: 484px;
-    }
-
     .modal-close {
         top: 6px;
         right: 4px;
@@ -1212,11 +1258,16 @@ a:hover .resource-icon-article {
         z-index: 1;
     }
 
+    .club-modal .modal-close {
+        top: 0;
+        right: -4px;
+    }
+
     .img-container .club-img {
         object-fit: cover;
         object-position: 50% 0;
         width: 384px;
-        height: 484px;
+        height: 100%;
     }
 
     #image-gallery-image .modal-close-div {
@@ -1274,14 +1325,6 @@ a:hover .resource-icon-article {
         object-fit: cover;
     }
 
-    .club-modal .modal-content {
-        position: absolute;
-        right: 0;
-        left: 0;
-        margin-left: 0px;
-        width: 1024px;
-    }
-
     .leaderboard-clubs {
         padding-right: 8px;
         overflow-y: auto;
@@ -1319,25 +1362,6 @@ a:hover .resource-icon-article {
         top: 0;
         margin-top: 0;
         background-color: var(--backgroundColor);
-    }
-
-
-    .club-modal .modal-content {
-        max-width: 100%;
-        position: absolute;
-        right: 0;
-        left: 0;
-        margin-left: 0px;
-    }
-
-    .club {
-        height: 100%;
-        overflow-y: auto;
-    }
-
-
-    .club-container {
-        max-height: 100%;
     }
 
     .modal-close-div {
@@ -1379,7 +1403,7 @@ a:hover .resource-icon-article {
         background-color: black;
     }
 
-    #image-gallery .modal-content {
+    #image-gallery .modal-content-custom {
         position: absolute;
         top: 50%;
         right: 0;
@@ -1525,7 +1549,7 @@ img.expired-img {
     height: 198px;
 }
 
-#image-gallery .modal-content {
+#image-gallery .modal-content-custom {
     padding: 0;
 }
 
@@ -1902,8 +1926,8 @@ html {
 }
 
 #btn-nav-toggle {
-    top: 25px;
-    right: 25px;
+    top: 20px;
+    right: 20px;
 }
 
 a.nav-link.login {
@@ -2354,6 +2378,7 @@ a.nav-link.login:hover {
     overflow: auto;
 }
 
-input[type=checkbox], input[type=radio] {
+input[type=checkbox],
+input[type=radio] {
     margin-right: 8px;
 }
