@@ -460,7 +460,7 @@ header.page-header img {
     padding: 8px 24px;
     background: var(--primaryColor);
     color: white;
-    vertical-align: middle;
+    vertical-align: unset;
     border-radius: 32px;
     text-decoration: none;
     text-underline-position: unset;
@@ -1107,6 +1107,8 @@ a:hover .resource-icon-article {
     background: rgba(255, 239, 220, 0.95);
     align-items: center;
     justify-content: center;
+    height: 100%;
+    overflow: auto;
 }
 
 .img-container .mission-img-list {
@@ -1198,6 +1200,8 @@ a:hover .resource-icon-article {
     }
 
     .modal-close {
+        top: 6px;
+        right: 4px;
         display: block;
         width: 32px;
         height: 32px;
@@ -1205,6 +1209,7 @@ a:hover .resource-icon-article {
         background: url('../images/cross.svg') center no-repeat;
         align-content: center;
         opacity: unset;
+        z-index: 1;
     }
 
     .img-container .club-img {
@@ -1530,11 +1535,6 @@ img.expired-img {
     position: fixed;
     background-color: var(--backgroundColor);
     z-index: 99;
-}
-
-.nav-items-container {
-    padding-top: 40px;
-    padding-bottom: 50%;
 }
 
 button.modal-close {
@@ -1971,6 +1971,7 @@ a.nav-link.login:hover {
 @media (max-width: 1024px) {
     .stats {
         height: 13%;
+        min-height: 101px;
     }
 
     .stats .count-wrap {
@@ -2342,4 +2343,17 @@ a.nav-link.login:hover {
         padding-right: 0;
         padding-left: 0;
     }
+}
+
+.nav-items-container .navbar-nav {
+    padding-bottom: 80px;
+}
+
+.heroes-nav .nav-items-container {
+    height: 100vh;
+    overflow: auto;
+}
+
+input[type=checkbox], input[type=radio] {
+    margin-right: 8px;
 }
