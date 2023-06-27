@@ -1,5 +1,5 @@
 ﻿@using Piranha.Extend.Fields
-<footer class="border-top text-muted custom-footer">
+<footer class="text-muted custom-footer">
     <div class="container">
         @{
             var currentSite = await WebApp.Site.GetContentAsync<HeroesCupSite>();
@@ -44,18 +44,16 @@
         }
         @if (currentSite != null)
         {
-            <div class="row col-12 pb-5 body3 text-white">
-                <div class="col-md-5 col-sm-12">
-                    <h2 class="heading2 text-white d-none d-md-block d-sm-none d-xs-none">С подкрепата на</h2>
-                    <h3 class="heading3 text-white d-sm-block d-md-none">С подкрепата на</h3>
+            <div class="footer-top">
+                <div class="footer-top-image">
+                <img src="~/images/main-supporter-logo.png" alt="Mission Image">
                 </div>
-                <div class="col-md-7 col-sm-12 mt-3 mt-md-0 text-white body3">
+                <div class="footer-top-text">
                     @Html.Raw(currentSite.FooterContents.MainPartnerInfoBox.Value)
                 </div>
             </div>
             @if (hasParnerLogos)
             {
-                <div class="separator-footer"></div>
                 <div class="container-fluid">
                     <div class="row pt-4 pb-4 mt-4 mb-4">
                         @foreach (var image in partnerImages)
@@ -69,16 +67,8 @@
                     </div>
                 </div>
             }
-
-            <div class="separator-footer"></div>
-            <div class="footer-bottom row pt-4 pb-4 mr-0 body2-small text-white justify-content-md-between">
-            <div class="col-md-10 col-sm-12 mt-2 d-none d-md-block pt-1 pb-1">Проект на <a class="underline-offset" href="https://timeheroes.org" target="_blank">TimeHeroes.org</a><span> | </span>Уеб дизайн и разработка <a class="underline-offset" href="https://saorsa.bg/" target="_blank">Саорса ООД</a><span> | </span><a class="underline-offset text-white" href="https://timeheroes.org/bg/pages/tocoop" target="_blank">Условия за ползване</a><span> | </span><a class="underline-offset text-white" href="/manager" target="_blank">Вход за координатори</a> <span> | </span><a class="underline-offset text-white" href="https://timeheroes.org/bg/pages/privacy-policy" target="_blank">Политика за поверителност</a></div>
-                <div class="col-sm-12 d-sm-block d-md-none pt-1 pb-1">Проект на <a class="underline-offset" href="https://timeheroes.org" target="_blank">TimeHeroes.org</a></div>
-                <div class="col-sm-12 d-sm-block d-md-none pt-1 pb-1">
-                    <a class="underline-offset" href="https://timeheroes.org/bg/pages/tocoop" target="_blank">Условия за ползване</a>
-                </div>
-                <div class="col-sm-12 d-sm-block d-md-none pt-1 pb-1">Уеб дизайн и разработка <a class="underline-offset" href="https://saorsa.bg/" target="_blank">Саорса ООД </a> </div>
-                <div class="row col-md-2 col-10 pr-0 pt-2 pb-2">
+            <div class="footer-social">
+                <div>
                     <div class="col-2 justify-content-md-end text-sm-center mr-1 ml-1">
                         <a href="https://www.facebook.com/TimeHeroes/" target="_blank">
                             <span class="icon icon-facebook"></span>
@@ -100,6 +90,14 @@
                         </a>
                     </div>
                 </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="col-md-10 col-sm-12 mt-2 d-none d-md-block pt-1 pb-1">Проект на <a class="underline-offset" href="https://timeheroes.org" target="_blank">TimeHeroes.org</a><span> | </span>Уеб дизайн и разработка <a class="underline-offset" href="https://saorsa.bg/" target="_blank">Саорса ООД</a><span> | </span><a class="underline-offset text-white" href="https://timeheroes.org/bg/pages/tocoop" target="_blank">Условия за ползване</a><span> | </span><a class="underline-offset text-white" href="/manager" target="_blank">Вход за координатори</a> <span> | </span><a class="underline-offset text-white" href="https://timeheroes.org/bg/pages/privacy-policy" target="_blank">Политика за поверителност</a></div>
+                <div class="col-sm-12 d-sm-block d-md-none pt-1 pb-1">Проект на <a class="underline-offset" href="https://timeheroes.org" target="_blank">TimeHeroes.org</a></div>
+                <div class="col-sm-12 d-sm-block d-md-none pt-1 pb-1">
+                    <a class="underline-offset" href="https://timeheroes.org/bg/pages/tocoop" target="_blank">Условия за ползване</a>
+                </div>
+                <div class="col-sm-12 d-sm-block d-md-none pt-1 pb-1">Уеб дизайн и разработка <a class="underline-offset" href="https://saorsa.bg/" target="_blank">Саорса ООД </a> </div>
             </div>
         }
     </div>

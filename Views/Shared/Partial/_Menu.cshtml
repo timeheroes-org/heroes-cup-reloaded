@@ -5,8 +5,8 @@
 }
 
 @*Not the best solution but meanwhile... class = d-sm-block d-md-none is hiding on md screen solution*@
-<nav class="navbar navbar-toggleable-sm navbar-light bg-faded d-sm-block d-md-none ml-0 mr-0 mt-md-3 mt-0 pt-3 pl-4 pr-4 main-blur">
-    <a class="navbar-brand" href="/">
+<nav class="navbar navbar-toggleable-sm navbar-light bg-faded d-md-none ml-0 mr-0 mt-md-3 mt-0 pt-3 pl-4 pr-4 main-blur">
+    <a class="navbar-brand navbar-brand-custom" href="/">
         <img src="~/images/logo_small.svg"/>
     </a>
     <button id="btn-nav-toggle" class="navbar-toggler navbar-toggler-right icon-hamburger" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,14 +50,14 @@
 @*Not the best solution but meanwhile... class =  d-none d-md-block is hiding on sm screen solution*@
 <div class="d-none d-md-block">
     <nav class="navbar">
-        <a class="col-sm navbar-brand" href="/">
+        <a class="col-sm navbar-brand navbar-brand-custom" href="/">
             <img src="~/images/Logo.svg"/>
         </a>
         
-        <ul class="nav nav-site justify-content-right pr-3">
+        <ul class="nav nav-site pr-3">
             @foreach (var item in sitemap)
             {
-                <li class="nav-item @(item.Id == WebApp.PageId ? "active" : "") mr-2">
+                <li class="nav-item @(item.Id == WebApp.PageId ? "active" : "")">
                     @if (item.PageTypeName != startPageTypeName && item.PageTypeName != landingPageTypeName)
                     {
                         <a class="nav-link" href="@item.Permalink">
@@ -66,22 +66,22 @@
                     }
                 </li>
             }
+        </ul>
+        <div class="menu-buttons">
             @if (ViewBag.IsSearchPage == null)
             {
-                <li class="nav-item nav-search">
+                <div class="nav-search">
                     <form id="search-box" class="search-box" method="post" action="/search" data-sitekey="@Configuration.GetSection("GoogleRecaptcha").GetSection("SiteKey").Value">
                         <input type="text" minlength="3" name="search" required/>
                         <input type="hidden" class="search-token" name="search-token"/>
                         <i class="fa fa-search"></i>
                     </form>
-                </li>
+                </div>
             }
-            <li class="nav-item">
+            <div>
                 <button class="btn btn-heroes btn-lg my-2 my-sm-0 btn-participate body2-bold" type="button" data-toggle="modal" data-target="#participateModal">Участвайте</button>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link login" href="/manager">Вход<i class="fa fa-solid fa-arrow-right"></i></a>
-            </li>
-        </ul>
+            </div>
+            <a class="nav-link login" href="/manager">Вход<i class="fa fa-solid fa-arrow-right"></i></a>
+        </div>
     </nav>
 </div>

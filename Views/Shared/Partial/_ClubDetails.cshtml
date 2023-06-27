@@ -5,13 +5,13 @@
 
 <div class="modal fade" id="@club.Id.ToString()" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg club-modal" role="document">
-        <div class="modal-content">
+        <div class="modal-content-custom">
             <div class="row">
-                <div class="col-md-5 col-sm-12 club-image pr-md-0">
+                <div class="col-md-5 col-sm-12 club-image pr-md-0 p-0">
                     @if (club.ClubImageFileName != null)
                     {
                         <div class="img-container text-left">
-                            <figure class="figure mb-0">
+                            <figure class="figure mb-0 club-image-container">
                                 <img src="/img/@club.ClubImageFileName" class="figure-img img-fluid club-img mb-0" alt="@club.Name">
                             </figure>
                             <div class="col-12 text-right d-sm-block d-md-none modal-close-div pr-0">
@@ -30,15 +30,15 @@
                     }
                 </div>
                 <div class="col-md-7 col-sm-12 pl-md-0 pl-1 club-container">
-                    <div class="modal-header no-border mt-3 pt-3 pr-0 pr-md-3 mr-0 pb-0 mb-0 pl-md-0">
-                        <div class="row pl-md-0 pl-4 pr-0 pr-md-3">
+                    <div class="modal-header no-border mt-3 pl-3 pt-3 pr-0 pr-md-3 mr-0 pb-0 mb-0">
+                        <div class="row pl-md-0 pl-4 pr-0 pr-md-3 club-modal-title">
                             <div class="col-12 text-right d-none d-md-block d-sm-none d-xs-none">
                                 <a href="/" type="button" class="close modal-close" data-dismiss="modal" aria-label="Close"></a>
                             </div>
-                            <div class="col-2 body1-bold initials pl-0 pl-md-4">
+                            <div class="col-2 body1-bold initials pl-0 pl-md-4 club-modal-icon">
                                 <span data-letters="@club.ClubInitials"></span>
                             </div>
-                            <div class="col-10 pl-md-1 pl-2">
+                            <div class="col-10 pl-md-1 pl-2 club-modal-title-text">
                                 @if (club.Name.Length + club.Location.Length >= 70)
                                 {
                                     <p class="body1-bold d-none d-md-block d-sm-none d-xs-none">
@@ -86,7 +86,7 @@
                         </ul>
                         @* Club Information *@
                         <div class="tab-content no-border pr-2 pl-3">
-                            <div role="tabpanel" class="tab-pane active pl-3 pt-3 pr-3 pb-0" id="club_information_@club.Id.ToString()">
+                            <div role="tabpanel" class="tab-pane active pl-3 pt-3 pr-3 pb-3" id="club_information_@club.Id.ToString()">
                                 <div class="row club body2 mt-3">
                                     <div class="col-12">
                                         @club.Club.Description
@@ -109,11 +109,11 @@
                                         <div class="col-12">
                                             <p class="body2">Координатори:</p>
                                         </div>
-                                        <div class="row col-12 align-top">
+                                        <div class="row col-12 align-top club-modal-wrap">
                                             @foreach (var coordinator in club.Coordinators)
                                             {
-                                                <div class="row col-sm-6 vertical-center p-1">
-                                                    <div class="col-3 body1-bold mr-2">
+                                                <div class="row col-sm-6 vertical-center p-1 club-modal-cont">
+                                                    <div class="col-3 body1-bold mr-2 club-modal-icon-small">
                                                         <span class="body1-bold" data-letters="@coordinator.HeroInitials"></span>
                                                     </div>
                                                     <div class="col-8 body2">
