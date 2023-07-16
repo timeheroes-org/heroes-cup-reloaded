@@ -11,11 +11,7 @@
         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
 
         var disqus_config = function () {
-            this.page.url = "@Model.UrlBase";  // Replace PAGE_URL with your page's canonical URL variable
-            var url = "@Model.Url";
-            var urlArray = url.split('/');
-            this.page.identifier = '/' + urlArray[urlArray.length - 2] + '/' + urlArray[urlArray.length - 1]; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            console.log('####', this.page.url, this.page.identifier);
+           
         };
 
         (function () { // DON'T EDIT BELOW THIS LINE
@@ -24,6 +20,27 @@
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
+        var resetDisqusPlugin = function () {
+            if (typeof DISQUS === 'undefined') {
+                setTimeout(function(){
+                    resetDisqusPlugin();
+                },3000);
+            } else {
+                try{
+                    DISQUS.reset({
+                        reload: true,
+                        config: function () {
+                            this.page.url = "https://kupatanageroite.com";  // Replace PAGE_URL with your page's canonical URL variable
+                            var url = "@Model.Url";
+                            var urlArray = url.split('/');
+                            this.page.identifier = '/' + urlArray[urlArray.length - 2] + '/' + urlArray[urlArray.length - 1]; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                            console.log('####', this.page.url, this.page.identifier);
+                        }
+                    });
+                } catch(e){}
+            }
+        };
+        resetDisqusPlugin();
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <script id="dsq-count-scr" src="//kupatanageroite-com.disqus.com/count.js" async></script>
