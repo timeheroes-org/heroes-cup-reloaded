@@ -10,7 +10,7 @@ public class Club
 
     public string OrganizationName { get; set; }
 
-    public AgeCategory Category { get; set; }
+    public AgeCategory AgeCategory { get; set; }
 
     public string OrganizationType { get; set; }
 
