@@ -34,7 +34,6 @@
         <None Include="ClubsModule\assets\**\*" CopyToOutputDirectory="Always" />
         <None Remove=".git\**" />
     </ItemGroup>
-
     <ItemGroup>
         <Compile Remove="ClubsModule\Areas\Manager\**" />
         <Compile Remove="ClubsModule\Resources\**" />
