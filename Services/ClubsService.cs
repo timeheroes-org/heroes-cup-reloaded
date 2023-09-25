@@ -136,7 +136,7 @@ public class ClubsService : IClubsService
         club.OrganizationName = model.Club.OrganizationName.TrimInput();
         club.OrganizationNumber = model.Club.OrganizationNumber.TrimInput();
         club.Description = model.Club.Description;
-
+        club.AgeCategory = model.Club.AgeCategory;
 
         // set club's heroes
         if (model.HeroesIds != null && model.HeroesIds.Any())

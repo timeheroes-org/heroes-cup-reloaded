@@ -10,6 +10,7 @@ public class Mission
 
     public string Slug { get; set; }
 
+    public AgeCategory AgeCategory { get; set; }
     public string Location { get; set; }
 
     public long StartDate { get; set; }

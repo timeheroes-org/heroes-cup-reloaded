@@ -140,10 +140,20 @@
     <data name="Description" xml:space="preserve">
     <value>Описание</value>
   </data>
-    <data name="Description is mandatory." xml:space="preserve">
+
+  <data name="AgeCategory" xml:space="preserve">
+    <value>Възрастова категория</value>
+  </data>
+  <data name="OneSeven" xml:space="preserve">
+    <value>От 1 до 7 годишна възраст</value>
+  </data>
+  <data name="EightTwelve" xml:space="preserve">
+    <value>От 8 до 12 годишна възраст</value>
+  </data>
+  <data name="Description is mandatory." xml:space="preserve">
     <value>Описанието е задължително поле.</value>
   </data>
-    <data name="Heroes" xml:space="preserve">
+  <data name="Heroes" xml:space="preserve">
     <value>Герои</value>
   </data>
     <data name="Image Suggestion" xml:space="preserve">

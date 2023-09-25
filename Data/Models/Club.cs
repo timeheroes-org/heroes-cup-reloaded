@@ -10,6 +10,8 @@ public class Club
 
     public string OrganizationName { get; set; }
 
+    public AgeCategory AgeCategory { get; set; }
+
     public string OrganizationType { get; set; }
 
     public string OrganizationNumber { get; set; }
@@ -19,6 +21,8 @@ public class Club
     public string Description { get; set; }
 
     public int Points { get; set; }
+
+    
 
     public ICollection<Hero> Heroes { get; set; }
 
