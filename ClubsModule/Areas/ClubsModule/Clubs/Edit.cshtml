@@ -64,8 +64,8 @@
                             <label>@HeroesCupLocalizer.Club["AgeCategory"]</label>
                             @Html.DropDownListFor(m => m.Club.AgeCategory, 
                                 new SelectList(new List<SelectListItem>() {
-                                    new SelectListItem("От 1 до 7 годишна възраст", "0"), 
-                                    new SelectListItem("От 8 до 12 годишна възраст", "1")
+                                    new SelectListItem("От 1 до 7 клас", "0"), 
+                                    new SelectListItem("От 8 до 12 клас", "1")
                                     }, "Value", "Text"), 
                                     new { @class = "form-control small", maxlength = 128, required = "" })
                             <div class="invalid-tooltip">
