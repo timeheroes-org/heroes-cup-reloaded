@@ -298,12 +298,11 @@ header.page-header img {
 .nav-site li a {
     padding: 0;
     margin: 1em 1.16em;
-    font-size: .9rem;
     transition: color ease-in-out .2s;
     text-shadow: 0 0 5px #fff;
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
     /* identical to box height, or 150% */
     text-align: right;
@@ -1920,6 +1919,7 @@ html {
     display: flex;
     align-items: center;
     margin-left: 0;
+    font-size: 18px;
 }
 
 .navbar-brand-custom {
