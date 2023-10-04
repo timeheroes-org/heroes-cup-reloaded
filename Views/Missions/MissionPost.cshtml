@@ -64,9 +64,8 @@
                                 <div class="row pt-md-4 pt-2 mt-md-4 mt-2 pr-md-2 pl-3 pr-3">
                                     @foreach (var imageId in Model.Mission.Story.Images)
                                     {
-                                        @{
-                                            String image = imageId.Replace(".jpg.jpg",".jpg");
-                                        }
+                                        String image = imageId.Replace(".jpg.jpg",".jpg");
+                                        
                                         <div class="col-md-6 col-sm-12 thumb pr-0 mb-3">
                                             <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
                                                data-image="/img/@image/@image.jpg"
