@@ -67,14 +67,14 @@
                                     @foreach (var imageId in Model.Mission.Story.Images)
                                     {
                                         String extension = System.IO.Path.GetExtension(imageId);
-                                        String image = imageId.Replace($".{extension}.{extension}",$".{extension}");
+                                        String image = imageId.Replace($"{extension}{extension}",$".{extension}");
                                         
                                         <div class="col-md-6 col-sm-12 thumb pr-0 mb-3">
                                             <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
-                                               data-image="/img/@image/@(image).@(extension)"
+                                               data-image="/img/@image/@(image)@(extension)"
                                                data-target="#image-gallery">
                                                 <img class="img-fluid img-thumbnail center-cropped story-image"
-                                                     src="/img/@image/@(image).@(extension)"
+                                                     src="/img/@image/@(image)@(extension)"
                                                      alt="Another alt text">
                                             </a>
                                         </div>
