@@ -56,6 +56,7 @@ public class LeaderboardService : ILeaderboardService
                 var item = new ClubListItem
                 {
                     Id = c.Club.Id,
+                    AgeCategory = c.Club.AgeCategory,
                     Name = GetClubName(c.Club),
                     Location = c.Club.Location,
                     ClubInitials = GetClubInitials(c.Club.Name),

@@ -30,4 +30,5 @@ public class ClubListItem
     public IEnumerable<HeroViewModel> Heroes { get; set; }
 
     public IEnumerable<HeroViewModel> Coordinators { get; set; }
+    public AgeCategory AgeCategory { get; internal set; }
 }
