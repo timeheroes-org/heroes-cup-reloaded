@@ -68,14 +68,22 @@
                 <li class="nav-item @(item.Id == WebApp.PageId ? "active" : "")">
                     @if (item.PageTypeName != startPageTypeName && item.PageTypeName != landingPageTypeName)
                     {
+                         @if (item.Permalink == "storiesmissions") {
+                        <div class="col-12 justify-content-center pt-3 pb-3">
+                            <a class="nav-item nav-link" href="https://kupatanageroite.com/missions#stories">
+                                <span class="body1-bold">@item.MenuTitle</span>
+                            </a>
+                        </div>
+		                } else {
                         <a class="nav-link" href="@item.Permalink">
                             <span>@item.MenuTitle</span>
                         </a>
+                        }
                     }
                 </li>
             }
             <li class="nav-item">
-                <a class="nav-link" href="https://kupatanageroite.com/events/geroiski-reglament-sezon-4">
+                <a class="nav-link" href="https://kupatanageroite.com/events/geroiski-reglament-sezon-5">
                     <span>Регламент</span>
                 </a>
             </li>

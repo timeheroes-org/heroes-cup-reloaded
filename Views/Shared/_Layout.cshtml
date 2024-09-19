@@ -58,6 +58,141 @@
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
+        if (localStorage.getItem('consentMode') === null) {
+            gtag('consent', 'default', {
+                'functionality_storage': 'denied',
+                'security_storage': 'denied',
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied',
+                'personalization_storage': 'denied',
+                'wait_for_update': 500,
+            });
+            } else {
+            gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+            }
+
+            window.onload = function() {
+            const cookie_consent_banner_dom = `
+                <div id="cookie-consent-banner" class="cookie-consent-banner">
+                    <h3>Този сайт използва бисквитки!</h3>
+                    <p>
+                Ние използваме бисквитки, за да персонализираме съдържанието и рекламите, да предоставяме функции на социалните медии и да анализираме трафика. Също така споделяме информация за използването на нашия сайт със социалните медии, рекламните партньори и платформите за анализ, които може да я комбинират с друга информация, предоставена от теб или събрана от тях при използването на техните услуги.
+                </p>
+                    <div class="cookie-consent-options">
+                    <label><input id="consent-necessary" type="checkbox" value="Necessary" checked disabled>Най-необходими</label>
+                    <label><input id="consent-analytics" type="checkbox" value="Analytics" checked>Анализ</label>
+                    <label><input id="consent-marketing" type="checkbox" value="Marketing" checked>Маркетинг</label>
+                    <label><input id="consent-preferences" type="checkbox" value="Preferences" checked>Персонализиране на реклами</label>
+                    <label><input id="consent-partners" type="checkbox" value="Partners">Партньори</label>
+                    </div>
+                    <div class="cookie-consent-buttons">
+                    <button id="cookie-consent-btn-reject-all" class="cookie-consent-button btn-grayscale">Отхвърли всички</button>
+                    <button id="cookie-consent-btn-accept-some" class="cookie-consent-button btn-outline">Приеми избраното</button>
+                    <button id="cookie-consent-btn-accept-all" class="cookie-consent-button btn-success">Приеми всички</button>
+                    </div>
+                </div>
+            `
+
+            document.body.insertAdjacentHTML('beforeend', cookie_consent_banner_dom)
+            const cookie_consent_banner = document.body.lastElementChild
+
+            function dnt () {
+                return (navigator.doNotTrack == "1" || window.doNotTrack == "1")
+            }
+
+            function gpc () {
+                return (navigator.globalPrivacyControl || window.globalPrivacyControl)
+            }
+
+            function showBanner() {
+                const cm = JSON.parse(window.localStorage.getItem('consentMode'))
+                if (cm && cm.functionality_storage) {
+                if (cm.functionality_storage == 'granted') {
+                    document.querySelector('#consent-necessary').checked = true
+                    document.querySelector('#consent-necessary').disabled = true
+                } else {
+                    document.querySelector('#consent-necessary').checked = false
+                    document.querySelector('#consent-necessary').disabled = false
+                }
+                document.querySelector('#consent-analytics').checked = (cm.analytics_storage == 'granted') ? true : false
+                document.querySelector('#consent-preferences').checked = (cm.ad_personalization == 'granted') ? true : false
+                document.querySelector('#consent-marketing').checked = (cm.ad_storage == 'granted') ? true : false
+                document.querySelector('#consent-partners').checked = (cm.ad_personalization == 'granted') ? true : false
+                }
+                cookie_consent_banner.style.display = 'flex';
+            }
+
+            function hideBanner() {
+                cookie_consent_banner.style.display = 'none';
+            }
+
+            window.cookieconsent = {
+                show: showBanner,
+                hide: hideBanner
+            }
+
+            function setConsent(consent) {
+                const consentMode = {
+                'ad_storage': (consent.marketing && !dnt()) ? 'granted' : 'denied',
+                'analytics_storage': (consent.analytics && !dnt()) ? 'granted' : 'denied',
+                'ad_user_data': (consent.marketing && !dnt()) ? 'granted' : 'denied',
+                'ad_personalization': (consent.partners && !gpc()) ? 'granted' : 'denied',
+                'functionality_storage': consent.necessary ? 'granted' : 'denied',
+                'personalization_storage': consent.preferences ? 'granted' : 'denied',
+                'security_storage': consent.necessary ? 'granted' : 'denied',
+                };
+                window.cookieconsent.consentMode = consentMode
+                gtag('consent', 'update', consentMode);
+                localStorage.setItem('consentMode', JSON.stringify(consentMode));
+            }
+
+            if (cookie_consent_banner) {
+                Array.from(document.querySelectorAll('.cookie-consent-banner-open')).map(btn => {
+                btn.addEventListener('click', () => {
+                    showBanner()
+                })
+                })
+
+                if (window.localStorage.getItem('consentMode')) {
+                hideBanner()
+                } else {
+                showBanner()
+                }
+
+                cookie_consent_banner.querySelector('#cookie-consent-btn-accept-all').addEventListener('click', () => {
+                setConsent({
+                    necessary: true,
+                    analytics: true,
+                    preferences: true,
+                    marketing: true,
+                    partners: true
+                });
+                hideBanner();
+                });
+                cookie_consent_banner.querySelector('#cookie-consent-btn-accept-some').addEventListener('click', () => {
+                setConsent({
+                    necessary: true,
+                    analytics: document.querySelector('#consent-analytics').checked,
+                    preferences: document.querySelector('#consent-preferences').checked,
+                    marketing: document.querySelector('#consent-marketing').checked,
+                    partners: document.querySelector('#consent-partners').checked
+                });
+                hideBanner();
+                });
+                cookie_consent_banner.querySelector('#cookie-consent-btn-reject-all').addEventListener('click', () => {
+                setConsent({
+                    necessary: true,
+                    analytics: false,
+                    preferences: false,
+                    marketing: false,
+                    partners: false
+                });
+                hideBanner();
+                });
+            }
+            }
         gtag('js', new Date());
 
         gtag('config', 'UA-172912338-1');

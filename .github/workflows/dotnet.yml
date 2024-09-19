@@ -29,7 +29,7 @@ jobs:
     runs-on: [ci-th]
     steps:
     - name: Download a Build Artifact
-      uses: actions/download-artifact@v3.0.0
+      uses: actions/download-artifact@v2.0.0
     - name: Stop service
       run: sudo /bin/systemctl stop kupatanageroite.service
     - name: Backup
