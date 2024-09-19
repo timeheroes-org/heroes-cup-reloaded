@@ -26,13 +26,13 @@
             {
                 @if (item.PageTypeName != startPageTypeName && item.PageTypeName != landingPageTypeName)
                 {
-		   @if (item.Permalink == "storiesmissions") {
+		            @if (item.Permalink.Contains("storiesmissions")) {
                     <div class="col-12 justify-content-center pt-3 pb-3">
                         <a class="nav-item nav-link" href="https://kupatanageroite.com/missions#stories">
                             <span class="body1-bold">@item.MenuTitle</span>
                         </a>
                     </div>
-		   } else {
+		            } else {
                     <div class="col-12 justify-content-center pt-3 pb-3">
                         <a class="nav-item nav-link @(item.Id == WebApp.PageId ? "active" : "")" href="@item.Permalink">
                             <span class="body1-bold">@item.MenuTitle</span>
@@ -68,7 +68,7 @@
                 <li class="nav-item @(item.Id == WebApp.PageId ? "active" : "")">
                     @if (item.PageTypeName != startPageTypeName && item.PageTypeName != landingPageTypeName)
                     {
-                         @if (item.Permalink == "storiesmissions") {
+                        @if (item.Permalink.Contains("storiesmissions")) {
                         <div class="col-12 justify-content-center pt-3 pb-3">
                             <a class="nav-item nav-link" href="https://kupatanageroite.com/missions#stories">
                                 <span class="body1-bold">@item.MenuTitle</span>
