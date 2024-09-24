@@ -32,7 +32,9 @@
                             <span class="body1-bold">@item.MenuTitle</span>
                         </a>
                     </div>
-		            } else {
+		            } else if (item.Permalink.Contains("privacypolicy") ||  item.Permalink.Contains("terms")) {
+                        break;
+                    } else {
                     <div class="col-12 justify-content-center pt-3 pb-3">
                         <a class="nav-item nav-link @(item.Id == WebApp.PageId ? "active" : "")" href="@item.Permalink">
                             <span class="body1-bold">@item.MenuTitle</span>
