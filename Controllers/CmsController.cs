@@ -61,7 +61,7 @@ public class CmsController : Controller
     /// </summary>
     /// <param name="id">The unique page id</param>
     /// <param name="draft">If a draft is requested</param>
-    [Route("page")]
+    [Route("page/{id}")]
     public async Task<IActionResult> Page(Guid id, bool draft = false)
     {
         var model = await _loader.GetPageAsync<StandardPage>(id, HttpContext.User, draft);
