@@ -22,29 +22,6 @@
         url('../fonts/Fira/Fira-Regular.woff') format('woff');
 }
 
-/*
-*   Comments
-*/
-
-#disqus_thread {
-    width: 100%;
-    margin-bottom: 32px;
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-}
-
-#disqus_thread p {
-    color: var(--fontColor);
-}
-
-#disqus_thread a {
-    color: var(--primaryColor);
-}
-
-.comment-section {
-    width: 100%;
-    margin-top: 4rem;
-}
 
 html,
 body {
