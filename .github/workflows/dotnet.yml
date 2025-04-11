@@ -19,39 +19,39 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
     - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v3.1.0
+      uses: actions/upload-artifact@v4
       with:
         path:  bin/Release/net6.0/
         if-no-files-found: error
         retention-days: 1
-  publish:
-    needs: build 
-    runs-on: [ci-th]
-    steps:
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v2.0.0
-    - name: Stop service
-      run: sudo /bin/systemctl stop kupatanageroite.service
-    - name: Backup
-      run: find "/var/www/" -maxdepth 1 -name heroes-cup  -type d -exec mv {} /var/www/heroes-cup-$(date +%m%d%Y-%S) \;
-    - name: Deploy artifact
-      run: mv ~/actions-runner/_work/heroes-cup-reloaded/heroes-cup-reloaded/artifact /var/www/heroes-cup
-    - name: Link images
-      run: ln -s /var/www/heroes-cup-uploads/uploads /var/www/heroes-cup/wwwroot
-    - name: Configure secrets
-      env:
-          GOOGLERECAPTCHASITEKEY: ${{ secrets.GOOGLERECAPTCHASITEKEY }}
-          GOOGLERECAPTCHASITESECRET: ${{ secrets.GOOGLERECAPTCHASITESECRET }}
-          OUTGOINGEMAILSETTINGSACCOUNT: ${{ secrets.OUTGOINGEMAILSETTINGSACCOUNT }}
-          OUTGOINGEMAILSETTINGSPASSWORD: ${{ secrets.OUTGOINGEMAILSETTINGSPASSWORD }}
-          OUTGOINGEMAILSETTINGSSERVER: ${{ secrets.OUTGOINGEMAILSETTINGSSERVER }}
-      run: |
-        sed -i.bak -re "s/(.+)SiteKey.+/\1SiteKey\":\"${GOOGLERECAPTCHASITEKEY}\",/" /var/www/heroes-cup/appsettings.json
-        sed -i.bak -re "s/(.+)SecretKey.+/\1SecretKey\":\"${GOOGLERECAPTCHASITESECRET}\",/" /var/www/heroes-cup/appsettings.json
-        sed -i.bak -re "s/(.+)EmailAccount.+/\1EmailAccount\":\"${OUTGOINGEMAILSETTINGSACCOUNT}\",/" /var/www/heroes-cup/appsettings.json
-        sed -i.bak -re "s/(.+)EmailPassword.+/\1EmailPassword\":\"${OUTGOINGEMAILSETTINGSPASSWORD}\",/" /var/www/heroes-cup/appsettings.json
-        sed -i.bak -re "s/(.+)EmailServer.+/\1EmailServer\":\"${OUTGOINGEMAILSETTINGSSERVER}\",/" /var/www/heroes-cup/appsettings.json
-    - name: Start service
-      run: sudo /bin/systemctl start kupatanageroite.service
+  # publish:
+  #   needs: build 
+  #   runs-on: [ci-th]
+  #   steps:
+  #   - name: Download a Build Artifact
+  #     uses: actions/download-artifact@v2.0.0
+  #   - name: Stop service
+  #     run: sudo /bin/systemctl stop kupatanageroite.service
+  #   - name: Backup
+  #     run: find "/var/www/" -maxdepth 1 -name heroes-cup  -type d -exec mv {} /var/www/heroes-cup-$(date +%m%d%Y-%S) \;
+  #   - name: Deploy artifact
+  #     run: mv ~/actions-runner/_work/heroes-cup-reloaded/heroes-cup-reloaded/artifact /var/www/heroes-cup
+  #   - name: Link images
+  #     run: ln -s /var/www/heroes-cup-uploads/uploads /var/www/heroes-cup/wwwroot
+  #   - name: Configure secrets
+  #     env:
+  #         GOOGLERECAPTCHASITEKEY: ${{ secrets.GOOGLERECAPTCHASITEKEY }}
+  #         GOOGLERECAPTCHASITESECRET: ${{ secrets.GOOGLERECAPTCHASITESECRET }}
+  #         OUTGOINGEMAILSETTINGSACCOUNT: ${{ secrets.OUTGOINGEMAILSETTINGSACCOUNT }}
+  #         OUTGOINGEMAILSETTINGSPASSWORD: ${{ secrets.OUTGOINGEMAILSETTINGSPASSWORD }}
+  #         OUTGOINGEMAILSETTINGSSERVER: ${{ secrets.OUTGOINGEMAILSETTINGSSERVER }}
+  #     run: |
+  #       sed -i.bak -re "s/(.+)SiteKey.+/\1SiteKey\":\"${GOOGLERECAPTCHASITEKEY}\",/" /var/www/heroes-cup/appsettings.json
+  #       sed -i.bak -re "s/(.+)SecretKey.+/\1SecretKey\":\"${GOOGLERECAPTCHASITESECRET}\",/" /var/www/heroes-cup/appsettings.json
+  #       sed -i.bak -re "s/(.+)EmailAccount.+/\1EmailAccount\":\"${OUTGOINGEMAILSETTINGSACCOUNT}\",/" /var/www/heroes-cup/appsettings.json
+  #       sed -i.bak -re "s/(.+)EmailPassword.+/\1EmailPassword\":\"${OUTGOINGEMAILSETTINGSPASSWORD}\",/" /var/www/heroes-cup/appsettings.json
+  #       sed -i.bak -re "s/(.+)EmailServer.+/\1EmailServer\":\"${OUTGOINGEMAILSETTINGSSERVER}\",/" /var/www/heroes-cup/appsettings.json
+  #   - name: Start service
+  #     run: sudo /bin/systemctl start kupatanageroite.service
       
       
